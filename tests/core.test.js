@@ -137,3 +137,6 @@ test('quota errors never trigger an unbounded fallback or another request',async
  const {generate}=await import('../src/simulation.js');
  const original=globalThis.fetch;let count=0;globalThis.fetch=async()=>{count++;return new Response('',{status:429});};try{const result=await generate(true,[npcs[3].kullanici_adi]);assert.equal(result.status,'failed');assert.equal(count,1);}finally{globalThis.fetch=original;}
 });
+
+import {socialPlan} from '../src/social-life.js';
+test('batch topic plans rotate away from constant job diaries while preserving individual voices',()=>{const plans=npcs.map(n=>socialPlan(n.kullanici_adi,Date.UTC(2026,9,26,20)));assert.ok(plans.filter(p=>p.meslektenUzak).length>50);assert.ok(new Set(plans.map(p=>p.konu)).size>8);assert.ok(plans.every(p=>p.bicim&&p.konu));});
