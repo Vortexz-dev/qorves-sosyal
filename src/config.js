@@ -9,7 +9,7 @@ export const config = {
 },
   // Acil üst anahtar. false iken hiçbir yeni Gemini isteği yapılmaz.
   simulationAllowed: true,
-  geminiModel: 'gemini-3.7-flash',
+  geminiModel: 'gemini-3.5-flash-lite',
   feedPageSize: 40,
   maxPostLength: 500,
   // İlk DM girişinde şifre belirlenir. Bu kilit oyun içindir, gerçek yetkilendirme değildir.

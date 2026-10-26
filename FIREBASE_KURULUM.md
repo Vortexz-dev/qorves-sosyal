@@ -46,7 +46,7 @@ Adresin sonuna `#/dm` ekle veya sol menüden **Yönetim** seç. İlk kurulumda D
 
 Gemini API anahtarını paneldeki parola alanına yapıştır. `GoogleAIStudio_API_KEY.txt` içeriğini GitHub'a, `src/config.js` içine veya bir paylaşıma koyma. Anahtar yalnız girdiğin tarayıcıda saklanır; ortak Firebase ayarlarına gönderilmez. Diğer oyuncular anahtarı almaz. Anahtarı bulunan açık oturum veya bilgisayarındaki yerel üretici simülasyonu çalıştırır.
 
-Model adını panelden değiştirebilirsin. Başlangıç modeli `gemini-3.7-flash`; kullanılabilirliği hesabının AI Studio ekranından kontrol et. Ücretsiz erişim ve kotalar zamanla değişebilir. [Resmî fiyatlandırma](https://ai.google.dev/gemini-api/docs/pricing) ve [aktif kota bilgisi](https://ai.google.dev/gemini-api/docs/rate-limits) esas alınır. Ücretsiz anahtar sınırsız kullanım anlamına gelmez.
+Model adını panelden değiştirebilirsin. Başlangıç modeli `gemini-3.5-flash-lite`; kullanılabilirliği hesabının AI Studio ekranından kontrol et. Ücretsiz erişim ve kotalar zamanla değişebilir. [Resmî fiyatlandırma](https://ai.google.dev/gemini-api/docs/pricing) ve [aktif kota bilgisi](https://ai.google.dev/gemini-api/docs/rate-limits) esas alınır. Ücretsiz anahtar sınırsız kullanım anlamına gelmez.
 
 Google Cloud Console > APIs & Services > Credentials bölümünden anahtarını seç. **API restrictions** ile Generative Language API'ye sınırla. **Application restrictions / Websites (HTTP referrers)** altında `https://vortexz-dev.github.io/*` ekle. Testte `http://localhost:5173/*` ekleyebilirsin. Kısıtlama sonrasında site üzerinden bir üretim denemesi yap. AI Studio hesabın destekliyorsa düşük kota ayarla; uygulama panelindeki günlük sınır buna ek bir oyun sınırıdır.
 
@@ -84,5 +84,6 @@ Kaynak: [Firestore ücretsiz kota ve ücretlendirme](https://firebase.google.com
 ## 10. Birlikte kurulum için gereken son bilgiler
 
 Firebase projesini kendi Google hesabında oluşturman ve web yapılandırmasını `src/config.js` içine eklemen gerekir. Bu proje için şu anda bir Firebase hesabına bağlı yönetim aracı yok; boş yapılandırmayla gerçek ortak veritabanı oluşturulmuş sayılmaz. Yapılandırma tamamlandığında yukarıdaki iki tarayıcı testiyle ortak akışı doğrula.
+
 
 

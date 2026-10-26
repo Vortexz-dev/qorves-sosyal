@@ -101,3 +101,5 @@ GitHub zamanlanmış çalışmaları yoğunlukta geciktirebilir veya atlayabilir
 Kaynaklar: https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule ve https://ai.google.dev/gemini-api/docs/rate-limits
 
 Portrelerin özgün 100 dosyası `assets/profiller.zip` içindedir. `npm ci`, `npm run dev` ve `npm run build` bunları `public/profiller` içine otomatik çıkarır. `scripts/simulation-worker.mjs` yalnız isteğe bağlı yerel test üreticisidir; normal çalışma ona bağlı değildir.
+
+

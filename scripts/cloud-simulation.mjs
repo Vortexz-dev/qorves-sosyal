@@ -12,6 +12,7 @@ try{
  const settings=await storage.refreshSettings();
  if(!settings.enabled){console.log('Simülasyon panelden kapalı; Gemini isteği gönderilmedi.');process.exit(0);}
  const result=await generate(process.env.QORVES_FORCE_TURN==='true');
+ await storage.refreshControl();
  // Never print settings or provider payloads: the job log must contain no secrets.
  console.log(JSON.stringify({result,day:storage.usage.day,requests:storage.usage.requests||0,generated:storage.usage.posts||0,status:storage.usage.status||''}));
  clearTimeout(timer);process.exit(result?.status==='failed'?1:0);

@@ -44,6 +44,7 @@ export const storage={
  },
  subscribe(fn){listeners.add(fn);return()=>listeners.delete(fn);},list:rows,
  async refreshSettings(){if(db){settings={...defaults,...(await fs.getDocFromServer(ref('settings','simulation'))).data()};emit();}return storage.settings;},
+ async refreshControl(){if(db){remoteRows.control.simulation=(await fs.getDocFromServer(ref('control','simulation'))).data()||{};emit();}return storage.usage;},
  getFeed(){const saved=rows('posts'),hidden=new Set(saved.filter(p=>p.deleted).map(p=>p.id));const map=new Map([...seeds,...saved].map(p=>[p.id,p]));return [...map.values()].filter(p=>!p.deleted&&!hidden.has(p.id)).sort((a,b)=>b.createdAt-a.createdAt);},
  async loadMore(){if(!db){feedLimit+=40;return;}if(!cursor)return;const snap=await fs.getDocs(fs.query(fs.collection(db,'posts'),fs.orderBy('createdAt','desc'),fs.startAfter(cursor),fs.limit(40)));for(const d of snap.docs)remoteRows.posts[d.id]={...d.data(),id:d.id};cursor=snap.docs.at(-1)||null;emit();},
  async addPost(p){if(!p.text?.trim()||p.text.length>500||!safeText(p.text))throw Error('Bu metin yayınlanamaz. Uzunluğu veya evren kurallarını kontrol et.');const row={...p,id:p.id||id(),createdAt:p.createdAt||Date.now()};await put('posts',row.id,row);if(!npcs.some(n=>n.kullanici_adi===row.author))await storage.enqueue(row);return row;},
