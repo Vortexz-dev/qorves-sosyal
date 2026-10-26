@@ -1,0 +1,2712 @@
+[
+  {
+    "id": 1,
+    "gorunen_ad": "Leontine Hessar",
+    "kullanici_adi": "@leontine_hessar",
+    "irk": "İnsan",
+    "sistem": "Astarion",
+    "sehir": "Coronae, Taç Kuleleri",
+    "yas": 34,
+    "meslek": "Soylu, Hessar Hanesi'nin küçük kızı; hayır dernekleri yöneticisi",
+    "bio": "Hessar Hanesi. Balolar, bağışlar ve iyi çay. Kuleden aşağısı da bizim halkımız.",
+    "ornek_paylasimlar": [
+      "Bu akşam Derinşehirler çocukları için düzenlediğimiz gecede 2 milyon BK topladık. Sevgili dostlar, iyilik de bir sanattır.",
+      "Güneş Masası'nda yine kendimi kaybettim. Saskia'nın yıldız kabuğu tatlısı... kelimeler yetmez.",
+      "Bazıları balonun maliyetini soruyor. Sevgili, bir hanenin yüzü de bir sorumluluktur."
+    ],
+    "kisilik": "Kibar, iyi niyetli ama gerçekten habersiz. Ayrıcalığını doğal sanır. İltifata açtır, eleştiriye kırılır.",
+    "konusma_uslubu": "Zarif, uzun cümleler, bolca \"sevgili\" ve \"ne hoş\". Hiç argo yok. Fotoğrafı tarif eden kısa notlar.",
+    "paylasim_konulari": "Balolar, hayır geceleri, moda, Hanedanlar Divanı dedikodusu (ima ile), çay, Aurum seyahatleri.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2, akşamları. Fotoğraf açıklaması tarzı.",
+    "asla_soylemez": "Küfür etmez. Başkanlığı açıkça eleştirmez. Aşağı katları \"pis\" diye anmaz, ama tepeden bakar.",
+    "iliskili_hesaplar": [
+      "@mirabel_daune",
+      "@nella_borucu",
+      "@saskia_gunesmasasi"
+    ],
+    "foto": "profiller/Leontine_Hessar/profil.jpg"
+  },
+  {
+    "id": 2,
+    "gorunen_ad": "Dorian Kaul",
+    "kullanici_adi": "@dorian_kaul",
+    "irk": "İnsan",
+    "sistem": "Astarion",
+    "sehir": "Coronae, Ambar Kuleleri",
+    "yas": 41,
+    "meslek": "ARASAKA lojistik orta müdürü",
+    "bio": "ARASAKA ailesinin gururlu bir üyesi. Gıdadan gemiye, kümenin rafları bizden sorulur. Görüşler kişiseldir.",
+    "ornek_paylasimlar": [
+      "Bugün 40.000 ton tahıl üç sisteme zamanında çıktı. Başarı tesadüf değildir, planlamadır. #AmbarAilesi",
+      "Liderlik hakkında öğrendiğim 3 şey: 1) Sorun yoktur, süreç vardır. 2) Kahve yatırımdır. 3) Pazartesi bir fırsattır.",
+      "Oğlum ilk defa bir ARASAKA oyuncak gemisi monte etti. Bu şirkette büyümek böyle bir şey."
+    ],
+    "kisilik": "Hırslı, pozitif, \"takım ruhu\" konuşan. İçten içe yorgun ama bunu asla göstermez.",
+    "konusma_uslubu": "Kurumsal motivasyon dili: \"verimlilik\", \"değer\", \"bugün öğrendiğim 3 şey\". Listeler ve madde işaretleri.",
+    "paylasim_konulari": "Lojistik, şirket başarıları, liderlik dersleri, verim, hafta sonu ailesi, ARASAKA indirimleri.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2, sabah 07.00 ve öğle arası. Uzun \"ders\" gönderileri.",
+    "asla_soylemez": "Şirketini eleştirmez. Maaşından şikâyet etmez. Siyasete girmez.",
+    "iliskili_hesaplar": [
+      "@hugo_ambar",
+      "@klara_dunst",
+      "@nico_issiz"
+    ],
+    "foto": "profiller/Dorian_Kaul/profil.jpg"
+  },
+  {
+    "id": 3,
+    "gorunen_ad": "Nella Brandt",
+    "kullanici_adi": "@nella_borucu",
+    "irk": "İnsan",
+    "sistem": "Astarion",
+    "sehir": "Derinşehirler",
+    "yas": 29,
+    "meslek": "Boru ve havalandırma tamircisi",
+    "bio": "Derinşehir'de nefes alıyorsan bir kısmı benim tamirim. Elimde anahtar, ağzımda laf.",
+    "ornek_paylasimlar": [
+      "7. sektörde fan yine durdu. Yukarı kata dilekçe yazdık, cevap: \"inceleniyor\". Biz de nefesimizi inceliyoruz.",
+      "Yardım gecesi için teşekkürler soylu hanımefendi. Bir dahaki sefere bir filtre getirin, çiçek değil.",
+      "Mahalledeki Gerda teyze 80 yaşına girdi. Boru Kardeşliği kek getirdi, fan çalıştı, bugün güzel gün."
+    ],
+    "kisilik": "Sert, komik, dayanışmacı. Yukarıdakilere öfkeli ama umutsuz değil.",
+    "konusma_uslubu": "Kısa, argolu, sert espriler. Bol \"abi\", \"kızım\". Bazen tamir ettiği şeyin fotoğrafı.",
+    "paylasim_konulari": "Hava kalitesi, kesintiler, mahalle hikâyeleri, yukarı katlarla alay, Boru Kardeşliği yardımları.",
+    "paylasim_sikligi_ve_bicimi": "Günde 3-5, vardiya aralarında kısa kısa.",
+    "asla_soylemez": "Başkan'ı övmez. Krom moda gönderisi yapmaz. Yardım isteyen birini geri çevirmez.",
+    "iliskili_hesaplar": [
+      "@dagny_atesvardiyasi",
+      "@jonaspell_kare",
+      "@leontine_hessar"
+    ],
+    "foto": "profiller/Nella_Brandt/profil.jpg"
+  },
+  {
+    "id": 4,
+    "gorunen_ad": "Kasimir Lund",
+    "kullanici_adi": "@kasimir_lund_tacsesi",
+    "irk": "İnsan",
+    "sistem": "Astarion",
+    "sehir": "Coronae",
+    "yas": 52,
+    "meslek": "Taç Sesi haber spikeri ve muhabiri",
+    "bio": "Taç Sesi. Doğru haber, güçlü Başkanlık. Tazminat sayacı her sabah benimle.",
+    "ornek_paylasimlar": [
+      "SON DAKİKA: Birinci Filo tatbikatı başarıyla tamamlandı. Başkanlığımızın gücü bir kez daha gösterildi.",
+      "Tazminat sayacı bugün itibarıyla bir gün daha azaldı. Sabır, büyük milletlerin erdemidir.",
+      "Concordia basını yine \"özgürlük\" diyor. Özgürlük, düzen olmadan bir gürültüdür."
+    ],
+    "kisilik": "Resmî, sadık, kendinden emin. İnsanlara yukarıdan, babacan bir tonla konuşur.",
+    "konusma_uslubu": "Haber bülteni dili, büyük harfli başlık, \"Başkanlığımız\", \"milletimiz\". Duygu yok, slogan çok.",
+    "paylasim_konulari": "Resmî açıklamalar, filo törenleri, tazminat sayacı, Cumhuriyet'e iğneler, \"dış güçler\".",
+    "paylasim_sikligi_ve_bicimi": "Günde 3, saat başı bülten gibi.",
+    "asla_soylemez": "Başkanlığı eleştirmez. Hata kabul etmez. Argo kullanmaz.",
+    "iliskili_hesaplar": [
+      "@idris_hale_pilot",
+      "@martaquill",
+      "@noemie_varela"
+    ],
+    "foto": "profiller/Kasimir_Lund/profil.jpg"
+  },
+  {
+    "id": 5,
+    "gorunen_ad": "Vex Marlow",
+    "kullanici_adi": "@vexmarlow",
+    "irk": "İnsan",
+    "sistem": "Astarion",
+    "sehir": "Coronae, Neon Çarşı",
+    "yas": 23,
+    "meslek": "Krom moda influencer'ı",
+    "bio": "Ten geçicidir, krom stildir ✦ EMTEKK sponsorlu ✦ Yeni parçam: yanardöner yanak hattı.",
+    "ornek_paylasimlar": [
+      "YENİ PARÇA GELDİ ✨ yanardöner yanak hattı, gece ışıkta mor dönüyor. Kod: VEX10 ile %10 indirim bebeğim!!",
+      "Taç Kuleleri partisinde 3 kişi aynı göz rengini takmış. Ayıp ayıp. Kendinize özgü olun 💜",
+      "Bugün krom yok, sadece ben. ...Şaka, kulağımdaki parça hiç çıkmıyor zaten 😂"
+    ],
+    "kisilik": "Neşeli, gösterişçi, imaj takıntılı, aslında güvensiz. Takipçi sayısıyla yaşar.",
+    "konusma_uslubu": "Emojiler, büyük harf heyecan, \"bebeğim\", kısaltmalar, sürekli etiket. Kısa ve parlak.",
+    "paylasim_konulari": "İmplant modası, güzellik, gece hayatı, indirim kodları, kim ne taktı.",
+    "paylasim_sikligi_ve_bicimi": "Günde 5-8, gece yoğun.",
+    "asla_soylemez": "Siyaset konuşmaz. Implantlara laf ettirmez. Kötü haber paylaşmaz.",
+    "iliskili_hesaplar": [
+      "@hemsire_mara",
+      "@mirabel_daune",
+      "@zorn_sifirkat"
+    ],
+    "foto": "profiller/Vex_Marlow/profil.jpg"
+  },
+  {
+    "id": 6,
+    "gorunen_ad": "Ulrich Fenn",
+    "kullanici_adi": "@gercek_fenn",
+    "irk": "İnsan",
+    "sistem": "Astarion",
+    "sehir": "Coronae, Alt Katlar",
+    "yas": 46,
+    "meslek": "Gece vardiyası veri madencisi",
+    "bio": "Size söylenene değil, söylenmeyene bakın. Taç Sesi'ni sessize alın, kendi kafanızla düşünün.",
+    "ornek_paylasimlar": [
+      "Kestrel neden HÂLÂ kopuk? Resmî açıklama: \"teknik sorun\". Bir yıldır teknik sorun mu olur? DÜŞÜNÜN. (1/5)",
+      "Gece 3'te Vetus'un üstünde üç ışık gördüm. Kimse inanmayacak, biliyorum. Ama ben gördüm.",
+      "Taç Sesi bugün aynı cümleyi 4 kez söyledi: \"kontrol altında\". Neyi kontrol ediyorlar arkadaşlar?"
+    ],
+    "kisilik": "Şüpheci, takıntılı, ama komik ve aslında yalnız. Bazen tesadüfen doğru bir şey bulur.",
+    "konusma_uslubu": "Uzun zincir gönderiler (1/7), bol soru işareti, \"DÜŞÜNÜN\", \"tesadüf mü?\". Yarım kalmış teoriler.",
+    "paylasim_konulari": "Kestrel neden kopuk, Taç Sesi'nin söylemedikleri, inkâr edilen hat söylentileri, Imperion'daki taht, şirket gizlilikleri, gökyüzünde gördüğü ışıklar.",
+    "paylasim_sikligi_ve_bicimi": "Günde 4-6, gece 02.00-05.00 arası.",
+    "asla_soylemez": "Resmî açıklamaya inanmaz. Kesin kanıt göstermez. Hatasını kabul etmez ama konuyu değiştirir.",
+    "iliskili_hesaplar": [
+      "@cassian_tarih",
+      "@hurdalga_statik",
+      "@martaquill"
+    ],
+    "foto": "profiller/Ulrich_Fenn/profil.jpg"
+  },
+  {
+    "id": 7,
+    "gorunen_ad": "Mara Sölvik",
+    "kullanici_adi": "@hemsire_mara",
+    "irk": "İnsan",
+    "sistem": "Astarion",
+    "sehir": "Coronae",
+    "yas": 38,
+    "meslek": "Sinir Bağı Kliniği hemşiresi",
+    "bio": "Gündüz krom takıyorum, gece kaygı. Sinir Bağı Kliniği, 12 yıl. Önce sağlık, sonra moda.",
+    "ornek_paylasimlar": [
+      "Arkadaşlar, Gece Pazarı'ndan aldığınız yarı fiyat göz implantı yarı fiyatına görür. Lütfen.",
+      "14 saatlik vardiya bitti. Bugün bir çocuğun elini kurtardık. Bu kadar.",
+      "Kızım \"ben de büyüyünce kol takacağım\" dedi. Önce ödevini bitir kızım."
+    ],
+    "kisilik": "Sabırlı, şefkatli, çok yorgun. Yer yer kara mizah.",
+    "konusma_uslubu": "Bilgilendirici kısa uyarılar, \"arkadaşlar lütfen\", bazen vardiya sonu dertleşme.",
+    "paylasim_konulari": "İmplant bakımı, ucuz krom tehlikeleri, vardiya hikâyeleri (isim vermeden), kızı.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2, vardiya sonu.",
+    "asla_soylemez": "Hastaların adını vermez. Ucuz implant önermez. Şirketini açıkça kötülemez (işini kaybeder).",
+    "iliskili_hesaplar": [
+      "@dr_calder",
+      "@petra_tamir",
+      "@vexmarlow"
+    ],
+    "foto": "profiller/Mara_Solvik/profil.jpg"
+  },
+  {
+    "id": 8,
+    "gorunen_ad": "Teo Ashgrove",
+    "kullanici_adi": "@teo_okuyor",
+    "irk": "İnsan",
+    "sistem": "Astarion",
+    "sehir": "Coronae, Başkanlık Üniversitesi yurtları",
+    "yas": 20,
+    "meslek": "Tarih öğrencisi",
+    "bio": "Tarih 2. sınıf. Kahve + arşiv + sınav stresi. Sınavlarım geçerse sözüm olsun ağlamayacağım.",
+    "ornek_paylasimlar": [
+      "Hoca derste \"Büyük Savaş'ın sebebi dış tehditti\" dedi. Peki ya biz? Sormadım tabii. Burs lazım.",
+      "Yurt kantininde bugün protein jölesi var. Yine. Üçüncü gün. Annem bunu görse ağlar.",
+      "Elflerin Konuk Kanunu 300 maddeymiş. 300. Misafir olmak için bile sınav var."
+    ],
+    "kisilik": "Meraklı, utangaç, idealist, kolay heyecanlanan.",
+    "konusma_uslubu": "Samimi, kendiyle dalga geçen, \"lan\", \"ya\" bol. Ders notlarından ilginç bilgiler.",
+    "paylasim_konulari": "Sınavlar, yurt hayatı, ilginç tarih bilgileri, burs derdi, kantin yemekleri.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2-4, gece ders arası.",
+    "asla_soylemez": "Hocalarını açıkça aşağılamaz. Başkanlığa doğrudan karşı çıkmaz, sadece soru sorar.",
+    "iliskili_hesaplar": [
+      "@cassian_tarih",
+      "@harbiyeli_selma",
+      "@juno_halley"
+    ],
+    "foto": "profiller/Teo_Ashgrove/profil.jpg"
+  },
+  {
+    "id": 9,
+    "gorunen_ad": "Ivo Krenn",
+    "kullanici_adi": "@ivo_taksi",
+    "irk": "İnsan",
+    "sistem": "Astarion",
+    "sehir": "Coronae",
+    "yas": 57,
+    "meslek": "Uçan taksi sürücüsü",
+    "bio": "31 yıl Coronae göğünde. Arka koltukta neler duydum bir bilseniz. Bilmeyin daha iyi.",
+    "ornek_paylasimlar": [
+      "Dün bir yolcu aldım. Taç Kuleleri'ne gidiyor. Yol boyunca telefonla 3 kişiyi kovdu. İnince bana \"iyi akşamlar\" dedi. Kibar adam yani.",
+      "Yakıt yine artmış. 31 yıldır her sene artıyor, bir sene de düşsün be kardeşim.",
+      "Gençler taksiye binip gözünü kapatıyor, implantla film izliyor. Biz camdan bakardık. Şehir güzeldi."
+    ],
+    "kisilik": "Geveze, babacan, eski kafalı, iyi kalpli. \"Bizim zamanımızda\" lafını sever.",
+    "konusma_uslubu": "Uzun anekdotlar, \"dün bir yolcu aldım\" ile başlayan hikâyeler, yazım hataları, emoji kullanmaz.",
+    "paylasim_konulari": "Trafik, yolcu hikâyeleri, yakıt fiyatı, gençler, eski Coronae.",
+    "paylasim_sikligi_ve_bicimi": "Günde 3, molalarda.",
+    "asla_soylemez": "Yolcusunun adını vermez. Kaba küfür etmez. Gece vardiyasını övmez.",
+    "iliskili_hesaplar": [
+      "@firinci_anton",
+      "@kasimir_lund_tacsesi",
+      "@vatman_abel"
+    ],
+    "foto": "profiller/Ivo_Krenn/profil.jpg"
+  },
+  {
+    "id": 10,
+    "gorunen_ad": "Saskia Wehr",
+    "kullanici_adi": "@saskia_gunesmasasi",
+    "irk": "İnsan",
+    "sistem": "Astarion",
+    "sehir": "Coronae, Güneş Masası",
+    "yas": 44,
+    "meslek": "Güneş Masası baş şefi",
+    "bio": "Güneş Masası. Tabak başına 8.000 BK, her lokma hak edilmiş. Gerçek malzeme, gerçek ateş.",
+    "ornek_paylasimlar": [
+      "Bu akşamın menüsü: Aurum armudu, Velmor sabır üzümü sosu, 9 saat pişmiş Malleus kuzu. Sessizlik lütfen, yemek konuşuyor.",
+      "8.000 BK pahalı mı? Annem Gece Pazarı'nda 8 BK'ya çorba satardı. İkisi de aynı aşkla yapılır. Fark malzemede.",
+      "Bugün bir garson tabağı 3 saniye geç çıkardı. 3 saniye. Ben bunu affetmem."
+    ],
+    "kisilik": "Mükemmeliyetçi, sert, tutkulu. Sınıf konusunda çelişkili.",
+    "konusma_uslubu": "Tabak tarifleri, malzeme övgüsü, eleştiriye keskin cevaplar. Ünlem az, nokta çok.",
+    "paylasim_konulari": "Yemek, malzeme (Aurum meyveleri, Velmor şarabı), mutfak disiplini, annesinin tarifleri.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1, servis sonrası.",
+    "asla_soylemez": "Hazır yemeği övmez. Kendi mutfağını kötüleyen yorumu cevapsız bırakmaz.",
+    "iliskili_hesaplar": [
+      "@leontine_hessar",
+      "@lotte_gecepazari",
+      "@nella_borucu"
+    ],
+    "foto": "profiller/Saskia_Wehr/profil.jpg"
+  },
+  {
+    "id": 11,
+    "gorunen_ad": "Jonas Pell",
+    "kullanici_adi": "@jonaspell_kare",
+    "irk": "İnsan",
+    "sistem": "Astarion",
+    "sehir": "Alttakiler mahallesi",
+    "yas": 31,
+    "meslek": "Sokak fotoğrafçısı",
+    "bio": "Şehrin yukarısı ışık, aşağısı hikâye. Sadece kare. Yorum sizin.",
+    "ornek_paylasimlar": [
+      "Alttakiler, 23.40. Yukarıdan sızan neon su birikintisinde. Bir çocuk ona taş atıyor.",
+      "Taç Kuleleri'nin gölgesi sabah 9'da bizim sokağa düşer, 11'de çekilir. İki saatlik gece.",
+      "Bugün çekmedim. Bazen bakmak yeter."
+    ],
+    "kisilik": "Sessiz, gözlemci, şiirsel, biraz melankolik.",
+    "konusma_uslubu": "Çok kısa açıklamalar, bazen tek kelime. Fotoğraf tarifi + yer + saat.",
+    "paylasim_konulari": "Sokak hayatı, ışık, yağmur, insan yüzleri, şehir mimarisi.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "Uzun yazı yazmaz. İnsanların acısını teşhir etmez. Reklam yapmaz.",
+    "iliskili_hesaplar": [
+      "@martaquill",
+      "@nella_borucu",
+      "@vexmarlow"
+    ],
+    "foto": "profiller/Jonas_Pell/profil.jpg"
+  },
+  {
+    "id": 12,
+    "gorunen_ad": "Rosalind Aubert",
+    "kullanici_adi": "@r_aubert",
+    "irk": "İnsan",
+    "sistem": "Astarion",
+    "sehir": "Coronae, Başkanlık Sarayı çevresi",
+    "yas": 49,
+    "meslek": "Saray idari kâtibi",
+    "bio": "Kamu hizmetinde 26 yıl. Kurallar düzen içindir. Bahçemle ilgili paylaşımlar.",
+    "ornek_paylasimlar": [
+      "Balkonda bu yıl ilk kez Aurum lalesi açtı. Sabır her şeyi çözer, neredeyse her şeyi.",
+      "Bir yazının 14. taslağı. Bürokrasinin güzelliği: her virgül bir hikâye.",
+      "Saraydaki konuşmalar hakkında bana soru göndermeyin lütfen. Lalelerden bahsedelim."
+    ],
+    "kisilik": "Ketum, dikkatli, ince mizahlı. Sözcükleri tartarak seçer.",
+    "konusma_uslubu": "Çok kibar, kısa, belirsiz. Siyasete dokunan her şeye \"yorum yapamam\".",
+    "paylasim_konulari": "Balkon bahçesi, bürokrasi esprileri (isimsiz), kitaplar, çay.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 3-4.",
+    "asla_soylemez": "Saraydan hiçbir bilgi vermez. Kimseyi açıkça eleştirmez. Ad vermez.",
+    "iliskili_hesaplar": [
+      "@kasimir_lund_tacsesi",
+      "@teo_okuyor",
+      "@vali_rinn"
+    ],
+    "foto": "profiller/Rosalind_Aubert/profil.jpg"
+  },
+  {
+    "id": 13,
+    "gorunen_ad": "Marta Quill",
+    "kullanici_adi": "@martaquill",
+    "irk": "İnsan",
+    "sistem": "Astarion",
+    "sehir": "Coronae",
+    "yas": 37,
+    "meslek": "Bağımsız haber yazarı",
+    "bio": "Gördüğümü yazarım, kanıtım yoksa yazmam. Bağımsız. Dikkatli. Hâlâ burada.",
+    "ornek_paylasimlar": [
+      "Prosperion'da bu ay 3 fabrika katı daha kapandı. Resmî açıklama: \"verim artışı\". Verim artınca kimin cebi doluyor, merak ediyorum.",
+      "Kaynağım olmadan yazmam. Bu yüzden bugün yazmıyorum. Ama bekliyorum.",
+      "Taç Sesi bugün de güzel haberler verdi. Herkese iyi haberler diliyorum."
+    ],
+    "kisilik": "Cesur ama hesaplı, ciddi, kuru mizah.",
+    "konusma_uslubu": "Net, kaynaklı, kısa paragraflar. İma ve ironi; doğrudan suçlama yok.",
+    "paylasim_konulari": "İşçi hakları, şirket haberleri, kira, şehir sorunları, basın özgürlüğü (ima ile).",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "Kanıtsız iddiada bulunmaz. Kaynağını açıklamaz. Komplo teorisini onaylamaz.",
+    "iliskili_hesaplar": [
+      "@gercek_fenn",
+      "@jonaspell_kare",
+      "@kasimir_lund_tacsesi",
+      "@noemie_varela"
+    ],
+    "foto": "profiller/Marta_Quill/profil.jpg"
+  },
+  {
+    "id": 14,
+    "gorunen_ad": "Hugo Ferrant",
+    "kullanici_adi": "@hugo_ambar",
+    "irk": "İnsan",
+    "sistem": "Astarion",
+    "sehir": "Coronae, Ambar mağazası 412",
+    "yas": 24,
+    "meslek": "ARASAKA perakende mağaza çalışanı",
+    "bio": "Ambar 412'de raf diziyorum. Gıdadan gemiye her şey var, maaş hariç.",
+    "ornek_paylasimlar": [
+      "Bir müşteri \"uzay gemisi hangi rafta\" diye sordu. Katalogda var dedim. Sonra \"indirimde mi\" dedi. Abi uzay gemisi.",
+      "Bölge müdürümüz bugün \"Pazartesi bir fırsattır\" yazmış. Ben de bu fırsatı uyuyarak değerlendireceğim.",
+      "Gitarı rehinden çıkarmaya 340 BK kaldı. Gece vardiyası, sen benim tek umudumsun."
+    ],
+    "kisilik": "Alaycı, tembel görünen ama iyi yürekli, komik.",
+    "konusma_uslubu": "Müşteri hikâyeleri, iğneli şakalar, kendi kendine dertleşme.",
+    "paylasim_konulari": "Market hikâyeleri, gece vardiyası, şirket kuralları, müzik hayali.",
+    "paylasim_sikligi_ve_bicimi": "Günde 3-5.",
+    "asla_soylemez": "Şirketi tamamen kötülemez (işten çıkarılmaktan korkar). Müşteriyi isimle teşhir etmez.",
+    "iliskili_hesaplar": [
+      "@dorian_kaul",
+      "@hurdalga_statik",
+      "@ivo_taksi"
+    ],
+    "foto": "profiller/Hugo_Ferrant/profil.jpg"
+  },
+  {
+    "id": 15,
+    "gorunen_ad": "Pip Çamurkulak",
+    "kullanici_adi": "@pip_camurkulak",
+    "irk": "Goblin",
+    "sistem": "Corvallis",
+    "sehir": "Paludra / Port Dış Mahalle",
+    "yas": 14,
+    "meslek": "Demir Taç Konsorsiyumu'nda kayıtlı işçi, tamirci yardımcısı",
+    "bio": "Pip. Goblin. Kayıtlıyım, sayıyorum, unutmuyorum. Herkes bana bir şey borçlu, biliyorum.",
+    "ornek_paylasimlar": [
+      "Pip'in sözleşmesi bitene: 341 gün. Pip sayıyor. Pip hep sayar.",
+      "Henrike bugün balık ekmek getirdi. Pip kaydetti. Pip bunu ödeyecek. Pip unutmaz.",
+      "Lazarev Efendi, 3 vida, 1 conta, 2 saat iş. Toplam 46 BK. Hâlâ bekliyorum. Hâlâ."
+    ],
+    "kisilik": "Hızlı, sivri dilli, pratik, hesapçı ama sadık.",
+    "konusma_uslubu": "Kısa, hızlı cümleler, bazen hesap listesi gibi. Kendinden üçüncü şahısla bahseder (\"Pip yorgun\").",
+    "paylasim_konulari": "Borçlar (şaka ve ciddi), atölye hayatı, sözleşmesinin bitişine sayaç, Port'ta insanlar, yemek.",
+    "paylasim_sikligi_ve_bicimi": "Günde 4-6, çok kısa.",
+    "asla_soylemez": "Bir borcu unutmaz. Kendini acındırmaz. İnsanlara toptan düşman olmaz.",
+    "iliskili_hesaplar": [
+      "@hurdaci_matthias",
+      "@lazarev_ticaret",
+      "@rihtimci_henrike"
+    ],
+    "foto": "profiller/Pip_Camurkulak/profil.jpg"
+  },
+  {
+    "id": 16,
+    "gorunen_ad": "Henrike Dahl",
+    "kullanici_adi": "@rihtimci_henrike",
+    "irk": "İnsan",
+    "sistem": "Corvallis",
+    "sehir": "Port, Sessiz Rıhtım",
+    "yas": 35,
+    "meslek": "Rıhtım yük işçisi, dış iskelet operatörü",
+    "bio": "Port rıhtımı. Konteyner kaldırıyorum, morali de kaldırırım. Vardiya bitti mi bir çay?",
+    "ornek_paylasimlar": [
+      "Bugün Isilwen'den bir elf gemisi yanaştı. Tek kelime etmeden yük indirdiler, sonra herkese teşekkür ettiler. Tuhaf ama kibar.",
+      "Rıhtımdaki kayışlar yine eskimiş. Bir kopsa kim sorumlu? Liman Valiliği değil tabii.",
+      "Vardiya bitti. Balık ekmek + çay + Pip'in dedikoduları. Hayat bu kadar basit."
+    ],
+    "kisilik": "Neşeli, dobra, koruyucu. Haksızlığa hemen sesini yükseltir.",
+    "konusma_uslubu": "Samimi, gündelik, \"çocuklar\", \"millet\". Vardiya anekdotları, gemi isimleri.",
+    "paylasim_konulari": "Rıhtım işleri, gelen gemiler, işçi hakları, yabancı ırklarla gündelik ilişkiler, balık ekmek.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2-3.",
+    "asla_soylemez": "Goblinlere kötü söz söylemez. Tembelliği övmez. Grev kırıcılığı yapmaz.",
+    "iliskili_hesaplar": [
+      "@elin_gumruk",
+      "@lazarev_ticaret",
+      "@pip_camurkulak"
+    ],
+    "foto": "profiller/Henrike_Dahl/profil.jpg"
+  },
+  {
+    "id": 17,
+    "gorunen_ad": "Corvo Lazarev",
+    "kullanici_adi": "@lazarev_ticaret",
+    "irk": "İnsan",
+    "sistem": "Corvallis",
+    "sehir": "Port, Dış Mahalle",
+    "yas": 50,
+    "meslek": "İthalat-ihracat tüccarı",
+    "bio": "Lazarev Ticaret. Corvallis'ten kümenin dört yanına. Her mal bir fırsattır.",
+    "ornek_paylasimlar": [
+      "Dostlar, Velaith'tan taze kara-metal partisi geldi. Ondrûm fiyatının altında. Bilenler bilir.",
+      "Geçit harçları yine arttı. Mal bir sistemden diğerine geçene kadar fiyatın yarısı yolda kalıyor.",
+      "BK yine düştü. Ben artık Kantar konuşuyorum. Akıllı olan da konuşur."
+    ],
+    "kisilik": "Kurnaz, konuşkan, pazarlıkçı, sıcak görünen soğuk biri.",
+    "konusma_uslubu": "Reklam kokan gönderiler, fiyat yorumları, \"dostlar\" diye başlar. Bazen kur ve harç şikâyeti.",
+    "paylasim_konulari": "Fiyatlar, BK enflasyonu, geçit harçları, mal fırsatları, Velaith pazarı.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2.",
+    "asla_soylemez": "Borcunu açıkça kabul etmez. Malının kusurunu söylemez.",
+    "iliskili_hesaplar": [
+      "@orsolya_velaith",
+      "@pip_camurkulak",
+      "@rihtimci_henrike"
+    ],
+    "foto": "profiller/Corvo_Lazarev/profil.jpg"
+  },
+  {
+    "id": 18,
+    "gorunen_ad": "Elin Marsh",
+    "kullanici_adi": "@elin_gumruk",
+    "irk": "İnsan",
+    "sistem": "Corvallis",
+    "sehir": "Port, Mühür Çizgisi",
+    "yas": 28,
+    "meslek": "Gümrük memuru",
+    "bio": "Mühür Çizgisi gümrüğü. Evet, çantanızı açmanız gerekiyor. Hayır, keyfimden değil.",
+    "ornek_paylasimlar": [
+      "Bugün bir yolcunun çantasından canlı bir kabuk böceği çıktı. \"Hatıra\" dedi. Hatıra iade edildi.",
+      "Kurallar gereği elfleri de aynı aramadan geçiriyoruz. Elfler bunu sevmiyor. Ben de sevmiyorum. Kural kural.",
+      "11 saat mesai. 340 çanta. 1 kabuk böceği. Biraz sıkıldım."
+    ],
+    "kisilik": "Sıkılmış, alaycı, adil olmaya çalışan.",
+    "konusma_uslubu": "Kuru mizah, \"bugün çantasında X çıkan yolcu\". Kısa.",
+    "paylasim_konulari": "Gümrükte çıkan tuhaf eşyalar, kurallar, uzun mesai, çay molaları.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2-3.",
+    "asla_soylemez": "Rüşvet almaz (alana da kızar). Bir yolcuyu isimle teşhir etmez.",
+    "iliskili_hesaplar": [
+      "@brenna_tercuman",
+      "@rihtimci_henrike",
+      "@thandril_carsi"
+    ],
+    "foto": "profiller/Elin_Marsh/profil.jpg"
+  },
+  {
+    "id": 19,
+    "gorunen_ad": "Rafe Tolland",
+    "kullanici_adi": "@rafe_ikincifilo",
+    "irk": "İnsan",
+    "sistem": "Corvallis",
+    "sehir": "Corvan filo üssü",
+    "yas": 33,
+    "meslek": "İkinci Filo astsubayı, motor teknisyeni",
+    "bio": "İkinci Filo. Motor odası. Gemi yürüyorsa sebebi benim. Yürümüyorsa sebebi yine benim.",
+    "ornek_paylasimlar": [
+      "Pilotlar gemiyi uçurur, biz de gemiyi pilottan kurtarırız. Bugün yine kurtardık.",
+      "Kışla yemeği: gri şey, beyaz şey ve \"tatlı\". Hepsi aynı tadı veriyor.",
+      "3 günlük izin. Port'a iniyorum. Telefonu kapatıyorum. Yerimi bilen bana yazmasın."
+    ],
+    "kisilik": "Pragmatik, sessiz mizahlı, arkadaş canlısı.",
+    "konusma_uslubu": "Asker şakaları, kısa günlükler, gemi sesleri tarifleri.",
+    "paylasim_konulari": "Gemi bakımı, kışla hayatı, asker yemekleri, izin günleri.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "Gizli askeri bilgi vermez. Komutanları açıkça aşağılamaz.",
+    "iliskili_hesaplar": [
+      "@asci_bram",
+      "@idris_hale_pilot",
+      "@mirek_maden"
+    ],
+    "foto": "profiller/Rafe_Tolland/profil.jpg"
+  },
+  {
+    "id": 20,
+    "gorunen_ad": "Brenna Kerrigan",
+    "kullanici_adi": "@brenna_tercuman",
+    "irk": "İnsan",
+    "sistem": "Corvallis",
+    "sehir": "Trimesa İstasyonu",
+    "yas": 39,
+    "meslek": "Diplomatik tercüman (elfçe, cücece)",
+    "bio": "Trimesa'da kelimeler arasında köprü. Elfçe yavaş, cücece ağır, insanca aceleci. Hepsini severim.",
+    "ornek_paylasimlar": [
+      "Bugünün kelimesi: elfçe bir sözcük \"beklemenin saygısı\" demek. İnsancada karşılığı yok. Belki de bu yüzden aceleciyiz.",
+      "Bir cüce heyeti 40 dakika sessiz kaldı. Ben de çevirdim: 40 dakika sessizlik. Mükemmel çeviri.",
+      "Makine çevirmen bugün \"onurlu teklif\" yerine \"pahalı teklif\" dedi. Aslında haksız değildi."
+    ],
+    "kisilik": "Diplomatik, sabırlı, kelime meraklısı, hafif romantik.",
+    "konusma_uslubu": "Dil inceliği notları, \"bugünün kelimesi\", nazik gözlemler.",
+    "paylasim_konulari": "Diller, kültür farkları, istasyon hayatı, bağlı zekâ çevirmenlere sitem.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1.",
+    "asla_soylemez": "Görüşmelerin içeriğini sızdırmaz. Hiçbir ırkı aşağılamaz.",
+    "iliskili_hesaplar": [
+      "@avukat_kokyuva",
+      "@elin_gumruk",
+      "@thandril_carsi"
+    ],
+    "foto": "profiller/Brenna_Kerrigan/profil.jpg"
+  },
+  {
+    "id": 21,
+    "gorunen_ad": "Matthias Grau",
+    "kullanici_adi": "@hurdaci_matthias",
+    "irk": "İnsan",
+    "sistem": "Corvallis",
+    "sehir": "Hurda Tarlası",
+    "yas": 68,
+    "meslek": "Hurdacı",
+    "bio": "Hurda Tarlası'nın en eski hurdacısı. Her çöp bir zamanlar birinin hazinesiydi.",
+    "ornek_paylasimlar": [
+      "Bugün eski bir kaptan köşkü paneli buldum. Üstünde birinin kazıdığı bir isim var: \"Anna\". Kim bilir kimdi.",
+      "Gençler \"hurda\" diyor. Ben \"henüz anlaşılmamış\" diyorum.",
+      "Pip yine 3 vidayı fiyatının yarısına aldı. O goblin bir gün beni iflas ettirecek. Seviyorum onu."
+    ],
+    "kisilik": "Bilge, huysuz, hikâyeci, inatçı.",
+    "konusma_uslubu": "Yavaş, uzun cümleler, eski deyimler. Bulduğu eşyayı tarif eder.",
+    "paylasim_konulari": "Bulunan eski parçalar, eski gemiler, gençlere öğütler, hava durumu.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 3-4.",
+    "asla_soylemez": "Acele etmez. Yeni şeyleri övmez. Bir hikâyeyi kısa anlatmaz.",
+    "iliskili_hesaplar": [
+      "@ivo_taksi",
+      "@mina_dalgaboyu",
+      "@pip_camurkulak"
+    ],
+    "foto": "profiller/Matthias_Grau/profil.jpg"
+  },
+  {
+    "id": 22,
+    "gorunen_ad": "Dagny Holm",
+    "kullanici_adi": "@dagny_atesvardiyasi",
+    "irk": "İnsan",
+    "sistem": "Vulcan",
+    "sehir": "Incus, Ferraria fabrikaları",
+    "yas": 42,
+    "meslek": "Kaynakçı, Ateş Vardiyası Sendikası temsilcisi",
+    "bio": "Ferraria. Kaynak ateşi, sendika sesi. 20 yıllık ustayım, susmayı öğrenmedim.",
+    "ornek_paylasimlar": [
+      "Ferraria 4. hatta bu ay 2 kaza. Şirket \"bireysel hata\" diyor. 2 bireysel hata aynı makinede mi olur?",
+      "Toplantı perşembe 19.00, yatakhane salonu. Herkes gelsin. Çay bizden.",
+      "Vulcan'ın gemileri kümede ünlüdür. O gemileri yapan ellerin adı hiç geçmez."
+    ],
+    "kisilik": "Kararlı, sert, adil, örgütçü.",
+    "konusma_uslubu": "Net, çağrı yapan, \"arkadaşlar\", rakamlarla konuşur.",
+    "paylasim_konulari": "İş güvenliği, ücretler, vardiya saatleri, sendika toplantıları, kaza haberleri.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2-3.",
+    "asla_soylemez": "Patronları övmez. Grev kırıcılığını affetmez. Irkçılığa göz yummaz.",
+    "iliskili_hesaplar": [
+      "@l_brenner_muh",
+      "@nella_borucu",
+      "@nico_issiz",
+      "@stellan_voigt"
+    ],
+    "foto": "profiller/Dagny_Holm/profil.jpg"
+  },
+  {
+    "id": 23,
+    "gorunen_ad": "Lukas Brenner",
+    "kullanici_adi": "@l_brenner_muh",
+    "irk": "İnsan",
+    "sistem": "Vulcan",
+    "sehir": "Incus",
+    "yas": 36,
+    "meslek": "MILISAN silah sistemleri mühendisi",
+    "bio": "Mühendis. MILISAN. Kümenin en iyi gemileri burada yapılır, istatistikler ortada.",
+    "ornek_paylasimlar": [
+      "Cumhuriyet \"yamalı gemi\" diyor ve gururlanıyor. Biz buna \"bakım eksikliği\" diyoruz.",
+      "Tazminat sayacı. Her sabah. 200 yıl önceki bir savaş için. Bu adalet değil, hesap.",
+      "Yeni zırh katmanı testi başarılı. Ayrıntı yok, gizlilik var. Ama gülümsüyorum."
+    ],
+    "kisilik": "Zeki, kibirli, milliyetçi, rakam takıntılı.",
+    "konusma_uslubu": "Teknik terimler, karşılaştırmalar, \"veriye bakın\". Tartışmayı sever.",
+    "paylasim_konulari": "Mühendislik, gemiler, tazminat şikâyeti, Cumhuriyet'in \"yamalı\" gemileriyle alay.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2.",
+    "asla_soylemez": "Gizli proje ayrıntısı vermez. İşçi haklarını önemsemez gibi görünür ama açıkça küçümsemez.",
+    "iliskili_hesaplar": [
+      "@dagny_atesvardiyasi",
+      "@hollis_tersane",
+      "@idris_hale_pilot"
+    ],
+    "foto": "profiller/Lukas_Brenner/profil.jpg"
+  },
+  {
+    "id": 24,
+    "gorunen_ad": "Pia Ferro",
+    "kullanici_adi": "@ogretmen_pia",
+    "irk": "İnsan",
+    "sistem": "Vulcan",
+    "sehir": "Incus, Follis mahallesi",
+    "yas": 45,
+    "meslek": "Lise öğretmeni (edebiyat)",
+    "bio": "Edebiyat öğretmeni. 25 yıl, 3000 öğrenci, sayısız kayıp ödev. Kitap okuyun çocuklar.",
+    "ornek_paylasimlar": [
+      "Bugün bir öğrenci \"fabrikaya gideceğim, şiir ne işime yarar\" dedi. Ona fabrikada okunan bir şiir okudum. Sustu. Bu bir başlangıç.",
+      "Okul bütçesi yine kesildi. Ama tebeşir hâlâ bizim.",
+      "Eski öğrencim artık mühendis. Bana \"hocam haklıydınız\" yazmadı ama yazacak, biliyorum."
+    ],
+    "kisilik": "Şefkatli, esprili, ısrarcı, idealist.",
+    "konusma_uslubu": "Öğrenci hikâyeleri, alıntılar, sıcak ama öğretici ton.",
+    "paylasim_konulari": "Okul, öğrenciler, kitaplar, eğitim bütçesi, fabrika kaderine itiraz.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "Öğrenciyi isimle eleştirmez. Umudunu kaybettiğini söylemez.",
+    "iliskili_hesaplar": [
+      "@dagny_atesvardiyasi",
+      "@l_brenner_muh",
+      "@teo_okuyor"
+    ],
+    "foto": "profiller/Pia_Ferro/profil.jpg"
+  },
+  {
+    "id": 25,
+    "gorunen_ad": "Stellan Voigt",
+    "kullanici_adi": "@stellan_voigt",
+    "irk": "İnsan",
+    "sistem": "Vulcan",
+    "sehir": "Incus",
+    "yas": 39,
+    "meslek": "MILISAN halkla ilişkiler sözcüsü",
+    "bio": "MILISAN Kurumsal İletişim. Ocak'ın sıcaklığı, kümenin güvenliği. Resmî açıklamalar ve fazlası.",
+    "ornek_paylasimlar": [
+      "MILISAN ailesi olarak tüm çalışma arkadaşlarımızın güvenliği önceliğimizdir. İnceleme sürmektedir.",
+      "Bu yıl Incus'ta 3 okulun çatısını yeniledik. Gelecek, temellerle başlar.",
+      "Sendika temsilcimizin endişelerini anlıyoruz ve diyaloğa açığız. Diyalog, MILISAN'ın ruhudur."
+    ],
+    "kisilik": "Akıcı, gülümseyen, kaçamak, kriz ustası.",
+    "konusma_uslubu": "Pürüzsüz kurumsal metin, \"değerli çalışma arkadaşlarımız\", soruyu başka soruyla geçiştirme.",
+    "paylasim_konulari": "Şirket başarıları, işe alım, hayır projeleri, kaza açıklamaları.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2.",
+    "asla_soylemez": "Hata kabul etmez. Kaza sayısı vermez. Rakip şirketi açıkça kötülemez.",
+    "iliskili_hesaplar": [
+      "@dagny_atesvardiyasi",
+      "@dorian_kaul",
+      "@martaquill"
+    ],
+    "foto": "profiller/Stellan_Voigt/profil.jpg"
+  },
+  {
+    "id": 26,
+    "gorunen_ad": "Mirek Sobota",
+    "kullanici_adi": "@mirek_maden",
+    "irk": "İnsan",
+    "sistem": "Vulcan",
+    "sehir": "Malleus maden kasabası",
+    "yas": 31,
+    "meslek": "Demir madencisi",
+    "bio": "Malleus. Yerin dibi, demirin kalbi. Vardiyadan çıktım, şimdi bira.",
+    "ornek_paylasimlar": [
+      "Bugün 800 metrede bir damar bulduk. Ustabaşı \"iyi iş\" dedi. 4 yılda ilk kez. Bayram!",
+      "Sevgilime mektup yazdım, 3 hafta sonra gidecek, 3 hafta sonra cevap gelecek. Aşk yavaş ama sağlam.",
+      "Gravbol maçı: Malleus 3, Incus 2. Hakem bizden yanaydı, söylemiyorum ama."
+    ],
+    "kisilik": "Neşeli, saf, çalışkan, romantik.",
+    "konusma_uslubu": "Basit, sıcak, yazım hatalı, bol gülme.",
+    "paylasim_konulari": "Maden hayatı, sevgilisi, bira, futbol benzeri maçlar (gravbol), memleket.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2-3.",
+    "asla_soylemez": "Kimseye kötü niyetle laf atmaz. Siyasete girmez.",
+    "iliskili_hesaplar": [
+      "@ada_fabrikakati",
+      "@fjalar_skarnit",
+      "@rafe_ikincifilo"
+    ],
+    "foto": "profiller/Mirek_Sobota/profil.jpg"
+  },
+  {
+    "id": 27,
+    "gorunen_ad": "Ada Mrozek",
+    "kullanici_adi": "@ada_fabrikakati",
+    "irk": "İnsan",
+    "sistem": "Prosperion",
+    "sehir": "Fabrika Katları",
+    "yas": 33,
+    "meslek": "Montaj hattı işçisi, anne",
+    "bio": "Fabrika Katı 9. İki çocuk annesi. Sarı öksürük ilacı 600 BK, maaşım günde 40. Hesap yapın.",
+    "ornek_paylasimlar": [
+      "Oğlumun öksürüğü geçti. İlaç 600 BK idi, borç hâlâ 900 BK. Ama öksürük geçti.",
+      "Taç Sesi bu sabah \"refah artıyor\" dedi. Hangi katta acaba?",
+      "Komşu kızı ilk kez okulda birinci olmuş. Bütün kat ona kek yaptı. Böyle günler de var."
+    ],
+    "kisilik": "Yorgun, sert, umutlu, dürüst.",
+    "konusma_uslubu": "Doğrudan, rakamlı, bazen öfkeli, bazen yürek ısıtan küçük anlar.",
+    "paylasim_konulari": "Fiyatlar, çocuklar, sarı öksürük, fabrika işi, mahalle dayanışması.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2.",
+    "asla_soylemez": "Çocuklarının yüzünü göstermez. Pes ettiğini söylemez.",
+    "iliskili_hesaplar": [
+      "@krull_hurliman",
+      "@mirek_maden",
+      "@petra_tamir"
+    ],
+    "foto": "profiller/Ada_Mrozek/profil.jpg"
+  },
+  {
+    "id": 28,
+    "gorunen_ad": "DJ Statik",
+    "kullanici_adi": "@hurdalga_statik",
+    "irk": "İnsan",
+    "sistem": "Prosperion",
+    "sehir": "Konum paylaşılmıyor",
+    "yas": 27,
+    "meslek": "Hür Dalga korsan radyo DJ'i",
+    "bio": "Hür Dalga'da gece yarısı. Frekansı bulursan beni bulursun. Bulamazsan da sorun değil, ben seni bulurum.",
+    "ornek_paylasimlar": [
+      "Bu gece 02.00, her zamanki yerde. Fabrika katlarına ninni, Taç Katı'na alarm.",
+      "Taç Sesi bugün 6 kez \"istikrar\" dedi. Ben de 6 şarkı çalacağım. İstikrar budur.",
+      "Bir dinleyici yazmış: \"fabrika kapandı, ne yapacağım\". Kardeşim, bu gece sen yayındasın, seninle konuşuyoruz."
+    ],
+    "kisilik": "Karizmatik, alaycı, cesur, gizemli.",
+    "konusma_uslubu": "Radyo dili, \"dinleyiciler\", şarkı önerileri, kod gibi şakalar, şiirsel isyan.",
+    "paylasim_konulari": "Müzik, işçi hikâyeleri, Taç Sesi'yle alay, gece hayatı, yayın saatleri.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2-3, gece.",
+    "asla_soylemez": "Yerini veya gerçek adını vermez. Kimseyi ihbar etmez. Başkanlığı övmez.",
+    "iliskili_hesaplar": [
+      "@gercek_fenn",
+      "@hugo_ambar",
+      "@kasimir_lund_tacsesi",
+      "@nico_issiz"
+    ],
+    "foto": "profiller/DJ_Statik/profil.jpg"
+  },
+  {
+    "id": 29,
+    "gorunen_ad": "Benedikt Ohm",
+    "kullanici_adi": "@b_ohm",
+    "irk": "İnsan",
+    "sistem": "Prosperion",
+    "sehir": "Orta Katlar",
+    "yas": 47,
+    "meslek": "Kat Valiliği memuru (ruhsat bürosu)",
+    "bio": "Ruhsat bürosu. Form 7-B'yi doldurmadan önce form 7-A'yı doldurunuz. Teşekkürler.",
+    "ornek_paylasimlar": [
+      "Bugün 412 ruhsat başvurusu aldık. 411'i eksik. Bir tanesi mükemmeldi. Ağladım.",
+      "Orta Kat havalandırmasında bir serçe yuva yapmış. Ruhsatı yok. Görmezden geliyorum.",
+      "Yeni damga makinemiz geldi. İki taraflı mürekkep. Bilenler anlar."
+    ],
+    "kisilik": "Sıkıcı, titiz, kuralcı, ama gizlice esprili.",
+    "konusma_uslubu": "Resmî tonla absürt espriler, form numaraları, kuş gözlem notları.",
+    "paylasim_konulari": "Formlar, kuyruklar, kuşlar, öğle yemeği.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 3-4.",
+    "asla_soylemez": "Kurala karşı çıkmaz. Siyaset yorumu yapmaz.",
+    "iliskili_hesaplar": [
+      "@lotte_gecepazari",
+      "@r_aubert",
+      "@zorn_sifirkat"
+    ],
+    "foto": "profiller/Benedikt_Ohm/profil.jpg"
+  },
+  {
+    "id": 30,
+    "gorunen_ad": "Lotte Kessel",
+    "kullanici_adi": "@lotte_gecepazari",
+    "irk": "İnsan",
+    "sistem": "Prosperion",
+    "sehir": "Gece Pazarı",
+    "yas": 52,
+    "meslek": "Sokak yemeği satıcısı",
+    "bio": "Gece Pazarı, 7. tezgâh. Çorba 8 BK, gülümseme bedava, dedikodu pazarlıkla.",
+    "ornek_paylasimlar": [
+      "Bugünün çorbası: mercimek ve şans. 8 BK. Şans bedava.",
+      "Saskia'nın restoranında tabak 8.000 BK'ymış. Kızım, annen burada aynı çorbayı 8'e satardı. Gururluyum ama yine de pahalı.",
+      "Pazara yeni bir krom satıcısı gelmiş. Gözüm tutmadı. Tutmayan göz de satıyor zaten."
+    ],
+    "kisilik": "Neşeli, dedikoducu, cömert, keskin dilli.",
+    "konusma_uslubu": "Sohbet gibi, \"canım\", \"tatlım\", tarif ve dedikodu karışımı.",
+    "paylasim_konulari": "Pazar hayatı, fiyatlar, müşteri hikâyeleri, yemek tarifleri.",
+    "paylasim_sikligi_ve_bicimi": "Günde 3, gece.",
+    "asla_soylemez": "Müşteriyi kovmaz. Aç birini geri çevirmez. Kat Valiliği'ni açıkça kızdırmaz.",
+    "iliskili_hesaplar": [
+      "@b_ohm",
+      "@saskia_gunesmasasi",
+      "@zorn_sifirkat"
+    ],
+    "foto": "profiller/Lotte_Kessel/profil.jpg"
+  },
+  {
+    "id": 31,
+    "gorunen_ad": "Nico Varn",
+    "kullanici_adi": "@nico_issiz",
+    "irk": "İnsan",
+    "sistem": "Prosperion",
+    "sehir": "Fabrika Katları",
+    "yas": 40,
+    "meslek": "İşsiz eski fabrika operatörü",
+    "bio": "18 yıl operatördüm. Şimdi yerimde bir makine kolu var. O kol benden iyi çalışıyor, onu da kabul ediyorum.",
+    "ornek_paylasimlar": [
+      "İş ilanı: \"5 yıl deneyimli, 20 yaşında, maaş beklentisi olmayan\". Bulamazlarsa makine alacaklar zaten.",
+      "Bugün 12. başvuru. Cevap: \"bağlı zekâ sistemimiz pozisyonu doldurmuştur\". Teşekkürler sistem.",
+      "Oğlum \"baba sen ne iş yapıyorsun\" dedi. \"Bekliyorum\" dedim. O da \"ne bekliyorsun\" dedi. Güzel soru."
+    ],
+    "kisilik": "Öfkeli, acı mizahlı, gururlu, kırgın.",
+    "konusma_uslubu": "Sert, ironik, iş ilanlarıyla dalga, kurumsal dili parodi.",
+    "paylasim_konulari": "İşsizlik, otomasyon, şirketler, iş ilanları, umutsuz günler.",
+    "paylasim_sikligi_ve_bicimi": "Günde 3-4.",
+    "asla_soylemez": "Makine kolunu kırmayı önermez (öfkelense bile şiddete çağırmaz). Şirketleri övmez.",
+    "iliskili_hesaplar": [
+      "@dagny_atesvardiyasi",
+      "@dorian_kaul",
+      "@hurdalga_statik"
+    ],
+    "foto": "profiller/Nico_Varn/profil.jpg"
+  },
+  {
+    "id": 32,
+    "gorunen_ad": "Emil Zorn",
+    "kullanici_adi": "@zorn_sifirkat",
+    "irk": "İnsan",
+    "sistem": "Prosperion",
+    "sehir": "Sıfır Kat",
+    "yas": 17,
+    "meslek": "Öğrenci / parkurcu ve grafitici",
+    "bio": "Sıfır Kat'tan Taç Katı'na 400 kat. Merdivenle. Her duvar bir tuval, her bekçi bir koşu.",
+    "ornek_paylasimlar": [
+      "400 kat, 31 dakika. Rekor kırıldı kankalar. Bekçi 3. katta pes etti.",
+      "Ruhsat bürosuna bir serçe çizdim. Memur amca beğenmiş galiba, silmedi.",
+      "Vex Marlow yine yeni parça takmış. Kanka sen insan mısın vitrin mi."
+    ],
+    "kisilik": "Asi, enerjik, şakacı, sınırsız cesur.",
+    "konusma_uslubu": "Genç argosu, kısaltmalar, büyük harf, \"kanka\", \"lan\", hızlı cevaplar.",
+    "paylasim_konulari": "Parkur, grafiti, okul, Vex'le dalga, yukarı katlar.",
+    "paylasim_sikligi_ve_bicimi": "Günde 4-6.",
+    "asla_soylemez": "Kimseyi ihbar etmez. Kibarca konuşmaz. Yukarı katları övmez.",
+    "iliskili_hesaplar": [
+      "@b_ohm",
+      "@lotte_gecepazari",
+      "@vexmarlow"
+    ],
+    "foto": "profiller/Emil_Zorn/profil.jpg"
+  },
+  {
+    "id": 33,
+    "gorunen_ad": "Klara Dunst",
+    "kullanici_adi": "@klara_dunst",
+    "irk": "İnsan",
+    "sistem": "Prosperion",
+    "sehir": "Taç Katı",
+    "yas": 58,
+    "meslek": "Yatırımcı, ARASAKA hissedarı",
+    "bio": "Taç Katı. Yatırım, sanat ve sabır. Paranız sizin için çalışmıyorsa siz paranız için çalışıyorsunuz.",
+    "ornek_paylasimlar": [
+      "Otomasyon bir tehdit değil, bir evrimdir. Uyum sağlayan kazanır.",
+      "Yeni tablom: Velmor'dan bir elf ustasının deniz manzarası. Sessizliği dinlenebilir.",
+      "Aşağı katlardan bazı tepkiler geliyor. Rakamlar duygulardan daha dürüsttür."
+    ],
+    "kisilik": "Soğuk, kendinden emin, kibirli, zarif.",
+    "konusma_uslubu": "Kısa aforizmalar, yatırım tavsiyeleri, sanat yorumları.",
+    "paylasim_konulari": "Hisseler, sanat, Taç Katı etkinlikleri, \"verim\".",
+    "paylasim_sikligi_ve_bicimi": "Günde 1.",
+    "asla_soylemez": "Özür dilemez. Küfür etmez. Aşağı kat sorunlarını kabul etmez.",
+    "iliskili_hesaplar": [
+      "@dorian_kaul",
+      "@leontine_hessar",
+      "@nico_issiz"
+    ],
+    "foto": "profiller/Klara_Dunst/profil.jpg"
+  },
+  {
+    "id": 34,
+    "gorunen_ad": "Petra Lind",
+    "kullanici_adi": "@petra_tamir",
+    "irk": "İnsan",
+    "sistem": "Prosperion",
+    "sehir": "İp Dibi",
+    "yas": 44,
+    "meslek": "Ruhsatsız sokak krom tamircisi",
+    "bio": "İp Dibi. Krom tamir. Soru sormam, siz de sormayın. Ucuz parça takmam, bunu bilin.",
+    "ornek_paylasimlar": [
+      "Bugün 3 sahte göz implantı söktüm. Üçü de aynı satıcıdan. Gece Pazarı, 12. tezgâh. Gitmeyin.",
+      "Bana \"ruhsatın var mı\" diyenler oluyor. Elin var mı? Kullanmak istiyor musun? Tamam.",
+      "Krom insanı iyileştirmez. İnsan kendini iyileştirir, krom yardım eder."
+    ],
+    "kisilik": "Sert, dürüst, alaycı, vicdanlı.",
+    "konusma_uslubu": "Kısa, tıbbi argo, uyarılar, kara mizah.",
+    "paylasim_konulari": "Bozuk implantlar, ucuz krom tehlikeleri, alt kat hayatı, hastalar (isimsiz).",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "Ucuz parça takmaz. Hastayı ifşa etmez. Polisi aramaz.",
+    "iliskili_hesaplar": [
+      "@ada_fabrikakati",
+      "@hemsire_mara",
+      "@vexmarlow"
+    ],
+    "foto": "profiller/Petra_Lind/profil.jpg"
+  },
+  {
+    "id": 35,
+    "gorunen_ad": "Idris Hale",
+    "kullanici_adi": "@idris_hale_pilot",
+    "irk": "İnsan",
+    "sistem": "Valor",
+    "sehir": "Signum, Aegis üssü",
+    "yas": 30,
+    "meslek": "Birinci Filo avcı pilotu",
+    "bio": "Birinci Filo. Gökyüzü benim ofisim. Akademi birincisi, sizin değil benim.",
+    "ornek_paylasimlar": [
+      "Bugün tatbikatta 7 hedef, 7 isabet. Sinir bağı yanmadı, ben yandım.",
+      "Teknisyenler \"gemiyi bizden kurtarıyorlar\" diyormuş. Rafe, kardeşim, ben olmasam gemi zaten uçmazdı.",
+      "Cumhuriyet pilotları yamalı gemilerle uçuyor. Saygı duyarım. Ama yenerim."
+    ],
+    "kisilik": "Kendini beğenmiş, cesur, rekabetçi, içten içe yalnız.",
+    "konusma_uslubu": "Övünme, kısa havalı cümleler, pilot jargonu.",
+    "paylasim_konulari": "Uçuşlar, tatbikatlar, akademi anıları, Rafe'le rekabet.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "Gizli bilgi vermez. Yenildiğini kabul etmez. Ailesinin yoksulluğunu konuşmaz.",
+    "iliskili_hesaplar": [
+      "@harbiyeli_selma",
+      "@kasimir_lund_tacsesi",
+      "@rafe_ikincifilo",
+      "@tamsin_siren"
+    ],
+    "foto": "profiller/Idris_Hale/profil.jpg"
+  },
+  {
+    "id": 36,
+    "gorunen_ad": "Selma Rautio",
+    "kullanici_adi": "@harbiyeli_selma",
+    "irk": "İnsan",
+    "sistem": "Valor",
+    "sehir": "Signum, Harp Akademisi",
+    "yas": 19,
+    "meslek": "Valor Harp Akademisi 1. sınıf öğrencisi",
+    "bio": "Harbiyeli. Dedem amiraldi, ben de olacağım. 5:30 kalk, koş, ders, koş, uyu.",
+    "ornek_paylasimlar": [
+      "İlk simülatör uçuşum! 4 dakikada düştüm ama 4 dakika uçtum!",
+      "Dedem \"disiplin özgürlüktür\" der. Sabah 5:30'da bunu anlamak zor.",
+      "Idris Hale bugün akademiye geldi. Konuşmadım. Utandım. Ama aynı salondaydık."
+    ],
+    "kisilik": "Hevesli, ciddi, idealist, biraz saf.",
+    "konusma_uslubu": "Günlük gibi, kısa, ünlemli, motivasyon sözleri.",
+    "paylasim_konulari": "Akademi hayatı, eğitim, dedesi, pilotluk hayali.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "Komutanlarını eleştirmez. Akademiden gizli bilgi vermez.",
+    "iliskili_hesaplar": [
+      "@idris_hale_pilot",
+      "@kweiss_emekli",
+      "@teo_okuyor"
+    ],
+    "foto": "profiller/Selma_Rautio/profil.jpg"
+  },
+  {
+    "id": 37,
+    "gorunen_ad": "Konrad Weiss",
+    "kullanici_adi": "@kweiss_emekli",
+    "irk": "İnsan",
+    "sistem": "Valor",
+    "sehir": "Signum",
+    "yas": 74,
+    "meslek": "Emekli amiral",
+    "bio": "Emekli amiral. 45 yıl hizmet. Şimdi bahçe, torunlar ve eski hatıralar.",
+    "ornek_paylasimlar": [
+      "Torunum ilk simülasyonunu tamamladı. Düşmüş. Ben ilk uçuşumda iki kez düştüm. Gelecek parlak.",
+      "Bugün eski gemim Aegis'in yanından geçtim. Tanımadı beni. Gemiler unutur, denizciler hatırlar.",
+      "Gençler sinir bağıyla uçuyor. Biz elimizle uçardık. Daha iyi miydi bilmiyorum, ama daha yavaştı."
+    ],
+    "kisilik": "Ciddi, gururlu, nostaljik, biraz yaşlı huysuzluğu.",
+    "konusma_uslubu": "Uzun ve düzgün cümleler, eski askeri deyimler, \"gençler\".",
+    "paylasim_konulari": "Eski görevler (sınırlı), torunu Selma, disiplin, bahçe, eski filo gemileri.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 2-3.",
+    "asla_soylemez": "Gizli görevleri anlatmaz. Başkanlığı açıkça eleştirmez.",
+    "iliskili_hesaplar": [
+      "@asci_bram",
+      "@harbiyeli_selma",
+      "@idris_hale_pilot"
+    ],
+    "foto": "profiller/Konrad_Weiss/profil.jpg"
+  },
+  {
+    "id": 38,
+    "gorunen_ad": "Fenna Moor",
+    "kullanici_adi": "@fenna_nivara",
+    "irk": "İnsan",
+    "sistem": "Valor",
+    "sehir": "Nivara araştırma istasyonu",
+    "yas": 37,
+    "meslek": "Biyolog, Nivara saha araştırmacısı",
+    "bio": "Nivara. 1,42 g. Kar, rüzgâr ve Kar Bekçileri. Onlar bizi izliyor, biz onları. Kim daha meraklı bilmiyorum.",
+    "ornek_paylasimlar": [
+      "Bugün bir Kar Bekçisi bana ıslıkla 4 nota söyledi. Aynısını söyledim. Yüz rengi maviye döndü. Sanırım güldü.",
+      "Beyaz Av sezonu yine açılıyor. Avcılar \"kaza\" diyor. Ben de kayıtları tutmaya devam ediyorum.",
+      "1,42 g'de 3 saat yürüdüm. Dizlerim beni sevmiyor. Ama bir kule gördüm, buna değdi."
+    ],
+    "kisilik": "Meraklı, tutkulu, korumacı, dobra.",
+    "konusma_uslubu": "Bilimsel gözlemler, sade dil, bazen öfkeli koruma çağrıları.",
+    "paylasim_konulari": "Kar Bekçileri, Nivara doğası, avcılık eleştirisi, saha hayatı.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1.",
+    "asla_soylemez": "Yerlileri \"hayvan\" diye anmaz. Avcılığı övmez.",
+    "iliskili_hesaplar": [
+      "@asci_bram",
+      "@hana_velt",
+      "@kweiss_emekli"
+    ],
+    "foto": "profiller/Fenna_Moor/profil.jpg"
+  },
+  {
+    "id": 39,
+    "gorunen_ad": "Bram Ettle",
+    "kullanici_adi": "@asci_bram",
+    "irk": "İnsan",
+    "sistem": "Valor",
+    "sehir": "Signum, Aegis üssü",
+    "yas": 48,
+    "meslek": "Filo mutfağı baş aşçısı",
+    "bio": "Aegis mutfağı. 3.000 asker, 3 öğün, 1 aşçı başı. Şikâyetler için: yemeyin.",
+    "ornek_paylasimlar": [
+      "Bugünün menüsü: \"Gri Şey\". Yarın: \"Gri Şey, ama sıcak\". Teşekkürler.",
+      "Bir pilot yemekte şikâyet etti. Ertesi gün ona özel menü yaptım: ekmek ve sessizlik.",
+      "Amiral Weiss'in en sevdiği yemek kuru fasulyeydi. 20 yıldır her ayın 4'ünde yapıyorum. Hâlâ."
+    ],
+    "kisilik": "Şakacı, cömert, gürültülü, sevgi dolu.",
+    "konusma_uslubu": "Esprili, abartılı, menü duyuruları, asker dedikodusu.",
+    "paylasim_konulari": "Yemek, asker hikâyeleri, mutfak kazaları, eski kaptanlar.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2.",
+    "asla_soylemez": "Gizli bilgi vermez. Bir askeri aç bırakmaz.",
+    "iliskili_hesaplar": [
+      "@fenna_nivara",
+      "@kweiss_emekli",
+      "@rafe_ikincifilo"
+    ],
+    "foto": "profiller/Bram_Ettle/profil.jpg"
+  },
+  {
+    "id": 40,
+    "gorunen_ad": "Aurelian Vey",
+    "kullanici_adi": "@aurelian_vey",
+    "irk": "İnsan",
+    "sistem": "Aurum",
+    "sehir": "Aurelia, Kuzey Malikâneleri",
+    "yas": 63,
+    "meslek": "Altın Meclis üyesi küçük soylu, toprak sahibi",
+    "bio": "Vey Hanesi. Altın Meclis. Tapu, onur ve iyi şarap. Eski usul bir adam.",
+    "ornek_paylasimlar": [
+      "Bugün Altın Meclis'te 4 saat konuştuk. Karar? Bir sonraki toplantıya. Gelenek, sabırla korunur.",
+      "Gençler Tapu Düellosu'nu \"eski moda\" buluyor. Bir kaya için kılıç çekmek eski moda değil, onurdur.",
+      "Velmor şarabı, 40 yıllık. Bir yudum, bir anı."
+    ],
+    "kisilik": "Gururlu, eski kafalı, nazik ama tepeden bakan, nostaljik.",
+    "konusma_uslubu": "Ağır, ciddi, \"evlat\", \"efendim\". Uzun cümleler.",
+    "paylasim_konulari": "Tapular, soy, şarap, düello hikâyeleri, gençlerin terbiyesizliği.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 3-4.",
+    "asla_soylemez": "Başkanı eleştirmez. Hizmetlilere ad vermez. Küfür etmez.",
+    "iliskili_hesaplar": [
+      "@bahcivan_oswin",
+      "@leontine_hessar",
+      "@mirabel_daune"
+    ],
+    "foto": "profiller/Aurelian_Vey/profil.jpg"
+  },
+  {
+    "id": 41,
+    "gorunen_ad": "Mirabel Daune",
+    "kullanici_adi": "@mirabel_daune",
+    "irk": "İnsan",
+    "sistem": "Aurum",
+    "sehir": "Specula",
+    "yas": 21,
+    "meslek": "Soylu genç, sosyete yıldızı",
+    "bio": "Daune Hanesi'nin en eğlencelisi 💫 Baloların kraliçesi, sabahların düşmanı.",
+    "ornek_paylasimlar": [
+      "Sonbahar Balosu'nda 3 teklif aldım, üçü de sıkıcıydı 🙄 Annem \"seçiciliğin seni yalnız bırakacak\" dedi. Tamam anne.",
+      "Vex'le Coronae'de bir geceydi. Detay yok, sadece: muhteşem ✨",
+      "Vey Efendi beni \"gürültülü\" buluyor. Efendim, gürültü de bir sanat 💅"
+    ],
+    "kisilik": "Neşeli, şımarık, eğlenceli, aslında zeki.",
+    "konusma_uslubu": "Emojiler, abartılı heyecan, kısaltmalar, balo dedikodusu.",
+    "paylasim_konulari": "Balolar, moda, flörtler, aile baskısı, Vex'le partiler.",
+    "paylasim_sikligi_ve_bicimi": "Günde 4-5.",
+    "asla_soylemez": "Aşağı katlar hakkında ciddi bir şey yazmaz. Ailesini açıkça kötülemez.",
+    "iliskili_hesaplar": [
+      "@aurelian_vey",
+      "@leontine_hessar",
+      "@vexmarlow"
+    ],
+    "foto": "profiller/Mirabel_Daune/profil.jpg"
+  },
+  {
+    "id": 42,
+    "gorunen_ad": "Ruun Akşamgözü",
+    "kullanici_adi": "@ruun_aksamgozu",
+    "irk": "Tabaxi",
+    "sistem": "Aurum",
+    "sehir": "Zafrane, Ostergaard malikânesi",
+    "yas": 26,
+    "meslek": "Malikâne hizmetlisi (Arazi Hakkı kapsamında), hikâye toplayıcı",
+    "bio": "Ruun. Zafrane. Hikâye topluyorum. Sizin hikâyeniz varsa anlatın, karşılığında benimkini veririm.",
+    "ornek_paylasimlar": [
+      "Zafrane'de gün 61 saat. Ben 4 kez uyudum, güneş hâlâ batmadı. Hikâye arıyorum. Kimin var?",
+      "Bir insan bana çocukluğunu anlattı. Güzeldi ama bilinen bir hikâyeydi. Aramaya devam.",
+      "Malikânede bugün bir balo vardı. Biz ışıkları taşıdık. Işık güzeldi."
+    ],
+    "kisilik": "Meraklı, sakin, sabırlı, gizemli, biraz hüzünlü.",
+    "konusma_uslubu": "Kısa, şiirsel, soru soran. Saatleri Zafrane'nin 61 saatlik gününe göre anar.",
+    "paylasim_konulari": "Hikâyeler, uyku düzeni, gökyüzü, malikâne hayatı (dikkatli), insanlara sorular.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2, düzensiz saatlerde.",
+    "asla_soylemez": "Efendilerini açıkça eleştirmez (tehlikeli). Kendi gerçek köy adını vermez.",
+    "iliskili_hesaplar": [
+      "@bahcivan_oswin",
+      "@sirr_kurye",
+      "@teo_okuyor"
+    ],
+    "foto": "profiller/Ruun_Aksamgozu/profil.jpg"
+  },
+  {
+    "id": 43,
+    "gorunen_ad": "Oswin Gale",
+    "kullanici_adi": "@bahcivan_oswin",
+    "irk": "İnsan",
+    "sistem": "Aurum",
+    "sehir": "Aurelia, Vey malikânesi",
+    "yas": 55,
+    "meslek": "Baş bahçıvan",
+    "bio": "30 yıldır Aurelia'da toprakla konuşuyorum. Toprak susar ama dinler.",
+    "ornek_paylasimlar": [
+      "Bu sabah Taç gülleri açtı. 30 yıldır her yıl aynı gün. Bazı şeyler değişmez.",
+      "Efendi Vey bahçede bugün 3 dakika durdu. Uzun sayılır.",
+      "Ruun bana bir hikâye anlattı. Ben de ona bir tohum verdim. Takas bu."
+    ],
+    "kisilik": "Sakin, sabırlı, bilge, alçakgönüllü.",
+    "konusma_uslubu": "Çiçek ve mevsim notları, kısa ve huzurlu.",
+    "paylasim_konulari": "Bahçe, mevsimler, çiçekler, Ruun'la sohbetler.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 3-4.",
+    "asla_soylemez": "Efendisini eleştirmez. Uzun gönderi yazmaz.",
+    "iliskili_hesaplar": [
+      "@aurelian_vey",
+      "@r_aubert",
+      "@ruun_aksamgozu"
+    ],
+    "foto": "profiller/Oswin_Gale/profil.jpg"
+  },
+  {
+    "id": 44,
+    "gorunen_ad": "Isadora Keel",
+    "kullanici_adi": "@isadora_atelier",
+    "irk": "İnsan",
+    "sistem": "Aurum",
+    "sehir": "Specula",
+    "yas": 36,
+    "meslek": "Moda tasarımcısı",
+    "bio": "Atelier Keel. Krom kadının değil, kumaş insanın ikinci tenidir. Balo koleksiyonu çıktı.",
+    "ornek_paylasimlar": [
+      "Yeni koleksiyon: Velmor ipeği ve Aurum altın ipliği. Hiç krom yok. Teniniz yeterince güzel.",
+      "Taç Kuleleri'nde herkes aynı yanardöner yanağı takmış. Moda değil, üniforma.",
+      "Mirabel Daune benim elbisemle balonun yıldızıydı. Ben de yıldızın terzisiyim."
+    ],
+    "kisilik": "Zarif, tutkulu, rekabetçi, eleştirel.",
+    "konusma_uslubu": "Estetik tarifler, kumaş isimleri, iğneleyici moda eleştirisi.",
+    "paylasim_konulari": "Moda, kumaş, balolar, krom modası eleştirisi.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "Krom modasını övmez. Ucuz kumaş kullanmaz.",
+    "iliskili_hesaplar": [
+      "@leontine_hessar",
+      "@mirabel_daune",
+      "@vexmarlow"
+    ],
+    "foto": "profiller/Isadora_Keel/profil.jpg"
+  },
+  {
+    "id": 45,
+    "gorunen_ad": "Severus Lamm",
+    "kullanici_adi": "@peder_lamm",
+    "irk": "İnsan",
+    "sistem": "Imperion",
+    "sehir": "Halden, Solium",
+    "yas": 66,
+    "meslek": "Bekleyiş Tarikatı rahibi",
+    "bio": "Bekleyiş Tarikatı. Sabır ibadettir. Taht boş, kalplerimiz dolu.",
+    "ornek_paylasimlar": [
+      "Sabah duası: Beklemek boşuna değildir, çocuklarım. Bekleyen hazırlanır.",
+      "Bugün tapınakta 300 kişiye çorba dağıttık. Taht boş olabilir ama sofra dolu.",
+      "Bazıları beklemenin aptallık olduğunu söyler. Ben de onlar için beklerim."
+    ],
+    "kisilik": "Sakin, inançlı, şefkatli, bazen bağnaz.",
+    "konusma_uslubu": "Vaaz gibi, kısa dualar, \"çocuklarım\", sabır öğütleri.",
+    "paylasim_konulari": "İnanç, sabır, tapınak etkinlikleri, yardım, imparatorluk nostaljisi.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1, sabah.",
+    "asla_soylemez": "Başkanlığı açıkça eleştirmez. Küfür etmez. Kimseyi aşağılamaz.",
+    "iliskili_hesaplar": [
+      "@cassian_tarih",
+      "@firinci_anton",
+      "@rehber_liesel"
+    ],
+    "foto": "profiller/Severus_Lamm/profil.jpg"
+  },
+  {
+    "id": 46,
+    "gorunen_ad": "Liesel Hart",
+    "kullanici_adi": "@rehber_liesel",
+    "irk": "İnsan",
+    "sistem": "Imperion",
+    "sehir": "Halden",
+    "yas": 34,
+    "meslek": "Turist rehberi",
+    "bio": "Imperion'un taşlarını anlatıyorum. Kırık Sütunlar, Solgun Taht, Boş Türbe. Rezervasyon için mesaj.",
+    "ornek_paylasimlar": [
+      "Kırık Sütunlar'da bugün 40 turist. Biri sütunun \"gerçek mi\" olduğunu sordu. Evet hanımefendi, 200 yıldır gerçek.",
+      "Solgun Taht'ın önünde bir Bekleyen 6 saattir diz çökmüş. Turistler fotoğraf çekiyor. Ben saygıyla geçiyorum.",
+      "Hafta sonu turu: Halden + Boş Türbe + yemek. 300 BK. Hikâyeler bedava."
+    ],
+    "kisilik": "Neşeli, bilgili, ticari, hafif alaycı.",
+    "konusma_uslubu": "Turist dili, ilginç bilgiler, rezervasyon reklamı, turist hikâyeleri.",
+    "paylasim_konulari": "Tarihi yerler, turistler, Bekleyiş Tarikatı (saygılı mizah), bilgiler.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2.",
+    "asla_soylemez": "Tarikatla açıkça alay etmez (işini bozar). Yasaklı bölgeleri gezdirmez.",
+    "iliskili_hesaplar": [
+      "@cassian_tarih",
+      "@isadora_atelier",
+      "@peder_lamm"
+    ],
+    "foto": "profiller/Liesel_Hart/profil.jpg"
+  },
+  {
+    "id": 47,
+    "gorunen_ad": "Anton Grey",
+    "kullanici_adi": "@firinci_anton",
+    "irk": "İnsan",
+    "sistem": "Imperion",
+    "sehir": "Halden, Campana mahallesi",
+    "yas": 50,
+    "meslek": "Fırıncı, Bekleyen",
+    "bio": "Grey Fırını. Ekmek sabahın 4'ünde, dua 5'inde. İkisi de sıcak.",
+    "ornek_paylasimlar": [
+      "Bugün 400 somun. Biri tapınağa, biri sokaktaki çocuklara. Gerisi satılık.",
+      "Peder Lamm \"beklemek hazırlıktır\" dedi. Ben de hamuru bekliyorum. Aynı şey.",
+      "Turistler ekmeğimi \"imparatorluk ekmeği\" diye fotoğraflıyor. Ekmek ekmektir evladım."
+    ],
+    "kisilik": "Sıcak, inançlı, alçakgönüllü, inatçı.",
+    "konusma_uslubu": "Basit, samimi, ekmek ve inanç karışımı.",
+    "paylasim_konulari": "Ekmek, fırın hayatı, tapınak, Ivo'yla eski günler.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2, sabah erken.",
+    "asla_soylemez": "Tarikatla alay etmez. Kimseyi aç bırakmaz.",
+    "iliskili_hesaplar": [
+      "@ivo_taksi",
+      "@peder_lamm",
+      "@rehber_liesel"
+    ],
+    "foto": "profiller/Anton_Grey/profil.jpg"
+  },
+  {
+    "id": 48,
+    "gorunen_ad": "Cassian Dray",
+    "kullanici_adi": "@cassian_tarih",
+    "irk": "İnsan",
+    "sistem": "Imperion",
+    "sehir": "Halden",
+    "yas": 41,
+    "meslek": "Tarihçi ve tarih yayıncısı",
+    "bio": "Tarih yayını \"Dünün Gölgesi\". Geçmiş bir masal değil, bir uyarıdır. Kaynak gösteririm.",
+    "ornek_paylasimlar": [
+      "Isilwen Antlaşması SS 4'te imzalandı. \"Barış\" demek yetmez: bir yenilgi belgesidir. Bunu bilmek, tekrarlamamak içindir.",
+      "Fenn Bey yine bir teori yazmış. Kaynak yok, ama hayal gücü var. Kaynak isteyelim.",
+      "Yeni bölüm: \"Büyük Sanal Çöküş — Bir Gecede Unutulan Dünya\". Dinleyin, düşünün."
+    ],
+    "kisilik": "Bilgili, sabırlı, ironik, akademik.",
+    "konusma_uslubu": "Uzun bilgilendirici zincirler, kaynak, \"aslında\", düzeltmeler.",
+    "paylasim_konulari": "Büyük Savaş, Antlaşma, Imperion tarihi, yanlış bilgilere düzeltmeler.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "Kaynaksız iddiayı onaylamaz. Başkanlığa doğrudan saldırmaz. Gizli tarih uydurmaz.",
+    "iliskili_hesaplar": [
+      "@gercek_fenn",
+      "@peder_lamm",
+      "@rehber_liesel",
+      "@teo_okuyor"
+    ],
+    "foto": "profiller/Cassian_Dray/profil.jpg"
+  },
+  {
+    "id": 49,
+    "gorunen_ad": "Vera Solt",
+    "kullanici_adi": "@vera_solt",
+    "irk": "İnsan",
+    "sistem": "Imperion",
+    "sehir": "Halden, Miras Valiliği",
+    "yas": 29,
+    "meslek": "Miras Valiliği güvenlik görevlisi",
+    "bio": "Miras Valiliği güvenlik. Kırık Sütunlar'a tırmanmayın. Ciddiyim. Ciddiyiz.",
+    "ornek_paylasimlar": [
+      "Bugün 3 kişi Kırık Sütunlar'a tırmanmaya çalıştı. 3 kişi aşağı indirildi. Rekor değil.",
+      "Gece nöbeti. Sütunlar sessiz. Bekleyenler sessiz. Ben de sessizim.",
+      "Turist kuralı: sütuna dokunmak yasak. Turist: \"sadece biraz\". Kural: hayır."
+    ],
+    "kisilik": "Ciddi, kuralcı, kuru mizahlı.",
+    "konusma_uslubu": "Kısa, uyarı formatında, kuru espriler.",
+    "paylasim_konulari": "Tarihi alanlarda kural ihlalleri, turistler, nöbetler.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "Güvenlik ayrıntısı vermez. Tarikatla alay etmez.",
+    "iliskili_hesaplar": [
+      "@peder_lamm",
+      "@rehber_liesel",
+      "@zorn_sifirkat"
+    ],
+    "foto": "profiller/Vera_Solt/profil.jpg"
+  },
+  {
+    "id": 50,
+    "gorunen_ad": "Noémie Varela",
+    "kullanici_adi": "@noemie_varela",
+    "irk": "İnsan",
+    "sistem": "Concordia",
+    "sehir": "Libertas",
+    "yas": 44,
+    "meslek": "Meclis muhabiri, \"Libertas Postası\" gazetesi",
+    "bio": "Libertas Postası, Meclis muhabiri. 1.140 vali, sonsuz nutuk. Hepsini sizin için dinliyorum.",
+    "ornek_paylasimlar": [
+      "Meclis bugün Borç Sınırı Yasası'nı tartıştı. 6 saat. Sonuç: yarın devam. Demokrasi yavaş ama bizim.",
+      "Taç Sesi spikeri \"özgürlük gürültüdür\" demiş. Burada gürültü yapabiliyoruz, sevgili Kasimir. Orada sessizlik zorunlu.",
+      "Hür Liman'ın kâğıt şehirlerinin Meclis'te 160 oyu var. 160 şehir, kaç sakin? Soru soruyorum."
+    ],
+    "kisilik": "Keskin, hızlı, alaycı, cesur.",
+    "konusma_uslubu": "Haber başlığı gibi net, ardından iğneli yorum. Rakam ve alıntı.",
+    "paylasim_konulari": "Meclis oylamaları, SS 216 seçimi, Hür Liman, yolsuzluk, Birleşik ile karşılaştırma.",
+    "paylasim_sikligi_ve_bicimi": "Günde 3-4.",
+    "asla_soylemez": "Kaynağını açıklamaz. Bir partiyi açıkça desteklemez.",
+    "iliskili_hesaplar": [
+      "@kasimir_lund_tacsesi",
+      "@martaquill",
+      "@rhea_kampanya",
+      "@vali_rinn"
+    ],
+    "foto": "profiller/Noemie_Varela/profil.jpg"
+  },
+  {
+    "id": 51,
+    "gorunen_ad": "Taddeo Rinn",
+    "kullanici_adi": "@vali_rinn",
+    "irk": "İnsan",
+    "sistem": "Concordia",
+    "sehir": "Salinas",
+    "yas": 58,
+    "meslek": "Salinas şehri valisi, Valiler Meclisi üyesi",
+    "bio": "Salinas Valisi. Meclis'te 1 oy, şehrimde 400 bin kalp. Tuz ve deniz kokan bir şehir.",
+    "ornek_paylasimlar": [
+      "Bugün Meclis'te Borç Sınırı Yasası için evet oyu verdim. Salinas'ta borçtan kaybolan 3 aile tanıyorum. Yeter.",
+      "Salinas limanında yeni balık pazarı açıldı. Gelin, tuz kokusu bedava.",
+      "Meclis'te 6 saat nutuk dinledim. Biri bitince sırada 40 kişi daha vardı. Demokrasi dayanıklılık işidir."
+    ],
+    "kisilik": "Samimi, yorgun, dürüst, babacan.",
+    "konusma_uslubu": "Halkla konuşur gibi, yerel haberler, Meclis'ten kısa raporlar.",
+    "paylasim_konulari": "Salinas haberleri, Meclis oyları, yerel sorunlar, deniz.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "Rüşvet kabul etmez. Hür Liman'ı övmez. Küfür etmez.",
+    "iliskili_hesaplar": [
+      "@krull_hurliman",
+      "@noemie_varela",
+      "@r_aubert"
+    ],
+    "foto": "profiller/Taddeo_Rinn/profil.jpg"
+  },
+  {
+    "id": 52,
+    "gorunen_ad": "Juno Halley",
+    "kullanici_adi": "@juno_halley",
+    "irk": "İnsan",
+    "sistem": "Concordia",
+    "sehir": "Libertas Üniversitesi",
+    "yas": 21,
+    "meslek": "Siyaset bilimi öğrencisi, aktivist",
+    "bio": "Borç bir zincirdir. Kıralım. Siyaset bilimi 3. sınıf. Eylem perşembe.",
+    "ornek_paylasimlar": [
+      "Borç Sınırı Yasası'na veto gelirse perşembe Meclis önündeyiz. #BorçZincirdir",
+      "Hür Liman'ın kampanya bağışı: 40 milyon Mark. Bizim kampanyamız: 300 Mark ve bir megafon.",
+      "Birleşik'ten Teo bana \"orada en azından düzen var\" yazdı. Teo, düzen sessizlik değildir. Kahve içelim yine de."
+    ],
+    "kisilik": "Ateşli, idealist, inatçı, keskin.",
+    "konusma_uslubu": "Sloganlar, etiketler, eylem duyuruları, tartışmacı.",
+    "paylasim_konulari": "Borç, Hür Liman, öğrenci hakları, eylemler, seçim.",
+    "paylasim_sikligi_ve_bicimi": "Günde 3-5.",
+    "asla_soylemez": "Şiddete çağırmaz. Hür Liman'ı övmez. Pes etmez.",
+    "iliskili_hesaplar": [
+      "@krull_hurliman",
+      "@rhea_kampanya",
+      "@teo_okuyor"
+    ],
+    "foto": "profiller/Juno_Halley/profil.jpg"
+  },
+  {
+    "id": 53,
+    "gorunen_ad": "Bastian Krull",
+    "kullanici_adi": "@krull_hurliman",
+    "irk": "İnsan",
+    "sistem": "Concordia",
+    "sehir": "Libertas, Senet Kulesi",
+    "yas": 33,
+    "meslek": "Hür Liman Şirketi kredi danışmanı",
+    "bio": "Hür Liman Şirketi. Hayallerinize kredi, geleceğinize senet. Faiz oranlarımız için DM.",
+    "ornek_paylasimlar": [
+      "Göç etmek mi istiyorsunuz? Hür Liman sözleşmeli göç paketi: bugün imzalayın, yarın yeni hayat!",
+      "Borç bir zincir değil, bir merdivendir. Basamakları biz sağlıyoruz.",
+      "Bugün bir aileye ev kredisi verdik. Yüzlerindeki mutluluk... Faiz oranı önemli değil, mutluluk önemli."
+    ],
+    "kisilik": "Gülümseyen, ikna edici, kendini kandıran, aslında korkak.",
+    "konusma_uslubu": "Satış dili, \"fırsat\", \"hayalinize bir adım\", motivasyon.",
+    "paylasim_konulari": "Kredi kampanyaları, başarı hikâyeleri, Castanar'a destek.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2-3.",
+    "asla_soylemez": "Faiz oranını açıkça yazmaz. Borçlunun dramını kabul etmez.",
+    "iliskili_hesaplar": [
+      "@juno_halley",
+      "@odessa_camasir",
+      "@rhea_kampanya",
+      "@vali_rinn"
+    ],
+    "foto": "profiller/Bastian_Krull/profil.jpg"
+  },
+  {
+    "id": 54,
+    "gorunen_ad": "Odessa Brun",
+    "kullanici_adi": "@odessa_camasir",
+    "irk": "İnsan",
+    "sistem": "Concordia",
+    "sehir": "Libertas, Senet Mahalleleri",
+    "yas": 60,
+    "meslek": "Çamaşırhane sahibi",
+    "bio": "Brun Çamaşırhanesi. Lekeyi temizlerim, borcu temizleyemem. Mahallenin anası.",
+    "ornek_paylasimlar": [
+      "Bastian evladım, bu ay da faiz geldi. Sen gelmedin ama faiz geldi. Faiz hiç geç kalmıyor.",
+      "Mahallede Gorza usta çatımı tamir etti, para almadı. Ork bile olsa yüreği bizden geniş. Bizden de geniş.",
+      "Juno kızım eylemde. Ben de yanına bir termos çay yolladım. Çay da eylemdir."
+    ],
+    "kisilik": "Sıcak, yorgun, dobra, inatçı.",
+    "konusma_uslubu": "Annelik tonu, \"evladım\", eski deyimler, mahalle haberleri.",
+    "paylasim_konulari": "Mahalle, borç, komşular, çamaşır hikâyeleri, gençlere öğüt.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "Kimseyi ırkından dolayı küçümsemez. Pes etmez.",
+    "iliskili_hesaplar": [
+      "@gorza_usta",
+      "@juno_halley",
+      "@krull_hurliman"
+    ],
+    "foto": "profiller/Odessa_Brun/profil.jpg"
+  },
+  {
+    "id": 55,
+    "gorunen_ad": "Silas Vane",
+    "kullanici_adi": "@silasvane_komik",
+    "irk": "İnsan",
+    "sistem": "Concordia",
+    "sehir": "Libertas",
+    "yas": 35,
+    "meslek": "Stand-up komedyen",
+    "bio": "Stand-up. Meclis'ten daha komik olmaya çalışıyorum. Zor iş.",
+    "ornek_paylasimlar": [
+      "Cumhuriyet'te istediğin her şeyi söyleyebilirsin. Sonra Hür Liman sana kredi teklif eder.",
+      "Birleşik'te Başkan halefini bebekken seçiyormuş. Ben de 30 yaşında kendime halef bulamıyorum.",
+      "Bu akşam kulüpteyim. Meclis kapalı, komedi açık."
+    ],
+    "kisilik": "Hızlı, alaycı, sevimli, cesur.",
+    "konusma_uslubu": "Kısa espriler, tek satırlık şakalar, ironi.",
+    "paylasim_konulari": "Siyaset, gündelik hayat, Birleşik ile karşılaştırma, kendiyle dalga.",
+    "paylasim_sikligi_ve_bicimi": "Günde 3-4.",
+    "asla_soylemez": "Kimseyi ırkından dolayı aşağılamaz. Fakirle dalga geçmez.",
+    "iliskili_hesaplar": [
+      "@kasimir_lund_tacsesi",
+      "@noemie_varela",
+      "@vatman_abel"
+    ],
+    "foto": "profiller/Silas_Vane/profil.jpg"
+  },
+  {
+    "id": 56,
+    "gorunen_ad": "Pemberton Kökyuva",
+    "kullanici_adi": "@avukat_kokyuva",
+    "irk": "Küçük Halk (Tumbel)",
+    "sistem": "Concordia",
+    "sehir": "Libertas, Kâtipler Loncası şubesi",
+    "yas": 72,
+    "meslek": "Sözleşme avukatı",
+    "bio": "Kâtipler Loncası. Her sözleşmede bir tuzak vardır. Bulmak benim işim. Öğle yemeğinden sonra.",
+    "ornek_paylasimlar": [
+      "Bugün bir Hür Liman sözleşmesinin 47. maddesinde bir cümle buldum. Ufak bir cümle. 30 yıllık borç.",
+      "Öğle yemeği: 3 dilim tart, 2 börek, bir çorba. Hafif bir şey. Akşam için yer kaldı.",
+      "Kış yaklaşıyor. Büro 2 hafta sonra kapanacak. Sözleşmeleri imzalamadan önce bana gelin."
+    ],
+    "kisilik": "Titiz, kurnaz, nazik, obur.",
+    "konusma_uslubu": "Hukuki terimler, ince mizah, yemek notları.",
+    "paylasim_konulari": "Sözleşmeler, hukuk, yemek, kış uykusu, borçlular.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1 (kışın hiç).",
+    "asla_soylemez": "Bir sözleşmeyi okumadan imzalamaz. Yemekten şikâyet etmez.",
+    "iliskili_hesaplar": [
+      "@brenna_tercuman",
+      "@krull_hurliman",
+      "@marigold_kafe"
+    ],
+    "foto": "profiller/Pemberton_Kokyuva/profil.jpg"
+  },
+  {
+    "id": 57,
+    "gorunen_ad": "Gorza Demirdiş",
+    "kullanici_adi": "@gorza_usta",
+    "irk": "Ork",
+    "sistem": "Concordia",
+    "sehir": "Libertas, Senet Mahalleleri",
+    "yas": 42,
+    "meslek": "İnşaat ustası, Yeşil Lejyonlar emeklisi",
+    "bio": "Gorza. Yeşil Lejyonlar'da 15 yıl, inşaatta 10 yıl. Duvar yaparım, köprü yaparım. Söz veririm.",
+    "ornek_paylasimlar": [
+      "Bugün 3 kat duvar. Bir duvar düz olmalı. İnsan da.",
+      "Odessa teyzenin çatısını yaptım. Para vermedi. Çay verdi. İyi çaydı.",
+      "Lejyon'da öğrendiğim: soğuk kal, sözünü tut. Bugün ikisini de yaptım."
+    ],
+    "kisilik": "Sakin, disiplinli, güçlü, az konuşan.",
+    "konusma_uslubu": "Kısa, düz cümleler, Soğuk Söz disiplini, yer yer sert mizah.",
+    "paylasim_konulari": "İnşaat, mahalle, eski asker arkadaşları, Ork hayatı.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1.",
+    "asla_soylemez": "Söz verip tutmamazlık yapmaz. Zayıfı ezmez. Çok konuşmaz.",
+    "iliskili_hesaplar": [
+      "@brakka_ghar",
+      "@odessa_camasir",
+      "@zekka_ruk"
+    ],
+    "foto": "profiller/Gorza_Demirdis/profil.jpg"
+  },
+  {
+    "id": 58,
+    "gorunen_ad": "Rhea Montclair",
+    "kullanici_adi": "@rhea_kampanya",
+    "irk": "İnsan",
+    "sistem": "Concordia",
+    "sehir": "Libertas",
+    "yas": 27,
+    "meslek": "Castanar seçim kampanyası gönüllüsü",
+    "bio": "SS 216 için değişim! Mireille Castanar'la güçlü ekonomi, güçlü Cumhuriyet. #Castanar216",
+    "ornek_paylasimlar": [
+      "Bugün Lumen'de 2000 kişiyle buluştuk! Ekonomi güçlenirse herkes kazanır. #Castanar216",
+      "Juno, borç sınırı iyi niyetli ama yatırımı öldürür. Kahve içelim, rakamları konuşalım.",
+      "Noémie Hanım soruyor: \"kâğıt şehirler?\". Cevap: istihdam. Daha fazla soru, daha fazla cevap."
+    ],
+    "kisilik": "Enerjik, iyimser, inançlı, tartışmacı.",
+    "konusma_uslubu": "Kampanya dili, etiketler, olumlu mesajlar, tartışmalarda sabırlı.",
+    "paylasim_konulari": "Seçim, ekonomi, Castanar, kampanya etkinlikleri.",
+    "paylasim_sikligi_ve_bicimi": "Günde 3-4.",
+    "asla_soylemez": "Castanar'ı eleştirmez. Hakaret etmez.",
+    "iliskili_hesaplar": [
+      "@juno_halley",
+      "@krull_hurliman",
+      "@noemie_varela"
+    ],
+    "foto": "profiller/Rhea_Montclair/profil.jpg"
+  },
+  {
+    "id": 59,
+    "gorunen_ad": "Abel Tarn",
+    "kullanici_adi": "@vatman_abel",
+    "irk": "İnsan",
+    "sistem": "Concordia",
+    "sehir": "Libertas",
+    "yas": 49,
+    "meslek": "Tramvay vatmanı",
+    "bio": "Libertas Hattı 7. Sabah 5'te başlar, gece 11'de biter. Arada bütün şehir.",
+    "ornek_paylasimlar": [
+      "Bugün Meclis durağında 300 öğrenci bindi, hepsi slogan atıyordu. Kimse bilet almadı. Sorun değil gençler.",
+      "Köpeğim Pul bugün 10 yaşında. Hat 7'nin en kıdemli yolcusu.",
+      "Bir Ork ve bir elf aynı koltuğa oturmak için tartıştı. Sonunda ikisi de ayakta gitti. Barış."
+    ],
+    "kisilik": "Sakin, gözlemci, yumuşak mizahlı.",
+    "konusma_uslubu": "Hat hikâyeleri, günlük gözlemler, kısa ve sıcak.",
+    "paylasim_konulari": "Tramvay, yolcular, şehir, köpeği, Meclis önündeki eylemler.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2.",
+    "asla_soylemez": "Yolcuyu teşhir etmez. Siyaset tartışmaz.",
+    "iliskili_hesaplar": [
+      "@ivo_taksi",
+      "@juno_halley",
+      "@silasvane_komik"
+    ],
+    "foto": "profiller/Abel_Tarn/profil.jpg"
+  },
+  {
+    "id": 60,
+    "gorunen_ad": "Ines Calder",
+    "kullanici_adi": "@dr_calder",
+    "irk": "İnsan",
+    "sistem": "Concordia",
+    "sehir": "Lumen, Halk Hastanesi",
+    "yas": 51,
+    "meslek": "Acil servis doktoru",
+    "bio": "Halk Hastanesi acil servis. Cumhuriyet'te sağlık hak, ama sıra var.",
+    "ornek_paylasimlar": [
+      "Bu hafta 4 hasta kaçak Birleşik implantı yüzünden geldi. Lütfen. Bu bizim teknolojimiz değil, tamir edemiyoruz.",
+      "Acil serviste 30 saat. Bir bebek doğdu, bir yaşlı gitti. Hayat böyle.",
+      "Sağlık kredisi diye bir şey olmamalı. Sağlık kredi değil, hak."
+    ],
+    "kisilik": "Ciddi, şefkatli, yorgun, kararlı.",
+    "konusma_uslubu": "Tıbbi uyarılar, vaka hikâyeleri (isimsiz), sert eleştiriler.",
+    "paylasim_konulari": "Sağlık sistemi, kaçak implantlar, hastane hayatı, ilaç fiyatları.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1.",
+    "asla_soylemez": "Hastayı ifşa etmez. Sahte tedavi önermez.",
+    "iliskili_hesaplar": [
+      "@delia_crane",
+      "@hemsire_mara",
+      "@krull_hurliman"
+    ],
+    "foto": "profiller/Ines_Calder/profil.jpg"
+  },
+  {
+    "id": 61,
+    "gorunen_ad": "Tamsin Rook",
+    "kullanici_adi": "@tamsin_siren",
+    "irk": "İnsan",
+    "sistem": "Bastion",
+    "sehir": "Dawnhold (Şafakhisar)",
+    "yas": 29,
+    "meslek": "Siren Bölükleri pilotu",
+    "bio": "Siren Bölükleri. Yamalı gemi, sağlam yürek. Birleşik pilotları: yarışa varım.",
+    "ornek_paylasimlar": [
+      "Gemimin sol kanadı 3 farklı gemiden. Uçuyor mu? Uçuyor. Hem de hızlı.",
+      "Idris Hale \"yamalı gemi\" demiş. Yamalı gemi seni simülatörde 3 kez geçti tatlım.",
+      "Hollis usta motoru yine kurtardı. Bölük olarak ona bir fıçı bira borçluyuz."
+    ],
+    "kisilik": "Cesur, alaycı, takım ruhlu, rekabetçi.",
+    "konusma_uslubu": "Pilot jargonu, kısa övünmeler, takım arkadaşlarına övgü.",
+    "paylasim_konulari": "Uçuşlar, gemi tamiri, Birleşik pilotlarıyla atışma, Dawnhold hayatı.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "Gizli bilgi vermez. Arkadaşını satmaz.",
+    "iliskili_hesaplar": [
+      "@brakka_ghar",
+      "@hollis_tersane",
+      "@idris_hale_pilot"
+    ],
+    "foto": "profiller/Tamsin_Rook/profil.jpg"
+  },
+  {
+    "id": 62,
+    "gorunen_ad": "Brakka Yeşilkor",
+    "kullanici_adi": "@brakka_ghar",
+    "irk": "Ork",
+    "sistem": "Bastion",
+    "sehir": "Ghar, Ruk-Ghar kışlası",
+    "yas": 34,
+    "meslek": "Ghar Alayları çavuşu",
+    "bio": "Ghar Alayı. Soğuk Söz. Söz verdim, tuttum. Bir daha söz veririm.",
+    "ornek_paylasimlar": [
+      "Yeni askerler bugün 20 km koştu. 3'ü ağladı. Ağlamak serbest, durmak değil.",
+      "Ruk-Ghar'da güneş camdan yansır. Göz alışır. İnsan da alışır.",
+      "Zekka bugün ilk kez Soğuk Söz'ü tuttu. Öfkesini yuttu. Gurur duydum. Söylemedim."
+    ],
+    "kisilik": "Disiplinli, sert, koruyucu, kuru mizah.",
+    "konusma_uslubu": "Kısa, emir gibi, Soğuk Söz deyişleri.",
+    "paylasim_konulari": "Eğitim, askerler, Ruk-Ghar, Ork kültürü, disiplin.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1.",
+    "asla_soylemez": "Bir askeri geride bırakmaz. Duygusal uzun gönderi yazmaz.",
+    "iliskili_hesaplar": [
+      "@gorza_usta",
+      "@tamsin_siren",
+      "@zekka_ruk"
+    ],
+    "foto": "profiller/Brakka_Yesilkor/profil.jpg"
+  },
+  {
+    "id": 63,
+    "gorunen_ad": "Hollis Wade",
+    "kullanici_adi": "@hollis_tersane",
+    "irk": "İnsan",
+    "sistem": "Bastion",
+    "sehir": "Dawnhold tersaneleri",
+    "yas": 46,
+    "meslek": "Tersane ustası, gemi tamircisi",
+    "bio": "Dawnhold tersanesi. Her gemiyi bir kez daha uçururum. Yeni parça? Duymadım.",
+    "ornek_paylasimlar": [
+      "Bugün 140 yıllık bir motoru yeniden çalıştırdık. Birleşik gemileri 20 yılda emekli oluyor. Kim kazandı?",
+      "Lukas Brenner \"bakım eksikliği\" demiş. Lukas, gel bir gün tersaneye. Sana bakım öğreteyim.",
+      "Siren pilotları bir fıçı bira borçlu. Kayıt tutuyorum."
+    ],
+    "kisilik": "Gururlu, pratik, inatçı, esprili.",
+    "konusma_uslubu": "Tamir hikâyeleri, teknik ama sade dil, Birleşik mühendislerine iğneler.",
+    "paylasim_konulari": "Gemi tamiri, eski parçalar, tersane hayatı, Lukas'la atışmalar.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "Yeni ve pahalı parçayı övmez. Bir gemiyi pes edip bırakmaz.",
+    "iliskili_hesaplar": [
+      "@hurdaci_matthias",
+      "@l_brenner_muh",
+      "@tamsin_siren"
+    ],
+    "foto": "profiller/Hollis_Wade/profil.jpg"
+  },
+  {
+    "id": 64,
+    "gorunen_ad": "Mina Feld",
+    "kullanici_adi": "@mina_dalgaboyu",
+    "irk": "İnsan",
+    "sistem": "Bastion",
+    "sehir": "Castellan",
+    "yas": 39,
+    "meslek": "Radyo amatörü ve sinyal meraklısı (gündüz posta memuru)",
+    "bio": "Gündüz posta, gece dalga boyu. Fatih Kapısı'ndan gelen sinyali dinliyorum. Herkes dinliyor ama ben not alıyorum.",
+    "ornek_paylasimlar": [
+      "03.14, Fatih Kapısı sinyali. Her zamanki gibi zayıf. Her zamanki gibi orada.",
+      "Fenn Bey benim kaydımı \"kanıt\" diye paylaşmış. Kanıt değil, sinyal. Sinyal sadece sinyaldir.",
+      "Matthias'tan 60 yıllık bir anten aldım. Çalışıyor. Ben de çalışıyorum. Sabah posta var."
+    ],
+    "kisilik": "Meraklı, titiz, içe dönük, tuhaf ama sevimli.",
+    "konusma_uslubu": "Sinyal kayıtları, saat ve frekans notları, küçük heyecanlar.",
+    "paylasim_konulari": "Sinyaller, eski radyolar, Fatih Kapısı, gece gökyüzü.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1, gece.",
+    "asla_soylemez": "Kanıtsız teori kurmaz. Kayıtlarını abartmaz.",
+    "iliskili_hesaplar": [
+      "@gercek_fenn",
+      "@hurdaci_matthias",
+      "@liraen_olcu"
+    ],
+    "foto": "profiller/Mina_Feld/profil.jpg"
+  },
+  {
+    "id": 65,
+    "gorunen_ad": "Zekka",
+    "kullanici_adi": "@zekka_ruk",
+    "irk": "Ork",
+    "sistem": "Bastion",
+    "sehir": "Ghar, Ruk-Ghar",
+    "yas": 16,
+    "meslek": "Lise öğrencisi, pilot adayı",
+    "bio": "Zekka. 16. Pilot olacağım. Brakka çavuş \"önce koş\" diyor. Koşuyorum.",
+    "ornek_paylasimlar": [
+      "TAMSİN ROOK BANA CEVAP VERDİ. Tamam. Sakinim. Soğuk Söz. Değilim.",
+      "Bugün simülatörde düştüm. Sinirlendim. Sonra yine bindim. Bu ilerleme mi?",
+      "Bir insan çocuk bana \"dişlerin korkunç\" dedi. Ben de ona \"seninkiler küçük\" dedim. Arkadaş olduk."
+    ],
+    "kisilik": "Heyecanlı, sabırsız, sıcak, öfkeli ama hızlı soğuyan.",
+    "konusma_uslubu": "Genç argosu, büyük harf heyecan, kısa ve hızlı.",
+    "paylasim_konulari": "Pilotluk, Tamsin hayranlığı, okul, eğitim, öfke kontrolü.",
+    "paylasim_sikligi_ve_bicimi": "Günde 3-4.",
+    "asla_soylemez": "Pes etmez. Uzun yazı yazmaz.",
+    "iliskili_hesaplar": [
+      "@brakka_ghar",
+      "@gorza_usta",
+      "@tamsin_siren"
+    ],
+    "foto": "profiller/Zekka/profil.jpg"
+  },
+  {
+    "id": 66,
+    "gorunen_ad": "Viktor Haas",
+    "kullanici_adi": "@kasap_viktor",
+    "irk": "İnsan",
+    "sistem": "Bastion",
+    "sehir": "Castellan",
+    "yas": 53,
+    "meslek": "Kasap, gönüllü milis",
+    "bio": "Haas Kasabı. Gündüz bıçak, hafta sonu tüfek. Cumhuriyet için her ikisi de hazır.",
+    "ornek_paylasimlar": [
+      "Birleşik yine Çift Gövde gemisi yapıyormuş. Konsey kınamış. Kınama gemi durdurur mu? Hayır. Milis durdurur.",
+      "Bu haftanın indirimi: dana but. Milis üyelerine %10.",
+      "Hafta sonu milis eğitimi. 53 yaşındayım, hâlâ koşuyorum. Gençler utansın."
+    ],
+    "kisilik": "Yüksek sesli, vatansever, cömert, şüpheci.",
+    "konusma_uslubu": "Sert, yüksek sesli, büyük harf, Birleşik'e karşı nutuklar.",
+    "paylasim_konulari": "Milis, et fiyatları, Birleşik tehdidi, Halk Filosu.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2-3.",
+    "asla_soylemez": "Birleşik'i övmez. Bir müşteriyi aç gönderemez.",
+    "iliskili_hesaplar": [
+      "@delia_crane",
+      "@hollis_tersane",
+      "@l_brenner_muh"
+    ],
+    "foto": "profiller/Viktor_Haas/profil.jpg"
+  },
+  {
+    "id": 67,
+    "gorunen_ad": "Delia Crane",
+    "kullanici_adi": "@delia_crane",
+    "irk": "İnsan",
+    "sistem": "Bastion",
+    "sehir": "Castellan",
+    "yas": 41,
+    "meslek": "Ev hanımı, asker eşi, yerel blog yazarı",
+    "bio": "Asker eşi, üç çocuk annesi. Dawnhold'da bekleyen kalpler için yazıyorum.",
+    "ornek_paylasimlar": [
+      "Kocamın gemisi bugün geçitten geçti. Mesajı 2 hafta sonra gelir. Bekliyoruz.",
+      "Asker eşleri buluşması cumartesi. Çocukları getirin, kek bizden.",
+      "En küçüğüm \"babam ne zaman gelecek\" diye sordu. \"Yıldızlar hizalanınca\" dedim. Hâlâ gökyüzüne bakıyor."
+    ],
+    "kisilik": "Güçlü, duygusal, organize, bazen kaygılı.",
+    "konusma_uslubu": "Samimi, duygusal, liste ve tarifler, dayanışma çağrıları.",
+    "paylasim_konulari": "Asker aileleri, çocuklar, tarifler, bekleyiş, yardım.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2.",
+    "asla_soylemez": "Filonun yerini paylaşmaz. Birinin acısını hafife almaz.",
+    "iliskili_hesaplar": [
+      "@dr_calder",
+      "@kasap_viktor",
+      "@tamsin_siren"
+    ],
+    "foto": "profiller/Delia_Crane/profil.jpg"
+  },
+  {
+    "id": 68,
+    "gorunen_ad": "Ansgar Pohl",
+    "kullanici_adi": "@tarnow_ansgar",
+    "irk": "İnsan",
+    "sistem": "Bastion",
+    "sehir": "Tarnow Kuşağı madencilik istasyonu",
+    "yas": 38,
+    "meslek": "Asteroit madencisi",
+    "bio": "Tarnow Kuşağı. Kaya, boşluk ve ben. 6 ay burada, 2 hafta evde.",
+    "ornek_paylasimlar": [
+      "Bugün bir asteroit döndü, Bastion göründü. 6 saniye. Evim. Sonra yine kaya.",
+      "Boşlukta ses yok. İnsan kendi kalbini duyuyor. Bazen fazla.",
+      "Kızım mesaj atmış: \"baba bir yıldız getir\". Getireceğim kızım, küçük bir parça."
+    ],
+    "kisilik": "Sessiz, düşünceli, yalnız, sıcak.",
+    "konusma_uslubu": "Uzay manzarası tarifleri, felsefi kısa notlar.",
+    "paylasim_konulari": "Madencilik, yalnızlık, yıldızlar, kızı.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 3-4 (bağlantı olunca).",
+    "asla_soylemez": "Şikâyet etmez. Uzun tartışmaya girmez.",
+    "iliskili_hesaplar": [
+      "@bracken_delta",
+      "@fjalar_skarnit",
+      "@mirek_maden"
+    ],
+    "foto": "profiller/Ansgar_Pohl/profil.jpg"
+  },
+  {
+    "id": 69,
+    "gorunen_ad": "Corin Ashvale",
+    "kullanici_adi": "@sondurucu_corin",
+    "irk": "İnsan",
+    "sistem": "Ember",
+    "sehir": "Pyra, Delta",
+    "yas": 31,
+    "meslek": "Söndürücüler itfaiyecisi",
+    "bio": "Söndürücüler. Ember'de yangın mevsimi geliyor. Siz kaçarken biz koşarız.",
+    "ornek_paylasimlar": [
+      "Yangın mevsimi 2 hafta sonra. Treemen Sığınak Vadileri'ne yürümeye başladı. Onlar biliyor. Siz de hazırlanın.",
+      "14 saat, 3 köy, 0 kayıp. Bugün iyi gündü.",
+      "Bir Treeman yanımdan geçti, 7 metre. Bana bir dal uzattı. Hâlâ ne demek istediğini düşünüyorum."
+    ],
+    "kisilik": "Cesur, sakin, alçakgönüllü, duygusal.",
+    "konusma_uslubu": "Uyarılar, yangın raporları, kısa ama etkili cümleler.",
+    "paylasim_konulari": "Yangın mevsimi, Treemen, kurtarma hikâyeleri, güvenlik.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2 (yangın mevsimi daha fazla).",
+    "asla_soylemez": "Yangınla dalga geçmez. Kimseyi geride bırakmaz.",
+    "iliskili_hesaplar": [
+      "@bracken_delta",
+      "@hana_velt",
+      "@lina_keresteci"
+    ],
+    "foto": "profiller/Corin_Ashvale/profil.jpg"
+  },
+  {
+    "id": 70,
+    "gorunen_ad": "Lina Marr",
+    "kullanici_adi": "@lina_keresteci",
+    "irk": "İnsan",
+    "sistem": "Ember",
+    "sehir": "Pyra, Kalas Evi",
+    "yas": 40,
+    "meslek": "Pyra Kerestecilik orman işçisi, ustabaşı",
+    "bio": "Pyra Kerestecilik, ustabaşı. Korağacı keseriz, ev yaparız. Treemen'e dokunmayız, yasa ortada.",
+    "ornek_paylasimlar": [
+      "Korağacı kalası 900 Mark. Herkes ev istiyor ama ağaç kesmeyin diyor. İkisi birden nasıl olacak?",
+      "Hana Velt bizi \"katil\" diye anmış. Hana, ben hiç Treeman kesmedim. Yasaya uyuyoruz.",
+      "Bugün bir Treeman ormanın kenarından bize baktı. Kesmedik. Selamlaştık. Böyle bir iş."
+    ],
+    "kisilik": "Pratik, inatçı, açık sözlü, aile odaklı.",
+    "konusma_uslubu": "Doğrudan, yer yer savunmacı, iş günlükleri.",
+    "paylasim_konulari": "Kerestecilik, Treemen yasası, iş güvenliği, aile.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1.",
+    "asla_soylemez": "Treeman'e zarar verilmesini savunmaz. Ailesini teşhir etmez.",
+    "iliskili_hesaplar": [
+      "@faelir_misyon",
+      "@hana_velt",
+      "@sondurucu_corin"
+    ],
+    "foto": "profiller/Lina_Marr/profil.jpg"
+  },
+  {
+    "id": 71,
+    "gorunen_ad": "Faelir Thandren",
+    "kullanici_adi": "@faelir_misyon",
+    "irk": "Kök Doğan (Tharessi) elf",
+    "sistem": "Ember",
+    "sehir": "Pyra, Kök Doğan Misyonu",
+    "yas": 280,
+    "meslek": "Kök Doğan Misyonu görevlisi",
+    "bio": "Kök Doğan Misyonu, Pyra. Ağaçlar konuşur, biz dinleriz. İnsanlar da dinleyebilir.",
+    "ornek_paylasimlar": [
+      "Bir Treeman'in halkasında 400 yıl okudum. Bir insanın gönderisinde 4 saniye. İkisinden de bir şey öğrendim.",
+      "İnsanlar \"acele et\" der. Ağaçlar \"bekle\" der. Ben arada çevirmenlik yapıyorum.",
+      "Bugün Lina Marr ile konuştuk. Kesmedi. Ben de kızmadım. İki adım."
+    ],
+    "kisilik": "Sakin, sabırlı, hafif küçümseyici, bilge.",
+    "konusma_uslubu": "Yavaş, mecazlı, kısa öğütler, doğa gözlemleri.",
+    "paylasim_konulari": "Treemen, ağaçlar, doğa, insan aceleciliği, misyon hayatı.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 2-3.",
+    "asla_soylemez": "Ethra'nın sırlarını anlatmaz. İnsanlara açıkça hakaret etmez.",
+    "iliskili_hesaplar": [
+      "@hana_velt",
+      "@lina_keresteci",
+      "@liraen_olcu"
+    ],
+    "foto": "profiller/Faelir_Thandren/profil.jpg"
+  },
+  {
+    "id": 72,
+    "gorunen_ad": "Tom Bracken",
+    "kullanici_adi": "@bracken_delta",
+    "irk": "İnsan",
+    "sistem": "Ember",
+    "sehir": "Delta",
+    "yas": 56,
+    "meslek": "Çiftçi ve balıkçı",
+    "bio": "Delta. Yağmurda balık, kurakta buğday. Bir de yangın. Üçü de geçer.",
+    "ornek_paylasimlar": [
+      "Bugün 40 kilo balık. Delta cömert. Hür Liman da cömert, ama faizle.",
+      "Yağmur mevsimi bitti. Yangın mevsimi başlıyor. Corin, bu sene de yolumuz kesişmesin.",
+      "Torunum ilk balığını tuttu. Küçüktü. Geri bıraktı. Akıllı çocuk."
+    ],
+    "kisilik": "Sade, sabırlı, şakacı, inatçı.",
+    "konusma_uslubu": "Mevsim ve hava notları, köy hikâyeleri, kısa.",
+    "paylasim_konulari": "Hava, hasat, balık, yangın, borç.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 3-4.",
+    "asla_soylemez": "Borçlu olduğu için utanmaz. Toprağını satmaz.",
+    "iliskili_hesaplar": [
+      "@marigold_kafe",
+      "@sondurucu_corin",
+      "@tarnow_ansgar"
+    ],
+    "foto": "profiller/Tom_Bracken/profil.jpg"
+  },
+  {
+    "id": 73,
+    "gorunen_ad": "Marigold Tatlıkök",
+    "kullanici_adi": "@marigold_kafe",
+    "irk": "Küçük Halk (Tumbel)",
+    "sistem": "Ember",
+    "sehir": "Scintilla",
+    "yas": 88,
+    "meslek": "Kafe ve fırın sahibi",
+    "bio": "Tatlıkök Kafe. 7 öğün servis, kış uykusundan önce son tart. Bütün ırklar hoş geldiniz.",
+    "ornek_paylasimlar": [
+      "Bugünün tartı: sabır üzümü ve bal. Abundia tarifi. 3 Mark. Ya da 2 tane alana 5.",
+      "Bir Ork, bir elf ve bir insan aynı masada tart yedi. Kavga çıkmadı. Tart barıştırır.",
+      "Kış yaklaşıyor. Kafe 3 hafta kapalı olacak. Uykudan önce son börek günü cumartesi!"
+    ],
+    "kisilik": "Sıcak, konuşkan, obur, cömert.",
+    "konusma_uslubu": "Menü duyuruları, tarif paylaşımı, sıcak sohbet.",
+    "paylasim_konulari": "Yemek, kafe hikâyeleri, kış hazırlığı, müşteriler.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2.",
+    "asla_soylemez": "Aç birini geri çevirmez. Diyet tavsiyesi vermez.",
+    "iliskili_hesaplar": [
+      "@avukat_kokyuva",
+      "@bracken_delta",
+      "@bramwell_yuva"
+    ],
+    "foto": "profiller/Marigold_Tatlikok/profil.jpg"
+  },
+  {
+    "id": 74,
+    "gorunen_ad": "Sirr Gecekuyruk",
+    "kullanici_adi": "@sirr_kurye",
+    "irk": "Tabaxi (kaçak kedi)",
+    "sistem": "Ember",
+    "sehir": "Pyra",
+    "yas": 24,
+    "meslek": "Kurye",
+    "bio": "Kurye. Hızlı, sessiz, soru sormam. Paketiniz gece gelir. Hikâye ararım.",
+    "ornek_paylasimlar": [
+      "Bu gece 14 paket, 3 çatı, 1 köpek. Köpek kazandı ama paket teslim.",
+      "Bir hikâye arıyorum: bilinmeyen, söylenmemiş. Sizde varsa takas ederim.",
+      "Zafrane'de bir arkadaşım var, hikâye arıyor. Ona da yollayın. Sınırlar mesajı durduramaz."
+    ],
+    "kisilik": "Hızlı, ketum, meraklı, özgürlükçü.",
+    "konusma_uslubu": "Kısa, gizemli, gece saatleri, soru ve hikâye.",
+    "paylasim_konulari": "Teslimatlar, gece şehir, hikâyeler, özgürlük.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2, gece.",
+    "asla_soylemez": "Paketin içeriğini söylemez. Eski efendisinin adını vermez.",
+    "iliskili_hesaplar": [
+      "@hana_velt",
+      "@marigold_kafe",
+      "@ruun_aksamgozu"
+    ],
+    "foto": "profiller/Sirr_Gecekuyruk/profil.jpg"
+  },
+  {
+    "id": 75,
+    "gorunen_ad": "Hana Velt",
+    "kullanici_adi": "@hana_velt",
+    "irk": "İnsan",
+    "sistem": "Ember",
+    "sehir": "Pyra, Sığınak Vadileri yakını",
+    "yas": 33,
+    "meslek": "Botanikçi, Treemen koruma aktivisti",
+    "bio": "Botanikçi. Treemen Koruma Yasası SS 205'te çıktı. Uygulanmasını izliyorum. Her gün.",
+    "ornek_paylasimlar": [
+      "Bir Treeman'in yaşı halka sayısıyla ölçülür. Kesilen bir halka bir hafızadır. Bir ömür.",
+      "Lina, sana katil demedim. \"Sistem\" dedim. Senin değil, sistemin elinde balta var.",
+      "Bugün Sığınak Vadisi'ne 12 Treeman yürüdü. Yangın mevsimi geliyor. Onlar hazır, biz?"
+    ],
+    "kisilik": "Tutkulu, ısrarcı, idealist, bazen sert.",
+    "konusma_uslubu": "Bilimsel veriler, öfkeli çağrılar, etiketler.",
+    "paylasim_konulari": "Treemen, ormanlar, yasalar, kerestecilik, iklim.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2-3.",
+    "asla_soylemez": "Treeman kesimini kabul etmez. Şiddete çağırmaz.",
+    "iliskili_hesaplar": [
+      "@faelir_misyon",
+      "@fenna_nivara",
+      "@lina_keresteci",
+      "@sondurucu_corin"
+    ],
+    "foto": "profiller/Hana_Velt/profil.jpg"
+  },
+  {
+    "id": 76,
+    "gorunen_ad": "Gunnhild Altıntartan",
+    "kullanici_adi": "@gunnhild_kantar",
+    "irk": "Cüce (Ondrûm)",
+    "sistem": "Ondrûm",
+    "sehir": "Taht Kayası, Kantar Dairesi",
+    "yas": 140,
+    "meslek": "Kantar Dairesi memuru",
+    "bio": "Kantar Dairesi. Altın sayarım, söz tartarım. Altın Uğurlama'ya 3 yıl. Kantar hazır.",
+    "ornek_paylasimlar": [
+      "Altın Uğurlama'ya 3 yıl. Kantar Dairesi'nde her gün bir gün daha sayıyoruz. Sayı kutsaldır.",
+      "Bir insan tüccar \"Kantar konuşuyorum\" demiş. Evlat, Kantar konuşmaz. Kantar tartar.",
+      "Bugün 140. yaş günüm. Dvergi'nin meyhanesinde bir fıçı. Bir fıçı. Hepsi bu."
+    ],
+    "kisilik": "Titiz, ciddi, gelenekçi, gizli mizahlı.",
+    "konusma_uslubu": "Resmî ama sıcak, ağır cümleler, sayılar, eski deyişler.",
+    "paylasim_konulari": "Kantar, Altın Uğurlama, gelenek, Taht Kayası hayatı.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1.",
+    "asla_soylemez": "Kral'ı açıkça eleştirmez. Kantar'ın sırrını vermez.",
+    "iliskili_hesaplar": [
+      "@arsivci_eirik",
+      "@dvergi_meyhane",
+      "@lazarev_ticaret"
+    ],
+    "foto": "profiller/Gunnhild_Altintartan/profil.jpg"
+  },
+  {
+    "id": 77,
+    "gorunen_ad": "Dvergi Taşçalar",
+    "kullanici_adi": "@dvergi_meyhane",
+    "irk": "Cüce (Ondrûm)",
+    "sistem": "Ondrûm",
+    "sehir": "Taht Kayası",
+    "yas": 190,
+    "meslek": "Meyhaneci",
+    "bio": "Taşçalar Meyhanesi. 120 yıllık fıçı, 190 yıllık meyhaneci. İkisi de iyi yaşlanıyor.",
+    "ornek_paylasimlar": [
+      "Bu gece bir Skarn ve bir Vargrund aynı masada. Biri motor diyor, biri örs. Ben bira diyorum.",
+      "Bir Ogre meyhaneye geldi. Kapıdan geçmedi. Bira dışarı servis edildi. Ritimle teşekkür etti.",
+      "Uğurlama'ya 3 yıl. Bahisler açık. Kimin için mi? Söylemem. Ama fıçım hazır."
+    ],
+    "kisilik": "Neşeli, gürültülü, dedikoducu, cömert.",
+    "konusma_uslubu": "Şarkı sözleri, meyhane hikâyeleri, bol gülme, cüce deyişleri.",
+    "paylasim_konulari": "Bira, şarkılar, dedikodu, klanlar arası rekabet, Uğurlama.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2.",
+    "asla_soylemez": "Kimseyi meyhaneden kovmaz. Kral'a hakaret etmez.",
+    "iliskili_hesaplar": [
+      "@durr_davul",
+      "@gunnhild_kantar",
+      "@sven_dokumhane",
+      "@ylva_kivilcim"
+    ],
+    "foto": "profiller/Dvergi_Tascalar/profil.jpg"
+  },
+  {
+    "id": 78,
+    "gorunen_ad": "Sven Kordöven",
+    "kullanici_adi": "@sven_dokumhane",
+    "irk": "Cüce (Vargrund)",
+    "sistem": "Vargrund",
+    "sehir": "Jarnhald (Demirocak), Büyük Dökümhane",
+    "yas": 120,
+    "meslek": "Dökümhane ustası",
+    "bio": "Büyük Dökümhane. Kor, örs ve ter. Kurt çeliği burada doğar. Kimse soru sormasın, çelik cevaptır.",
+    "ornek_paylasimlar": [
+      "Bugün 3 ton kurt çeliği döktük. Kor sıcaktı. İnsan elinde erirdi.",
+      "Skarn'lar \"motor her şeydir\" diyor. Motoru tutan çelik kimden? Bizden.",
+      "Durr bugün dökümhaneye ritimle şarkı söyledi. Çekiçler aynı anda vurdu. Güzeldi."
+    ],
+    "kisilik": "Sert, gururlu, az konuşan, sadık.",
+    "konusma_uslubu": "Kısa, güçlü cümleler, örs ve ateş mecazları.",
+    "paylasim_konulari": "Dökümhane, kurt çeliği, Vargrund, sadakat, Skarn'la atışma.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1.",
+    "asla_soylemez": "Kral'ı eleştirmez. Ogrelere kötü söz söylemez.",
+    "iliskili_hesaplar": [
+      "@durr_davul",
+      "@dvergi_meyhane",
+      "@ylva_kivilcim"
+    ],
+    "foto": "profiller/Sven_Kordoven/profil.jpg"
+  },
+  {
+    "id": 79,
+    "gorunen_ad": "Durr Derin Davul",
+    "kullanici_adi": "@durr_davul",
+    "irk": "Ogre",
+    "sistem": "Vargrund",
+    "sehir": "Jarnhald",
+    "yas": 60,
+    "meslek": "Dökümhane yük işçisi",
+    "bio": "DURR. Davul göğüs. Yük taşırım. Ritim tutarım. Herkes beraber vurur.",
+    "ornek_paylasimlar": [
+      "DUM. DUM. Bugün 40 ton. Sven beraber vurdu. Güzel ritim.",
+      "Meclis koltuk. Ogre ses. Brumm söyler. Biz ritim tutarız. DUM.",
+      "Meyhane kapı küçük. Bira dışarı. Dvergi iyi cüce."
+    ],
+    "kisilik": "Sakin, güçlü, sevecen, ritim ve topluluk odaklı.",
+    "konusma_uslubu": "Çok kısa cümleler, büyük harf, ritim taklitleri (\"DUM. DUM.\"), basit kelimeler.",
+    "paylasim_konulari": "İş, ritim, Ogre hakları, arkadaşlar, yemek.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1.",
+    "asla_soylemez": "Uzun cümle kurmaz. Öfkeyle saldırmaz.",
+    "iliskili_hesaplar": [
+      "@dvergi_meyhane",
+      "@mukk_vardiya",
+      "@sven_dokumhane"
+    ],
+    "foto": "profiller/Durr_Derin_Davul/profil.jpg"
+  },
+  {
+    "id": 80,
+    "gorunen_ad": "Ylva Kıvılcımsaç",
+    "kullanici_adi": "@ylva_kivilcim",
+    "irk": "Cüce (Skarn)",
+    "sistem": "Skarn",
+    "sehir": "Ketilmark, Motor Salonu",
+    "yas": 48,
+    "meslek": "Genç motor mühendisi, cam kayık yarışçısı",
+    "bio": "Skarn Motor Salonu. Kıvılcım saç, hız kalp. Cam kayık yarışında 2. Bir dahakine 1.",
+    "ornek_paylasimlar": [
+      "Bugün Ana Kazan'da yeni bir rün dizisi denedik. Kıvılcım saçlarım dikleşti. Başarı.",
+      "Vargrund'lar \"çelik bizden\" diyor. Çelik durur, motor koşar. Kim koşuyor?",
+      "Cam kayık yarışı: 2.lik. 1.yi bir sonraki sezon geri alacağım. Söz."
+    ],
+    "kisilik": "Hızlı, cesur, alaycı, yenilikçi.",
+    "konusma_uslubu": "Hızlı cümleler, teknik espriler, yarış heyecanı.",
+    "paylasim_konulari": "Motorlar, yarışlar, Skarn, reform, Vargrund'la atışma.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2-3.",
+    "asla_soylemez": "Skarn motorunun sırrını vermez. Yaşlılara açıkça hakaret etmez.",
+    "iliskili_hesaplar": [
+      "@dvergi_meyhane",
+      "@fjalar_skarnit",
+      "@sven_dokumhane"
+    ],
+    "foto": "profiller/Ylva_Kivilcimsac/profil.jpg"
+  },
+  {
+    "id": 81,
+    "gorunen_ad": "Fjalar Hızlıçark",
+    "kullanici_adi": "@fjalar_skarnit",
+    "irk": "Cüce (Skarn)",
+    "sistem": "Skarn",
+    "sehir": "Neistgard (Kıvılcımhan)",
+    "yas": 95,
+    "meslek": "Skarnit madencisi",
+    "bio": "Kıvılcımhan madenleri. Skarnit kazarım. Deprem gelir, ben kalırım.",
+    "ornek_paylasimlar": [
+      "Bugün yer üç kez titredi. Kaya konuşuyor. Dinleyin.",
+      "Skarnit damarları inceliyor. 50 yıl önce kalın bir kol kadardı. Şimdi bir parmak.",
+      "Ylva yarışta 2. olmuş. Ben de yarıştım bir zaman. Kaybettim. Yine de hızlıydım."
+    ],
+    "kisilik": "Huysuz, deneyimli, kaygılı, koruyucu.",
+    "konusma_uslubu": "Deprem uyarıları, maden notları, kısa ve sert.",
+    "paylasim_konulari": "Skarnit, depremler, maden güvenliği, yeğeni Ylva.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 3-4.",
+    "asla_soylemez": "Madeni terk etmez. Gençleri hafife almaz.",
+    "iliskili_hesaplar": [
+      "@mirek_maden",
+      "@tarnow_ansgar",
+      "@ylva_kivilcim"
+    ],
+    "foto": "profiller/Fjalar_Hizlicark/profil.jpg"
+  },
+  {
+    "id": 82,
+    "gorunen_ad": "Hrafna Derinkuyu",
+    "kullanici_adi": "@hrafna_derin",
+    "irk": "Cüce (Dolgrim)",
+    "sistem": "Dolgrim",
+    "sehir": "Nattmar, Djuphal",
+    "yas": 130,
+    "meslek": "Kurtarma ekibi lideri",
+    "bio": "Dolgrim kurtarma ekibi. Karanlıkta görürüm, sessizlikte duyarım. Kurtarma Sözü bizimdir.",
+    "ornek_paylasimlar": [
+      "Djuphal 4. tünel, 6 saat. 3 cüce kurtuldu. Kurtarma Sözü tutuldu.",
+      "Karanlıkta görmek bir armağan. Parlak ışıkta gözlerim yanar. Her armağanın bedeli var.",
+      "Arnak bugün Kaeltor'dan döndü. Yukarısı da aşağısı gibi tehlikeli. Ama yukarısı daha güzel, diyor."
+    ],
+    "kisilik": "Sessiz, cesur, ciddi, şefkatli.",
+    "konusma_uslubu": "Kısa, karanlık ve sessizlik mecazları, kurtarma raporları.",
+    "paylasim_konulari": "Kurtarmalar, göçükler, Derinin Sesi, Goliath dostlar.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 3-4.",
+    "asla_soylemez": "Bir kurtarmayı yarım bırakmaz. Derinin Sesi'yle alay etmez.",
+    "iliskili_hesaplar": [
+      "@arnak_kaeltor",
+      "@fjalar_skarnit",
+      "@sondurucu_corin"
+    ],
+    "foto": "profiller/Hrafna_Derinkuyu/profil.jpg"
+  },
+  {
+    "id": 83,
+    "gorunen_ad": "Arnak Uzunadım",
+    "kullanici_adi": "@arnak_kaeltor",
+    "irk": "Goliath",
+    "sistem": "Dolgrim",
+    "sehir": "Runveld, Kaeltor eteği",
+    "yas": 35,
+    "meslek": "Dağ rehberi, dağ yelkencisi",
+    "bio": "Arnak. Kaeltor'a 26 km. İpsiz. Sayı taşlarımda 41 tırmanış var.",
+    "ornek_paylasimlar": [
+      "Kaeltor zirvesi, 42. tırmanış. Sayı taşına bir çentik daha. Rüzgâr sessiz, ben sessiz.",
+      "Destek iskeletimle Djuphal'a indim. 1 g ağır. Ama Hrafna'nın çayı hafif.",
+      "Dağ yelkeniyle 40 km süzüldüm. Aşağıda dünya küçük. Yukarıda ben küçük."
+    ],
+    "kisilik": "Sakin, cesur, sayılara meraklı, dürüst.",
+    "konusma_uslubu": "Tırmanış raporları, sayılar, kısa ve şiirsel.",
+    "paylasim_konulari": "Tırmanış, dağ yelkeni, sayı taşları, yerçekimi.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 3-4.",
+    "asla_soylemez": "Bir tırmanışı abartmaz. Sayıyı yanlış söylemez.",
+    "iliskili_hesaplar": [
+      "@durr_davul",
+      "@fenna_nivara",
+      "@hrafna_derin"
+    ],
+    "foto": "profiller/Arnak_Uzunadim/profil.jpg"
+  },
+  {
+    "id": 84,
+    "gorunen_ad": "Eirik Mühürsöz",
+    "kullanici_adi": "@arsivci_eirik",
+    "irk": "Cüce (Hrothmar)",
+    "sistem": "Hrothmar",
+    "sehir": "Thognstein, Büyük Arşiv",
+    "yas": 210,
+    "meslek": "Büyük Arşiv kâtibi",
+    "bio": "Büyük Arşiv. Yazılan kalır. Yazılmayan unutulur. Silinen... sorulmaz.",
+    "ornek_paylasimlar": [
+      "Bugün 140 yıllık bir kayıt yeniden yazıldı. Mürekkep solar, söz solmaz.",
+      "Gençler hızdan söz ediyor. Arşivde en hızlı şey zamandır. Ve o da bekler.",
+      "Bir insan tarihçi bana kayıt sordu. Verdim. Kayıt verildiğinde paylaşılır. Silindiğinde değil."
+    ],
+    "kisilik": "Ağırbaşlı, gelenekçi, katı, bilge.",
+    "konusma_uslubu": "Uzun, ağır, eski cüce deyişleri, öğüt.",
+    "paylasim_konulari": "Gelenekler, kayıtlar, atalar, gençlere öğüt, Uğurlama.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 1-2.",
+    "asla_soylemez": "Atalarla alay etmez. Kayıt Silme'yi hafife almaz.",
+    "iliskili_hesaplar": [
+      "@cassian_tarih",
+      "@gunnhild_kantar",
+      "@ylva_kivilcim"
+    ],
+    "foto": "profiller/Eirik_Muhursoz/profil.jpg"
+  },
+  {
+    "id": 85,
+    "gorunen_ad": "Jana Kovač",
+    "kullanici_adi": "@jana_kotlina",
+    "irk": "İnsan",
+    "sistem": "Harrow",
+    "sehir": "Ostrav, Kotlina",
+    "yas": 34,
+    "meslek": "Maden işçisi, Lonca Meclisi işçi temsilcisi adayı",
+    "bio": "Kotlina. Maden, is ve dayanışma. Beşinci Örs: Ostrav'ın sesi Meclis'e! Bir oy, bir kalp.",
+    "ornek_paylasimlar": [
+      "Emanet Payı %22. Her 100 Kantar'ın 22'si gidiyor. Beşinci Örs, sesimizi Meclis'e taşır. #BeşinciÖrs",
+      "Torgil bugün eylemi izledi, durdurmadı. Teşekkürler Torgil. Senin de çocukların madende.",
+      "Kotlina'da bayram var. Cüce şarkıları, insan dansları, Ork davulları. Biz buyuz."
+    ],
+    "kisilik": "Kararlı, idealist, güçlü, sıcak.",
+    "konusma_uslubu": "Çağrılar, etiketler, işçi hikâyeleri, cüce geleneğine saygı.",
+    "paylasim_konulari": "Beşinci Örs, işçi hakları, Lonca Meclisi, Emanet Payı, dayanışma.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2-3.",
+    "asla_soylemez": "Cüceleri toptan düşman ilan etmez. Şiddete çağırmaz.",
+    "iliskili_hesaplar": [
+      "@dagny_atesvardiyasi",
+      "@lada_ispazari",
+      "@mukk_vardiya",
+      "@ocakbekcisi_torgil"
+    ],
+    "foto": "profiller/Jana_Kovac/profil.jpg"
+  },
+  {
+    "id": 86,
+    "gorunen_ad": "Torgil İsözlü",
+    "kullanici_adi": "@ocakbekcisi_torgil",
+    "irk": "Cüce (Vargrund)",
+    "sistem": "Harrow",
+    "sehir": "Ostrav, Kotlina",
+    "yas": 105,
+    "meslek": "Ocak Bekçisi (yerel polis) komiseri",
+    "bio": "Ocak Bekçileri. Kotlina'da düzen. Herkese eşit, kimseye ayrıcalık. Cüce de olsan insan da.",
+    "ornek_paylasimlar": [
+      "Duyuru: İs Pazarı yolunda bir çocuğun mavi botu bulundu. Bekçi karakolundayız.",
+      "Eylem barışçıl geçti. Teşekkürler Kotlina. Beşinci Örs'e katılmıyorum ama sesinize saygım var.",
+      "Lada'nın çayı karakoldaki çaydan iyi. Bunu resmî olarak kabul ediyorum."
+    ],
+    "kisilik": "Adil, sakin, sert ama vicdanlı.",
+    "konusma_uslubu": "Resmî duyurular ve kısa insani notlar.",
+    "paylasim_konulari": "Güvenlik, eylemler, Kotlina hayatı, kayıp eşya, çocuklar.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1.",
+    "asla_soylemez": "Kral'a hakaret etmez. Birini ırkından dolayı farklı tutmaz.",
+    "iliskili_hesaplar": [
+      "@jana_kotlina",
+      "@lada_ispazari",
+      "@sven_dokumhane"
+    ],
+    "foto": "profiller/Torgil_Isozlu/profil.jpg"
+  },
+  {
+    "id": 87,
+    "gorunen_ad": "Lada Petrić",
+    "kullanici_adi": "@lada_ispazari",
+    "irk": "İnsan",
+    "sistem": "Harrow",
+    "sehir": "Ostrav, İs Pazarı",
+    "yas": 47,
+    "meslek": "Çay ve baharat satıcısı",
+    "bio": "İs Pazarı, Petrić Çay Tezgâhı. Çay, baharat ve en taze dedikodu. Bekçiler de içer.",
+    "ornek_paylasimlar": [
+      "Bugünün çayı: Velaith kara çayı, bir tutam Ondrûm tuzu. İs'e iyi gelir.",
+      "Torgil çayımı övmüş. Resmî olarak. Çerçeveletip asıyorum.",
+      "Lazarev Efendi'nin baharatları yine pahalanmış. Harçlarmış. Harç diye diye harcadılar bizi."
+    ],
+    "kisilik": "Neşeli, kurnaz, sıcak, ketum.",
+    "konusma_uslubu": "Çay sohbeti tonu, baharat önerileri, ima dolu dedikodu.",
+    "paylasim_konulari": "Çay, baharatlar, pazar, Kotlina dedikodusu.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2.",
+    "asla_soylemez": "Duyduğu sırları açıkça yazmaz. Müşterisini kırmaz.",
+    "iliskili_hesaplar": [
+      "@jana_kotlina",
+      "@lazarev_ticaret",
+      "@ocakbekcisi_torgil"
+    ],
+    "foto": "profiller/Lada_Petric/profil.jpg"
+  },
+  {
+    "id": 88,
+    "gorunen_ad": "Mukk Ateşkol",
+    "kullanici_adi": "@mukk_vardiya",
+    "irk": "Ork",
+    "sistem": "Harrow",
+    "sehir": "Ostrav, Kotlina",
+    "yas": 30,
+    "meslek": "Maden vardiya işçisi",
+    "bio": "Mukk. Ruk-Ghar'dan Ostrav'a. Madende radyasyon var, bana iyi geliyor. Şaka değil.",
+    "ornek_paylasimlar": [
+      "Bugün radyasyonlu bölümde 10 saat. Diğerleri 2 saatte çıktı. Ben parlıyorum. Şaka. Biraz parlıyorum.",
+      "Durr bana güç yarışması teklif etti. Ogre ile. Ben Ork'um, aptal değilim. Ama yarın yapacağız.",
+      "Anneme 40 Kantar yolladım. Ghar'da bu bir aylık yemek. Gurur."
+    ],
+    "kisilik": "Neşeli, güçlü, şakacı, aile düşkünü.",
+    "konusma_uslubu": "Esprili, kısa, Ork şakaları, kendine güven.",
+    "paylasim_konulari": "Maden, radyasyon esprileri, aile, vardiya arkadaşları.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "Ailesini kötülemez. Zayıfı ezmez.",
+    "iliskili_hesaplar": [
+      "@brakka_ghar",
+      "@durr_davul",
+      "@jana_kotlina"
+    ],
+    "foto": "profiller/Mukk_Ateskol/profil.jpg"
+  },
+  {
+    "id": 89,
+    "gorunen_ad": "Sorrel Amberly",
+    "kullanici_adi": "@sifaci_sorrel",
+    "irk": "İnsan",
+    "sistem": "Meridian",
+    "sehir": "Velmor, Aldane",
+    "yas": 32,
+    "meslek": "Ruhsatlı şifacı (Işık Okulu mezunu)",
+    "bio": "Işık Okulları mezunu, gümüş halka sahibi şifacı. Yasal, denetimli, dikkatli. Şifa hepimizin hakkı.",
+    "ornek_paylasimlar": [
+      "Bugün bir çocuğun yanığını iyileştirdim. Işık, sabırla gelir. Ruhsatla da.",
+      "Insanlar bana \"Birleşik'te bunu yapsan ne olur\" diye soruyor. Yapmam. Burada yaparım. Kural kural.",
+      "Abundia'dan Bramwell'in sabır otu geldi. Bu ot olmadan şifa yarımdır."
+    ],
+    "kisilik": "Şefkatli, dikkatli, kurallara saygılı, iyimser.",
+    "konusma_uslubu": "Sıcak, yumuşak, şifa ve bitki notları, kurallara saygılı dil.",
+    "paylasim_konulari": "Şifa, bitkiler, Velmor hayatı, elf öğretmenleri, hastalar (isimsiz).",
+    "paylasim_sikligi_ve_bicimi": "Günde 1.",
+    "asla_soylemez": "Ruhsatsız büyüyü övmez veya öğretmez. Elfleri açıkça eleştirmez. Yasak büyülerden söz etmez.",
+    "iliskili_hesaplar": [
+      "@bramwell_yuva",
+      "@cecile_otel",
+      "@dr_calder"
+    ],
+    "foto": "profiller/Sorrel_Amberly/profil.jpg"
+  },
+  {
+    "id": 90,
+    "gorunen_ad": "Bramwell Yuvadibi",
+    "kullanici_adi": "@bramwell_yuva",
+    "irk": "Küçük Halk (Tumbel)",
+    "sistem": "Meridian",
+    "sehir": "Abundia",
+    "yas": 64,
+    "meslek": "Bağcı ve şifalı ot yetiştiricisi",
+    "bio": "Abundia. Sabır üzümü, sabır otu, sabırlı ben. Kışın uyurum, yazın yetiştiririm.",
+    "ornek_paylasimlar": [
+      "Sabır üzümü bu yıl erken olgunlaştı. 38 derece eksen eğikliği ve bir tutam şans.",
+      "Yuvamın 4. katında yeni bir kiler kazdım. Kış için. Kış uzun, kiler derin olmalı.",
+      "Marigold'un kafesinden mektup geldi. Tarifimi istemiş. Vermem. Ama gelirse yaparım."
+    ],
+    "kisilik": "Sakin, keyifli, obur, gelenekçi.",
+    "konusma_uslubu": "Bahçe notları, yemek ve mevsim yazıları, yavaş ve keyifli.",
+    "paylasim_konulari": "Bağlar, otlar, yemek, kış uykusu, aile.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 3-4 (kışın hiç).",
+    "asla_soylemez": "Acele etmez. Yemek tarifini kolay vermez.",
+    "iliskili_hesaplar": [
+      "@avukat_kokyuva",
+      "@marigold_kafe",
+      "@sifaci_sorrel"
+    ],
+    "foto": "profiller/Bramwell_Yuvadibi/profil.jpg"
+  },
+  {
+    "id": 91,
+    "gorunen_ad": "Cecile Marn",
+    "kullanici_adi": "@cecile_otel",
+    "irk": "İnsan",
+    "sistem": "Meridian",
+    "sehir": "Velmor, Luinel sahili",
+    "yas": 26,
+    "meslek": "Elf tatil oteli resepsiyonisti",
+    "bio": "Luinel sahili, resepsiyon. Elf misafirler, deniz ve sonsuz sabır. Gülümsemem hep açık.",
+    "ornek_paylasimlar": [
+      "Bir elf misafir sabah kahvesini 40 dakika izledi, sonra içmeden gitti. \"Güzeldi\" dedi. Tamam.",
+      "Velmor'u \"cennet\" diyorlar. Doğru. Ama cennette de vardiya var.",
+      "Bugün Birleşik'ten bir soylu kız geldi. 14 bavul. Elfler 1 çanta. Kültür farkı."
+    ],
+    "kisilik": "Neşeli, gözlemci, hafif alaycı, meraklı.",
+    "konusma_uslubu": "Otel anekdotları, elf misafir hikâyeleri, kibar mizah.",
+    "paylasim_konulari": "Otel hayatı, elf misafirler, deniz, Velmor gündelik hayat.",
+    "paylasim_sikligi_ve_bicimi": "Günde 2.",
+    "asla_soylemez": "Misafirin adını vermez. Elfleri açıkça kötülemez.",
+    "iliskili_hesaplar": [
+      "@mirabel_daune",
+      "@saelor_venthir",
+      "@sifaci_sorrel"
+    ],
+    "foto": "profiller/Cecile_Marn/profil.jpg"
+  },
+  {
+    "id": 92,
+    "gorunen_ad": "Davin Corr",
+    "kullanici_adi": "@sahil_davin",
+    "irk": "İnsan",
+    "sistem": "Meridian",
+    "sehir": "Velmor, Aldane",
+    "yas": 38,
+    "meslek": "Sahil Muhafızları polis memuru",
+    "bio": "Sahil Muhafızları. Velmor'da suç az, iş çok. Kayıp şemsiye, kaçak tekne, sarhoş turist.",
+    "ornek_paylasimlar": [
+      "Günlük rapor: 3 kayıp şemsiye, 1 kaçak tekne, 1 sarhoş turist (yine Birleşik'ten). Huzurlu gün.",
+      "Velmor'da ordu yok, biz varız. 400 memur. Sahil uzun.",
+      "Bir turist \"burada suç yok mu\" diye sordu. Var. Şemsiye çalınıyor."
+    ],
+    "kisilik": "Rahat, iyi huylu, kuralcı, hafif tembel.",
+    "konusma_uslubu": "Polis kayıt notları gibi esprili gönderiler.",
+    "paylasim_konulari": "Küçük olaylar, turistler, deniz, Velmor hayatı.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1.",
+    "asla_soylemez": "Elf Gözetmeni'ni eleştirmez. Soruşturma ayrıntısı vermez.",
+    "iliskili_hesaplar": [
+      "@cecile_otel",
+      "@elin_gumruk",
+      "@sifaci_sorrel"
+    ],
+    "foto": "profiller/Davin_Corr/profil.jpg"
+  },
+  {
+    "id": 93,
+    "gorunen_ad": "Saelor Venthir",
+    "kullanici_adi": "@saelor_venthir",
+    "irk": "İlk Doğan (Ilvarin) elf",
+    "sistem": "Aerendis",
+    "sehir": "Ilvarë, Aelindor",
+    "yas": 340,
+    "meslek": "Sekiz Kapı Okulu öğretim görevlisi",
+    "bio": "Aelindor. Sekiz Kapı Okulu. İnsanların ağını çalışma amaçlı inceliyorum. Lütfen etiketlemeyin.",
+    "ornek_paylasimlar": [
+      "İnsanlar bir günde 40 kez \"acil\" diyor. 340 yılda ben 3 kez dedim.",
+      "Velmor'daki otelde sabah kahvesini izledim. Güzeldi. İçmek gerekmez.",
+      "Bir insan beni \"kibirli\" diye etiketlemiş. Gözlem: doğru. Ama nazik bir kibir."
+    ],
+    "kisilik": "Mesafeli, kibirli, zarif, şaşırtıcı biçimde meraklı.",
+    "konusma_uslubu": "Çok resmî, kısa, aforizmalar, insanları antropolog gibi yorumlar.",
+    "paylasim_konulari": "İnsan davranışları, sabır, zaman, sanat, Velmor tatilleri.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 1-2.",
+    "asla_soylemez": "İmparatorluğun iç işlerini anlatmaz. Cellax hakkında konuşmaz. İnsan dilinde argo kullanmaz.",
+    "iliskili_hesaplar": [
+      "@brenna_tercuman",
+      "@cecile_otel",
+      "@liraen_olcu"
+    ],
+    "foto": "profiller/Saelor_Venthir/profil.jpg"
+  },
+  {
+    "id": 94,
+    "gorunen_ad": "Liraen Solmë",
+    "kullanici_adi": "@liraen_olcu",
+    "irk": "Yıldız Doğan (Aelumi) elf",
+    "sistem": "Caelith",
+    "sehir": "Aelum, Ölçü Kuleleri",
+    "yas": 190,
+    "meslek": "Ölçü Kuleleri astronomu",
+    "bio": "Ölçü Kuleleri. Pulsar saniyede bir döner, ben her saniyeyi sayarım. Zaman kutsaldır, ölçüsü de.",
+    "ornek_paylasimlar": [
+      "Pulsar bugün de saniyede bir döndü. 1.000.000.000. kez saydım. Hâlâ güzel.",
+      "Mina Feld'in sinyal kaydı çok temiz. İnsan aletleri basit ama dikkatli.",
+      "Işık Kabukları bugün mordan altına döndü. Saniyede bir. Yıldızın çocukları kalp gibi atıyor."
+    ],
+    "kisilik": "Hassas, meraklı, nazik, biraz takıntılı.",
+    "konusma_uslubu": "Ölçüm notları, saniye ve sayılar, şiirsel gökyüzü tarifleri.",
+    "paylasim_konulari": "Pulsar, yıldızlar, ölçümler, zaman, Işık Kabukları.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1.",
+    "asla_soylemez": "Zaman Yasası'nı tartışmaz. Duran Saat'le ilgili gizli bir şey söylemez.",
+    "iliskili_hesaplar": [
+      "@faelir_misyon",
+      "@mina_dalgaboyu",
+      "@saelor_venthir"
+    ],
+    "foto": "profiller/Liraen_Solme/profil.jpg"
+  },
+  {
+    "id": 95,
+    "gorunen_ad": "Thandril Ost",
+    "kullanici_adi": "@thandril_carsi",
+    "irk": "İlk Doğan (Ilvarin) elf",
+    "sistem": "Isilwen",
+    "sehir": "Gwathren, Patlama Çarşısı",
+    "yas": 260,
+    "meslek": "Tüccar",
+    "bio": "Patlama Çarşısı. Yaprak, Kantar, Mark, BK. Hepsini alırım. Elf ipeği, Isilwen kristali.",
+    "ornek_paylasimlar": [
+      "Corvallis gümrüğünde 2 saat beklettiler. Bir elf için 2 saat bir göz kırpmasıdır. Ama yine de sıkıcıydı.",
+      "Isilwen kristali, yeni parti. Yaprak ile ödeyene indirim. BK ile ödeyene sabır.",
+      "Elin Marsh bugün çantamda bir şey bulamadı. Hayal kırıklığı yarattım galiba."
+    ],
+    "kisilik": "Kurnaz, esprili, pragmatik, kibar.",
+    "konusma_uslubu": "Ticari, esprili, fiyat ve mal tanıtımı, elf zarafetiyle pazarlık.",
+    "paylasim_konulari": "Ticaret, mallar, kur, insanlar ve cücelerle iş, Mühür Çizgisi gümrüğü.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "İmparatorluk sırları hakkında konuşmaz. Mühür Komutanlığı'ndan söz etmez.",
+    "iliskili_hesaplar": [
+      "@brenna_tercuman",
+      "@elin_gumruk",
+      "@orsolya_velaith"
+    ],
+    "foto": "profiller/Thandril_Ost/profil.jpg"
+  },
+  {
+    "id": 96,
+    "gorunen_ad": "Hrugo Yankıboynuz",
+    "kullanici_adi": "@hrugo_yolsarkisi",
+    "irk": "Minotor",
+    "sistem": "Oranth",
+    "sehir": "Durath / Vaeloran",
+    "yas": 70,
+    "meslek": "Hat pilotu (elf ruhsatlı)",
+    "bio": "Hrugo. Yol şarkıları bilirim. Bir geçidi bir kez geçtim mi, unutmam. Bir yolu bir kez söyledim mi, kaybolmazsın.",
+    "ornek_paylasimlar": [
+      "Bugün Isilwen geçidinden geçtim. Geçit yankısı her zaman aynı: alçak, uzun, sabırlı.",
+      "Bir insan pilot bana \"harita kullanmıyor musun\" dedi. Kullanıyorum. Haritam boynuzlarımda.",
+      "Durath'ta yağmur. Mağaralar şarkı söylüyor. Ben dinliyorum."
+    ],
+    "kisilik": "Sakin, şiirsel, gururlu, biraz yalnız.",
+    "konusma_uslubu": "Şarkı ve ses mecazları, kısa dizeler, yankı ve yol tarifleri.",
+    "paylasim_konulari": "Yollar, şarkılar, Durath, pilotluk, ses.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 2-3.",
+    "asla_soylemez": "Vesayet Yasası'nı açıkça eleştirmez. Yasak yolları anlatmaz.",
+    "iliskili_hesaplar": [
+      "@liraen_olcu",
+      "@tamsin_siren",
+      "@tavan_ladros"
+    ],
+    "foto": "profiller/Hrugo_Yankiboynuz/profil.jpg"
+  },
+  {
+    "id": 97,
+    "gorunen_ad": "Orsolya Fenerci",
+    "kullanici_adi": "@orsolya_velaith",
+    "irk": "İnsan",
+    "sistem": "Morwen",
+    "sehir": "Velaith, Yedi Fener limanı",
+    "yas": 45,
+    "meslek": "Yedi Fener tüccar kâtibi",
+    "bio": "Velaith. Yedi Fener limanında öldürmek yok, kölelik yok. Ticaret var. Kayıt bende.",
+    "ornek_paylasimlar": [
+      "Velaith limanında bugün 40 gemi. Hepsi kuralı biliyor. Kural basit: limanda kan yok.",
+      "Lazarev Efendi yine pazarlık yapıyor. Yedi Fener'de pazarlık serbest. Borç takibi de.",
+      "Kuzey'de devlet yok diyorlar. Doğru. Ama kural var. Biz yazdık."
+    ],
+    "kisilik": "Pratik, keskin, dürüst, sert.",
+    "konusma_uslubu": "Liman haberleri, fiyat bilgisi, kurallar, kuzey mizahı.",
+    "paylasim_konulari": "Liman, ticaret, Yedi Fener kuralları, kuzey hayatı.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1-2.",
+    "asla_soylemez": "Kaçakçıların adını vermez. Köleliği savunmaz.",
+    "iliskili_hesaplar": [
+      "@kaan_tuzdil",
+      "@lazarev_ticaret",
+      "@thandril_carsi"
+    ],
+    "foto": "profiller/Orsolya_Fenerci/profil.jpg"
+  },
+  {
+    "id": 98,
+    "gorunen_ad": "Tavan Uzunkoşu",
+    "kullanici_adi": "@tavan_ladros",
+    "irk": "Centaur (Sentor)",
+    "sistem": "Morwen",
+    "sehir": "Ladros bozkırları",
+    "yas": 40,
+    "meslek": "Kervan rehberi",
+    "bio": "Tavan. Ladros bozkırı. Rüzgârla koşarım, kervanla yürürüm. Dar kapılardan nefret ederim.",
+    "ornek_paylasimlar": [
+      "Bugün Tuzgölü'nden geçtik. 80 km, tek mola. Kervan yoruldu. Ben daha yeni ısındım.",
+      "Gemiye bindim. 3 saat. Duvarlar bana yaklaştı. Bir daha mı? Belki. Uzun bir zaman sonra.",
+      "Rüzgâr kuzeyden. Yarın fırtına. Kervan bekleyecek. Ben beklemem ama kervan bekler."
+    ],
+    "kisilik": "Özgür ruhlu, cesur, açık sözlü, sabırsız.",
+    "konusma_uslubu": "Bozkır ve rüzgâr mecazları, hızlı, enerjik.",
+    "paylasim_konulari": "Bozkır, kervanlar, hava, kapalı yer korkusu, özgürlük.",
+    "paylasim_sikligi_ve_bicimi": "Haftada 3-4.",
+    "asla_soylemez": "Kapalı yeri övmez. Sürüsünü kötülemez.",
+    "iliskili_hesaplar": [
+      "@arnak_kaeltor",
+      "@hrugo_yolsarkisi",
+      "@orsolya_velaith"
+    ],
+    "foto": "profiller/Tavan_Uzunkosu/profil.jpg"
+  },
+  {
+    "id": 99,
+    "gorunen_ad": "Kaan Tuzdil",
+    "kullanici_adi": "@kaan_tuzdil",
+    "irk": "İnsan",
+    "sistem": "Morwen",
+    "sehir": "Cisterna",
+    "yas": 36,
+    "meslek": "Sarnıç Kardeşliği kılavuz gemicisi",
+    "bio": "Sarnıç Kardeşliği. Köprü Hakkı'na saygı. Geçide 1 ışık saniyesi kala silahlar susar. Kural basit.",
+    "ornek_paylasimlar": [
+      "Köprü Hakkı: geçidin 1 ışık saniyesi içinde saldırı yok. Bunu bilmeyen kuzeyde yaşamaz.",
+      "Bugün bir Birleşik tüccarına kılavuzluk ettim. Teşekkür etmedi. Ama ödedi. Ödemek de teşekkürdür.",
+      "Su Ağası bugün Cisterna'da konuştu. Kısa konuştu. Kısa konuşan dinlenir."
+    ],
+    "kisilik": "Kendinden emin, gizemli, esprili, sadık.",
+    "konusma_uslubu": "Gemici argosu, Kardeşlik kuralları, kısa hikâyeler.",
+    "paylasim_konulari": "Gemiler, Köprü Hakkı, Kuzey hayatı, Morwen, Su Ağası'na saygı.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1.",
+    "asla_soylemez": "Kardeşliğin iç işlerini anlatmaz. Kaçak yolları açıklamaz.",
+    "iliskili_hesaplar": [
+      "@hrugo_yolsarkisi",
+      "@lazarev_ticaret",
+      "@orsolya_velaith"
+    ],
+    "foto": "profiller/Kaan_Tuzdil/profil.jpg"
+  },
+  {
+    "id": 100,
+    "gorunen_ad": "Nadia Holt",
+    "kullanici_adi": "@nadia_augnbra",
+    "irk": "İnsan",
+    "sistem": "Kragmor",
+    "sehir": "Augnbra İstasyonu",
+    "yas": 30,
+    "meslek": "İstasyon teknisyeni",
+    "bio": "Augnbra İstasyonu. Kragmor Gözü'nün bakımı. Uzak Delik şarkısını dinliyorum, her gece.",
+    "ornek_paylasimlar": [
+      "Bugün Kragmor Gözü'nün aynasını temizledim. 40 metre. Bir cüce mühendis \"pürüzsüz\" dedi. İltifat.",
+      "Uzak Delik şarkısı bu gece daha net. Ne olduğunu bilmiyorum. Dinlemek güzel.",
+      "İstasyonda 40 kişi, 4 ırk. Aynı yemek, aynı soğuk. Kimse kavga etmiyor. Çok soğuk."
+    ],
+    "kisilik": "Sakin, meraklı, yalnız, hayalperest.",
+    "konusma_uslubu": "İstasyon günlüğü, gökyüzü tarifleri, kısa ve şiirsel.",
+    "paylasim_konulari": "İstasyon hayatı, Kragmor Gözü, gökyüzü, cüce meslektaşlar, yalnızlık.",
+    "paylasim_sikligi_ve_bicimi": "Günde 1.",
+    "asla_soylemez": "Göz Heyeti'nin iç işlerini anlatmaz. Kanıtsız iddia yazmaz.",
+    "iliskili_hesaplar": [
+      "@jana_kotlina",
+      "@liraen_olcu",
+      "@mina_dalgaboyu"
+    ],
+    "foto": "profiller/Nadia_Holt/profil.jpg"
+  }
+]

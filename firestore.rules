@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+ match /databases/{database}/documents {
+  function player() { return request.auth != null; }
+  // Trusted tabletop group model: anonymous authenticated sessions share the game.
+  // The browser DM password is a game UI lock, NOT a server-side admin role.
+  match /posts/{id} { allow read: if player(); allow create, update: if player() && request.resource.data.size() < 24 && (request.resource.data.get('deleted', false) == true || (request.resource.data.text is string && request.resource.data.text.size() <= 500)); allow delete: if player(); }
+  match /comments/{id} { allow read, delete: if player(); allow create, update: if player() && request.resource.data.text is string && request.resource.data.text.size() <= 500; }
+  match /users/{id} { allow read, delete: if player(); allow create, update: if player() && request.resource.data.handle is string && request.resource.data.handle.size() <= 29; }
+  match /{collection}/{id} {
+   allow read, write: if player() && collection in ['likes', 'follows', 'notifications', 'events', 'memories', 'queue', 'settings', 'control'];
+  }
+ }
+}

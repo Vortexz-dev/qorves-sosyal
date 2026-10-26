@@ -1,0 +1,1802 @@
+[
+  {
+    "id": "history-1-0",
+    "author": "@leontine_hessar",
+    "text": "Hessar Hanesi. Balolar, bağışlar ve iyi çay. Kuleden aşağısı da bizim halkımız.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792626659000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-1-1",
+    "author": "@leontine_hessar",
+    "text": "Hessar Hanesi. Balolar, bağışlar ve iyi çay.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792540259000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-2-0",
+    "author": "@dorian_kaul",
+    "text": "ARASAKA ailesinin gururlu bir üyesi. Gıdadan gemiye, kümenin rafları bizden sorulur. Görüşler kişiseldir.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792626118000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-2-1",
+    "author": "@dorian_kaul",
+    "text": "ARASAKA ailesinin gururlu bir üyesi. Gıdadan gemiye, kümenin rafları bizden sorulur.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792539718000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-3-0",
+    "author": "@nella_borucu",
+    "text": "Derinşehir'de nefes alıyorsan bir kısmı benim tamirim. Elimde anahtar, ağzımda laf.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792625577000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-3-1",
+    "author": "@nella_borucu",
+    "text": "Derinşehir'de nefes alıyorsan bir kısmı benim tamirim.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792539177000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-4-0",
+    "author": "@kasimir_lund_tacsesi",
+    "text": "Taç Sesi. Doğru haber, güçlü Başkanlık. Tazminat sayacı her sabah benimle.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792625036000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-4-1",
+    "author": "@kasimir_lund_tacsesi",
+    "text": "Taç Sesi. Doğru haber, güçlü Başkanlık.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792538636000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-5-0",
+    "author": "@vexmarlow",
+    "text": "Ten geçicidir, krom stildir ✦ EMTEKK sponsorlu ✦ Yeni parçam: yanardöner yanak hattı.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792624495000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-5-1",
+    "author": "@vexmarlow",
+    "text": "YENİ PARÇA GELDİ ✨ yanardöner yanak hattı, gece ışıkta mor dönüyor.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792538095000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-6-0",
+    "author": "@gercek_fenn",
+    "text": "Size söylenene değil, söylenmeyene bakın. Taç Sesi'ni sessize alın, kendi kafanızla düşünün.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792623954000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-6-1",
+    "author": "@gercek_fenn",
+    "text": "Size söylenene değil, söylenmeyene bakın.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792537554000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-7-0",
+    "author": "@hemsire_mara",
+    "text": "Gündüz krom takıyorum, gece kaygı. Sinir Bağı Kliniği, 12 yıl. Önce sağlık, sonra moda.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792623413000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-7-1",
+    "author": "@hemsire_mara",
+    "text": "Gündüz krom takıyorum, gece kaygı. Sinir Bağı Kliniği, 12 yıl.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792537013000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-8-0",
+    "author": "@teo_okuyor",
+    "text": "Tarih 2. sınıf. Kahve + arşiv + sınav stresi. Sınavlarım geçerse sözüm olsun ağlamayacağım.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792622872000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-8-1",
+    "author": "@teo_okuyor",
+    "text": "Kahve + arşiv + sınav stresi. Sınavlarım geçerse sözüm olsun ağlamayacağım.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792536472000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-9-0",
+    "author": "@ivo_taksi",
+    "text": "31 yıl Coronae göğünde. Arka koltukta neler duydum bir bilseniz. Bilmeyin daha iyi.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792622331000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-9-1",
+    "author": "@ivo_taksi",
+    "text": "31 yıl Coronae göğünde. Arka koltukta neler duydum bir bilseniz.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792535931000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-10-0",
+    "author": "@saskia_gunesmasasi",
+    "text": "Güneş Masası. Tabak başına 8.000 BK, her lokma hak edilmiş. Gerçek malzeme, gerçek ateş.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792621790000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-10-1",
+    "author": "@saskia_gunesmasasi",
+    "text": "Güneş Masası. Tabak başına 8.000 BK, her lokma hak edilmiş.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792535390000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-11-0",
+    "author": "@jonaspell_kare",
+    "text": "Şehrin yukarısı ışık, aşağısı hikâye. Sadece kare. Yorum sizin.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792621249000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-11-1",
+    "author": "@jonaspell_kare",
+    "text": "Şehrin yukarısı ışık, aşağısı hikâye. Sadece kare.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792534849000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-12-0",
+    "author": "@r_aubert",
+    "text": "Kamu hizmetinde 26 yıl. Kurallar düzen içindir. Bahçemle ilgili paylaşımlar.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792620708000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-12-1",
+    "author": "@r_aubert",
+    "text": "Kamu hizmetinde 26 yıl. Kurallar düzen içindir.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792534308000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-13-0",
+    "author": "@martaquill",
+    "text": "Gördüğümü yazarım, kanıtım yoksa yazmam. Bağımsız. Dikkatli. Hâlâ burada.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792620167000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-13-1",
+    "author": "@martaquill",
+    "text": "Gördüğümü yazarım, kanıtım yoksa yazmam. Bağımsız.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792533767000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-14-0",
+    "author": "@hugo_ambar",
+    "text": "Ambar 412'de raf diziyorum. Gıdadan gemiye her şey var, maaş hariç.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792619626000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-14-1",
+    "author": "@hugo_ambar",
+    "text": "Ambar 412'de raf diziyorum.",
+    "system": "Astarion",
+    "race": "İnsan",
+    "createdAt": 1792533226000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-15-0",
+    "author": "@pip_camurkulak",
+    "text": "Pip. Goblin. Kayıtlıyım, sayıyorum, unutmuyorum. Herkes bana bir şey borçlu, biliyorum.",
+    "system": "Corvallis",
+    "race": "Goblin",
+    "createdAt": 1792619085000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-15-1",
+    "author": "@pip_camurkulak",
+    "text": "Kayıtlıyım, sayıyorum, unutmuyorum. Herkes bana bir şey borçlu, biliyorum.",
+    "system": "Corvallis",
+    "race": "Goblin",
+    "createdAt": 1792532685000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-16-0",
+    "author": "@rihtimci_henrike",
+    "text": "Port rıhtımı. Konteyner kaldırıyorum, morali de kaldırırım. Vardiya bitti mi bir çay?",
+    "system": "Corvallis",
+    "race": "İnsan",
+    "createdAt": 1792618544000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-16-1",
+    "author": "@rihtimci_henrike",
+    "text": "Port rıhtımı. Konteyner kaldırıyorum, morali de kaldırırım.",
+    "system": "Corvallis",
+    "race": "İnsan",
+    "createdAt": 1792532144000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-17-0",
+    "author": "@lazarev_ticaret",
+    "text": "Lazarev Ticaret. Corvallis'ten kümenin dört yanına. Her mal bir fırsattır.",
+    "system": "Corvallis",
+    "race": "İnsan",
+    "createdAt": 1792618003000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-17-1",
+    "author": "@lazarev_ticaret",
+    "text": "Lazarev Ticaret. Corvallis'ten kümenin dört yanına.",
+    "system": "Corvallis",
+    "race": "İnsan",
+    "createdAt": 1792531603000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-18-0",
+    "author": "@elin_gumruk",
+    "text": "Mühür Çizgisi gümrüğü. Evet, çantanızı açmanız gerekiyor. Hayır, keyfimden değil.",
+    "system": "Corvallis",
+    "race": "İnsan",
+    "createdAt": 1792617462000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-18-1",
+    "author": "@elin_gumruk",
+    "text": "Mühür Çizgisi gümrüğü. Evet, çantanızı açmanız gerekiyor.",
+    "system": "Corvallis",
+    "race": "İnsan",
+    "createdAt": 1792531062000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-19-0",
+    "author": "@rafe_ikincifilo",
+    "text": "İkinci Filo. Motor odası. Gemi yürüyorsa sebebi benim. Yürümüyorsa sebebi yine benim.",
+    "system": "Corvallis",
+    "race": "İnsan",
+    "createdAt": 1792616921000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-19-1",
+    "author": "@rafe_ikincifilo",
+    "text": "İkinci Filo. Motor odası.",
+    "system": "Corvallis",
+    "race": "İnsan",
+    "createdAt": 1792530521000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-20-0",
+    "author": "@brenna_tercuman",
+    "text": "Trimesa'da kelimeler arasında köprü. Elfçe yavaş, cücece ağır, insanca aceleci. Hepsini severim.",
+    "system": "Corvallis",
+    "race": "İnsan",
+    "createdAt": 1792616380000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-20-1",
+    "author": "@brenna_tercuman",
+    "text": "Trimesa'da kelimeler arasında köprü. Elfçe yavaş, cücece ağır, insanca aceleci.",
+    "system": "Corvallis",
+    "race": "İnsan",
+    "createdAt": 1792529980000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-21-0",
+    "author": "@hurdaci_matthias",
+    "text": "Hurda Tarlası'nın en eski hurdacısı. Her çöp bir zamanlar birinin hazinesiydi.",
+    "system": "Corvallis",
+    "race": "İnsan",
+    "createdAt": 1792615839000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-21-1",
+    "author": "@hurdaci_matthias",
+    "text": "Hurda Tarlası'nın en eski hurdacısı.",
+    "system": "Corvallis",
+    "race": "İnsan",
+    "createdAt": 1792529439000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-22-0",
+    "author": "@dagny_atesvardiyasi",
+    "text": "Ferraria. Kaynak ateşi, sendika sesi. 20 yıllık ustayım, susmayı öğrenmedim.",
+    "system": "Vulcan",
+    "race": "İnsan",
+    "createdAt": 1792615298000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-22-1",
+    "author": "@dagny_atesvardiyasi",
+    "text": "Ferraria. Kaynak ateşi, sendika sesi.",
+    "system": "Vulcan",
+    "race": "İnsan",
+    "createdAt": 1792528898000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-23-0",
+    "author": "@l_brenner_muh",
+    "text": "Mühendis. MILISAN. Kümenin en iyi gemileri burada yapılır, istatistikler ortada.",
+    "system": "Vulcan",
+    "race": "İnsan",
+    "createdAt": 1792614757000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-23-1",
+    "author": "@l_brenner_muh",
+    "text": "Mühendis. MILISAN.",
+    "system": "Vulcan",
+    "race": "İnsan",
+    "createdAt": 1792528357000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-24-0",
+    "author": "@ogretmen_pia",
+    "text": "Edebiyat öğretmeni. 25 yıl, 3000 öğrenci, sayısız kayıp ödev. Kitap okuyun çocuklar.",
+    "system": "Vulcan",
+    "race": "İnsan",
+    "createdAt": 1792614216000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-24-1",
+    "author": "@ogretmen_pia",
+    "text": "Edebiyat öğretmeni. 25 yıl, 3000 öğrenci, sayısız kayıp ödev.",
+    "system": "Vulcan",
+    "race": "İnsan",
+    "createdAt": 1792527816000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-25-0",
+    "author": "@stellan_voigt",
+    "text": "MILISAN Kurumsal İletişim. Ocak'ın sıcaklığı, kümenin güvenliği. Resmî açıklamalar ve fazlası.",
+    "system": "Vulcan",
+    "race": "İnsan",
+    "createdAt": 1792613675000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-25-1",
+    "author": "@stellan_voigt",
+    "text": "MILISAN Kurumsal İletişim. Ocak'ın sıcaklığı, kümenin güvenliği.",
+    "system": "Vulcan",
+    "race": "İnsan",
+    "createdAt": 1792527275000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-26-0",
+    "author": "@mirek_maden",
+    "text": "Malleus. Yerin dibi, demirin kalbi. Vardiyadan çıktım, şimdi bira.",
+    "system": "Vulcan",
+    "race": "İnsan",
+    "createdAt": 1792613134000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-26-1",
+    "author": "@mirek_maden",
+    "text": "Malleus. Yerin dibi, demirin kalbi.",
+    "system": "Vulcan",
+    "race": "İnsan",
+    "createdAt": 1792526734000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-27-0",
+    "author": "@ada_fabrikakati",
+    "text": "Fabrika Katı 9. İki çocuk annesi. Sarı öksürük ilacı 600 BK, maaşım günde 40. Hesap yapın.",
+    "system": "Prosperion",
+    "race": "İnsan",
+    "createdAt": 1792612593000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-27-1",
+    "author": "@ada_fabrikakati",
+    "text": "Fabrika Katı 9. İki çocuk annesi.",
+    "system": "Prosperion",
+    "race": "İnsan",
+    "createdAt": 1792526193000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-28-0",
+    "author": "@hurdalga_statik",
+    "text": "Hür Dalga'da gece yarısı. Frekansı bulursan beni bulursun. Bulamazsan da sorun değil, ben seni bulurum.",
+    "system": "Prosperion",
+    "race": "İnsan",
+    "createdAt": 1792612052000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-28-1",
+    "author": "@hurdalga_statik",
+    "text": "Hür Dalga'da gece yarısı. Frekansı bulursan beni bulursun.",
+    "system": "Prosperion",
+    "race": "İnsan",
+    "createdAt": 1792525652000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-29-0",
+    "author": "@b_ohm",
+    "text": "Ruhsat bürosu. Form 7-B'yi doldurmadan önce form 7-A'yı doldurunuz. Teşekkürler.",
+    "system": "Prosperion",
+    "race": "İnsan",
+    "createdAt": 1792611511000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-29-1",
+    "author": "@b_ohm",
+    "text": "Ruhsat bürosu. Form 7-B'yi doldurmadan önce form 7-A'yı doldurunuz.",
+    "system": "Prosperion",
+    "race": "İnsan",
+    "createdAt": 1792525111000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-30-0",
+    "author": "@lotte_gecepazari",
+    "text": "Gece Pazarı, 7. tezgâh. Çorba 8 BK, gülümseme bedava, dedikodu pazarlıkla.",
+    "system": "Prosperion",
+    "race": "İnsan",
+    "createdAt": 1792610970000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-30-1",
+    "author": "@lotte_gecepazari",
+    "text": "Gece Pazarı, 7. tezgâh.",
+    "system": "Prosperion",
+    "race": "İnsan",
+    "createdAt": 1792524570000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-31-0",
+    "author": "@nico_issiz",
+    "text": "18 yıl operatördüm. Şimdi yerimde bir makine kolu var. O kol benden iyi çalışıyor, onu da kabul ediyorum.",
+    "system": "Prosperion",
+    "race": "İnsan",
+    "createdAt": 1792610429000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-31-1",
+    "author": "@nico_issiz",
+    "text": "18 yıl operatördüm. Şimdi yerimde bir makine kolu var.",
+    "system": "Prosperion",
+    "race": "İnsan",
+    "createdAt": 1792524029000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-32-0",
+    "author": "@zorn_sifirkat",
+    "text": "Sıfır Kat'tan Taç Katı'na 400 kat. Merdivenle. Her duvar bir tuval, her bekçi bir koşu.",
+    "system": "Prosperion",
+    "race": "İnsan",
+    "createdAt": 1792609888000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-32-1",
+    "author": "@zorn_sifirkat",
+    "text": "Sıfır Kat'tan Taç Katı'na 400 kat. Merdivenle.",
+    "system": "Prosperion",
+    "race": "İnsan",
+    "createdAt": 1792523488000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-33-0",
+    "author": "@klara_dunst",
+    "text": "Taç Katı. Yatırım, sanat ve sabır. Paranız sizin için çalışmıyorsa siz paranız için çalışıyorsunuz.",
+    "system": "Prosperion",
+    "race": "İnsan",
+    "createdAt": 1792609347000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-33-1",
+    "author": "@klara_dunst",
+    "text": "Taç Katı. Yatırım, sanat ve sabır.",
+    "system": "Prosperion",
+    "race": "İnsan",
+    "createdAt": 1792522947000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-34-0",
+    "author": "@petra_tamir",
+    "text": "İp Dibi. Krom tamir. Soru sormam, siz de sormayın. Ucuz parça takmam, bunu bilin.",
+    "system": "Prosperion",
+    "race": "İnsan",
+    "createdAt": 1792608806000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-34-1",
+    "author": "@petra_tamir",
+    "text": "İp Dibi. Krom tamir.",
+    "system": "Prosperion",
+    "race": "İnsan",
+    "createdAt": 1792522406000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-35-0",
+    "author": "@idris_hale_pilot",
+    "text": "Birinci Filo. Gökyüzü benim ofisim. Akademi birincisi, sizin değil benim.",
+    "system": "Valor",
+    "race": "İnsan",
+    "createdAt": 1792608265000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-35-1",
+    "author": "@idris_hale_pilot",
+    "text": "Birinci Filo. Gökyüzü benim ofisim.",
+    "system": "Valor",
+    "race": "İnsan",
+    "createdAt": 1792521865000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-36-0",
+    "author": "@harbiyeli_selma",
+    "text": "Harbiyeli. Dedem amiraldi, ben de olacağım. 5:30 kalk, koş, ders, koş, uyu.",
+    "system": "Valor",
+    "race": "İnsan",
+    "createdAt": 1792607724000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-36-1",
+    "author": "@harbiyeli_selma",
+    "text": "Harbiyeli. Dedem amiraldi, ben de olacağım.",
+    "system": "Valor",
+    "race": "İnsan",
+    "createdAt": 1792521324000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-37-0",
+    "author": "@kweiss_emekli",
+    "text": "Emekli amiral. 45 yıl hizmet. Şimdi bahçe, torunlar ve eski hatıralar.",
+    "system": "Valor",
+    "race": "İnsan",
+    "createdAt": 1792607183000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-37-1",
+    "author": "@kweiss_emekli",
+    "text": "Emekli amiral. 45 yıl hizmet.",
+    "system": "Valor",
+    "race": "İnsan",
+    "createdAt": 1792520783000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-38-0",
+    "author": "@fenna_nivara",
+    "text": "Nivara. 1,42 g. Kar, rüzgâr ve Kar Bekçileri. Onlar bizi izliyor, biz onları. Kim daha meraklı bilmiyorum.",
+    "system": "Valor",
+    "race": "İnsan",
+    "createdAt": 1792606642000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-38-1",
+    "author": "@fenna_nivara",
+    "text": "Onlar bizi izliyor, biz onları. Kim daha meraklı bilmiyorum.",
+    "system": "Valor",
+    "race": "İnsan",
+    "createdAt": 1792520242000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-39-0",
+    "author": "@asci_bram",
+    "text": "Aegis mutfağı. 3.000 asker, 3 öğün, 1 aşçı başı. Şikâyetler için: yemeyin.",
+    "system": "Valor",
+    "race": "İnsan",
+    "createdAt": 1792606101000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-39-1",
+    "author": "@asci_bram",
+    "text": "Aegis mutfağı. 3.000 asker, 3 öğün, 1 aşçı başı.",
+    "system": "Valor",
+    "race": "İnsan",
+    "createdAt": 1792519701000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-40-0",
+    "author": "@aurelian_vey",
+    "text": "Vey Hanesi. Altın Meclis. Tapu, onur ve iyi şarap. Eski usul bir adam.",
+    "system": "Aurum",
+    "race": "İnsan",
+    "createdAt": 1792605560000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-40-1",
+    "author": "@aurelian_vey",
+    "text": "Vey Hanesi. Altın Meclis.",
+    "system": "Aurum",
+    "race": "İnsan",
+    "createdAt": 1792519160000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-41-0",
+    "author": "@mirabel_daune",
+    "text": "Daune Hanesi'nin en eğlencelisi 💫 Baloların kraliçesi, sabahların düşmanı.",
+    "system": "Aurum",
+    "race": "İnsan",
+    "createdAt": 1792605019000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-41-1",
+    "author": "@mirabel_daune",
+    "text": "Sonbahar Balosu'nda 3 teklif aldım, üçü de sıkıcıydı 🙄 Annem \"seçiciliğin seni yalnız bırakacak\" dedi.",
+    "system": "Aurum",
+    "race": "İnsan",
+    "createdAt": 1792518619000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-42-0",
+    "author": "@ruun_aksamgozu",
+    "text": "Ruun. Zafrane. Hikâye topluyorum. Sizin hikâyeniz varsa anlatın, karşılığında benimkini veririm.",
+    "system": "Aurum",
+    "race": "Tabaxi",
+    "createdAt": 1792604478000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-42-1",
+    "author": "@ruun_aksamgozu",
+    "text": "Hikâye topluyorum. Sizin hikâyeniz varsa anlatın, karşılığında benimkini veririm.",
+    "system": "Aurum",
+    "race": "Tabaxi",
+    "createdAt": 1792518078000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-43-0",
+    "author": "@bahcivan_oswin",
+    "text": "30 yıldır Aurelia'da toprakla konuşuyorum. Toprak susar ama dinler.",
+    "system": "Aurum",
+    "race": "İnsan",
+    "createdAt": 1792603937000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-43-1",
+    "author": "@bahcivan_oswin",
+    "text": "30 yıldır Aurelia'da toprakla konuşuyorum.",
+    "system": "Aurum",
+    "race": "İnsan",
+    "createdAt": 1792517537000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-44-0",
+    "author": "@isadora_atelier",
+    "text": "Atelier Keel. Krom kadının değil, kumaş insanın ikinci tenidir. Balo koleksiyonu çıktı.",
+    "system": "Aurum",
+    "race": "İnsan",
+    "createdAt": 1792603396000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-44-1",
+    "author": "@isadora_atelier",
+    "text": "Atelier Keel. Krom kadının değil, kumaş insanın ikinci tenidir.",
+    "system": "Aurum",
+    "race": "İnsan",
+    "createdAt": 1792516996000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-45-0",
+    "author": "@peder_lamm",
+    "text": "Bekleyiş Tarikatı. Sabır ibadettir. Taht boş, kalplerimiz dolu.",
+    "system": "Imperion",
+    "race": "İnsan",
+    "createdAt": 1792602855000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-45-1",
+    "author": "@peder_lamm",
+    "text": "Bekleyiş Tarikatı. Sabır ibadettir.",
+    "system": "Imperion",
+    "race": "İnsan",
+    "createdAt": 1792516455000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-46-0",
+    "author": "@rehber_liesel",
+    "text": "Imperion'un taşlarını anlatıyorum. Kırık Sütunlar, Solgun Taht, Boş Türbe. Rezervasyon için mesaj.",
+    "system": "Imperion",
+    "race": "İnsan",
+    "createdAt": 1792602314000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-46-1",
+    "author": "@rehber_liesel",
+    "text": "Imperion'un taşlarını anlatıyorum. Kırık Sütunlar, Solgun Taht, Boş Türbe.",
+    "system": "Imperion",
+    "race": "İnsan",
+    "createdAt": 1792515914000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-47-0",
+    "author": "@firinci_anton",
+    "text": "Grey Fırını. Ekmek sabahın 4'ünde, dua 5'inde. İkisi de sıcak.",
+    "system": "Imperion",
+    "race": "İnsan",
+    "createdAt": 1792601773000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-47-1",
+    "author": "@firinci_anton",
+    "text": "Grey Fırını. Ekmek sabahın 4'ünde, dua 5'inde.",
+    "system": "Imperion",
+    "race": "İnsan",
+    "createdAt": 1792515373000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-48-0",
+    "author": "@cassian_tarih",
+    "text": "Tarih yayını \"Dünün Gölgesi\". Geçmiş bir masal değil, bir uyarıdır. Kaynak gösteririm.",
+    "system": "Imperion",
+    "race": "İnsan",
+    "createdAt": 1792601232000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-48-1",
+    "author": "@cassian_tarih",
+    "text": "Tarih yayını \"Dünün Gölgesi\". Geçmiş bir masal değil, bir uyarıdır.",
+    "system": "Imperion",
+    "race": "İnsan",
+    "createdAt": 1792514832000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-49-0",
+    "author": "@vera_solt",
+    "text": "Miras Valiliği güvenlik. Kırık Sütunlar'a tırmanmayın. Ciddiyim. Ciddiyiz.",
+    "system": "Imperion",
+    "race": "İnsan",
+    "createdAt": 1792600691000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-49-1",
+    "author": "@vera_solt",
+    "text": "Miras Valiliği güvenlik. Kırık Sütunlar'a tırmanmayın.",
+    "system": "Imperion",
+    "race": "İnsan",
+    "createdAt": 1792514291000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-50-0",
+    "author": "@noemie_varela",
+    "text": "Libertas Postası, Meclis muhabiri. 1.140 vali, sonsuz nutuk. Hepsini sizin için dinliyorum.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792600150000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-50-1",
+    "author": "@noemie_varela",
+    "text": "Libertas Postası, Meclis muhabiri. 1.140 vali, sonsuz nutuk.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792513750000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-51-0",
+    "author": "@vali_rinn",
+    "text": "Salinas Valisi. Meclis'te 1 oy, şehrimde 400 bin kalp. Tuz ve deniz kokan bir şehir.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792599609000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-51-1",
+    "author": "@vali_rinn",
+    "text": "Salinas Valisi. Meclis'te 1 oy, şehrimde 400 bin kalp.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792513209000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-52-0",
+    "author": "@juno_halley",
+    "text": "Borç bir zincirdir. Kıralım. Siyaset bilimi 3. sınıf. Eylem perşembe.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792599068000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-52-1",
+    "author": "@juno_halley",
+    "text": "Borç bir zincirdir. Kıralım.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792512668000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-53-0",
+    "author": "@krull_hurliman",
+    "text": "Hür Liman Şirketi. Hayallerinize kredi, geleceğinize senet. Faiz oranlarımız için DM.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792598527000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-53-1",
+    "author": "@krull_hurliman",
+    "text": "Hür Liman Şirketi. Hayallerinize kredi, geleceğinize senet.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792512127000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-54-0",
+    "author": "@odessa_camasir",
+    "text": "Brun Çamaşırhanesi. Lekeyi temizlerim, borcu temizleyemem. Mahallenin anası.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792597986000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-54-1",
+    "author": "@odessa_camasir",
+    "text": "Brun Çamaşırhanesi. Lekeyi temizlerim, borcu temizleyemem.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792511586000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-55-0",
+    "author": "@silasvane_komik",
+    "text": "Stand-up. Meclis'ten daha komik olmaya çalışıyorum. Zor iş.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792597445000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-55-1",
+    "author": "@silasvane_komik",
+    "text": "Stand-up. Meclis'ten daha komik olmaya çalışıyorum.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792511045000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-56-0",
+    "author": "@avukat_kokyuva",
+    "text": "Kâtipler Loncası. Her sözleşmede bir tuzak vardır. Bulmak benim işim. Öğle yemeğinden sonra.",
+    "system": "Concordia",
+    "race": "Küçük Halk (Tumbel)",
+    "createdAt": 1792596904000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-56-1",
+    "author": "@avukat_kokyuva",
+    "text": "Kâtipler Loncası. Her sözleşmede bir tuzak vardır.",
+    "system": "Concordia",
+    "race": "Küçük Halk (Tumbel)",
+    "createdAt": 1792510504000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-57-0",
+    "author": "@gorza_usta",
+    "text": "Gorza. Yeşil Lejyonlar'da 15 yıl, inşaatta 10 yıl. Duvar yaparım, köprü yaparım. Söz veririm.",
+    "system": "Concordia",
+    "race": "Ork",
+    "createdAt": 1792596363000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-57-1",
+    "author": "@gorza_usta",
+    "text": "Gorza. Yeşil Lejyonlar'da 15 yıl, inşaatta 10 yıl.",
+    "system": "Concordia",
+    "race": "Ork",
+    "createdAt": 1792509963000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-58-0",
+    "author": "@rhea_kampanya",
+    "text": "SS 216 için değişim! Mireille Castanar'la güçlü ekonomi, güçlü Cumhuriyet. #Castanar216",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792595822000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-58-1",
+    "author": "@rhea_kampanya",
+    "text": "SS 216 için değişim! Mireille Castanar'la güçlü ekonomi, güçlü Cumhuriyet.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792509422000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-59-0",
+    "author": "@vatman_abel",
+    "text": "Libertas Hattı 7. Sabah 5'te başlar, gece 11'de biter. Arada bütün şehir.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792595281000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-59-1",
+    "author": "@vatman_abel",
+    "text": "Libertas Hattı 7. Sabah 5'te başlar, gece 11'de biter.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792508881000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-60-0",
+    "author": "@dr_calder",
+    "text": "Halk Hastanesi acil servis. Cumhuriyet'te sağlık hak, ama sıra var.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792594740000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-60-1",
+    "author": "@dr_calder",
+    "text": "Halk Hastanesi acil servis.",
+    "system": "Concordia",
+    "race": "İnsan",
+    "createdAt": 1792508340000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-61-0",
+    "author": "@tamsin_siren",
+    "text": "Siren Bölükleri. Yamalı gemi, sağlam yürek. Birleşik pilotları: yarışa varım.",
+    "system": "Bastion",
+    "race": "İnsan",
+    "createdAt": 1792594199000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-61-1",
+    "author": "@tamsin_siren",
+    "text": "Siren Bölükleri. Yamalı gemi, sağlam yürek.",
+    "system": "Bastion",
+    "race": "İnsan",
+    "createdAt": 1792507799000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-62-0",
+    "author": "@brakka_ghar",
+    "text": "Ghar Alayı. Soğuk Söz. Söz verdim, tuttum. Bir daha söz veririm.",
+    "system": "Bastion",
+    "race": "Ork",
+    "createdAt": 1792593658000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-62-1",
+    "author": "@brakka_ghar",
+    "text": "Ghar Alayı. Soğuk Söz.",
+    "system": "Bastion",
+    "race": "Ork",
+    "createdAt": 1792507258000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-63-0",
+    "author": "@hollis_tersane",
+    "text": "Dawnhold tersanesi. Her gemiyi bir kez daha uçururum. Yeni parça? Duymadım.",
+    "system": "Bastion",
+    "race": "İnsan",
+    "createdAt": 1792593117000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-63-1",
+    "author": "@hollis_tersane",
+    "text": "Dawnhold tersanesi. Her gemiyi bir kez daha uçururum.",
+    "system": "Bastion",
+    "race": "İnsan",
+    "createdAt": 1792506717000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-64-0",
+    "author": "@mina_dalgaboyu",
+    "text": "Gündüz posta, gece dalga boyu. Fatih Kapısı'ndan gelen sinyali dinliyorum. Herkes dinliyor ama ben not alıyorum.",
+    "system": "Bastion",
+    "race": "İnsan",
+    "createdAt": 1792592576000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-64-1",
+    "author": "@mina_dalgaboyu",
+    "text": "Gündüz posta, gece dalga boyu. Fatih Kapısı'ndan gelen sinyali dinliyorum.",
+    "system": "Bastion",
+    "race": "İnsan",
+    "createdAt": 1792506176000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-65-0",
+    "author": "@zekka_ruk",
+    "text": "Zekka. 16. Pilot olacağım. Brakka çavuş \"önce koş\" diyor. Koşuyorum.",
+    "system": "Bastion",
+    "race": "Ork",
+    "createdAt": 1792592035000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-65-1",
+    "author": "@zekka_ruk",
+    "text": "Brakka çavuş \"önce koş\" diyor. Koşuyorum.",
+    "system": "Bastion",
+    "race": "Ork",
+    "createdAt": 1792505635000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-66-0",
+    "author": "@kasap_viktor",
+    "text": "Haas Kasabı. Gündüz bıçak, hafta sonu tüfek. Cumhuriyet için her ikisi de hazır.",
+    "system": "Bastion",
+    "race": "İnsan",
+    "createdAt": 1792591494000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-66-1",
+    "author": "@kasap_viktor",
+    "text": "Haas Kasabı. Gündüz bıçak, hafta sonu tüfek.",
+    "system": "Bastion",
+    "race": "İnsan",
+    "createdAt": 1792505094000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-67-0",
+    "author": "@delia_crane",
+    "text": "Asker eşi, üç çocuk annesi. Dawnhold'da bekleyen kalpler için yazıyorum.",
+    "system": "Bastion",
+    "race": "İnsan",
+    "createdAt": 1792590953000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-67-1",
+    "author": "@delia_crane",
+    "text": "Asker eşi, üç çocuk annesi.",
+    "system": "Bastion",
+    "race": "İnsan",
+    "createdAt": 1792504553000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-68-0",
+    "author": "@tarnow_ansgar",
+    "text": "Tarnow Kuşağı. Kaya, boşluk ve ben. 6 ay burada, 2 hafta evde.",
+    "system": "Bastion",
+    "race": "İnsan",
+    "createdAt": 1792590412000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-68-1",
+    "author": "@tarnow_ansgar",
+    "text": "Tarnow Kuşağı. Kaya, boşluk ve ben.",
+    "system": "Bastion",
+    "race": "İnsan",
+    "createdAt": 1792504012000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-69-0",
+    "author": "@sondurucu_corin",
+    "text": "Söndürücüler. Ember'de yangın mevsimi geliyor. Siz kaçarken biz koşarız.",
+    "system": "Ember",
+    "race": "İnsan",
+    "createdAt": 1792589871000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-69-1",
+    "author": "@sondurucu_corin",
+    "text": "Söndürücüler. Ember'de yangın mevsimi geliyor.",
+    "system": "Ember",
+    "race": "İnsan",
+    "createdAt": 1792503471000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-70-0",
+    "author": "@lina_keresteci",
+    "text": "Pyra Kerestecilik, ustabaşı. Korağacı keseriz, ev yaparız. Treemen'e dokunmayız, yasa ortada.",
+    "system": "Ember",
+    "race": "İnsan",
+    "createdAt": 1792589330000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-70-1",
+    "author": "@lina_keresteci",
+    "text": "Pyra Kerestecilik, ustabaşı. Korağacı keseriz, ev yaparız.",
+    "system": "Ember",
+    "race": "İnsan",
+    "createdAt": 1792502930000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-71-0",
+    "author": "@faelir_misyon",
+    "text": "Kök Doğan Misyonu, Pyra. Ağaçlar konuşur, biz dinleriz. İnsanlar da dinleyebilir.",
+    "system": "Ember",
+    "race": "Kök Doğan (Tharessi) elf",
+    "createdAt": 1792588789000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-71-1",
+    "author": "@faelir_misyon",
+    "text": "Kök Doğan Misyonu, Pyra. Ağaçlar konuşur, biz dinleriz.",
+    "system": "Ember",
+    "race": "Kök Doğan (Tharessi) elf",
+    "createdAt": 1792502389000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-72-0",
+    "author": "@bracken_delta",
+    "text": "Delta. Yağmurda balık, kurakta buğday. Bir de yangın. Üçü de geçer.",
+    "system": "Ember",
+    "race": "İnsan",
+    "createdAt": 1792588248000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-72-1",
+    "author": "@bracken_delta",
+    "text": "Delta. Yağmurda balık, kurakta buğday.",
+    "system": "Ember",
+    "race": "İnsan",
+    "createdAt": 1792501848000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-73-0",
+    "author": "@marigold_kafe",
+    "text": "Tatlıkök Kafe. 7 öğün servis, kış uykusundan önce son tart. Bütün ırklar hoş geldiniz.",
+    "system": "Ember",
+    "race": "Küçük Halk (Tumbel)",
+    "createdAt": 1792587707000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-73-1",
+    "author": "@marigold_kafe",
+    "text": "Tatlıkök Kafe. 7 öğün servis, kış uykusundan önce son tart.",
+    "system": "Ember",
+    "race": "Küçük Halk (Tumbel)",
+    "createdAt": 1792501307000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-74-0",
+    "author": "@sirr_kurye",
+    "text": "Kurye. Hızlı, sessiz, soru sormam. Paketiniz gece gelir. Hikâye ararım.",
+    "system": "Ember",
+    "race": "Tabaxi (kaçak kedi)",
+    "createdAt": 1792587166000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-74-1",
+    "author": "@sirr_kurye",
+    "text": "Kurye. Hızlı, sessiz, soru sormam.",
+    "system": "Ember",
+    "race": "Tabaxi (kaçak kedi)",
+    "createdAt": 1792500766000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-75-0",
+    "author": "@hana_velt",
+    "text": "Botanikçi. Treemen Koruma Yasası SS 205'te çıktı. Uygulanmasını izliyorum. Her gün.",
+    "system": "Ember",
+    "race": "İnsan",
+    "createdAt": 1792586625000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-75-1",
+    "author": "@hana_velt",
+    "text": "Botanikçi. Treemen Koruma Yasası SS 205'te çıktı.",
+    "system": "Ember",
+    "race": "İnsan",
+    "createdAt": 1792500225000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-76-0",
+    "author": "@gunnhild_kantar",
+    "text": "Kantar Dairesi. Altın sayarım, söz tartarım. Altın Uğurlama'ya 3 yıl. Kantar hazır.",
+    "system": "Ondrûm",
+    "race": "Cüce (Ondrûm)",
+    "createdAt": 1792586084000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-76-1",
+    "author": "@gunnhild_kantar",
+    "text": "Kantar Dairesi. Altın sayarım, söz tartarım.",
+    "system": "Ondrûm",
+    "race": "Cüce (Ondrûm)",
+    "createdAt": 1792499684000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-77-0",
+    "author": "@dvergi_meyhane",
+    "text": "Taşçalar Meyhanesi. 120 yıllık fıçı, 190 yıllık meyhaneci. İkisi de iyi yaşlanıyor.",
+    "system": "Ondrûm",
+    "race": "Cüce (Ondrûm)",
+    "createdAt": 1792585543000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-77-1",
+    "author": "@dvergi_meyhane",
+    "text": "Taşçalar Meyhanesi. 120 yıllık fıçı, 190 yıllık meyhaneci.",
+    "system": "Ondrûm",
+    "race": "Cüce (Ondrûm)",
+    "createdAt": 1792499143000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-78-0",
+    "author": "@sven_dokumhane",
+    "text": "Büyük Dökümhane. Kor, örs ve ter. Kurt çeliği burada doğar. Kimse soru sormasın, çelik cevaptır.",
+    "system": "Vargrund",
+    "race": "Cüce (Vargrund)",
+    "createdAt": 1792585002000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-78-1",
+    "author": "@sven_dokumhane",
+    "text": "Büyük Dökümhane. Kor, örs ve ter.",
+    "system": "Vargrund",
+    "race": "Cüce (Vargrund)",
+    "createdAt": 1792498602000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-79-0",
+    "author": "@durr_davul",
+    "text": "DURR. Davul göğüs. Yük taşırım. Ritim tutarım. Herkes beraber vurur.",
+    "system": "Vargrund",
+    "race": "Ogre",
+    "createdAt": 1792584461000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-79-1",
+    "author": "@durr_davul",
+    "text": "DURR. Davul göğüs.",
+    "system": "Vargrund",
+    "race": "Ogre",
+    "createdAt": 1792498061000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-80-0",
+    "author": "@ylva_kivilcim",
+    "text": "Skarn Motor Salonu. Kıvılcım saç, hız kalp. Cam kayık yarışında 2. Bir dahakine 1.",
+    "system": "Skarn",
+    "race": "Cüce (Skarn)",
+    "createdAt": 1792583920000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-80-1",
+    "author": "@ylva_kivilcim",
+    "text": "Skarn Motor Salonu. Kıvılcım saç, hız kalp.",
+    "system": "Skarn",
+    "race": "Cüce (Skarn)",
+    "createdAt": 1792497520000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-81-0",
+    "author": "@fjalar_skarnit",
+    "text": "Kıvılcımhan madenleri. Skarnit kazarım. Deprem gelir, ben kalırım.",
+    "system": "Skarn",
+    "race": "Cüce (Skarn)",
+    "createdAt": 1792583379000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-81-1",
+    "author": "@fjalar_skarnit",
+    "text": "Kıvılcımhan madenleri. Skarnit kazarım.",
+    "system": "Skarn",
+    "race": "Cüce (Skarn)",
+    "createdAt": 1792496979000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-82-0",
+    "author": "@hrafna_derin",
+    "text": "Dolgrim kurtarma ekibi. Karanlıkta görürüm, sessizlikte duyarım. Kurtarma Sözü bizimdir.",
+    "system": "Dolgrim",
+    "race": "Cüce (Dolgrim)",
+    "createdAt": 1792582838000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-82-1",
+    "author": "@hrafna_derin",
+    "text": "Dolgrim kurtarma ekibi. Karanlıkta görürüm, sessizlikte duyarım.",
+    "system": "Dolgrim",
+    "race": "Cüce (Dolgrim)",
+    "createdAt": 1792496438000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-83-0",
+    "author": "@arnak_kaeltor",
+    "text": "Arnak. Kaeltor'a 26 km. İpsiz. Sayı taşlarımda 41 tırmanış var.",
+    "system": "Dolgrim",
+    "race": "Goliath",
+    "createdAt": 1792582297000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-83-1",
+    "author": "@arnak_kaeltor",
+    "text": "Arnak. Kaeltor'a 26 km.",
+    "system": "Dolgrim",
+    "race": "Goliath",
+    "createdAt": 1792495897000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-84-0",
+    "author": "@arsivci_eirik",
+    "text": "Büyük Arşiv. Yazılan kalır. Yazılmayan unutulur. Silinen... sorulmaz.",
+    "system": "Hrothmar",
+    "race": "Cüce (Hrothmar)",
+    "createdAt": 1792581756000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-84-1",
+    "author": "@arsivci_eirik",
+    "text": "Büyük Arşiv. Yazılan kalır.",
+    "system": "Hrothmar",
+    "race": "Cüce (Hrothmar)",
+    "createdAt": 1792495356000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-85-0",
+    "author": "@jana_kotlina",
+    "text": "Kotlina. Maden, is ve dayanışma. Beşinci Örs: Ostrav'ın sesi Meclis'e! Bir oy, bir kalp.",
+    "system": "Harrow",
+    "race": "İnsan",
+    "createdAt": 1792581215000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-85-1",
+    "author": "@jana_kotlina",
+    "text": "Kotlina. Maden, is ve dayanışma.",
+    "system": "Harrow",
+    "race": "İnsan",
+    "createdAt": 1792494815000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-86-0",
+    "author": "@ocakbekcisi_torgil",
+    "text": "Ocak Bekçileri. Kotlina'da düzen. Herkese eşit, kimseye ayrıcalık. Cüce de olsan insan da.",
+    "system": "Harrow",
+    "race": "Cüce (Vargrund)",
+    "createdAt": 1792580674000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-86-1",
+    "author": "@ocakbekcisi_torgil",
+    "text": "Ocak Bekçileri. Kotlina'da düzen.",
+    "system": "Harrow",
+    "race": "Cüce (Vargrund)",
+    "createdAt": 1792494274000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-87-0",
+    "author": "@lada_ispazari",
+    "text": "İs Pazarı, Petrić Çay Tezgâhı. Çay, baharat ve en taze dedikodu. Bekçiler de içer.",
+    "system": "Harrow",
+    "race": "İnsan",
+    "createdAt": 1792580133000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-87-1",
+    "author": "@lada_ispazari",
+    "text": "İs Pazarı, Petrić Çay Tezgâhı. Çay, baharat ve en taze dedikodu.",
+    "system": "Harrow",
+    "race": "İnsan",
+    "createdAt": 1792493733000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-88-0",
+    "author": "@mukk_vardiya",
+    "text": "Mukk. Ruk-Ghar'dan Ostrav'a. Madende radyasyon var, bana iyi geliyor. Şaka değil.",
+    "system": "Harrow",
+    "race": "Ork",
+    "createdAt": 1792579592000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-88-1",
+    "author": "@mukk_vardiya",
+    "text": "Mukk. Ruk-Ghar'dan Ostrav'a.",
+    "system": "Harrow",
+    "race": "Ork",
+    "createdAt": 1792493192000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-89-0",
+    "author": "@sifaci_sorrel",
+    "text": "Işık Okulları mezunu, gümüş halka sahibi şifacı. Yasal, denetimli, dikkatli. Şifa hepimizin hakkı.",
+    "system": "Meridian",
+    "race": "İnsan",
+    "createdAt": 1792579051000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-89-1",
+    "author": "@sifaci_sorrel",
+    "text": "Işık Okulları mezunu, gümüş halka sahibi şifacı. Yasal, denetimli, dikkatli.",
+    "system": "Meridian",
+    "race": "İnsan",
+    "createdAt": 1792492651000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-90-0",
+    "author": "@bramwell_yuva",
+    "text": "Abundia. Sabır üzümü, sabır otu, sabırlı ben. Kışın uyurum, yazın yetiştiririm.",
+    "system": "Meridian",
+    "race": "Küçük Halk (Tumbel)",
+    "createdAt": 1792578510000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-90-1",
+    "author": "@bramwell_yuva",
+    "text": "Abundia. Sabır üzümü, sabır otu, sabırlı ben.",
+    "system": "Meridian",
+    "race": "Küçük Halk (Tumbel)",
+    "createdAt": 1792492110000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-91-0",
+    "author": "@cecile_otel",
+    "text": "Luinel sahili, resepsiyon. Elf misafirler, deniz ve sonsuz sabır. Gülümsemem hep açık.",
+    "system": "Meridian",
+    "race": "İnsan",
+    "createdAt": 1792577969000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-91-1",
+    "author": "@cecile_otel",
+    "text": "Luinel sahili, resepsiyon. Elf misafirler, deniz ve sonsuz sabır.",
+    "system": "Meridian",
+    "race": "İnsan",
+    "createdAt": 1792491569000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-92-0",
+    "author": "@sahil_davin",
+    "text": "Sahil Muhafızları. Velmor'da suç az, iş çok. Kayıp şemsiye, kaçak tekne, sarhoş turist.",
+    "system": "Meridian",
+    "race": "İnsan",
+    "createdAt": 1792577428000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-92-1",
+    "author": "@sahil_davin",
+    "text": "Sahil Muhafızları. Velmor'da suç az, iş çok.",
+    "system": "Meridian",
+    "race": "İnsan",
+    "createdAt": 1792491028000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-93-0",
+    "author": "@saelor_venthir",
+    "text": "Aelindor. Sekiz Kapı Okulu. İnsanların ağını çalışma amaçlı inceliyorum. Lütfen etiketlemeyin.",
+    "system": "Aerendis",
+    "race": "İlk Doğan (Ilvarin) elf",
+    "createdAt": 1792576887000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-93-1",
+    "author": "@saelor_venthir",
+    "text": "Aelindor. Sekiz Kapı Okulu.",
+    "system": "Aerendis",
+    "race": "İlk Doğan (Ilvarin) elf",
+    "createdAt": 1792490487000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-94-0",
+    "author": "@liraen_olcu",
+    "text": "Ölçü Kuleleri. Pulsar saniyede bir döner, ben her saniyeyi sayarım. Zaman kutsaldır, ölçüsü de.",
+    "system": "Caelith",
+    "race": "Yıldız Doğan (Aelumi) elf",
+    "createdAt": 1792576346000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-94-1",
+    "author": "@liraen_olcu",
+    "text": "Ölçü Kuleleri. Pulsar saniyede bir döner, ben her saniyeyi sayarım.",
+    "system": "Caelith",
+    "race": "Yıldız Doğan (Aelumi) elf",
+    "createdAt": 1792489946000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-95-0",
+    "author": "@thandril_carsi",
+    "text": "Patlama Çarşısı. Yaprak, Kantar, Mark, BK. Hepsini alırım. Elf ipeği, Isilwen kristali.",
+    "system": "Isilwen",
+    "race": "İlk Doğan (Ilvarin) elf",
+    "createdAt": 1792575805000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-95-1",
+    "author": "@thandril_carsi",
+    "text": "Patlama Çarşısı. Yaprak, Kantar, Mark, BK.",
+    "system": "Isilwen",
+    "race": "İlk Doğan (Ilvarin) elf",
+    "createdAt": 1792489405000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-96-0",
+    "author": "@hrugo_yolsarkisi",
+    "text": "Hrugo. Yol şarkıları bilirim. Bir geçidi bir kez geçtim mi, unutmam. Bir yolu bir kez söyledim mi, kaybolmazsın.",
+    "system": "Oranth",
+    "race": "Minotor",
+    "createdAt": 1792575264000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-96-1",
+    "author": "@hrugo_yolsarkisi",
+    "text": "Hrugo. Yol şarkıları bilirim.",
+    "system": "Oranth",
+    "race": "Minotor",
+    "createdAt": 1792488864000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-97-0",
+    "author": "@orsolya_velaith",
+    "text": "Velaith. Yedi Fener limanında öldürmek yok, kölelik yok. Ticaret var. Kayıt bende.",
+    "system": "Morwen",
+    "race": "İnsan",
+    "createdAt": 1792574723000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-97-1",
+    "author": "@orsolya_velaith",
+    "text": "Velaith. Yedi Fener limanında öldürmek yok, kölelik yok.",
+    "system": "Morwen",
+    "race": "İnsan",
+    "createdAt": 1792488323000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-98-0",
+    "author": "@tavan_ladros",
+    "text": "Tavan. Ladros bozkırı. Rüzgârla koşarım, kervanla yürürüm. Dar kapılardan nefret ederim.",
+    "system": "Morwen",
+    "race": "Centaur (Sentor)",
+    "createdAt": 1792574182000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-98-1",
+    "author": "@tavan_ladros",
+    "text": "Tavan. Ladros bozkırı.",
+    "system": "Morwen",
+    "race": "Centaur (Sentor)",
+    "createdAt": 1792487782000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-99-0",
+    "author": "@kaan_tuzdil",
+    "text": "Sarnıç Kardeşliği. Köprü Hakkı'na saygı. Geçide 1 ışık saniyesi kala silahlar susar. Kural basit.",
+    "system": "Morwen",
+    "race": "İnsan",
+    "createdAt": 1792573641000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-99-1",
+    "author": "@kaan_tuzdil",
+    "text": "Sarnıç Kardeşliği. Köprü Hakkı'na saygı.",
+    "system": "Morwen",
+    "race": "İnsan",
+    "createdAt": 1792487241000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-100-0",
+    "author": "@nadia_augnbra",
+    "text": "Augnbra İstasyonu. Kragmor Gözü'nün bakımı. Uzak Delik şarkısını dinliyorum, her gece.",
+    "system": "Kragmor",
+    "race": "İnsan",
+    "createdAt": 1792573100000,
+    "source": "approved-profile-text"
+  },
+  {
+    "id": "history-100-1",
+    "author": "@nadia_augnbra",
+    "text": "Augnbra İstasyonu. Kragmor Gözü'nün bakımı.",
+    "system": "Kragmor",
+    "race": "İnsan",
+    "createdAt": 1792486700000,
+    "source": "approved-profile-text"
+  }
+]

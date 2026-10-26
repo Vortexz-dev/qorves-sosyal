@@ -1,7 +1,10 @@
 node_modules/
+.npm-cache/
 dist/
 research/
-.npm-cache/
 .env*
+!.env.example
 *API_KEY*
 *.private.*
+.DS_Store
+public/profiller/

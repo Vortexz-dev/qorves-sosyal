@@ -1,0 +1,1 @@
+{"indexes":[],"fieldOverrides":[{"collectionGroup":"posts","fieldPath":"image","indexes":[]},{"collectionGroup":"users","fieldPath":"avatar","indexes":[]},{"collectionGroup":"memories","fieldPath":"summary","indexes":[]},{"collectionGroup":"memories","fieldPath":"recent","indexes":[]},{"collectionGroup":"settings","fieldPath":"apiKey","indexes":[]}]}
