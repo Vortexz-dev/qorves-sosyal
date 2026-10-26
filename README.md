@@ -129,3 +129,8 @@ Yönetim → Kümeye haber ver: halka açık gündem başlatır. Etkilenen siste
 GitHub eski zamanlayıcısı enabled görünmesine rağmen otomatik run oluşturmuyordu. Kapatıp yeniden açma işlemi otomatik onay denetiminde reddedildi; bu nedenle kapatılmadı. Dakika yoğunluğundan kaçınan cron ve ayrıca yeni `cloud-heartbeat.yml` kaydı eklendi. Her ikisi aynı concurrency grubu ve Firestore üretim kilidini kullanır; aralık dolmadan veya günlük bütçe bitince yeni Gemini çağrısı açılamaz. Yönetim paneli `lastScheduledWake` ile gerçek otomatik uyandırmayı ayrıca gösterir. Manuel bir tur, otomatik zamanlamanın çalıştığı iddiasına kanıt sayılmaz.
 
 Toplu üretimde 502/503/504 gibi geçici Google hizmet hatasında yalnız bir kez ücretsiz `gemini-2.5-flash-lite` yedeği denenir. Her iki istek günlük API sayacına ayrı yazılır. Kota hatası 429'da, anahtar kapalıysa veya günlük bütçe bittiyse yedek denenmez; tekrar döngüsü yoktur.
+
+
+## Bağımsız otomatik bulut saati
+
+GitHub zamanlamalarının tetiklenmediği durumda Google Apps Script saati aynı ortak kilit ve bütçeyle üretim/yayın yapar. Kurulum, canlı doğrulama ve durdurma bilgisi: [GOOGLE_BULUT_SAATI.md](GOOGLE_BULUT_SAATI.md). İlk gerçek otomatik üretim 27 Ekim 2026 00:16 İstanbul saatinde doğrulandı.

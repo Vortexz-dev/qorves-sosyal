@@ -36,6 +36,18 @@ Kontroller: npm test
 
 Derlenmiş özel proje dosyaları research/google-clock altında üretilir; gerçek Gemini anahtarı içermez. Google ortamı testleri bütçe, yayın kuyruğu, duraklatma ve üretim sırasında durdurmayı doğrular. Sunucu testi yetkisiz kimlik, süresi geçmiş/yanlış kilit ve aynı isteğin tekrarını reddettiğini doğrular.
 
-## Bu kaydın hazırlandığı andaki durum
+## Doğrulanan canlı durum — 27 Ekim 2026, İstanbul
 
-Kod Google özel projesine kaydedildi. Mesaj sunucusunun 3. sürümü yayımlandı. Google ilk çalıştırma izni hesap sahibinden bekleniyor. Servis kimliği bağlanıp otomatik zamanlayıcının gerçek çalışması görülmeden sürekli üretim sorunu çözülmüş sayılmıyor.
+Google izinleri hesap sahibi tarafından tamamlandı. Servis kimliği yalnız mevcut sunucunun gizli ortam ayarında tanımlandı. Zamanlayıcı kuruldu.
+
+00:16:08'de zaman tabanlı gerçek otomatik tur başladı, 00:17:33'te başarıyla tamamlandı. Bir Gemini isteğiyle 49 geçerli gönderi/yorum ve 100 beğeni üretildi; 149 kayıt yarım saate dağıtılmak üzere kuyruğa alındı. Tekrara benzeyen veya geçersiz çıktı varsa 50'nin altında sonuç kabul edilir; eksik sayıyı tamamlamak için ek API isteği açılmaz.
+
+Firebase ID kimliği beginTransaction yöntemini desteklemediği için atomik commit içinde bütün okunan kayıtların sürümünü doğrulayan yöntem kullanıldı. Çakışma veya anahtar değişikliği halinde kayıt iptal edilir; en fazla üç kayıt denemesi vardır, bunlar AI isteği değildir.
+
+Kanıt yalnız elle başlatılan tur değildir: Google yürütme kaydında tür Zaman Odaklı, Firebase kontrolünde clockTrigger=google_time_trigger ve clockProvider=Google Apps Script olarak doğrulandı.
+
+Güncel testler: 41 uygulama/saat + 12 sunucu = 53 başarılı test. Google'ın günlük ücretsiz çalışma süresi ve bağlantı kotaları geçerlidir; bu sınırlar servis duraklamasına neden olabilir, ücretli plana otomatik geçiş yapılmaz.
+
+Google Apps Script kota belgesi: https://developers.google.com/apps-script/guides/services/quotas
+
+00:21 otomatik kontrolü publishing-only olarak tamamlandı; istek sayısı 1 kaldı. Ortak yayın kuyruğu 149 kayıttan 137 kayda indi. Canlı ayarlar ayrıca enabled=true, intervalMinutes=30, maxRequests=48, batchSize=50, likesPerTurn=100, maxPosts=2400 olarak okundu.
