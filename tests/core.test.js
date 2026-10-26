@@ -104,3 +104,26 @@ test('reaction queue is compact enough for Firebase free writes',()=>{
  const posts=Array.from({length:50},(_,i)=>({id:'budget'+i,author:'@x',text:'Merhaba'}));const pairs=Array.from({length:100},(_,i)=>({postId:posts[i%50].id,author:'@n'+i}));
  const raw=planPublications(posts,[],pairs,{},Date.now(),30),small=compactPublications(raw);assert.ok(small.length<=57);assert.equal(small.filter(x=>x.type==='likes').reduce((n,x)=>n+x.body.items.length,0),100);
 });
+
+import {repetitive,socialAngle} from '../src/social-life.js';
+import {unreadNotifications,typingVisible,shuffleSuggestions} from '../src/inbox.js';
+test('cloned posts are rejected without forcing unrelated topics or extra generation calls',()=>{
+ assert.equal(repetitive('Bugün limanda vardiya yine bitti, çayımı içtim.', ['Bugün limanda vardiya yine bitti, çayımı içtim. #Liman']),true);
+ assert.equal(repetitive('Bu şarkının nakaratını unutamıyorum.', ['Bugün limanda vardiya yine bitti, çayımı içtim.']),false);
+ assert.notEqual(socialAngle('@ada',0),socialAngle('@ada',1800000));
+});
+test('unread notifications merge private messages without leaking other accounts',()=>{
+ const n=unreadNotifications([{id:'1',recipient:'@me',createdAt:1},{id:'2',recipient:'@other',createdAt:4}],[{id:'dm:x',createdAt:3}], '@me');assert.deepEqual(n.map(x=>x.id),['dm:x','1']);assert.equal(n[0].source,'private');assert.equal(n[0].kind,'mesaj');
+ assert.equal(typingVisible(60000,49999),false);assert.equal(typingVisible(60000,50000),true);assert.equal(typingVisible(60000,60000),false);
+});
+test('suggestions shuffle once from all accounts and retain unique candidates',()=>{
+ const picks=shuffleSuggestions(['a','b','c','d'],()=>0);assert.equal(new Set(picks).size,4);assert.notDeepEqual(picks,['a','b','c','d']);
+});
+test('notifications stay read across storage roundtrips',async()=>{
+ await storage.notify('@reader','@sender','beğeni','notice-post');const notice=storage.list('notifications').find(n=>n.recipient==='@reader');assert.ok(!notice.readAt);await storage.readNotifications([notice.id]);assert.ok(storage.list('notifications').find(n=>n.id===notice.id).readAt>0);
+});
+test('NPC follows require an explicit justified decision, shared switch and daily relationship cooldown',async()=>{
+ await storage.saveSettings({enabled:true,apiKey:'test',maxRequests:100,maxPosts:10000});const claim=await storage.claim('relations',true);assert.ok(claim);const author=npcs[0].kullanici_adi,target='@relationship_player';
+ assert.equal(await storage.updateRelationships(claim,[{author,target,action:'follow',reason:''}]),0);assert.equal(await storage.updateRelationships(claim,[{author,target,action:'follow',reason:'Ortak bir konu hakkında görüşlerini ilginç buldu.'}]),1);assert.ok(await storage.relationship(author,target));
+ assert.equal(await storage.updateRelationships(claim,[{author,target,action:'unfollow',reason:'Hemen vazgeçti.'}]),0);await storage.saveSettings({enabled:false});assert.equal(await storage.updateRelationships(claim,[{author,target:'@another',action:'follow',reason:'İlgisini çekti.'}]),0);await storage.release(claim,'test');
+});

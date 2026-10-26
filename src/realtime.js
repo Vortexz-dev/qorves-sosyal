@@ -6,6 +6,8 @@ export const realtime={
  bind:(handle,password)=>realtime.call('/bind',{handle,password}),
  unbind:()=>realtime.enabled?realtime.call('/unbind',{}):Promise.resolve(),
  messages:peer=>realtime.call('/dm'+(peer?'?peer='+encodeURIComponent(peer):'')),
+ read:peer=>realtime.call('/dm/read',{peer}),
+ readAll:()=>realtime.call('/dm/read',{all:true}),
  send:(peer,text)=>realtime.call('/dm/send',{peer,text}),
  async react(collection,id){if(!realtime.enabled)return;try{await realtime.call('/react',{collection,id});}catch(e){console.info('Ek yanıt ertelendi; normal küme turu kullanılacak.');}},
  async tick(){if(!realtime.enabled)return;try{await realtime.call('/tick');}catch{}},

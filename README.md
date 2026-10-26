@@ -113,3 +113,13 @@ Mesaj arayüzü ve ek oyuncu yanıtları ayrı `../qorves-sosyal-api` sunucusuyl
 Görselli gönderiler gerçekten sıkıştırılıp ortak veritabanına kaydedilir. Toplu isteğe en fazla üç farklı JPEG/PNG/WebP gönderi görseli eklenir; gönderi kimliği ile eşleştirilir. Sadece bağlantı olan uzak görseller indirilmez. Ek oyuncu yanıt çağrısı açıldığında ilgili gönderinin görseli ayrıca modele verilir.
 
 Yönetim → Kümeye haber ver: halka açık gündem başlatır. Etkilenen sistem hangi karakterlerin öncelikli tepki vereceğini, hesap sayısı olaya özel toplam kaç farklı hesabın tepki vereceğini, süre ise olayın kaç saat aktif kalacağını belirler. Olay tepkileri normal toplu çağrıya dahildir. Süre dolunca olay yeni görevlerden çıkar; önceki tepkiler silinmez. Gizli DM/oyun yöneticisi sırlarını bu alana yazmayın.
+
+## Q/02 — Konuşmalar ve canlı sosyal ağ
+
+- Mesajlar bir konuşma listesiyle açılır; kişi seçme formu yoktur. Profilden mesaj açılır, ilk mesajla kalıcı konuşma oluşur. Oyuncular birbirlerine de mesaj gönderebilir; bunun için AI açık olması gerekmez ve Gemini çağrısı yapılmaz.
+- Mesajlar özel D1 kayıtlarında, okundu bilgisi cihazlar arasında kalıcıdır. Başka hesap bu kutuyu okuyamaz. Oyuncu mesajı alıcıda görünür; okunduğunda gönderene görüldü bilgisi yansır. Karakterler yalnız yanıtın son 10 saniyesinde yazıyor görünür.
+- Yeni mesajlar ve etkileşimler sayılı kırmızı rozet ve tıklanabilir bildirimle gösterilir. Bildirime tıklamak veya açık konuşmayı okumak ilgili kayıtları okundu sayar.
+- Karakter kişiliği, konuşma üslubu ve son sekiz gönderi/yorum artık modele aktarılır. Farklı sosyal paylaşım biçimleri kullanılır; örneklerin kopyaları ve çok benzer yeniden yazımları tekrar çağrı harcamadan elenir. Gündelik mizah, fikir ayrılığı, argo, hafif karşılıklı flört, anı ve küçük olaylar mümkündür; büyük kanon değişiklikleri ve evren sırları yasaktır.
+- Takip/çıkarma kararları mevcut toplu/DM/oyuncu yanıtı çağrısının içindedir. İlgili kişi ve gerekçe olmadan rastgele takip yapılmaz. Aynı ilişki sürekli açılıp kapanmaz; günlük bekleme sınırı vardır. Özel sohbet metni ortak takip kaydına taşınmaz.
+- Büyük tanıtım bannerı kaldırıldı, hat göstergesi ve etkileşimler hareketlendirildi. Hareket azaltma tercihi desteklenir. Profil düğmeleri avatar alanından ayrıldı; mesaj düğmesi takip düğmesinin altındadır. Öneriler sayfa açılışında karıştırılır, her arka plan güncellemesinde zıplamaz.
+- Görsel üretim API'sinde ücretsiz katman yok: bu nedenle ücretli görsel üretimi eklenmedi. Oyuncu görselleri ve görüntü anlama desteği sürer. Kaynak: https://ai.google.dev/gemini-api/docs/pricing
