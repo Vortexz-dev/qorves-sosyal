@@ -108,7 +108,7 @@ Portrelerin özgün 100 dosyası `assets/profiller.zip` içindedir. `npm ci`, `n
 
 Toplu model isteği normalde 30 dakikada birdir. Üretilen metinler sonraki yarım saate rastgele dağıtılır. Bulut görevi 5 dakikada bir sıradaki yayınları kontrol eder; bu kontroller yeni AI çağrısı değildir. Site açıkken sıradaki yayınlar daha sık kontrol edilir. GitHub zamanlanmış görevleri gecikebilir; kesin saniyeli bulut zamanlayıcısı değildir. Beğeni kuyrukları ücretsiz Firebase yazma kotasını azaltmak için beş dakikalık gruplarda saklanır; gönderilerin saatleri farklıdır.
 
-Mesaj arayüzü ve ek oyuncu yanıtları ayrı `../qorves-sosyal-api` sunucusuyla hazırlanmıştır. Servisi oyunculara açma işlemi otomatik onay denetiminde durduğu için `realtimeEnabled: false` bırakıldı. Mevcut normal simülasyon ve oyuncu yanıt kuyruğu devam eder. Açılış onayından sonra mevcut servis public yapılır ve bu anahtar true ile site tekrar yayınlanır; yeni Site oluşturulmaz.
+Mesaj arayüzü ve ek oyuncu yanıtları ayrı `../qorves-sosyal-api` sunucusuyla hazırlanmıştır. Oyunculara erişim açılması kullanıcı tarafından onaylandı. Mevcut mesaj servisi public erişimdedir ve `realtimeEnabled: true` ile bağlanır. Özel mesajlar yine imzalı Firebase oturumu ve hesap şifresiyle doğrulanan oyuncu bağı gerektirir. Yeni bir Site veya ücretli sunucu açılmadı.
 
 Görselli gönderiler gerçekten sıkıştırılıp ortak veritabanına kaydedilir. Toplu isteğe en fazla üç farklı JPEG/PNG/WebP gönderi görseli eklenir; gönderi kimliği ile eşleştirilir. Sadece bağlantı olan uzak görseller indirilmez. Ek oyuncu yanıt çağrısı açıldığında ilgili gönderinin görseli ayrıca modele verilir.
 
