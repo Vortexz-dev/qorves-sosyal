@@ -1,7 +1,7 @@
 // Lightweight wake-up: queued publishing does not call Gemini.
 import {initializeApp} from 'firebase/app';
 import {getAuth,signInAnonymously} from 'firebase/auth';
-import {getFirestore,getDocFromServer,getDocs,doc,query,collection,where,limit} from 'firebase/firestore';
+import {getFirestore,setDoc,getDocFromServer,getDocs,doc,query,collection,where,limit} from 'firebase/firestore';
 import {config} from '../src/config.js';
 import {day} from '../src/domain.js';
 import {cloudTurnDue} from '../src/publication.js';
@@ -16,6 +16,7 @@ try{
  const app=initializeApp(config.firebaseConfig);await signInAnonymously(getAuth(app));const db=getFirestore(app);
  const [s,c]=await Promise.all([getDocFromServer(doc(db,'settings','simulation')),getDocFromServer(doc(db,'control','simulation'))]);
  const settings={...defaults,...s.data()},control=c.data()||{},now=Date.now();
+ await setDoc(doc(db,'control','simulation'),{lastWake:now,clockTrigger:process.env.GITHUB_EVENT_NAME||'local',...(process.env.GITHUB_EVENT_NAME==='schedule'?{lastScheduledWake:now}:{})},{merge:true});
  if(!config.simulationAllowed||!settings.enabled){console.log('Simülasyon panelden kapalı; Gemini isteği ve yayın yapılmadı.');process.exit(0);}
  if(config.realtimeEnabled&&config.realtimeUrl){try{const r=await fetch(config.realtimeUrl+'/api/v1/tick',{headers:{Authorization:'Bearer '+await getAuth(app).currentUser.getIdToken()},signal:AbortSignal.timeout(20000)});if(!r.ok)console.log('Ek yanıt dağıtıcısı bu tur kullanılamadı; normal tur devam ediyor.');}catch{console.log('Ek yanıt dağıtıcısına bu tur ulaşılamadı.');}}
  const due=cloudTurnDue(settings,control,now,day(),process.env.QORVES_FORCE_TURN==='true');

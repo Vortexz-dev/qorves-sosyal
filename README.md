@@ -123,3 +123,7 @@ Yönetim → Kümeye haber ver: halka açık gündem başlatır. Etkilenen siste
 - Takip/çıkarma kararları mevcut toplu/DM/oyuncu yanıtı çağrısının içindedir. İlgili kişi ve gerekçe olmadan rastgele takip yapılmaz. Aynı ilişki sürekli açılıp kapanmaz; günlük bekleme sınırı vardır. Özel sohbet metni ortak takip kaydına taşınmaz.
 - Büyük tanıtım bannerı kaldırıldı, hat göstergesi ve etkileşimler hareketlendirildi. Hareket azaltma tercihi desteklenir. Profil düğmeleri avatar alanından ayrıldı; mesaj düğmesi takip düğmesinin altındadır. Öneriler sayfa açılışında karıştırılır, her arka plan güncellemesinde zıplamaz.
 - Görsel üretim API'sinde ücretsiz katman yok: bu nedenle ücretli görsel üretimi eklenmedi. Oyuncu görselleri ve görüntü anlama desteği sürer. Kaynak: https://ai.google.dev/gemini-api/docs/pricing
+
+### Zamanlayıcı tanısı
+
+GitHub eski zamanlayıcısı enabled görünmesine rağmen otomatik run oluşturmuyordu. Kapatıp yeniden açma işlemi otomatik onay denetiminde reddedildi; bu nedenle kapatılmadı. Dakika yoğunluğundan kaçınan cron ve ayrıca yeni `cloud-heartbeat.yml` kaydı eklendi. Her ikisi aynı concurrency grubu ve Firestore üretim kilidini kullanır; aralık dolmadan veya günlük bütçe bitince yeni Gemini çağrısı açılamaz. Yönetim paneli `lastScheduledWake` ile gerçek otomatik uyandırmayı ayrıca gösterir. Manuel bir tur, otomatik zamanlamanın çalıştığı iddiasına kanıt sayılmaz.

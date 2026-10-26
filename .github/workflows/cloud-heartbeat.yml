@@ -1,0 +1,26 @@
+name: Qorves otomatik ağ saati
+on:
+  schedule:
+    - cron: '1-56/5 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: qorves-simulation
+  cancel-in-progress: false
+jobs:
+  wake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Ortak kilitle üretim ve yayın saatini kontrol et
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          QORVES_FORCE_TURN: 'false'
+        run: node scripts/cloud-simulation.mjs
