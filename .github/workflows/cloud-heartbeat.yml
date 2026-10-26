@@ -1,7 +1,7 @@
 name: Qorves otomatik ağ saati
 on:
   schedule:
-    - cron: '1-56/5 * * * *'
+    - cron: '3-58/5 * * * *'
   workflow_dispatch:
 permissions:
   contents: read
