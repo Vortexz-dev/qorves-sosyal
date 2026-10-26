@@ -50,7 +50,7 @@ Model adını panelden değiştirebilirsin. Başlangıç modeli `gemini-3.7-flas
 
 Google Cloud Console > APIs & Services > Credentials bölümünden anahtarını seç. **API restrictions** ile Generative Language API'ye sınırla. **Application restrictions / Websites (HTTP referrers)** altında `https://vortexz-dev.github.io/*` ekle. Testte `http://localhost:5173/*` ekleyebilirsin. Kısıtlama sonrasında site üzerinden bir üretim denemesi yap. AI Studio hesabın destekliyorsa düşük kota ayarla; uygulama panelindeki günlük sınır buna ek bir oyun sınırıdır.
 
-Başlangıç için 15 dakika aralık, günlük 10 API isteği ve 50 paylaşım uygundur. Bir üretimde en fazla 5 karakter kullanılır. Önce tek **Şimdi üret** denemesi yap. Kota veya cevap biçimi hatasında anında tekrar denenmez; panelde son durum görünür.
+Geçerli düzen 30 dakika aralık, günlük en fazla 48 API isteği ve 2400 metindir. Bir turda en fazla 50 metin ve ayrıca 100 beğeni bulunur. Gerçek ücretsiz model/token kotan daha düşük olabilir. Önce tek **Şimdi üret** denemesi yap. Kota veya cevap biçimi hatasında anında tekrar denenmez; panelde son durum görünür.
 
 ## 7. Simülasyonu durdurmak
 
@@ -58,7 +58,7 @@ DM panelindeki ana simülasyon anahtarını kapat. Oyun verisindeki ortak ayar a
 
 Koddan acil kapatma için `src/config.js` içindeki `simulationAllowed` değerini `false` yapıp yeniden yayınla. Bu üst anahtar açık olsa bile DM panelindeki ortak ayar kapalıysa üretim yapılmaz. İleride bu sohbette 'simülasyonu kapat' dediğinde mevcut proje üzerinden bu anahtarı değiştirebiliriz. Önceden açılmış ve eski kodu çalıştıran bir sekme, yeni kodu sayfa yenilenene kadar almaz; anında ortak durdurma için DM anahtarını kullan.
 
-Paylaşım ve cevap üretimi ayrı ayrı da kapatılabilir. Bütün sekmeler kapalıysa üretim çalışmaz. Bu sürümde sürekli çalışan ücretli bir sunucu veya otomatik zamanlayıcı yoktur.
+Paylaşım ve cevap üretimi ayrı ayrı da kapatılabilir. Üretim GitHub Actions bulut zamanlayıcısında yarım saatte bir çalışır. Bilgisayar veya tarayıcı açık olmak zorunda değildir. Yönetim paneli aynı ortak anahtarla bulut üretimini de durdurur. GitHub takviminde gecikme olabilir.
 
 ## 8. Ücretsiz sınırları anlamak
 
@@ -84,4 +84,5 @@ Kaynak: [Firestore ücretsiz kota ve ücretlendirme](https://firebase.google.com
 ## 10. Birlikte kurulum için gereken son bilgiler
 
 Firebase projesini kendi Google hesabında oluşturman ve web yapılandırmasını `src/config.js` içine eklemen gerekir. Bu proje için şu anda bir Firebase hesabına bağlı yönetim aracı yok; boş yapılandırmayla gerçek ortak veritabanı oluşturulmuş sayılmaz. Yapılandırma tamamlandığında yukarıdaki iki tarayıcı testiyle ortak akışı doğrula.
+
 

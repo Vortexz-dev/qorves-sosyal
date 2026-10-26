@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
-import {safeText,cleanHandle,escapeHtml,validateOutputs,validateBackup,scoreNPC,formatSocialText} from '../src/domain.js';
+import {safeText,cleanHandle,escapeHtml,validateOutputs,validateBackup,scoreNPC,formatSocialText,chooseReactions} from '../src/domain.js';
 import npcs from '../src/data/profiller.json' with {type:'json'};
 import world from '../src/data/world.json' with {type:'json'};
 test('100 source characters have all portraits and connected handles',()=>{assert.equal(npcs.length,100);assert.equal(new Set(npcs.map(n=>n.kullanici_adi)).size,100);for(const n of npcs){assert.ok(existsSync('public/'+n.foto));assert.ok(n.asla_soylemez);for(const h of n.iliskili_hesaplar)assert.ok(npcs.some(n=>n.kullanici_adi===h));}});
@@ -32,5 +32,34 @@ test('pause while network is pending discards output and keeps prior memory',asy
  const {generate}=await import('../src/simulation.js');await storage.saveSettings({enabled:true});let started,resolveResponse;const start=new Promise(r=>started=r);globalThis.fetch=async()=>{started();return new Promise(r=>resolveResponse=r);};
  const job=generate(true,['@leontine_hessar']);await start;await storage.saveSettings({enabled:false});resolveResponse({ok:true,json:async()=>({candidates:[{content:{parts:[{text:JSON.stringify([{handle:'@leontine_hessar',text:'BU ÇIKTI YAYINLANMAMALI',replyTo:null,memory:'Yanlış hafıza.'}])}]}}]})});await job;
  assert.ok(!storage.getFeed().some(p=>p.text==='BU ÇIKTI YAYINLANMAMALI'));assert.ok((await storage.memory('@leontine_hessar')).summary.includes('çay'));
+});
+test('common switch closing at preflight sends zero external requests',async()=>{
+ const {generate}=await import('../src/simulation.js');
+ await storage.saveSettings({enabled:true,maxRequests:30});
+ const original=storage.refreshSettings,before=storage.usage.requests;let calls=0;
+ globalThis.fetch=async()=>{calls++;throw Error('Bu çağrı gerçekleşmemeli');};
+ storage.refreshSettings=async()=>{await storage.saveSettings({enabled:false});return storage.settings;};
+ try{await generate(true,['@leontine_hessar']);assert.equal(calls,0);assert.equal(storage.usage.requests,before);}
+ finally{storage.refreshSettings=original;}
+});
+test('reopening common switch resumes generation without losing previous posts',async()=>{
+ const {generate}=await import('../src/simulation.js');const before=storage.getFeed().length;
+ await storage.saveSettings({enabled:true});let calls=0;
+ globalThis.fetch=async()=>{calls++;return {ok:true,json:async()=>({candidates:[{content:{parts:[{text:JSON.stringify([{handle:'@leontine_hessar',text:'Çay masasında sohbet kaldığı yerden sürüyor.',replyTo:null,memory:'Dostlarıyla çay sohbetine devam etti.'}])}]}}]})};};
+ const result=await generate(true,['@leontine_hessar']);assert.equal(result.status,'completed');assert.equal(calls,1);assert.equal(storage.getFeed().length,before+1);
+});
+test('100 reaction choices are unique and never self-likes',()=>{
+ const posts=npcs.slice(0,20).map(n=>({id:'sample-'+n.id,author:n.kullanici_adi,system:n.sistem,text:n.bio}));
+ const chosen=chooseReactions(posts,npcs,100);assert.equal(chosen.length,100);assert.equal(new Set(chosen.map(p=>p.postId+':'+p.author)).size,100);
+ for(const p of chosen)assert.notEqual(p.author,posts.find(x=>x.id===p.postId).author);
+});
+test('one external request can publish 50 texts without recursively enqueueing NPC replies',async()=>{
+ const {generate}=await import('../src/simulation.js');
+ await storage.saveSettings({enabled:true,postsEnabled:true,repliesEnabled:false,batchSize:50,likesPerTurn:100,maxRequests:48,maxPosts:2400});
+ const before=storage.getFeed().length,queued=storage.list('queue').length;let calls=0;
+ globalThis.fetch=async()=>{calls++;return {ok:true,json:async()=>({candidates:[{content:{parts:[{text:JSON.stringify(npcs.slice(0,50).map(n=>({handle:n.kullanici_adi,text:`Günlük ağ notu ${n.id}: vardiya bitti, çay hazır.`,replyTo:null,memory:'Vardiya sonrası çay içti.'})))}]}}]})};};
+ const result=await generate(true,npcs.slice(0,50).map(n=>n.kullanici_adi));assert.equal(calls,1);assert.equal(result.generated,50);assert.ok(result.likes<=100);assert.equal(storage.getFeed().length,before+50);assert.equal(storage.list('queue').length,queued);
+ await storage.saveSettings({enabled:false});const liked=storage.list('likes').length;
+ assert.equal(await storage.addReactions({token:storage.usage.token,revision:storage.settings.revision},[{postId:'off-test',author:'@a',recipient:'@b'}]),0);assert.equal(storage.list('likes').length,liked);
 });
 

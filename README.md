@@ -44,13 +44,13 @@ DM ana anahtarı ortak oyun ayarıdır. Kapatıldığında yeni istek yapılmaz;
 
 Koddan üst anahtar `src/config.js` içindeki `simulationAllowed` değeridir. `false` yapıp yayınlamak yeni yüklenen tüm oturumlarda üretimi engeller. Önceden açık sekmeler yenilenene kadar eski kodda kalabilir; derhal bütün oturumları durdurmak için DM anahtarını kullan. İleride bu projede “simülasyonu kapat/aç” diyerek bu ayarı değiştirtmek mümkün.
 
-Tarayıcı üretimi yalnız görünür ve açık oturumlarda çalışır. Yerel üretici ayrıca başlatılmışsa tarayıcı kapalıyken de bilgisayarda çalışır. Firestore işlemiyle alınan süreli kilit, iki tarayıcının aynı turu başlatmasını önler. İstek başlamadan günlük kullanım ayrılır. Kota hatası, ağ sorunu veya geçersiz JSON'da anlık yeniden deneme yapılmaz; sonraki normal zaman aralığı beklenir. Panel son sonucu gösterir.
+Üretim artık GitHub Actions bulut zamanlayıcısında çalışır. Bilgisayar veya tarayıcı açık olmak zorunda değildir. Her tur ortak panel anahtarını sunucudan okur; kapalıysa AI isteği göndermez. Ayrıntılar aşağıdaki bulut bölümündedir.
 
 ### Karakterler ne hatırlar?
 
 Her karakterin `memories` kaydında kalıcı kısa özet ve son 12 konuşma izi saklanır. Yeni üretimde bunlar, kendi son paylaşımları, kişiliği ve ilgili yerin kısa bilgisi gönderilir. Model mevcut hafızayı yeni konuşmayla birleştirir. Bu sınırsız ve kusursuz bir insan hafızası değildir: kısa özet zamanla ayrıntı kaybedebilir. Eski gönderiler akışta kalır, gerekirse yedekten incelenebilir.
 
-Oyuncu paylaşımları ve yorumları cevap kuyruğuna girer. Yer, ırk, konu ve mevcut ilişkilerle en ilgili 1–2 karakter seçilir. Her istekte en fazla 5 karakter bulunur. Mevcut tanışıklığı olan karakterler kendi aralarında da sohbet edebilir. Üretilen yanıt, hedef gönderiye bağlanır, bildirim oluşturur ve beğeni bırakır.
+Oyuncu paylaşımları ve yorumları cevap kuyruğuna girer. Yer, ırk, konu ve mevcut ilişkilerle en ilgili 1–2 karakter seçilir. Her istekte en fazla 50 farklı karakter bulunur. Mevcut tanışıklığı olan karakterler kendi aralarında da sohbet edebilir. Üretilen yanıt, hedef gönderiye bağlanır, bildirim oluşturur ve beğeni bırakır.
 
 ### Anahtar ve oyun güvenliği
 
@@ -85,13 +85,19 @@ Keşfedilmemiş ve karantina altındaki yerlerle ilgili üretilen mesajlar ihtiy
 
 `research/` yalnız yerel inceleme alanıdır; gizli kaynak alıntıları içerir, `.gitignore` ile dışlanmıştır. Yayına yalnız `dist/` çıkar. `dist`, `node_modules`, anahtar dosyaları ve yerel araştırma notları kaynak deposuna eklenmez.
 
-## Yayınlanan sürüm ve üretici
 
-Firebase bağlantısı kuruludur. İki bağımsız anonim oturum arasında ortak paylaşım okuma/yazma doğrulanmıştır. Başlangıç akışında her 100 karakter için 5, toplam 500 geçmiş paylaşım vardır. Geçmiş, kaynak örnekleri ve halka açık biyografi parçalarıyla, ayrıca başarılı toplu üretim sonuçlarıyla hazırlanmıştır; tamamının yeni AI üretimi olduğu iddia edilmez.
+## Bulutta çalışan simülasyon
 
-Gemini anahtarı artık ortak Firestore ayarlarına kaydedilmez. DM panelinden girildiğinde yalnız o tarayıcıda saklanır. Yalnız anahtarı bulunan oturum üretim yapabilir. Birden fazla üretici olsa da ortak kilit ve günlük bütçe tek kalır. Normal oyuncuların her sayfa açışı yeni AI isteği oluşturmaz.
+`.github/workflows/simulation.yml` GitHub Actions üzerinde yarım saatte bir kontrol başlatır. Bilgisayarın ve bütün tarayıcılar kapalıyken de çalışır. Anahtar `GEMINI_API_KEY` adlı şifreli GitHub Actions secret alanındadır; kaynak kodunda, site dosyalarında ve oyuncuların okuyabileceği Firestore ayarlarında bulunmaz. İş günlükleri anahtarı veya model isteklerini yazdırmaz.
 
-İsteğe bağlı yerel üretici `scripts/simulation-worker.mjs` bilgisayar açıkken çalışır; anahtar yolu `QORVES_GEMINI_KEY_FILE` ortam değişkeninden alınır, anahtar dosyasını depoya eklemez. Bu üretici tarayıcı kapalıyken de çalışabilir. DM ortak anahtarını kapatmak yerel üreticiyi de durdurur. İşlem kapanırsa tekrar başlatılması gerekir; otomatik zamanlayıcı kurulmamıştır.
+Her tur ortak Firestore anahtarını okur. Panelden kapalıysa Gemini çağrısı yapılmaz. İstek öncesinde ayar tekrar sunucudan okunur. Devam eden turda kapatma alınırsa ağ isteği mümkünse iptal edilir; sağlayıcıya ulaşmış istek kota sayılabilir. Sonuç kaydedilmeden önce aynı ortak anahtar ve ayar sürümü transaction içinde tekrar doğrulanır. Beğeniler de kapatma anahtarına uyar. Eski gönderiler, yorumlar ve hafızalar silinmez. Açınca bir sonraki zamanlanmış turda devam eder; anında çalışma sözü verilmez.
 
-Portrelerin özgün 100 dosyası `assets/profiller.zip` içinde tutulur. `npm ci`, `npm run dev` ve `npm run build` gerekli dosyaları `public/profiller` içine otomatik çıkarır. Böylece yayınlanan portreler kaynak fotoğraflarla aynıdır.
+Hedef düzen: 30 dakikada en fazla 1 Gemini isteği; istekte en fazla 50 paylaşım/yorum ve ayrıca kodla seçilen en fazla 100 beğeni. Günlük güvenlik sınırları 48 istek ve 2400 yeni metindir. Karakter seçimi konu, yer ve ilişkilerle ağırlıklandırılır ve dağıtılır. AI cevapları yeni üretim kuyruğu oluşturmaz. Kota/hata/geçersiz çıktı için aynı turda tekrar denenmez. Geçersiz veya spoiler içeren çıktı atılabildiği için her tur tam 50 içerik çıkacağı garanti edilmez.
 
+48 istek ve büyük toplu yanıtların ücretsiz kalması hesabın gerçek Gemini model/token kotalarına bağlıdır. Bu sayılar uygulama üst sınırıdır, sağlayıcının ücretsiz erişim garantisi değildir. Beğeniler model çağrısı gerektirmez ama Firestore işlemi kullanır. Kullanım panelden ve Firebase Usage ekranından izlenebilir.
+
+GitHub zamanlanmış çalışmaları yoğunlukta geciktirebilir veya atlayabilir. Kamuya açık depolarda 60 gün depo etkinliği olmazsa GitHub takvimi durdurabilir; Actions ekranından yeniden etkinleştirilir. Bu ücretsiz zamanlayıcı kesin saat/arıza toleranslı 24 saat hizmet garantisi değildir.
+
+Kaynaklar: https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule ve https://ai.google.dev/gemini-api/docs/rate-limits
+
+Portrelerin özgün 100 dosyası `assets/profiller.zip` içindedir. `npm ci`, `npm run dev` ve `npm run build` bunları `public/profiller` içine otomatik çıkarır. `scripts/simulation-worker.mjs` yalnız isteğe bağlı yerel test üreticisidir; normal çalışma ona bağlı değildir.

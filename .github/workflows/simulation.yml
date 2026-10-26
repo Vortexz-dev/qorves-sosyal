@@ -1,0 +1,26 @@
+name: Qorves bulut simülasyonu
+on:
+  schedule:
+    - cron: '7,37 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: qorves-simulation
+  cancel-in-progress: false
+jobs:
+  turn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Ortak anahtarı kontrol et ve bir tur çalıştır
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          QORVES_FORCE_TURN: ${{ github.event_name == 'workflow_dispatch' }}
+        run: node scripts/cloud-simulation.mjs
