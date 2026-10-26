@@ -4,6 +4,7 @@ import {readFileSync,existsSync} from 'node:fs';
 import {safeText,cleanHandle,escapeHtml,validateOutputs,validateBackup,scoreNPC,formatSocialText,chooseReactions} from '../src/domain.js';
 import npcs from '../src/data/profiller.json' with {type:'json'};
 import world from '../src/data/world.json' with {type:'json'};
+import {planPublications,effectiveDue,mergeSimulationSettings,cloudTurnDue} from '../src/publication.js';
 test('100 source characters have all portraits and connected handles',()=>{assert.equal(npcs.length,100);assert.equal(new Set(npcs.map(n=>n.kullanici_adi)).size,100);for(const n of npcs){assert.ok(existsSync('public/'+n.foto));assert.ok(n.asla_soylemez);for(const h of n.iliskili_hesaplar)assert.ok(npcs.some(n=>n.kullanici_adi===h));}});
 test('public world has 29 unique systems and 20 playable races',()=>{assert.equal(new Set(world.systems).size,29);assert.equal(world.races.length,20);assert.ok(world.unknownSystems.includes('Nys'));for(const x of ['ZXJlYnVz','dGh1bA==','aXNvbGRl'])assert.ok(!JSON.stringify(world).toLowerCase().includes(atob(x)));});
 test('spoiler filter normalizes Turkish casing and accents',()=>{for(const x of ['ISOLDE','Isolde','İSOLDE','EREBUS','Thul','Nys üzerinde yaşam','Cellax gerçeği','Aeternitas'])assert.equal(safeText(x),false,x);assert.equal(safeText('Prosperion’da vardiya bitti. #Dayanışma'),true);});
@@ -68,4 +69,38 @@ test('scheduler jitter does not accidentally turn a half-hour schedule into hour
  assert.equal(await storage.claim('browser',false),null);
  const claim=await storage.claim('cloud',false,90000);assert.ok(claim);await storage.release(claim,'jitter test',true);
 });
+test('planned posts have varied times and reactions follow their target posts',()=>{
+ let r=0;const posts=Array.from({length:50},(_,i)=>({id:'planned-'+i,author:'@a'+i,text:'Günlük not.'}));
+ const likes=posts.map(p=>({postId:p.id,author:'@reader',recipient:p.author}));
+ const planned=planPublications(posts,[],likes,{},1000,30,()=>((r++%97)+1)/100);
+ assert.equal(planned.length,100);assert.ok(new Set(planned.map(p=>p.dueAt)).size>40);
+ for(const item of planned){assert.ok(item.dueAt>=1000&&item.dueAt<=1000+1800000);if(item.type==='like')assert.ok(item.dueAt>=planned.find(p=>p.type==='post'&&p.body.id===item.body.postId).dueAt);}
+});
+test('pause shifts unpublished content forward instead of dumping it all on resume',()=>{
+ const initial={enabled:true,totalPausedMs:0,revision:1};const paused=mergeSimulationSettings(initial,{enabled:false},1000);const resumed=mergeSimulationSettings(paused,{enabled:true},61000);
+ assert.equal(resumed.totalPausedMs,60000);assert.equal(effectiveDue({dueAt:5000,pauseOffset:0},resumed),65000);
+});
+test('frequent cloud wake-ups cannot spend extra AI requests',()=>{
+ const settings={enabled:true,intervalMinutes:30,maxRequests:48,maxPosts:2400};const control={day:'today',requests:5,posts:200,lastAttempt:1000000};
+ assert.equal(cloudTurnDue(settings,control,1000000+300000,'today'),false);assert.equal(cloudTurnDue(settings,control,1000000+1800000,'today'),true);assert.equal(cloudTurnDue({...settings,enabled:false},control,99999999,'today'),false);assert.equal(cloudTurnDue(settings,{...control,requests:48},99999999,'today'),false);
+});
+test('queued content stays hidden while closed and publishes later without another API call',async()=>{
+ await storage.saveSettings({enabled:true,maxRequests:48,maxPosts:2400});const claim=await storage.claim('paced',true);assert.ok(claim);
+ const before=storage.getFeed().length;const p={id:'queued-proof',author:'@leontine_hessar',text:'Çaydan sonra görüşelim.',system:'Astarion',createdAt:Date.now()};
+ assert.equal(await storage.stageTurn(claim,[p],[],[],[],30),true);assert.equal(storage.getFeed().length,before);
+ await storage.saveSettings({enabled:false});assert.equal((await storage.flushDuePublications(Date.now()+3600000)).texts,0);assert.equal(storage.getFeed().length,before);
+ await storage.saveSettings({enabled:true});assert.equal((await storage.flushDuePublications(Date.now()+3600000)).texts,1);assert.equal(storage.getFeed().length,before+1);assert.equal((await storage.flushDuePublications(Date.now()+3600000)).texts,0);
+});
 
+
+import {imageContext} from '../src/vision.js';
+import {compactPublications} from '../src/publication.js';
+test('image context includes actual bytes once per parent and never fetches external URLs',()=>{
+ const feed=[{id:'p',image:'data:image/jpeg;base64,YWJj'},{id:'remote',image:'https://untrusted.example/image.jpg'}];
+ const parts=imageContext([{target:{postId:'p'}},{target:{postId:'p'}},{target:{postId:'remote'}}],feed);
+ assert.equal(parts.length,2);assert.equal(parts[1].inlineData.data,'YWJj');assert.equal(parts[1].inlineData.mimeType,'image/jpeg');assert.ok(parts[0].text.includes('p'));
+});
+test('reaction queue is compact enough for Firebase free writes',()=>{
+ const posts=Array.from({length:50},(_,i)=>({id:'budget'+i,author:'@x',text:'Merhaba'}));const pairs=Array.from({length:100},(_,i)=>({postId:posts[i%50].id,author:'@n'+i}));
+ const raw=planPublications(posts,[],pairs,{},Date.now(),30),small=compactPublications(raw);assert.ok(small.length<=57);assert.equal(small.filter(x=>x.type==='likes').reduce((n,x)=>n+x.body.items.length,0),100);
+});

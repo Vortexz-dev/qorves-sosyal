@@ -9,6 +9,8 @@ export const config = {
 },
   // Acil üst anahtar. false iken hiçbir yeni Gemini isteği yapılmaz.
   simulationAllowed: true,
+  realtimeEnabled: false,
+  realtimeUrl: 'https://qorves-sosyal-api.stormypoppy17.chatgpt.site',
   geminiModel: 'gemini-3.5-flash-lite',
   feedPageSize: 40,
   maxPostLength: 500,

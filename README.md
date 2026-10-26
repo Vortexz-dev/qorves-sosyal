@@ -103,3 +103,13 @@ Kaynaklar: https://docs.github.com/en/actions/reference/workflows-and-actions/ev
 Portrelerin özgün 100 dosyası `assets/profiller.zip` içindedir. `npm ci`, `npm run dev` ve `npm run build` bunları `public/profiller` içine otomatik çıkarır. `scripts/simulation-worker.mjs` yalnız isteğe bağlı yerel test üreticisidir; normal çalışma ona bağlı değildir.
 
 
+
+## 26 Ekim güncellemesi: doğal zamanlama ve mesajlar
+
+Toplu model isteği normalde 30 dakikada birdir. Üretilen metinler sonraki yarım saate rastgele dağıtılır. Bulut görevi 5 dakikada bir sıradaki yayınları kontrol eder; bu kontroller yeni AI çağrısı değildir. Site açıkken sıradaki yayınlar daha sık kontrol edilir. GitHub zamanlanmış görevleri gecikebilir; kesin saniyeli bulut zamanlayıcısı değildir. Beğeni kuyrukları ücretsiz Firebase yazma kotasını azaltmak için beş dakikalık gruplarda saklanır; gönderilerin saatleri farklıdır.
+
+Mesaj arayüzü ve ek oyuncu yanıtları ayrı `../qorves-sosyal-api` sunucusuyla hazırlanmıştır. Servisi oyunculara açma işlemi otomatik onay denetiminde durduğu için `realtimeEnabled: false` bırakıldı. Mevcut normal simülasyon ve oyuncu yanıt kuyruğu devam eder. Açılış onayından sonra mevcut servis public yapılır ve bu anahtar true ile site tekrar yayınlanır; yeni Site oluşturulmaz.
+
+Görselli gönderiler gerçekten sıkıştırılıp ortak veritabanına kaydedilir. Toplu isteğe en fazla üç farklı JPEG/PNG/WebP gönderi görseli eklenir; gönderi kimliği ile eşleştirilir. Sadece bağlantı olan uzak görseller indirilmez. Ek oyuncu yanıt çağrısı açıldığında ilgili gönderinin görseli ayrıca modele verilir.
+
+Yönetim → Kümeye haber ver: halka açık gündem başlatır. Etkilenen sistem hangi karakterlerin öncelikli tepki vereceğini, hesap sayısı olaya özel toplam kaç farklı hesabın tepki vereceğini, süre ise olayın kaç saat aktif kalacağını belirler. Olay tepkileri normal toplu çağrıya dahildir. Süre dolunca olay yeni görevlerden çıkar; önceki tepkiler silinmez. Gizli DM/oyun yöneticisi sırlarını bu alana yazmayın.

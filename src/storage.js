@@ -2,7 +2,8 @@ import {config} from './config.js';
 import {id,day,safeText,validateBackup} from './domain.js';
 import npcs from './data/profiller.json' with {type:'json'};
 import history from './data/history.json' with {type:'json'};
-export const defaults={enabled:false,postsEnabled:true,repliesEnabled:true,intervalMinutes:30,maxRequests:48,maxPosts:2400,batchSize:50,likesPerTurn:100,apiKey:'',model:config.geminiModel,muted:[],revision:0};
+import {mergeSimulationSettings,planPublications,effectiveDue,compactPublications} from './publication.js';
+export const defaults={enabled:false,postsEnabled:true,repliesEnabled:true,intervalMinutes:30,maxRequests:48,interactiveMaxRequests:96,maxPosts:2400,batchSize:50,likesPerTurn:100,apiKey:'',model:config.geminiModel,muted:[],revision:0};
 const names=['posts','users','comments','likes','follows','notifications','events','memories','queue'];
 const base=new Date('2026-10-26T04:00:00Z').getTime();
 export const seeds=[...npcs.flatMap((n,i)=>n.ornek_paylasimlar.filter(safeText).map((text,j)=>({id:`seed-${n.id}-${j}`,author:n.kullanici_adi,text,system:n.sistem,race:n.irk,createdAt:base-(j*100+i)*420000,seed:true}))),...history.filter(p=>safeText(p.text)).map(p=>({...p,seed:true}))].sort((a,b)=>b.createdAt-a.createdAt);
@@ -22,20 +23,22 @@ async function getOne(name,key){return db?(await fs.getDoc(ref(name,key))).data(
 async function atomicControl(fn){if(db)return fs.runTransaction(db,async tx=>{const r=ref('control','simulation'),s=ref('settings','simulation');const [a,b]=await Promise.all([tx.get(r),tx.get(s)]);const result=fn(a.data()||{}, {...defaults,...b.data(),apiKey:privateKey});if(result?.next)tx.set(r,result.next);return result?.value;});return navigator.locks.request('qorves-simulation',async()=>{state=JSON.parse(localStorage.getItem(localKey))||state;const result=fn(state.control||{},{...defaults,...state.settings,apiKey:privateKey});if(result?.next)applyLocal(s=>s.control=result.next);return result?.value;});}
 export const storage={
  get mode(){return mode;}, get settings(){return {...settings,apiKey:privateKey};}, get uid(){return uid;},get usage(){return db?remoteRows.control?.simulation||{}:state.control||{};},
- async init({forceLocal=false,cloud=false}={}){
+ async authToken(){if(!db)throw Error('Mesajlar için ortak ağa bağlan.');const {getAuth}=await import('firebase/auth');return getAuth().currentUser.getIdToken();},
+ async resetIdentity(){if(!db)return;const {getAuth,signOut,signInAnonymously}=await import('firebase/auth');const a=getAuth();await signOut(a);await signInAnonymously(a);uid=a.currentUser.uid;},
+ async init({forceLocal=false,cloud=false,deliveryOnly=false}={}){
   if(Object.keys(config.firebaseConfig).length&&!forceLocal){
    const initial=[];
    function listen(target,consume){initial.push(new Promise((resolve,reject)=>{let first=true;fs.onSnapshot(target,snap=>{consume(snap);if(first){first=false;resolve();}},error=>{storage.error='Ortak veriler alınamadı. Firebase bağlantısını ve kuralları kontrol et.';emit();if(first){first=false;reject(error);}});}));}
    const [{initializeApp},auth,firestore]=await Promise.all([import('firebase/app'),import('firebase/auth'),import('firebase/firestore')]);
    fs=firestore;const app=initializeApp(config.firebaseConfig);db=fs.getFirestore(app);mode='Ortak (Firebase)';
    const a=auth.getAuth(app);await auth.signInAnonymously(a);uid=a.currentUser.uid;
-   for(const name of names){remoteRows[name]={};if(name==='memories'||name==='queue'||(cloud&&['users','likes','notifications','follows'].includes(name)))continue;
+   for(const name of names){remoteRows[name]={};if(deliveryOnly||name==='memories'||name==='queue'||(cloud&&['users','likes','notifications','follows'].includes(name)))continue;
     const q=name==='posts'?fs.query(fs.collection(db,name),fs.orderBy('createdAt','desc'),fs.limit(config.feedPageSize)):name==='notifications'?fs.query(fs.collection(db,name),fs.orderBy('createdAt','desc'),fs.limit(100)):cloud&&name==='comments'?fs.query(fs.collection(db,name),fs.orderBy('createdAt','desc'),fs.limit(200)):fs.collection(db,name);
     const consume=snap=>{for(const change of snap.docChanges()){if(change.type==='removed'){if(name!=='posts')delete remoteRows[name][change.doc.id];}else remoteRows[name][change.doc.id]={...change.doc.data(),id:change.doc.id};}if(name==='posts'&&!cursor)cursor=snap.docs.at(-1)||null;emit();};
     if(cloud)initial.push(fs.getDocs(q).then(consume));else listen(q,consume);
    }
    // All moderation tombstones must survive the recent-feed window on fresh clients.
-   listen(fs.query(fs.collection(db,'posts'),fs.where('deleted','==',true)),snap=>{for(const d of snap.docs)remoteRows.posts[d.id]={...d.data(),id:d.id};emit();});
+   if(!deliveryOnly)listen(fs.query(fs.collection(db,'posts'),fs.where('deleted','==',true)),snap=>{for(const d of snap.docs)remoteRows.posts[d.id]={...d.data(),id:d.id};emit();});
    listen(ref('settings','simulation'),snap=>{settings={...defaults,...snap.data()};emit();});
    remoteRows.control={};listen(ref('control','simulation'),snap=>{remoteRows.control.simulation=snap.data()||{};emit();});
    await Promise.all(initial);
@@ -54,12 +57,39 @@ export const storage={
  async notify(recipient,author,kind,postId=''){if(!recipient||recipient===author||npcs.some(n=>n.kullanici_adi===recipient))return;const key=id();await put('notifications',key,{id:key,recipient,author,kind,postId,createdAt:Date.now()});},
  async saveUser(user,creating=false){const key=user.handle.slice(1);if(db){await fs.runTransaction(db,async tx=>{const r=ref('users',key),old=await tx.get(r);if(creating&&old.exists())throw Error('Bu kullanıcı adı alınmış.');tx.set(r,{...user,id:key});});}else{if(creating&&await getOne('users',key))throw Error('Bu kullanıcı adı alınmış.');await put('users',key,{...user,id:key});}},
  getUser:handle=>getOne('users',handle.replace(/^@/,'')),
- async saveSettings(patch){if('apiKey' in patch){privateKey=patch.apiKey;localStorage.setItem('qorves-gemini-private',privateKey);patch={...patch};delete patch.apiKey;}if(db){await fs.runTransaction(db,async tx=>{const r=ref('settings','simulation'),snap=await tx.get(r);tx.set(r,{...defaults,...snap.data(),...patch,apiKey:'',revision:(snap.data()?.revision||0)+1});});}else applyLocal(s=>{s.settings={...defaults,...s.settings,...patch,apiKey:'',revision:(s.settings.revision||0)+1};});},
+ async saveSettings(patch){if('apiKey' in patch){privateKey=patch.apiKey;localStorage.setItem('qorves-gemini-private',privateKey);patch={...patch};delete patch.apiKey;}if(db){await fs.runTransaction(db,async tx=>{const r=ref('settings','simulation'),snap=await tx.get(r);tx.set(r,mergeSimulationSettings({...defaults,...snap.data()},patch));});}else applyLocal(s=>{s.settings=mergeSimulationSettings({...defaults,...s.settings},patch);});},
  async deletePost(postId){await put('posts',postId,{id:postId,deleted:true,createdAt:Date.now()});},deleteComment:key=>remove('comments',key),
  async saveEvent(event){if(!safeText(event.text))throw Error('Olay metni evren kurallarını ihlal ediyor.');const row={...event,id:event.id||id(),createdAt:event.createdAt||Date.now()};await put('events',row.id,row);},deleteEvent:key=>remove('events',key),
  async enqueue(target){const row={id:target.id,target,createdAt:Date.now(),done:false};await put('queue',row.id,row);},
  async pending(){if(db){const snap=await fs.getDocs(fs.query(fs.collection(db,'queue'),fs.where('done','==',false),fs.limit(10)));return snap.docs.map(d=>({...d.data(),id:d.id}));}return rows('queue').filter(q=>!q.done).slice(0,10);},
  memory:handle=>getOne('memories',encodeURIComponent(handle)),
+ async stageTurn(claim,generated,memories,pairs,handled=[],minutes=30){
+  const raw=planPublications(generated,memories,pairs,claim.settings,Date.now(),minutes),planned=compactPublications(raw);
+  if(db)return fs.runTransaction(db,async tx=>{const sr=ref('settings','simulation'),cr=ref('control','simulation');const [a,b]=await Promise.all([tx.get(sr),tx.get(cr)]);const s=a.data(),c=b.data();if(!s?.enabled||s.revision!==claim.revision||c?.token!==claim.token||c.until<Date.now())return false;for(const item of planned)tx.set(ref('memories',item.id),item);for(const q of handled)tx.set(ref('queue',q.id),{...q,done:true});tx.set(cr,{...c,posts:c.posts+generated.length,pending:(c.pending||0)+raw.length,until:0,status:'Üretildi; yayınlar yarım saate dağıtıldı',lastSuccess:Date.now()});return true;});
+  if(!settings.enabled||settings.revision!==claim.revision||state.control.token!==claim.token)return false;
+  applyLocal(s=>{for(const item of planned)s.collections.memories[item.id]=item;for(const q of handled)s.collections.queue[q.id]={...q,done:true};s.control={...s.control,posts:s.control.posts+generated.length,pending:(s.control.pending||0)+raw.length,until:0};});return true;
+ },
+ async flushDuePublications(now=Date.now()){
+  await storage.refreshSettings();if(!storage.settings.enabled)return {texts:0,likes:0};
+  const items=db?(await fs.getDocs(fs.query(fs.collection(db,'memories'),fs.where('dueAt','<=',now),fs.limit(200)))).docs.map(d=>({...d.data(),id:d.id})):rows('memories').filter(x=>x.kind==='publication'&&x.dueAt<=now);
+  const due=items.filter(x=>x.kind==='publication'&&effectiveDue(x,storage.settings)<=now).sort((a,b)=>a.dueAt-b.dueAt),total={texts:0,likes:0};
+  const reactions=item=>item.type==='likes'?item.body.items:item.type==='like'?[{body:item.body,dueAt:item.dueAt}]:[];
+  for(let offset=0;offset<due.length;offset+=40){const batch=due.slice(offset,offset+40);
+   if(db){const result=await fs.runTransaction(db,async tx=>{
+    const [sdoc,cdoc,...docs]=await Promise.all([tx.get(ref('settings','simulation')),tx.get(ref('control','simulation')),...batch.map(x=>tx.get(ref('memories',x.id)))]),s=sdoc.data(),c=cdoc.data()||{};
+    if(!s?.enabled||!config.simulationAllowed)return {texts:0,likes:0};
+    const current=docs.map((d,i)=>({...d.data(),id:batch[i].id})).filter(x=>x.kind==='publication'&&effectiveDue(x,s)<=now),pairs=current.flatMap(reactions),existing=await Promise.all(pairs.map(x=>tx.get(ref('likes',encodeURIComponent(x.body.postId+':'+x.body.author))))),seen=new Set(existing.filter(d=>d.exists()).map(d=>d.id));
+    const result={texts:0,likes:0,removed:0};
+    for(const item of current){const rs=reactions(item);
+     if(rs.length){for(const reaction of rs){const body=reaction.body,key=encodeURIComponent(body.postId+':'+body.author);if(!seen.has(key)){seen.add(key);tx.set(ref('likes',key),{id:key,postId:body.postId,author:body.author,createdAt:reaction.dueAt+Math.max(0,(s.totalPausedMs||0)-(item.pauseOffset||0)),publishedAt:Date.now()});result.likes++;}}result.removed+=rs.length;}
+     else{const body=item.body,createdAt=effectiveDue(item,s);tx.set(ref(item.type==='comment'?'comments':'posts',body.id),{...body,createdAt,publishedAt:Date.now()});if(item.memory)tx.set(ref('memories',encodeURIComponent(item.memory.handle)),item.memory);if(body.recipient&&!npcs.some(n=>n.kullanici_adi===body.recipient)){const nid=id();tx.set(ref('notifications',nid),{id:nid,recipient:body.recipient,author:body.author,kind:'yanıt',postId:body.postId||body.id,createdAt});}result.texts++;result.removed++;}
+     tx.delete(ref('memories',item.id));
+    }
+    if(result.removed)tx.set(ref('control','simulation'),{...c,pending:Math.max(0,(c.pending||0)-result.removed),published:(c.published||0)+result.texts,likes:(c.likes||0)+result.likes,lastPublication:Date.now()});return result;
+   });total.texts+=result.texts;total.likes+=result.likes;
+   }else if(storage.settings.enabled){applyLocal(s=>{for(const old of batch){const item=s.collections.memories[old.id];if(!item||effectiveDue(item,s.settings)>now)continue;const rs=reactions(item);if(rs.length){for(const reaction of rs){const body=reaction.body,key=encodeURIComponent(body.postId+':'+body.author);if(!s.collections.likes[key]){s.collections.likes[key]={id:key,...body,createdAt:reaction.dueAt+Math.max(0,(s.settings.totalPausedMs||0)-(item.pauseOffset||0))};total.likes++;}}}else{const body=item.body;s.collections[item.type==='comment'?'comments':'posts'][body.id]={...body,createdAt:effectiveDue(item,s.settings)};if(item.memory)s.collections.memories[encodeURIComponent(item.memory.handle)]=item.memory;total.texts++;}delete s.collections.memories[old.id];}s.control.pending=Object.values(s.collections.memories).filter(x=>x.kind==='publication').reduce((n,x)=>n+(reactions(x).length||1),0);});}
+  }return total;
+ },
  async addReactions(claim,pairs){
   const unique=[...new Map(pairs.map(p=>[encodeURIComponent(`${p.postId}:${p.author}`),p])).entries()].slice(0,100);
   if(db)return fs.runTransaction(db,async tx=>{const [s,c,...existing]=await Promise.all([tx.get(ref('settings','simulation')),tx.get(ref('control','simulation')),...unique.map(([key])=>tx.get(ref('likes',key)))]);if(!s.data()?.enabled||s.data()?.revision!==claim.revision||c.data()?.token!==claim.token)return 0;let added=0;for(let i=0;i<unique.length;i++){if(existing[i].exists())continue;const [key,p]=unique[i];tx.set(ref('likes',key),{id:key,postId:p.postId,author:p.author,createdAt:Date.now()});if(p.recipient&&!npcs.some(n=>n.kullanici_adi===p.recipient)){const nid=id();tx.set(ref('notifications',nid),{id:nid,recipient:p.recipient,author:p.author,kind:'beğeni',postId:p.postId,createdAt:Date.now()});}added++;}tx.set(ref('control','simulation'),{...c.data(),likes:(c.data().likes||0)+added},{merge:true});return added;});
@@ -75,6 +105,7 @@ export const storage={
  async export(){const collections={};for(const name of names){if(db){const snap=await fs.getDocs(fs.collection(db,name));collections[name]=snap.docs.map(d=>({...d.data(),id:d.id}));}else collections[name]=Object.entries(state.collections[name]||{}).map(([key,value])=>({...value,id:key}));}return {version:1,exportedAt:new Date().toISOString(),collections};},
  async import(data){validateBackup(data);for(const [name,items]of Object.entries(data.collections)){for(const row of items)await put(name,row.id,row);}emit();},
 };
+
 
 
 
