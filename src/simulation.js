@@ -7,7 +7,7 @@ import {id,scoreNPC,validateOutputs,safeText} from './domain.js';
 const owner=id();let running=false,abort=null;
 storage.subscribe(()=>{if(!storage.settings.enabled||!config.simulationAllowed)abort?.abort();});
 export async function generate(manual=false,selected=[]){
- if(running)return;running=true;let claim;
+ if(running||!storage.settings.apiKey||!storage.settings.enabled||!config.simulationAllowed)return;running=true;let claim;
  try{
   claim=await storage.claim(owner,manual);if(!claim)return;
   const s=claim.settings,available=npcs.filter(n=>!s.muted.includes(n.kullanici_adi)&&(!selected.length||selected.includes(n.kullanici_adi)));
@@ -15,7 +15,7 @@ export async function generate(manual=false,selected=[]){
   for(const q of pending){const ranked=available.map(n=>({n,score:scoreNPC(n,q.target)})).filter(x=>x.score>0).sort((a,b)=>b.score-a.score);for(const {n}of ranked.slice(0,2)){if(used.has(n.kullanici_adi)||tasks.length>=claim.budget)continue;used.add(n.kullanici_adi);tasks.push({handle:n.kullanici_adi,replyTo:q.id,target:q.target,queueId:q.id});}}
   // One existing relationship can continue a public conversation without a new API call.
   if(s.repliesEnabled&&tasks.length<claim.budget){
-   const peer=storage.getFeed().slice(0,50).find(p=>npcs.some(n=>n.kullanici_adi===p.author)&&storage.list('comments').filter(c=>c.postId===p.id).length<4);
+   const peer=storage.getFeed().slice(0,50).find(p=>npcs.some(n=>n.kullanici_adi===p.author)&&storage.list('comments').filter(c=>c.postId===p.id&&Date.now()-c.createdAt<86400000&&npcs.some(n=>n.kullanici_adi===c.author)).length<4);
    const friend=peer&&available.find(n=>!used.has(n.kullanici_adi)&&n.iliskili_hesaplar.includes(peer.author)&&!storage.list('comments').some(c=>c.postId===peer.id&&c.author===n.kullanici_adi&&Date.now()-c.createdAt<3600000));
    if(friend){used.add(friend.kullanici_adi);tasks.push({handle:friend.kullanici_adi,replyTo:peer.id,target:peer});}
   }
@@ -52,6 +52,9 @@ export async function generate(manual=false,selected=[]){
  finally{running=false;abort=null;}
 }
 export function startSimulation(){return setInterval(()=>{if((typeof document==='undefined'||document.visibilityState==='visible')&&storage.settings.enabled&&config.simulationAllowed)generate();},30000);}
+
+
+
 
 
 
