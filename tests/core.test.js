@@ -127,3 +127,13 @@ test('NPC follows require an explicit justified decision, shared switch and dail
  assert.equal(await storage.updateRelationships(claim,[{author,target,action:'follow',reason:''}]),0);assert.equal(await storage.updateRelationships(claim,[{author,target,action:'follow',reason:'Ortak bir konu hakkında görüşlerini ilginç buldu.'}]),1);assert.ok(await storage.relationship(author,target));
  assert.equal(await storage.updateRelationships(claim,[{author,target,action:'unfollow',reason:'Hemen vazgeçti.'}]),0);await storage.saveSettings({enabled:false});assert.equal(await storage.updateRelationships(claim,[{author,target:'@another',action:'follow',reason:'İlgisini çekti.'}]),0);await storage.release(claim,'test');
 });
+
+test('temporary provider outage uses one free fallback, counts both API attempts and never loops',async()=>{
+ const {generate}=await import('../src/simulation.js');
+ await storage.saveSettings({enabled:true,apiKey:'test',model:'gemini-3.5-flash-lite',maxRequests:1000,maxPosts:10000,batchSize:1,postsEnabled:true,repliesEnabled:false});const before=storage.usage.requests,original=globalThis.fetch;let calls=[];globalThis.fetch=async(url)=>{calls.push(String(url));return calls.length===1?new Response('',{status:503}):Response.json({candidates:[{content:{parts:[{text:JSON.stringify([{handle:npcs[2].kullanici_adi,text:'Kim bütün geçit ekranlarına aynı reklamı yapıştırdı?',replyTo:null,memory:'Geçit reklamlarından şikâyet etti.'}])}]}}]});};
+ try{const result=await generate(true,[npcs[2].kullanici_adi]);assert.equal(result.status,'completed');assert.equal(calls.length,2);assert.ok(calls[1].includes('gemini-2.5-flash-lite'));assert.equal(storage.usage.requests,before+2);}finally{globalThis.fetch=original;}
+});
+test('quota errors never trigger an unbounded fallback or another request',async()=>{
+ const {generate}=await import('../src/simulation.js');
+ const original=globalThis.fetch;let count=0;globalThis.fetch=async()=>{count++;return new Response('',{status:429});};try{const result=await generate(true,[npcs[3].kullanici_adi]);assert.equal(result.status,'failed');assert.equal(count,1);}finally{globalThis.fetch=original;}
+});

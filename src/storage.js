@@ -40,7 +40,7 @@ export const storage={
    // All moderation tombstones must survive the recent-feed window on fresh clients.
    if(!deliveryOnly)listen(fs.query(fs.collection(db,'posts'),fs.where('deleted','==',true)),snap=>{for(const d of snap.docs)remoteRows.posts[d.id]={...d.data(),id:d.id};emit();});
    listen(ref('settings','simulation'),snap=>{settings={...defaults,...snap.data()};emit();});
-   remoteRows.control={};listen(ref('control','simulation'),snap=>{remoteRows.control.simulation=snap.data()||{};emit();});
+   remoteRows.control={};const consumeControl=snap=>{remoteRows.control.simulation=snap.data()||{};emit();};if(cloud)initial.push(fs.getDocFromServer(ref('control','simulation')).then(consumeControl));else listen(ref('control','simulation'),consumeControl);
    await Promise.all(initial);
   }else{uid='local';window.addEventListener('storage',e=>{if(e.key===localKey){state=JSON.parse(e.newValue)||state;settings={...defaults,...state.settings};emit();}});}
   return storage;
@@ -105,6 +105,7 @@ export const storage={
   }return navigator.locks.request('qorves-simulation',async()=>{state=JSON.parse(localStorage.getItem(localKey))||state;const c=state.control,s=state.settings;if(!s.enabled||s.revision!==claim.revision||c.token!==claim.token||c.until<Date.now()||!config.simulationAllowed)return false;applyLocal(next=>{for(const p of generated)next.collections[p.replyTo?'comments':'posts'][p.id]=p;for(const m of memories)next.collections.memories[encodeURIComponent(m.handle)]=m;for(const q of handled)next.collections.queue[q.id]={...q,done:true};next.control={...c,posts:c.posts+generated.length,until:0,status:'Tamamlandı',lastSuccess:Date.now()};});return true;});
  },
  async release(claim,status,refund=false){return atomicControl(c=>c.token===claim.token?{next:{...c,until:0,status,requests:Math.max(0,c.requests-(refund?1:0))},value:true}:{value:false});},
+ async chargeFallback(claim){return atomicControl((c,s)=>s.enabled&&s.revision===claim.revision&&c.token===claim.token&&c.until>Date.now()&&c.requests<s.maxRequests?{next:{...c,requests:c.requests+1,status:'Ücretsiz yedek model deneniyor'},value:true}:{value:false});},
  async export(){const collections={};for(const name of names){if(db){const snap=await fs.getDocs(fs.collection(db,name));collections[name]=snap.docs.map(d=>({...d.data(),id:d.id}));}else collections[name]=Object.entries(state.collections[name]||{}).map(([key,value])=>({...value,id:key}));}return {version:1,exportedAt:new Date().toISOString(),collections};},
  async import(data){validateBackup(data);for(const [name,items]of Object.entries(data.collections)){for(const row of items)await put(name,row.id,row);}emit();},
 };

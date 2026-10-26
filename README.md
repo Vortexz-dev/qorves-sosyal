@@ -127,3 +127,5 @@ Yönetim → Kümeye haber ver: halka açık gündem başlatır. Etkilenen siste
 ### Zamanlayıcı tanısı
 
 GitHub eski zamanlayıcısı enabled görünmesine rağmen otomatik run oluşturmuyordu. Kapatıp yeniden açma işlemi otomatik onay denetiminde reddedildi; bu nedenle kapatılmadı. Dakika yoğunluğundan kaçınan cron ve ayrıca yeni `cloud-heartbeat.yml` kaydı eklendi. Her ikisi aynı concurrency grubu ve Firestore üretim kilidini kullanır; aralık dolmadan veya günlük bütçe bitince yeni Gemini çağrısı açılamaz. Yönetim paneli `lastScheduledWake` ile gerçek otomatik uyandırmayı ayrıca gösterir. Manuel bir tur, otomatik zamanlamanın çalıştığı iddiasına kanıt sayılmaz.
+
+Toplu üretimde 502/503/504 gibi geçici Google hizmet hatasında yalnız bir kez ücretsiz `gemini-2.5-flash-lite` yedeği denenir. Her iki istek günlük API sayacına ayrı yazılır. Kota hatası 429'da, anahtar kapalıysa veya günlük bütçe bittiyse yedek denenmez; tekrar döngüsü yoktur.
