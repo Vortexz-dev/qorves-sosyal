@@ -6,10 +6,10 @@ import spoilers from './data/spoiler_kurallari.json' with {type:'json'};
 import {id,scoreNPC,validateOutputs,safeText,chooseReactions} from './domain.js';
 const owner=id();let running=false,abort=null;
 storage.subscribe(()=>{if(!storage.settings.enabled||!config.simulationAllowed)abort?.abort();});
-export async function generate(manual=false,selected=[]){
+export async function generate(manual=false,selected=[],{scheduleToleranceMs=0}={}){
  if(running||!storage.settings.apiKey||!storage.settings.enabled||!config.simulationAllowed)return {status:'skipped'};running=true;let claim;
  try{
-  claim=await storage.claim(owner,manual);if(!claim)return {status:'skipped'};
+  claim=await storage.claim(owner,manual,scheduleToleranceMs);if(!claim)return {status:'skipped'};
   const s=claim.settings,available=npcs.filter(n=>!s.muted.includes(n.kullanici_adi)&&(!selected.length||selected.includes(n.kullanici_adi)));
   const pending=s.repliesEnabled?(await storage.pending()).filter(q=>safeText(q.target?.text||'')):[],tasks=[],used=new Set();
   for(const q of pending){const ranked=available.map(n=>({n,score:scoreNPC(n,q.target)})).filter(x=>x.score>0).sort((a,b)=>b.score-a.score);for(const {n}of ranked.slice(0,2)){if(used.has(n.kullanici_adi)||tasks.length>=claim.budget)continue;used.add(n.kullanici_adi);tasks.push({handle:n.kullanici_adi,replyTo:q.id,target:q.target,queueId:q.id});}}
@@ -63,6 +63,7 @@ export async function generate(manual=false,selected=[]){
  finally{running=false;abort=null;}
 }
 export function startSimulation(){return setInterval(()=>{if((typeof document==='undefined'||document.visibilityState==='visible')&&storage.settings.enabled&&config.simulationAllowed)generate();},30000);}
+
 
 
 

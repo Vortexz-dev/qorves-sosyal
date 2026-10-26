@@ -62,4 +62,10 @@ test('one external request can publish 50 texts without recursively enqueueing N
  await storage.saveSettings({enabled:false});const liked=storage.list('likes').length;
  assert.equal(await storage.addReactions({token:storage.usage.token,revision:storage.settings.revision},[{postId:'off-test',author:'@a',recipient:'@b'}]),0);assert.equal(storage.list('likes').length,liked);
 });
+test('scheduler jitter does not accidentally turn a half-hour schedule into hourly work',async()=>{
+ await storage.saveSettings({enabled:true,intervalMinutes:30,maxRequests:48,maxPosts:2400});
+ const saved=JSON.parse(values.get('qorves-social-v1'));saved.control.until=0;saved.control.lastAttempt=Date.now()-29.5*60000;values.set('qorves-social-v1',JSON.stringify(saved));
+ assert.equal(await storage.claim('browser',false),null);
+ const claim=await storage.claim('cloud',false,90000);assert.ok(claim);await storage.release(claim,'jitter test',true);
+});
 
