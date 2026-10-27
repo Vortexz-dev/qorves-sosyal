@@ -7,7 +7,7 @@ import history from '../src/data/history.json' with {type:'json'};
 import {id,day,safeText} from '../src/domain.js';
 import {planPublications,compactPublications,effectiveDue} from '../src/publication.js';
 const defaults={enabled:false,postsEnabled:true,repliesEnabled:true,intervalMinutes:30,maxRequests:48,maxPosts:2400,batchSize:50,likesPerTurn:500,model:config.geminiModel,muted:[],revision:0};
-const project=config.firebaseConfig.projectId,root=`https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents`;
+const project=config.firebaseConfig.projectId;let root=`https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents`;
 const base=Date.parse('2026-10-26T04:00:00Z');
 const seeds=[...npcs.flatMap((n,i)=>n.ornek_paylasimlar.filter(safeText).map((text,j)=>({id:`seed-${n.id}-${j}`,author:n.kullanici_adi,text,system:n.sistem,race:n.irk,createdAt:base-(j*100+i)*420000,seed:true}))),...history.filter(p=>safeText(p.text)).map(p=>({...p,seed:true}))];
 let settings={...defaults},control={},token='',privateKey='',rows={posts:[],comments:[],events:[],follows:[],users:[]},cache=new Map();
@@ -33,14 +33,19 @@ export const storage={
  async attachImage(claim,post,prompt){const result=http('post',config.realtimeUrl+'/api/v1/clock/image',{claim,author:post.author,prompt});return result?.image||null;},
  get settings(){return {...defaults,...settings,apiKey:privateKey};},get usage(){return control;},subscribe(){return()=>{};},
  async init(){
-  if(CacheService.getScriptCache().get('qorves-firestore-quota')==='1')throw Error('Firebase okuma kotası dolu; 15 dakika sonra yeniden kontrol edilecek.');
+
   privateKey='managed-in-Sites';const properties=PropertiesService.getScriptProperties(),saved=CacheService.getScriptCache().get('qorves-firebase-session');
   if(saved)token=saved;else{const refresh=properties.getProperty('FIREBASE_REFRESH_TOKEN');let session;
    if(refresh){const r=UrlFetchApp.fetch(`https://securetoken.googleapis.com/v1/token?key=${config.firebaseConfig.apiKey}`,{method:'post',contentType:'application/x-www-form-urlencoded',payload:{grant_type:'refresh_token',refresh_token:refresh},muteHttpExceptions:true});if(r.getResponseCode()!==200)throw Error('Clock service session needs to be reconnected.');const b=JSON.parse(r.getContentText());session={idToken:b.id_token,refreshToken:b.refresh_token,localId:b.user_id};}
    else session=http('post',`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${config.firebaseConfig.apiKey}`,{returnSecureToken:true},false);
    token=session.idToken;properties.setProperties({FIREBASE_REFRESH_TOKEN:session.refreshToken,FIREBASE_SERVICE_UID:session.localId});CacheService.getScriptCache().put('qorves-firebase-session',token,3000);
   }
-  globalThis.QORVES_CLOCK_ACCESS_TOKEN=token;cache.clear();await storage.refreshSettings();await storage.refreshControl();
+  globalThis.QORVES_CLOCK_ACCESS_TOKEN=token;cache.clear();
+  const shared=http('post',config.realtimeUrl+'/api/v1/common/sync',{});
+  if(shared?.active)root=config.realtimeUrl+'/api/v1/common/documents';
+  else if(shared?.phase==='copying')throw Error('Ortak yedegin ilk esitlemesi suruyor; Firebase kotasi yenilenince otomatik tamamlanacak.');
+  else if(CacheService.getScriptCache().get('qorves-firestore-quota')==='1')throw Error('Firebase okuma kotası dolu; 15 dakika sonra yeniden kontrol edilecek.');
+  await storage.refreshSettings();await storage.refreshControl();
  },
  async loadContext(){rows={posts:query('posts',{order:'createdAt',limit:40}),comments:query('comments',{order:'createdAt',limit:80}),events:query('events',{limit:30}),follows:[],users:query('users',{limit:500,select:['handle','blockedAccounts']})};const deleted=query('posts',{where:['deleted','EQUAL',true],limit:100});rows.posts=[...rows.posts,...deleted].map(canonicalRow);rows.comments=rows.comments.map(canonicalRow);},
  list:collection=>rows[collection]||[],

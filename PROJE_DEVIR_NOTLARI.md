@@ -176,3 +176,7 @@ Q05 backend kaynak commit: 104234a8f7287bd6efd4d98736ac811cb0aadead; saved versi
 - Özel serviste eski Firestore geçmişini DM'ye geri doldurma aynı NPC/oyuncu için her dakika yerine günde en fazla bir kez yapılır. Canlı etkileşimler zaten D1 social_activity'ye kaydedilir; hafıza silinmez. Eski geçmiş okuma hata verirse 15 dakika bekler.
 - Google REST veritabanı 429'unda 15 dakikalık kontrol beklemesi uygular; limit yenilenince yeniden deneyerek devam eder. Dolu sağlayıcı kotası koddan sıfırlanamaz. Eski hatalı SDK transaction bekleyen tarayıcı sekmeleri yeni yayın sonrası yeniden yüklenmelidir.
 - checkQorvesClock sürümü Q08; kadro 750, AI ve görsel bütçeleri değişmedi. Frontend + Google saati + mevcut özel servis birlikte yayımlanır.
+
+## Q09 — otomatik yedek ve Firebase'e geri dönüş
+
+Önce YEDEK_VERI_HATTI.md dosyasını oku. D1'de yalnız dört yeni ortak tablo var; özel tablolar korunur. İlk tam aktarım bitmeden active işaretini elle değiştirme. Yeni Google Q09 kodu her uyanmada /common/sync çağırarak aktarımı otomatik sürdürür. Firebase sağlıklıyken provider=firebase, hata/kota veya bekleyen kopya varken provider=sites. Aynı requestId/sürüm korumaları, silme izleri ve yazma çiti iki ayrı veri dalını engeller. Firebase'e yalnız eşitleme bitince otomatik dönülür. İstemci src/common-firestore.js, sunucu lib/common-store.mjs ve Cloudflare imzalı görsel yolu birlikte güncellenmiştir. Yeni ücretli plan/billing yok. Kuralların writer çiti gerçek projeye ayrıca yayımlanmalıdır.

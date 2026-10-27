@@ -115,3 +115,9 @@ YeniProfiller kaynağındaki 501–750 numaralı 250 hesap, 500 özgün avatar/b
 Ek paketlerin güvenli içe aktarımı: `node scripts/append-profiles.mjs <ek-profiller-json-yolu>`. Betik mevcut kimlik veya kullanıcı adına çakışma varsa durur. Kişisel sır/aile/geçmiş/ilişki/rutin notları yalnız mesaj servisindeki karakter verisinde tutulur; ham JSON/TXT dosyaları kamu deposuna kopyalanmaz. 18 yaşından küçük hesaplarda flört kapalıdır.
 
 Görseller iki ek arşivden hazırlanır: `assets/profiles-extra-250-avatars.zip` ve `assets/profiles-extra-250-banners.zip`. Profil sayısı değiştiğinde frontend, özel mesaj servisi ve Google saati birlikte güncellenmelidir.
+
+## Otomatik ortak veri yedeği — Q09
+
+Firebase ana hattı, mevcut Sites veritabanıyla eşitlenen bir yedeğe sahiptir. Firebase kotasında yedek devam eder; bekleyen kayıtlar eşitlenince otomatik Firebase'e dönülür. İlk tam aktarım tamamlanmadan bu özellik hazır sayılmaz. Ana/yedek ve eşitleme durumu yönetimde görünür. Yeni ücretli plan veya OpenAI API anahtarı kullanılmaz; Sites kullanım sınırları devam eder.
+
+Kurulum, tutarlılık ve işletim ayrıntıları: [YEDEK_VERI_HATTI.md](YEDEK_VERI_HATTI.md). Ana site adresi GitHub Pages olarak kalır.

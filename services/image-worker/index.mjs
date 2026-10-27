@@ -22,10 +22,11 @@ export default {async fetch(request,env){
    if(!await verify(env.IMAGE_RELAY_SECRET,raw,request.headers.get('x-qorves-signature'))||Math.abs(Date.now()-Number(data.issuedAt))>60000)return json({error:'Unauthorized'},403);
   }else await identity(token);
   if(typeof data.prompt!=='string'||data.prompt.length<10||data.prompt.length>1400)return json({error:'Invalid prompt'},400);
-  const s=await doc('settings/simulation',token),revision=Number(s.revision?.integerValue||0);
-  if(!s.enabled?.booleanValue||!s.imageEnabled?.booleanValue)return json({error:'Paused'},409);
+  // Signed relay requests use the server's authoritative common-store check.
+  // Legacy clock requests retain their Firestore claim validation.
+  const s=path==='/generate'?null:await doc('settings/simulation',token),revision=s?Number(s.revision?.integerValue||0):Number(data.revision);
+  if(s&&(!s.enabled?.booleanValue||!s.imageEnabled?.booleanValue))return json({error:'Paused'},409);
   if(path==='/generate'){
-   if(data.revision!==revision)return json({error:'Changed settings'},409);
    const permitBody=JSON.stringify({permit:data.permit,revision,issuedAt:Date.now()});
    const r=await fetch(relayUrl,{method:'POST',headers:{Authorization:'Bearer '+token,'Content-Type':'application/json','User-Agent':'Qorves-Image-Worker/1.0','x-qorves-signature':await sign(env.IMAGE_RELAY_SECRET,permitBody)},body:permitBody,signal:AbortSignal.timeout(10000)});
    if(!r.ok||!(await r.json()).allowed)return json({error:'Consumed or expired permit'},409);
@@ -36,8 +37,8 @@ export default {async fetch(request,env){
   if(!env.AI)return json({error:'Image binding unavailable'},503);
   const result=await env.AI.run('@cf/black-forest-labs/flux-1-schnell',{prompt:data.prompt,steps:4}),image=result.image;
   if(typeof image!=='string'||image.length>3900000||!/^[A-Za-z0-9+/=]+$/.test(image))return json({image:null,reason:'image-too-large'});
-  const current=await doc('settings/simulation',token);
-  if(!current.enabled?.booleanValue||!current.imageEnabled?.booleanValue||Number(current.revision?.integerValue||0)!==revision)return json({error:'Paused'},409);
+  if(path!=='/generate'){const current=await doc('settings/simulation',token);if(!current.enabled?.booleanValue||!current.imageEnabled?.booleanValue||Number(current.revision?.integerValue||0)!==revision)return json({error:'Paused'},409);}
+  // The caller rechecks the shared revision before saving or publishing output.
   return json({image:'data:image/jpeg;base64,'+image});
  }catch(error){const message=String(error?.message||'');if(/identity|keys/.test(message))return json({error:'Unauthorized'},403);if(/quota|neurons|daily|allocation|429|3030/i.test(message))return json({error:'Free image quota exhausted'},429);return json({error:'Image service unavailable'},503);}
 }};

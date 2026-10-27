@@ -2,15 +2,22 @@ rules_version = '2';
 service cloud.firestore {
  match /databases/{database}/documents {
   function player() { return request.auth != null; }
+  // One logical write journal; block stale browser versions after the copy fence.
+  function writer() { return player() && (request.auth.uid == 'vQSL2BwTHvTtOASzi2r11xSEHD13' || get(/databases/$(database)/documents/settings/simulation).data.get('commonStore', '') != 'sites-d1'); }
+  function isValidComment(d) { return d.text is string && d.text.size() <= 500; }
+  function isValidUser(d) { return d.handle is string && d.handle.size() <= 29; }
+  function isValidShared(d) { return d is map && d.size() < 100; }
   // Posts: string text <=750 and optional inline image <=240000 characters.
   function isValidPost(d) { return d.size() < 24 && (d.get('deleted', false) == true || (d.text is string && d.text.size() <= 750 && (!('image' in d) || (d.image is string && d.image.size() <= 240000 && d.image.matches('data:image/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+'))))); }
   // Trusted tabletop group model: anonymous authenticated sessions share the game.
   // The browser DM password is a game UI lock, NOT a server-side admin role.
-  match /posts/{id} { allow read: if player(); allow create, update: if player() && isValidPost(request.resource.data); allow delete: if player(); }
-  match /comments/{id} { allow read, delete: if player(); allow create, update: if player() && request.resource.data.text is string && request.resource.data.text.size() <= 500; }
-  match /users/{id} { allow read, delete: if player(); allow create, update: if player() && request.resource.data.handle is string && request.resource.data.handle.size() <= 29; }
+  match /posts/{id} { allow read: if player(); allow create, update: if writer() && isValidPost(request.resource.data); allow delete: if writer(); }
+  match /comments/{id} { allow read: if player(); allow delete: if writer(); allow create, update: if writer() && isValidComment(request.resource.data); }
+  match /users/{id} { allow read: if player(); allow delete: if writer(); allow create, update: if writer() && isValidUser(request.resource.data); }
   match /{collection}/{id} {
-   allow read, write: if player() && collection in ['likes', 'follows', 'notifications', 'events', 'memories', 'queue', 'settings', 'control'];
+   allow read: if player() && collection in ['likes', 'follows', 'notifications', 'events', 'memories', 'queue', 'settings', 'control'];
+   allow create, update: if writer() && isValidShared(request.resource.data) && collection in ['likes', 'follows', 'notifications', 'events', 'memories', 'queue', 'settings', 'control'];
+   allow delete: if writer() && collection in ['likes', 'follows', 'notifications', 'events', 'memories', 'queue', 'settings', 'control'];
   }
  }
 }

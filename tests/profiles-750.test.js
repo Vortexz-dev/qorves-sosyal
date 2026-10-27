@@ -22,7 +22,7 @@ test('the 250 additional identities have usable portraits, banners and all suppl
 test('private extra biography notes never enter public profile data or the Google clock bundle',()=>{
  for(const p of profiles)for(const key of ['dm_notu','aile','gecmis','is','iliski','sir','rutin'])assert.ok(!Object.hasOwn(p,key));
  const clock=readFileSync('research/google-clock/Code.gs','utf8');
- assert.ok(clock.includes('lunaa.kat'));assert.ok(clock.includes('Q08'));
+ assert.ok(clock.includes('lunaa.kat'));assert.ok(clock.includes('Q09'));
  assert.ok(!clock.includes('ozelHayat'));
  assert.match(socialVoice,/18 yaşından küçük hesaplarla/);
  assert.ok(profiles.some(n=>n.id>=501&&n.yas<18));

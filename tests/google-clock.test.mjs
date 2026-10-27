@@ -14,6 +14,7 @@ function fixture({paused=false,pauseInModel=false,claimConflict=false}={}){
  const context=vm.createContext({console:{log(){},error(){}},Utilities:{getUuid:randomUUID,sleep(){},base64Decode:s=>[...Buffer.from(s,'base64')],newBlob:bytes=>({getDataAsString:()=>Buffer.from(bytes).toString('utf8')})},PropertiesService:{getScriptProperties:()=>({getProperty:key=>key==='FIREBASE_SERVICE_UID'?'service-test':null,setProperties(){}})},CacheService:{getScriptCache:()=>({get:()=> 'firebase-test-token',put(){}})},UrlFetchApp:{fetch(url,o={}){
   let body=o.payload?JSON.parse(o.payload):{};
   if(url.endsWith('/api/v1/clock/model')){body=body.payload;calls++;if(pauseInModel)docs.set('settings/simulation',{...docs.get('settings/simulation'),enabled:false,revision:2});const prompt=body.contents[0].parts[0].text,tasks=JSON.parse(prompt.match(/GÖREVLER: (.+)\n/)[1]);return respond({candidates:[{content:{parts:[{text:JSON.stringify(tasks.map(t=>({handle:t.handle,text:'Bu reklamı kapatmanın bir yolunu bulan var mı?',replyTo:t.replyTo,memory:'Reklamlardan şikâyet etti.'})))}]}}]});}
+  if(url.endsWith('/api/v1/common/sync'))return respond({active:false,phase:'waiting'});
   if(url.endsWith('/api/v1/tick'))return respond({published:0});
   if(url.endsWith(':beginTransaction'))throw Error('beginTransaction is not available for Firebase ID credentials');
   if(url.endsWith(':rollback'))return respond({});
