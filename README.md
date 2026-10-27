@@ -20,6 +20,8 @@ Normal ayarlar: **30 dakikada bir en fazla 50 gönderi/yorum, ayrıca 500 beğen
 
 ## Güncel özellikler
 
+- Gönderi, özel mesaj, profil portresi ve banner görselleri animasyonlu inceleme penceresinde büyütülebilir. Yakınlaştırma, klavye erişimi, Escape ve dışarı tıklayarak kapatma desteklenir.
+
 - Gerçek konuşma listesi, okunmamış mesajlar, okundu durumu ve son mesaj önizlemesi.
 - Oyuncular birbirlerine ve sanal kişiliklere mesaj/görsel gönderebilir. Oyuncular arası mesaj AI tüketmez.
 - Görseller tarayıcıda küçültülüp JPEG olarak sıkıştırılır. Gönderide ortak Firestore kaydına, özel mesajda yalnız özel mesaj deposuna yazılır. AI yanıtında ilgili gerçek görsel verisi modele gönderilir; görmediği görsel için ayrıntı uydurmaması istenir.

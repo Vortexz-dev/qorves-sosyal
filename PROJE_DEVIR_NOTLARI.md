@@ -132,3 +132,7 @@ Ortak ayarlarda imageEnabled=true, likesPerTurn=500 ve revision=11 ayarlandı; e
 Google Apps Script kodu yeni 500 hesaplı paketle yenilendi. Büyük dosyayı tek seferde panoya göndermek tarayıcı bağlantısını kesebiliyor: en fazla 90000 karakterlik parçaları sırayla yapıştır, son kaydın tamamlanmasını ve işlevin gerçekten seçildiğini kontrol et. checkQorvesClock profiller, beğeni ayarı ve görsel anahtarını gösterir, AI harcamaz. verifyQorvesImage tek görsel denemesi yapar, herkese açık test postu oluşturmaz; Gemini sayacını artırmaz. Bu tanı testini döngüye alma.
 
 Son canlı checkQorvesClock sonucu (27 Ekim 09:12 İstanbul): profiles=500, likesPerTurn=500, imageEnabled=true, enabled=false. Kullanıcının ortak durdurma durumu korunmuştur. Yerel derleme veya health yanıtını gerçek otomatik görsel üretimi kanıtı sayma: simülasyon kapalı olduğundan canlı fotoğraf üretimi henüz denenmedi. Eski Q03 sürüm bilgileri tarihçedir; güncel backend saved version 5 ve ortam revision 3'tür.
+
+## Görsel inceleme penceresi
+
+src/lightbox.js, main.js içinden bir kez başlatılır. Native dialog #app dışında durur; canlı DOM güncellemeleri açık görseli veya yakınlaştırmayı sıfırlamaz. data-image-viewer işaretli profil portresi/banner, .post-image ve .dm-image açılır. Akıştaki küçük profil bağlantıları normal profil gezinmesini korur. Klavye odağı, Escape, dışarı tıklama, 2x yakınlaştırma ve reduced-motion desteği vardır. Bu değişiklik yalnız GitHub Pages frontend yayını gerektirir; Google saati veya mesaj servisine yeniden dağıtım gerekmez.
