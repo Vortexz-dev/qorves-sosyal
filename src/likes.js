@@ -1,0 +1,4 @@
+import {canonicalHandle} from './profiles.js';
+export const likeBucketId=postId=>'bucket-'+encodeURIComponent(postId);
+export function expandLikes(rows){const unique=new Map();for(const row of rows){const entries=row.members?Object.entries(row.members).map(([author,createdAt])=>({postId:row.postId,author,createdAt})):row.author?[row]:[];for(const e of entries){const author=canonicalHandle(e.author),id=encodeURIComponent(e.postId+':'+author);unique.set(id,{...e,id,author});}}return [...unique.values()];}
+export function mergeLikeBucket(existing,postId,pairs,now){const members={...(existing?.members||{})},added=[];for(const p of pairs){const author=canonicalHandle(p.author);if(members[author]!==undefined)continue;members[author]=p.createdAt||now;added.push({...p,author});}return {bucket:{id:likeBucketId(postId),postId,members,updatedAt:now},added};}

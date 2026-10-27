@@ -12,14 +12,14 @@ export function planPublications(generated,memories,pairs,settings,now=Date.now(
  const planned=[],times=new Map();
  for(const body of generated){const dueAt=now+Math.floor(random()*latestContent);times.set(body.id,dueAt);planned.push({id:'publication-'+body.id,kind:'publication',state:'pending',type:body.replyTo?'comment':'post',body,memory:memories.find(m=>m.handle===body.author)||null,dueAt,pauseOffset:settings.totalPausedMs||0});}
  const seen=new Set();
- for(const body of pairs.slice(0,100)){const key=encodeURIComponent(body.postId+':'+body.author);if(seen.has(key))continue;seen.add(key);const earliest=times.get(body.postId)||now;planned.push({id:'reaction-'+key,kind:'publication',state:'pending',type:'like',body,memory:null,dueAt:earliest+Math.floor(random()*Math.max(1,now+window-earliest)),pauseOffset:settings.totalPausedMs||0});}
+ for(const body of pairs.slice(0,500)){const key=encodeURIComponent(body.postId+':'+body.author);if(seen.has(key))continue;seen.add(key);const earliest=times.get(body.postId)||now;planned.push({id:'reaction-'+key,kind:'publication',state:'pending',type:'like',body,memory:null,dueAt:earliest+Math.floor(random()*Math.max(1,now+window-earliest)),pauseOffset:settings.totalPausedMs||0});}
  return planned;
 }
 export function cloudTurnDue(settings,control,now,date,manual=false){
  if(!settings.enabled)return false;
  if(control.until>now)return false;
  if(control.day===date&&((control.requests||0)>=settings.maxRequests||(control.posts||0)>=settings.maxPosts))return false;
- return manual||now-(control.lastAttempt||0)>=Math.max(2,settings.intervalMinutes)*60000-90000;
+ return manual||(settings.requestedTurnAt||0)>(control.lastAttempt||0)||now-(control.lastAttempt||0)>=Math.max(2,settings.intervalMinutes)*60000-90000;
 }
 
 // Six small reaction bundles avoid spending Firestore's free write quota on 100 separate queue records.

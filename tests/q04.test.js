@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import npcs from '../src/data/profiller.json' with {type:'json'};
+import {canonicalHandle,profileAuthors} from '../src/profiles.js';
+import {expandLikes,mergeLikeBucket} from '../src/likes.js';
+import {chooseReactions} from '../src/domain.js';
+import {planPublications,compactPublications} from '../src/publication.js';
+test('old profiles resolve to revised identities without duplicating a person',()=>{assert.equal(canonicalHandle('@leontine_hessar'),'@leontine.h');assert.ok(profileAuthors('@leontine.h').includes('@leontine_hessar'));});
+test('500 unique reactions stay bounded and compact for the free database',()=>{const posts=npcs.slice(0,20).map(n=>({id:'p'+n.id,author:n.kullanici_adi,text:n.bio,system:n.sistem}));const likes=chooseReactions(posts,npcs,500);assert.equal(likes.length,500);assert.equal(new Set(likes.map(x=>x.postId+':'+x.author)).size,500);assert.ok(new Set(likes.map(x=>x.postId)).size<=12);const plan=compactPublications(planPublications([],[],likes,{},1000,30));assert.ok(plan.length<=7);});
+test('bucket merging does not repeat likes and legacy records remain visible once',()=>{const old={postId:'p',author:'@leontine_hessar',createdAt:1};const {bucket,added}=mergeLikeBucket(null,'p',[old,{postId:'p',author:'@leontine.h'}],2);assert.equal(added.length,1);assert.equal(expandLikes([old,bucket]).length,1);assert.equal(mergeLikeBucket(bucket,'p',[old],3).added.length,0);});

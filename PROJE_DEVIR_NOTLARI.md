@@ -1,10 +1,10 @@
 # Qorves Sosyal — proje devir notları
 
-Bu dosya yeni bir geliştiricinin veya başka bir Codex sohbetinin projeye kaldığı yerden devam etmesi içindir. README ürün davranışını, bu dosya uygulama/yayın ayrıntılarını anlatır. Güncelleme: 27 Ekim 2026, Q03.
+Bu dosya yeni bir geliştiricinin veya başka bir Codex sohbetinin projeye kaldığı yerden devam etmesi içindir. README ürün davranışını, bu dosya uygulama/yayın ayrıntılarını anlatır. Güncelleme: 27 Ekim 2026, Q04.
 
 ## Amaç ve kullanıcı tercihleri
 
-SS 214 Qorves evreni içinde gerçek sosyal ağ hissi. 100 NPC kişiliği ve insan oyuncular ortak akışı kullanır. Yönetim dışındaki UI’da model/API/deney gibi açıklamalarla atmosferi bozma. Yalnız yeni özellik eklemek için bütçeyi yükseltme; önce mevcut çağrıya kat. Kullanıcı kod testlerini tercih ediyor; küçük şeyler için tekrarlanan tarayıcı denetimi yapma. Oyun kaynaklarını baştan yeniden taramak gerekmez; yeni kanon sorusu varsa ilgili belgeyi oku.
+SS 214 Qorves evreni içinde gerçek sosyal ağ hissi. 500 NPC kişiliği ve insan oyuncular ortak akışı kullanır. Yönetim dışındaki UI’da model/API/deney gibi açıklamalarla atmosferi bozma. Yalnız yeni özellik eklemek için bütçeyi yükseltme; önce mevcut çağrıya kat. Kullanıcı kod testlerini tercih ediyor; küçük şeyler için tekrarlanan tarayıcı denetimi yapma. Oyun kaynaklarını baştan yeniden taramak gerekmez; yeni kanon sorusu varsa ilgili belgeyi oku.
 
 750 karakter kullanıcı tarafından seçilmiş üst sınırdır. Uzun/kısa yazan sabit hesap grupları oluşturma. Aynı kişi ruh haline ve anlattığı şeye göre farklı uzunlukta yazabilir. Promptta uzunluk önerileri bağlayıcı değildir.
 
@@ -109,3 +109,16 @@ Yerel Windows Node 24: `C:\Users\Ulaş\.cache\codex-runtimes\codex-primary-runti
 Q02: gerçek inbox, okunmamış/okundu, bildirimler, sosyal takip kararları, 100 karakter kişiliğinin prompta aktarılması, banner kaldırılması. Bağımsız Google saatiyle 27 Ekim 00:16 gerçek otomatik üretim doğrulandı; ilk gün 49 geçerli metin/100 beğeni tek istekte planlandı.
 
 Q03: DM kısa hız sınırı gevşetildi; görsel post/DM, özel görsel anlama, gerçek yanıtsız bırakma; odak kaybettiren root render kaldırıldı; 280 AI sınırı kaldırılıp 750 post sınırı ve esnek uzunluk yönergeleri eklendi; az hashtag, seyrek bulanık mavi matrix; README ve bu dosya yenilendi. Eski Q02/kurulum notlarındaki güncel davranışla çelişen tarihsel anlatım yerine README ve bu dosyayı esas al.
+
+## Q04 uygulama ve yayın notları
+
+- Kaynak profiller 500'e çıktı. İçe aktarım `scripts/import-profiles.mjs`; avatar/banner JPEG arşivleri `assets/profiles-500-avatars.zip` ve `assets/profiles-500-banners.zip`; hazırlama betiği ikisini açar. Ham özel kaynak dosyalarını yayımlama. Frontend verisinde özel DM notu yok; backend profil verisinde kişiliğin güvenli DM tavrı bulunur.
+- `src/profiles.js` ve backend `lib/profiles.js`: 69 eski/yeni ad eşleştirmesi. 65 eski hesabın adı değişti, dört Türkçe handle ASCII'ye çevrildi. Eski kayıtları topluca silme/yeniden seed etme. Profil geçmişi yazar sorgusuyla, eski post bağlantısı tek kayıt sorgusuyla yüklenir.
+- `src/likes.js`: eski bireysel beğeni + yeni gönderi başına bucket birleştirme. Firestore kayıt kimliği bucket-encodedPostId, üyeler canonical handle -> timestamp. Yeni AI kuyruğu en fazla 500 beğeni; gönderi hedefleri en fazla 12. Google saati ve tarayıcı teslimatı aynı biçimi kullanmalı.
+- Normal metin turu 50 içerik/30 dakika, 48 istek/gün olarak kalır. lastActors ortak kontrol alanı yeni 500 hesabın sırayla seçilmesini destekler.
+- Yönetim tarayıcı üreticisini çalıştırmaz. requestedTurnAt ortak ayar alanı saat kontrolünde bütçe/kilit üzerinden işlenir. Kaydetmek revision artırır.
+- Görsel yolu: Gemini aynı toplu istekte yalnız allowImage işaretli görev için imagePrompt önerir -> Google storage.attachImage -> mevcut serviste POST /api/v1/clock/image -> kullanıcının Cloudflare Worker'ı (AI binding). IMAGE_WORKER_URL Sites ortamında, GEMINI_API_KEY sunucuda kalır.
+- Görsel denemesi UTC gününde en fazla 5; D1 image-day / image-claim / image-stop sayaçları. Kota hatasında gün sonuna kadar dur; metni iptal etme veya başka ücretli modele geçme. Etkin ortak enabled/imageEnabled/revision/token/until iki tarafta kontrol edilir.
+- Backend Q04 kaynak: 696fead54e48957ebbc0de12ed4b24cb7c727531; saved version 5. Ortam revision 3.
+- Cloudflare Worker adı: frosty-art-583aqorves-images; adresi https://frosty-art-583aqorves-images.vortexseniseviyor.workers.dev . AI binding oluşturuldu. Custom Worker kodunun yayınını ve canlı imageEnabled durumunu iş bitimindeki yayın notundan doğrula; hazırlanan kodu canlı çalışıyor sanma.
+- Google saati her frontend değişiminde otomatik güncellenmez: scripts/build-google-clock.mjs ile research/google-clock/Code.gs üretip mevcut projeye aktar. Anahtar veya özel mesajları bu pakete koyma.
