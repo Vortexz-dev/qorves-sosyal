@@ -122,3 +122,11 @@ Q03: DM kısa hız sınırı gevşetildi; görsel post/DM, özel görsel anlama,
 - Backend Q04 kaynak: 696fead54e48957ebbc0de12ed4b24cb7c727531; saved version 5. Ortam revision 3.
 - Cloudflare Worker adı: frosty-art-583aqorves-images; adresi https://frosty-art-583aqorves-images.vortexseniseviyor.workers.dev . AI binding oluşturuldu. Custom Worker kodunun yayınını ve canlı imageEnabled durumunu iş bitimindeki yayın notundan doğrula; hazırlanan kodu canlı çalışıyor sanma.
 - Google saati her frontend değişiminde otomatik güncellenmez: scripts/build-google-clock.mjs ile research/google-clock/Code.gs üretip mevcut projeye aktar. Anahtar veya özel mesajları bu pakete koyma.
+
+### Q04 canlı görsel kurulumu (27 Ekim)
+
+Cloudflare Worker custom kodu resmi API ile başarıyla yayımlandı; /health 200, kimliksiz POST 403 doğrulandı. Varsayılan Python istemci tanımı Cloudflare 1010 verdiği için sağlık kontrollerinde Qorves-Health/1.0 kullanıldı. Workers AI binding adı AI. Ücretli plan açılmadı. Geçici Individual Workers Editor anahtarı yalnız bu Worker'a kapsamlandı, bitişi 28 Ekim 2026 23:59 İstanbul; değeri GitHub/siteye konmadı, geçici dosya silindi.
+
+Ortak ayarlarda imageEnabled=true, likesPerTurn=500 ve revision=11 ayarlandı; enabled değiştirilmedi. Oyuncu durdurma tercihini koru. Görsel denemeleri yalnız enabled açıkken çalışır.
+
+Google Apps Script kodu yeni 500 hesaplı paketle yenilendi. Büyük dosyayı tek seferde panoya göndermek tarayıcı bağlantısını kesebiliyor: en fazla 90000 karakterlik parçaları sırayla yapıştır, son kaydın tamamlanmasını ve işlevin gerçekten seçildiğini kontrol et. checkQorvesClock profiller, beğeni ayarı ve görsel anahtarını gösterir, AI harcamaz. verifyQorvesImage tek görsel denemesi yapar, herkese açık test postu oluşturmaz; Gemini sayacını artırmaz. Bu tanı testini döngüye alma.

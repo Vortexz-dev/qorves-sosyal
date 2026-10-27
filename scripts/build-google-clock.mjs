@@ -11,6 +11,7 @@ globalThis.fetch=async function(url,options){options=options||{};var model=decod
 const footer=`
 function qorvesCloudTick(event){return QorvesClockCore.runClock(!!(event&&event.triggerUid)).then(function(result){console.log(JSON.stringify(result));}).catch(function(error){console.error(error&&error.message||'Clock failed');throw error;});}
 function installQorvesClock(){var existing=ScriptApp.getProjectTriggers().filter(function(t){return t.getHandlerFunction()==='qorvesCloudTick';});if(!existing.length)ScriptApp.newTrigger('qorvesCloudTick').timeBased().everyMinutes(5).create();console.log('Qorves clock installed; AI budget and shared switch remain authoritative.');}
+function verifyQorvesImage(){return QorvesClockCore.verifyImage().then(function(result){console.log(JSON.stringify(result));});}
 function checkQorvesClock(){return QorvesClockCore.checkClock().then(function(result){console.log(JSON.stringify(result));});}
 function testQorvesClock(){return qorvesCloudTick(null);}
 function stopQorvesClock(){ScriptApp.getProjectTriggers().filter(function(t){return t.getHandlerFunction()==='qorvesCloudTick';}).forEach(function(t){ScriptApp.deleteTrigger(t);});}

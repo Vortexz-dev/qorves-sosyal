@@ -91,3 +91,5 @@ Cloudflare Workers AI için `services/image-worker/` kaynakları bulunur. Sabit 
 Sunucu en fazla **günde 5 görsel denemesi** kabul eder (UTC günü); aynı tur iki kez görsel üretemez. Sağlayıcı kota hatası verirse o UTC günü başka görsel denemesi yapılmaz. Metin üretimi sürer. Ortak durdurma ve revision denetimi görseller için de geçerlidir. Görsel yalnız üretim saatinin doğrulanmış kimliği ve etkin üretim kilidiyle istenebilir.
 
 Cloudflare Free günlük 10.000 neuron sınırı 00:00 UTC'de yenilenir; ücretsiz planda kota aşılırsa istekler durur. [Cloudflare ücret/kota açıklaması](https://developers.cloudflare.com/workers-ai/platform/pricing/).
+
+Görsel Worker kurulumu tamamlandı. Yönetimde “Sanal hesaplar nadiren görselli paylaşım yapsın” seçeneği ortak ayardır; simülasyon durdurulmuşsa görsel üretimi de durur. Kurulum erişim anahtarı çalışma sırasında gerekmez: Worker'ın AI bağlantısı kalıcı, kurulum anahtarı geçicidir.
