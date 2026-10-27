@@ -1,6 +1,6 @@
 # Qorves Sosyal — proje devir notları
 
-Bu dosya yeni bir geliştiricinin veya başka bir Codex sohbetinin projeye kaldığı yerden devam etmesi içindir. README ürün davranışını, bu dosya uygulama/yayın ayrıntılarını anlatır. Güncelleme: 27 Ekim 2026, Q04.
+Bu dosya yeni bir geliştiricinin veya başka bir Codex sohbetinin projeye kaldığı yerden devam etmesi içindir. README ürün davranışını, bu dosya uygulama/yayın ayrıntılarını anlatır. Güncelleme: 27 Ekim 2026, Q05.
 
 ## Amaç ve kullanıcı tercihleri
 
@@ -38,7 +38,7 @@ Hesap e-postaları ve şifreler kamuya açık belgelere eklenmez. Gerekirse kull
 | src/images.js | Resmi 850px’e (avatar 384px) sığdırır; JPEG sıkıştırır, 240000 karakter üstünü reddeder. |
 | src/domain.js | Güvenli metin/HTML, kanon filtresi, model çıktıları ve yedek doğrulama. |
 | src/matrix.js + style.css | Seyrek mavi, bulanık matrix arka planı ve arayüz animasyonları. Reduced motion destekli. |
-| src/data/ | Halka açık evren özeti, 100 profil, başlangıç paylaşımları ve spoiler politikası. |
+| src/data/ | Halka açık evren özeti, 500 profil, başlangıç paylaşımları ve spoiler politikası. |
 | scripts/google-clock-*.js | Aynı üretim motorunun Apps Script depolama/çalıştırma uyarlaması. |
 | scripts/build-google-clock.mjs | esbuild IIFE: research/google-clock/Code.gs ve appsscript.json üretir. Sır içermez. |
 | scripts/cloud-simulation.mjs | GitHub Actions için alternatif bulut üretim girişi. |
@@ -90,7 +90,7 @@ DM günlük kişi sınırı 120, aralık 2 saniye; ortak günlük interaktif bü
 
 Firestore mevcut güvenilen FRP grubu modelidir: anonim oturumlar ortak oyun belgelerine erişir. Yönetim şifresi yalnız UI kilidi; gerçek sunucu admin yetkisi değildir. Q03 değişikliği yalnız post validator: text <=750, opsiyonel JPEG/PNG/WebP data URL <=240000; comments <=500. Geniş yetki modeli değiştirilmedi. Bu temel kurallar geniş halka açık/hasım kullanıcılar için kapsamlı yetkilendirme değildir. Gizli kanon arşivini veya sırları modele/kamuya göndermemek temel korumadır.
 
-AI yeni görsel üretimi Cloudflare Free FLUX.1 schnell ile bağlandı; en fazla beş deneme/UTC günü. Ortak simülasyon anahtarı kapalıysa görsel de üretilmez. Oyuncu görsellerini anlama ayrı akıştır. Spark/AI/Apps Script ücretsiz kotaları duraklama yapabilir. Billing veya planı kendiliğinden değiştirme.
+AI yeni görsel üretimi Cloudflare Free FLUX.1 schnell ile bağlandı; en fazla elli deneme/UTC günü. Ortak simülasyon anahtarı kapalıysa görsel de üretilmez. Oyuncu görsellerini anlama ayrı akıştır. Spark/AI/Apps Script ücretsiz kotaları duraklama yapabilir. Billing veya planı kendiliğinden değiştirme.
 
 ## Test ve yayın sırası
 
@@ -114,11 +114,11 @@ Q03: DM kısa hız sınırı gevşetildi; görsel post/DM, özel görsel anlama,
 
 - Kaynak profiller 500'e çıktı. İçe aktarım `scripts/import-profiles.mjs`; avatar/banner JPEG arşivleri `assets/profiles-500-avatars.zip` ve `assets/profiles-500-banners.zip`; hazırlama betiği ikisini açar. Ham özel kaynak dosyalarını yayımlama. Frontend verisinde özel DM notu yok; backend profil verisinde kişiliğin güvenli DM tavrı bulunur.
 - `src/profiles.js` ve backend `lib/profiles.js`: 69 eski/yeni ad eşleştirmesi. 65 eski hesabın adı değişti, dört Türkçe handle ASCII'ye çevrildi. Eski kayıtları topluca silme/yeniden seed etme. Profil geçmişi yazar sorgusuyla, eski post bağlantısı tek kayıt sorgusuyla yüklenir.
-- `src/likes.js`: eski bireysel beğeni + yeni gönderi başına bucket birleştirme. Firestore kayıt kimliği bucket-encodedPostId, üyeler canonical handle -> timestamp. Yeni AI kuyruğu en fazla 500 beğeni; gönderi hedefleri en fazla 12. Google saati ve tarayıcı teslimatı aynı biçimi kullanmalı.
+- `src/likes.js`: eski bireysel beğeni + yeni gönderi başına bucket birleştirme. Firestore kayıt kimliği bucket-encodedPostId, üyeler canonical handle -> timestamp. Yeni AI kuyruğu en fazla 5000 beğeni; gönderi hedefleri en fazla 12. Google saati ve tarayıcı teslimatı aynı biçimi kullanmalı.
 - Normal metin turu 50 içerik/30 dakika, 48 istek/gün olarak kalır. lastActors ortak kontrol alanı yeni 500 hesabın sırayla seçilmesini destekler.
 - Yönetim tarayıcı üreticisini çalıştırmaz. requestedTurnAt ortak ayar alanı saat kontrolünde bütçe/kilit üzerinden işlenir. Kaydetmek revision artırır.
 - Görsel yolu: Gemini aynı toplu istekte yalnız allowImage işaretli görev için imagePrompt önerir -> Google storage.attachImage -> mevcut serviste POST /api/v1/clock/image -> kullanıcının Cloudflare Worker'ı (AI binding). IMAGE_WORKER_URL Sites ortamında, GEMINI_API_KEY sunucuda kalır.
-- Görsel denemesi UTC gününde en fazla 5; D1 image-day / image-claim / image-stop sayaçları. Kota hatasında gün sonuna kadar dur; metni iptal etme veya başka ücretli modele geçme. Etkin ortak enabled/imageEnabled/revision/token/until iki tarafta kontrol edilir.
+- Görsel denemesi UTC gününde en fazla 50; D1 image-day / image-claim / image-stop sayaçları. Kota hatasında gün sonuna kadar dur; metni iptal etme veya başka ücretli modele geçme. Etkin ortak enabled/imageEnabled/revision/token/until iki tarafta kontrol edilir.
 - Backend Q04 kaynak: 696fead54e48957ebbc0de12ed4b24cb7c727531; saved version 5. Ortam revision 3.
 - Cloudflare Worker adı: frosty-art-583aqorves-images; adresi https://frosty-art-583aqorves-images.vortexseniseviyor.workers.dev . AI binding oluşturuldu. Custom Worker kodunun yayınını ve canlı imageEnabled durumunu iş bitimindeki yayın notundan doğrula; hazırlanan kodu canlı çalışıyor sanma.
 - Google saati her frontend değişiminde otomatik güncellenmez: scripts/build-google-clock.mjs ile research/google-clock/Code.gs üretip mevcut projeye aktar. Anahtar veya özel mesajları bu pakete koyma.
@@ -136,3 +136,20 @@ Son canlı checkQorvesClock sonucu (27 Ekim 09:12 İstanbul): profiles=500, like
 ## Görsel inceleme penceresi
 
 src/lightbox.js, main.js içinden bir kez başlatılır. Native dialog #app dışında durur; canlı DOM güncellemeleri açık görseli veya yakınlaştırmayı sıfırlamaz. data-image-viewer işaretli profil portresi/banner, .post-image ve .dm-image açılır. Akıştaki küçük profil bağlantıları normal profil gezinmesini korur. Klavye odağı, Escape, dışarı tıklama, 2x yakınlaştırma ve reduced-motion desteği vardır. Bu değişiklik yalnız GitHub Pages frontend yayını gerektirir; Google saati veya mesaj servisine yeniden dağıtım gerekmez.
+
+## Q05 devir notları
+
+- threads.js: flattenThread ile çok seviyeli, yetim ve döngüsel eski yorumların her biri tam bir kez gösterilir. storage.openComments(postId) tek alan sorgulu dinleyicidir; ek Firestore indeksi gerekmez.
+- Kullanıcı banner'ı users.bannerImage içinde sıkıştırılmış JPEG olarak saklanır. NPC banner'ı kaynak dosya yolunu kullanmaya devam eder. Profil kaydı blockedAccounts alanını taze sunucu kaydından korur.
+- Engelleme: özel serviste account_blocks ve ortak users.blockedAccounts aynası. social-visibility.js eski/yeni NPC adlarını eşler. Üretim hedefi, akış bağlamı, beğeni seçimi ve gerçek yayın anı filtrelenir. Kuyruktaki DM, fotoğraf ve takip teslimlerinde sunucu da kontrol eder. Eski konuşma silinmez.
+- D1 migration 0002_slimy_chat.sql: yalnız account_blocks, private_memory, social_activity tablolarını ve indekslerini ekler. Eski mesaj tablosunu değiştirmez. Özel olaylar scope=private ve other=oyuncu ile ayrılır; kamuya açık /social/context ve /clock/context özel olay döndürmez.
+- Kamusal yayınlar /clock/record veya Firestore'dan doğrulayan /social/record ile idempotent kaydedilir. Normal üretimde actorContexts kendi eski postlarını getirir; özel bilgiler normal üretim istemine konmaz. Geçmiş beğeni, yorum ve takip DM'de hatırlatılır. 90 günden eski olaylar günlük temizlikte silinir; eski mesajların kendisi silinmez.
+- DM private-image işi önce D1'de bekler; /tick bir görsel işi işler. Başarıdan sonra fotoğraf+tasvir özel hafızaya girer. Henüz teslim edilmeyen, engellenen veya duraklatmada bekleyen yanıt olmuş gibi hatırlatılmaz. Görsel üretim hatası metin yanıtını kaybettirmez.
+- Cloudflare ve Sites IMAGE_RELAY_SECRET gizlisini paylaşır; değerini hiçbir not/kaynak/loga koyma. Worker HMAC imzasını, ortak anahtarı ve /image/consume üzerinden tek kullanımlık D1 iznini kontrol eder. Bütün görseller image-day:UTC sayaçlarında **50 deneme** paylaşır. Sağlayıcı 429'da image-stop:UTC gün sonuna kadar keser.
+- Büyük FLUX JPEG çıktısı backend generated-image.mjs ve jpeg-js ile 512px'e sıkıştırılır. Worker Free'de ağır görüntü işleme yapılmaz.
+- NPC'nin DM başlatma kararı, var olan oyuncu yanıt çağrısında veya Google toplu çağrısında outreach alanından gelir. Ek Gemini isteği yoktur. Günde çift başına 1 / toplam 12 başlangıç mesajı ile NPC-NPC DM döngüsü yoktur.
+- /likers sunucuda bağlı oyuncu kimliğiyle gönderi sahipliğini doğrular, eski/bucket beğenileri tekilleştirir. UI düğmesi yalnız kendi gerçek oyuncu gönderilerinde görünür.
+- Kişilik %85 ifadesi bir olasılık motoru değildir; istemde esneklik yönlendirmesidir. Rıza, yaş ve kanon katı kalır.
+- Backend açıklamaları BACKEND_NOTES.md içindedir. Bu sürüm frontend + mevcut Sites backend + Cloudflare Worker + Google saati yayını gerektirir. Firebase kuralları ve indekslerine yeni koleksiyon eklenmedi.
+
+Q05 backend kaynak commit: 104234a8f7287bd6efd4d98736ac811cb0aadead; saved version 6, ortam revision 4. Cloudflare Worker HMAC izinli yeni sürüm yayımlandı. Günlük görsel tavanı kullanıcının son seçimiyle 50 deneme oldu; eski Q04 beş deneme notları tarihçedir. Q05 kontrolleri: 50 frontend/saat/Worker testi, 22 backend/görsel testi.

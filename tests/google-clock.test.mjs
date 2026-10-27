@@ -13,7 +13,7 @@ function fixture({paused=false,pauseInModel=false,claimConflict=false}={}){
  function respond(data,status=200){return {getResponseCode:()=>status,getContentText:()=>JSON.stringify(data)};}
  const context=vm.createContext({console:{log(){},error(){}},Utilities:{getUuid:randomUUID,sleep(){},base64Decode:s=>[...Buffer.from(s,'base64')],newBlob:bytes=>({getDataAsString:()=>Buffer.from(bytes).toString('utf8')})},PropertiesService:{getScriptProperties:()=>({getProperty:key=>key==='FIREBASE_SERVICE_UID'?'service-test':null,setProperties(){}})},CacheService:{getScriptCache:()=>({get:()=> 'firebase-test-token',put(){}})},UrlFetchApp:{fetch(url,o={}){
   let body=o.payload?JSON.parse(o.payload):{};
-  if(url.endsWith('/api/v1/clock/model')){body=body.payload;calls++;if(pauseInModel)docs.set('settings/simulation',{...docs.get('settings/simulation'),enabled:false,revision:2});const prompt=body.contents[0].parts[0].text,tasks=JSON.parse(prompt.match(/GÖREVLER: (.+)\nSadece JSON/)[1]);return respond({candidates:[{content:{parts:[{text:JSON.stringify(tasks.map(t=>({handle:t.handle,text:'Bu reklamı kapatmanın bir yolunu bulan var mı?',replyTo:t.replyTo,memory:'Reklamlardan şikâyet etti.'})))}]}}]});}
+  if(url.endsWith('/api/v1/clock/model')){body=body.payload;calls++;if(pauseInModel)docs.set('settings/simulation',{...docs.get('settings/simulation'),enabled:false,revision:2});const prompt=body.contents[0].parts[0].text,tasks=JSON.parse(prompt.match(/GÖREVLER: (.+)\n/)[1]);return respond({candidates:[{content:{parts:[{text:JSON.stringify(tasks.map(t=>({handle:t.handle,text:'Bu reklamı kapatmanın bir yolunu bulan var mı?',replyTo:t.replyTo,memory:'Reklamlardan şikâyet etti.'})))}]}}]});}
   if(url.endsWith('/api/v1/tick'))return respond({published:0});
   if(url.endsWith(':beginTransaction'))throw Error('beginTransaction is not available for Firebase ID credentials');
   if(url.endsWith(':rollback'))return respond({});
@@ -37,3 +37,10 @@ test('pause during Google model generation discards output and retains request a
 });
 
 test('a switch change between claim read and commit rejects stale versions and retries without calling AI',async()=>{const f=fixture({claimConflict:true});await f.run(true);assert.equal(f.calls,0);assert.equal(f.docs.get('control/simulation').requests||0,0);});
+
+
+test('a queued response to a blocked player is discarded at actual publication time',async()=>{
+ const f=fixture(),now=Date.now();f.docs.set('settings/simulation',{...f.docs.get('settings/simulation'),maxRequests:0});f.docs.set('users/alice',{handle:'@alice',blockedAccounts:['@blocked']});f.docs.set('control/simulation',{pending:1});
+ f.docs.set('memories/blocked-publication',{id:'blocked-publication',kind:'publication',type:'comment',dueAt:now-1000,pauseOffset:0,body:{id:'blocked-comment',author:'@blocked',recipient:'@alice',postOwner:'@alice',postId:'p',text:'Gorunmemeli.'}});
+ await f.run(true);assert.equal(f.calls,0);assert.ok(!f.docs.has('comments/blocked-comment'));assert.ok(!f.docs.has('memories/blocked-publication'));assert.equal(f.docs.get('control/simulation').pending,0);
+});

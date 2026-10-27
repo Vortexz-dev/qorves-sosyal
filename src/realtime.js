@@ -3,6 +3,8 @@ import {storage} from './storage.js';
 export const realtime={
  get enabled(){return !!config.realtimeEnabled&&!!config.realtimeUrl;},
  async call(path,data){if(!realtime.enabled)throw Error('Mesaj hattı henüz oyunculara açılmadı.');const token=await storage.authToken();const r=await fetch(config.realtimeUrl+'/api/v1'+path,{method:data?'POST':'GET',headers:{Authorization:'Bearer '+token,...(data?{'Content-Type':'application/json'}:{})},...(data?{body:JSON.stringify(data)}:{})});if(r.redirected||!r.headers.get('content-type')?.includes('application/json'))throw Error('Mesaj hattı henüz oyunculara açılmadı.');const b=await r.json();if(!r.ok)throw Error(b.error||'Mesaj hattı geçici olarak meşgul.');return b;},
+ block:(peer,blocked)=>realtime.call('/blocks',{peer,blocked}),
+ likers:postId=>realtime.call('/likers',{postId}),
  bind:(handle,password)=>realtime.call('/bind',{handle,password}),
  unbind:()=>realtime.enabled?realtime.call('/unbind',{}):Promise.resolve(),
  messages:peer=>realtime.call('/dm'+(peer?'?peer='+encodeURIComponent(peer):'')),
