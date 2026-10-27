@@ -50,6 +50,7 @@ export function startLightbox(){
   event.preventDefault();event.stopPropagation();open(target);
  },true);
  document.addEventListener('keydown',event=>{
+  if(dialog.open&&event.key==='Escape'){event.preventDefault();event.stopPropagation();close();return;}
   if(!['Enter',' '].includes(event.key))return;
   const target=event.target.closest?.('[data-image-viewer],.post-image,.dm-image');
   if(target){event.preventDefault();event.stopPropagation();open(target);}
