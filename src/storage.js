@@ -1,3 +1,4 @@
+import {writeSharedSettings} from './shared-settings.js';
 import {isBlocked} from './social-visibility.js';
 import {expandLikes,likeBucketId,mergeLikeBucket} from './likes.js';
 import {canonicalRow,canonicalHandle,profileAuthors} from './profiles.js';
@@ -36,7 +37,7 @@ export const storage={
    fs=firestore;const app=initializeApp(config.firebaseConfig);db=fs.getFirestore(app);mode='Ortak (Firebase)';
    const a=auth.getAuth(app);await auth.signInAnonymously(a);uid=a.currentUser.uid;
    for(const name of names){remoteRows[name]={};if(deliveryOnly||name==='memories'||name==='queue'||(cloud&&['likes','notifications','follows'].includes(name)))continue;
-    const q=name==='posts'?fs.query(fs.collection(db,name),fs.orderBy('createdAt','desc'),fs.limit(config.feedPageSize)):name==='notifications'?fs.query(fs.collection(db,name),fs.orderBy('createdAt','desc'),fs.limit(100)):cloud&&name==='comments'?fs.query(fs.collection(db,name),fs.orderBy('createdAt','desc'),fs.limit(200)):fs.collection(db,name);
+    const q=name==='posts'?fs.query(fs.collection(db,name),fs.orderBy('createdAt','desc'),fs.limit(config.feedPageSize)):name==='comments'?fs.query(fs.collection(db,name),fs.orderBy('createdAt','desc'),fs.limit(200)):name==='notifications'?fs.query(fs.collection(db,name),fs.orderBy('createdAt','desc'),fs.limit(100)):cloud&&name==='comments'?fs.query(fs.collection(db,name),fs.orderBy('createdAt','desc'),fs.limit(200)):fs.collection(db,name);
     const consume=snap=>{for(const change of snap.docChanges()){if(change.type==='removed'){if(name!=='posts')delete remoteRows[name][change.doc.id];}else remoteRows[name][change.doc.id]={...change.doc.data(),id:change.doc.id};}if(name==='posts'&&!cursor)cursor=snap.docs.at(-1)||null;emit();};
     if(cloud)initial.push(fs.getDocs(q).then(consume));else listen(q,consume);
    }
@@ -67,7 +68,7 @@ export const storage={
  async saveUser(user,creating=false){const key=user.handle.slice(1);if(db){await fs.runTransaction(db,async tx=>{const r=ref('users',key),old=await tx.get(r);if(creating&&old.exists())throw Error('Bu kullanıcı adı alınmış.');tx.set(r,{...user,...(old.data()?.blockedAccounts?{blockedAccounts:old.data().blockedAccounts}:{}),id:key});});}else{if(creating&&await getOne('users',key))throw Error('Bu kullanıcı adı alınmış.');await put('users',key,{...user,id:key});}},
  async refreshUser(handle){if(!db)return;const row=await getOne('users',handle.slice(1));if(row)remoteRows.users[handle.slice(1)]={...row,id:handle.slice(1)};emit();},
  getUser:handle=>getOne('users',handle.replace(/^@/,'')),
- async saveSettings(patch){if('apiKey' in patch){privateKey=patch.apiKey;localStorage.setItem('qorves-gemini-private',privateKey);patch={...patch};delete patch.apiKey;}if(db){await fs.runTransaction(db,async tx=>{const r=ref('settings','simulation'),snap=await tx.get(r);tx.set(r,mergeSimulationSettings({...defaults,...snap.data()},patch));});}else applyLocal(s=>{s.settings=mergeSimulationSettings({...defaults,...s.settings},patch);});},
+ async saveSettings(patch){if('apiKey' in patch){privateKey=patch.apiKey;localStorage.setItem('qorves-gemini-private',privateKey);patch={...patch};delete patch.apiKey;}if(db){settings=await writeSharedSettings(config.firebaseConfig.projectId,await storage.authToken(),settings,patch);emit();}else applyLocal(s=>{s.settings=mergeSimulationSettings({...defaults,...s.settings},patch);});},
  async deletePost(postId){await put('posts',postId,{id:postId,deleted:true,createdAt:Date.now()});},deleteComment:key=>remove('comments',key),
  async saveEvent(event){if(!safeText(event.text))throw Error('Olay metni evren kurallarını ihlal ediyor.');const row={...event,id:event.id||id(),createdAt:event.createdAt||Date.now()};await put('events',row.id,row);},deleteEvent:key=>remove('events',key),
  async enqueue(target){const row={id:target.id,target,createdAt:Date.now(),done:false};await put('queue',row.id,row);},

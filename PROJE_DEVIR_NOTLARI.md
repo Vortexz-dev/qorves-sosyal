@@ -165,3 +165,14 @@ Q05 backend kaynak commit: 104234a8f7287bd6efd4d98736ac811cb0aadead; saved versi
 - Yeni 750 kadro frontend, backend ve Google Code.gs içine dahil olmalı. checkQorvesClock release=Q07 ve profiles=750 gösterir. Google tetikleyici/Script Properties/servis UID değişmez; kurulum işlevini yeniden çalıştırma.
 - Bütçeler aynı: 30 dakikalık normal turda 50 metin/500 beğeni, günde 48 normal AI isteği, ortak 50 görsel denemesi/UTC günü. 750 hesap gönderildi diye hepsini aynı isteğe koyma; turda yalnız seçilen hesaplar gider. Kullanıcının ortak enabled durumuna dokunma.
 - Q06 backend kaynak: 15511545b25d13268c245bcf6de48b63261271d6; saved version 7 / ortam revision 4. Doğal DM kararları ve kalıcı mesaj gruplama korunmalı. Yeni Q07 backend kaynağı ve canlı doğrulaması yayın kaydından kontrol edilmeli.
+
+## Q08 — Firestore okuma kotası ve yönetim anahtarı
+
+27 Ekim akşamı gerçek REST/SDK resource-exhausted (429) ve Firebase Usage kota uyarısı doğrulandı; 24 saat grafiği yaklaşık 86K okuma, 7.6K yazma gösteriyordu. Bu Gemini kotası değildir. Spark ücretsiz okuma sınırı 50K/gün, yenilenme Pasifik gece yarısıdır; ücretli plan açılmadı.
+
+- shared-settings.js: yönetim ayarını yeniden okumadan updateMask + atomik revision increment ile doğrudan commit eder. Durdurma/başlatmada pauseStartedAt ve totalPausedMs hesapları korunur. Sadece değişen alanlar yazılır. 8 saniyede belirsiz kayıt uyarısı, gerçek kota hatasında açık hata; sessiz sonsuz transaction retry yok. Anahtar işlem boyunca kilitlenir.
+- Genel akış yorum dinleyicisi son 200 yoruma sınırlanır; gönderi açılınca bütün yorumlar postId sorgusuyla ayrıca yüklenir. Eski yorumlar silinmez.
+- Google saati son 40 gönderi/80 yorumu bağlam olarak alır; sıra boşsa yayın sorgusu yapmaz. Son otomatik uyandırma 15 dakikadan yeniyse tarayıcı aynı yayın kuyruğunu tekrar tekrar sorgulamaz; eski saatte dakikalık yedek teslim devreye girer.
+- Özel serviste eski Firestore geçmişini DM'ye geri doldurma aynı NPC/oyuncu için her dakika yerine günde en fazla bir kez yapılır. Canlı etkileşimler zaten D1 social_activity'ye kaydedilir; hafıza silinmez. Eski geçmiş okuma hata verirse 15 dakika bekler.
+- Google REST veritabanı 429'unda 15 dakikalık kontrol beklemesi uygular; limit yenilenince yeniden deneyerek devam eder. Dolu sağlayıcı kotası koddan sıfırlanamaz. Eski hatalı SDK transaction bekleyen tarayıcı sekmeleri yeni yayın sonrası yeniden yüklenmelidir.
+- checkQorvesClock sürümü Q08; kadro 750, AI ve görsel bütçeleri değişmedi. Frontend + Google saati + mevcut özel servis birlikte yayımlanır.

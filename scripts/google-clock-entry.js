@@ -3,7 +3,7 @@ import {storage} from './google-clock-storage.js';
 import {generate} from '../src/simulation.js';
 import {cloudTurnDue} from '../src/publication.js';
 import {day} from '../src/domain.js';
-export async function checkClock(){await storage.init();return {release:'Q07',imageDailyLimit:50,memoryDays:90,profiles:npcs.length,likesPerTurn:storage.settings.likesPerTurn,imageEnabled:!!storage.settings.imageEnabled,enabled:storage.settings.enabled,intervalMinutes:storage.settings.intervalMinutes,requests:storage.usage.requests||0,serviceUid:PropertiesService.getScriptProperties().getProperty('FIREBASE_SERVICE_UID')};}
+export async function checkClock(){await storage.init();return {release:'Q08',imageDailyLimit:50,memoryDays:90,profiles:npcs.length,likesPerTurn:storage.settings.likesPerTurn,imageEnabled:!!storage.settings.imageEnabled,enabled:storage.settings.enabled,intervalMinutes:storage.settings.intervalMinutes,requests:storage.usage.requests||0,serviceUid:PropertiesService.getScriptProperties().getProperty('FIREBASE_SERVICE_UID')};}
 export async function runClock(automatic=false){
  await storage.init();await storage.markWake(automatic);const s=storage.settings;
  if(!s.enabled)return {status:'paused',aiRequests:0};
