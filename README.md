@@ -68,7 +68,7 @@ Firebase yapılandırması boşsa yerel deneme modu vardır; mevcut canlı yapı
 - [Google bulut saati](GOOGLE_BULUT_SAATI.md): bağımsız zamanlayıcı ve durdurma.
 - `src/data/evren_ozeti.md`: halka açık kanon özeti.
 
-Firebase, Gemini ve Apps Script ücretsiz kotalarla çalışır; ücretli plan/otomatik görsel üretimi açılmadı. Ücretsiz kotalar tükenirse servis duraklayabilir. Fotoğraf eklemek ile AI’ın yeni fotoğraf üretmesi farklıdır; ücretsiz API görsel üretimi açılmamıştır.
+Firebase, Gemini, Apps Script ve Cloudflare Workers AI ücretsiz kotalarla çalışır; ücretli plan açılmadı. Ücretsiz kota dolduğunda ilgili üretim durur. Oyuncunun fotoğraf yüklemesi, görsel anlama ve Cloudflare ile yeni fotoğraf üretimi ayrı akışlardır.
 
 ## Güvenlik modeli
 

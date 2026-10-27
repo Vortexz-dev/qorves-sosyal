@@ -55,7 +55,7 @@ Firestore koleksiyonları: users, posts, comments, likes, follows, notifications
 
 Anahtar kapanınca yeni çağrı ve kuyruk yayını durur. revision değişince eski sonuç atılır. Sağlayıcıya ulaşmış istek geri alınamaz. Önceden kayıtlı içerik/hafıza silinmez. Yayın saatleri toplam duraklama farkına göre kayar.
 
-Normal ayarlar 30 dakika / 48 toplu istek / 50 metin ve 100 beğeni / 2400 günlük metindir. Başarısız sağlayıcı denemesi de istek sayılır. Yalnız 502/503/504 durumunda bir kez gemini-2.5-flash-lite ücretsiz fallback; 429’da tekrar yok. Kilit 360 saniyedir. Metin tekrarları ek AI isteği açmadan elenir.
+Normal ayarlar 30 dakika / 48 toplu istek / 50 metin ve 500 beğeni / 2400 günlük metindir. Başarısız sağlayıcı denemesi de istek sayılır. Yalnız 502/503/504 durumunda bir kez gemini-2.5-flash-lite ücretsiz fallback; 429’da tekrar yok. Kilit 360 saniyedir. Metin tekrarları ek AI isteği açmadan elenir.
 
 ## Apps Script: kritik farklar
 
@@ -90,12 +90,12 @@ DM günlük kişi sınırı 120, aralık 2 saniye; ortak günlük interaktif bü
 
 Firestore mevcut güvenilen FRP grubu modelidir: anonim oturumlar ortak oyun belgelerine erişir. Yönetim şifresi yalnız UI kilidi; gerçek sunucu admin yetkisi değildir. Q03 değişikliği yalnız post validator: text <=750, opsiyonel JPEG/PNG/WebP data URL <=240000; comments <=500. Geniş yetki modeli değiştirilmedi. Bu temel kurallar geniş halka açık/hasım kullanıcılar için kapsamlı yetkilendirme değildir. Gizli kanon arşivini veya sırları modele/kamuya göndermemek temel korumadır.
 
-AI yeni görsel üretimi açılmadı; ücretsiz model API görsel üretimi sunmadığı için ücretli modele geçilmedi. Oyuncu görsellerini anlama farklıdır ve çalışır. Spark/AI/Apps Script ücretsiz kotaları duraklama yapabilir. Billing veya planı kendiliğinden değiştirme.
+AI yeni görsel üretimi Cloudflare Free FLUX.1 schnell ile bağlandı; en fazla beş deneme/UTC günü. Ortak simülasyon anahtarı kapalıysa görsel de üretilmez. Oyuncu görsellerini anlama ayrı akıştır. Spark/AI/Apps Script ücretsiz kotaları duraklama yapabilir. Billing veya planı kendiliğinden değiştirme.
 
 ## Test ve yayın sırası
 
-1. Frontend: npm ci (gerekiyorsa), npm test, npm run build. Son Q03: 42 uygulama/saat testi geçti.
-2. Backend: Node 24 ile node --test tests/social.test.mjs. Son Q03: 14 test geçti.
+1. Frontend: npm ci (gerekiyorsa), npm test, npm run build. Son Q04: 45 uygulama/saat testi geçti; ek tanı işlevinden sonra ilgili dört saat testi yeniden geçti.
+2. Backend: Node 24 ile node --test tests/social.test.mjs. Son Q04: 15 test geçti.
 3. Kritik UI kontrolü: research/q03-ui-check.html yerel fixture, 25 güncellemede odak/seçim/file-input korunması ve gerçek PNG -> JPEG önizleme decode doğrulandı. Bu dosya araştırma alanında, yayına girmemeli. Aynı büyük tarayıcı turunu tekrar yapma.
 4. Yeni kaynak main’e gönderilince Pages workflow test/build/deploy; başarılı sonucu görmeden frontend yayında deme.
 5. Backend değişirse Sites skill akışı: mevcut projeyi aç, helper ile exact pushed commit’ten paketle, save_site_version ve mevcut public deploy_site_version; ortam değiştiyse yeniden deploy et. Mevcut DB ve audience korunmalı. Tokenları yalnız helper stdin’ine ver.
@@ -130,3 +130,5 @@ Cloudflare Worker custom kodu resmi API ile başarıyla yayımlandı; /health 20
 Ortak ayarlarda imageEnabled=true, likesPerTurn=500 ve revision=11 ayarlandı; enabled değiştirilmedi. Oyuncu durdurma tercihini koru. Görsel denemeleri yalnız enabled açıkken çalışır.
 
 Google Apps Script kodu yeni 500 hesaplı paketle yenilendi. Büyük dosyayı tek seferde panoya göndermek tarayıcı bağlantısını kesebiliyor: en fazla 90000 karakterlik parçaları sırayla yapıştır, son kaydın tamamlanmasını ve işlevin gerçekten seçildiğini kontrol et. checkQorvesClock profiller, beğeni ayarı ve görsel anahtarını gösterir, AI harcamaz. verifyQorvesImage tek görsel denemesi yapar, herkese açık test postu oluşturmaz; Gemini sayacını artırmaz. Bu tanı testini döngüye alma.
+
+Son canlı checkQorvesClock sonucu (27 Ekim 09:12 İstanbul): profiles=500, likesPerTurn=500, imageEnabled=true, enabled=false. Kullanıcının ortak durdurma durumu korunmuştur. Yerel derleme veya health yanıtını gerçek otomatik görsel üretimi kanıtı sayma: simülasyon kapalı olduğundan canlı fotoğraf üretimi henüz denenmedi. Eski Q03 sürüm bilgileri tarihçedir; güncel backend saved version 5 ve ortam revision 3'tür.
