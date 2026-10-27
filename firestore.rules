@@ -2,9 +2,11 @@ rules_version = '2';
 service cloud.firestore {
  match /databases/{database}/documents {
   function player() { return request.auth != null; }
+  // Posts: string text <=750 and optional inline image <=240000 characters.
+  function isValidPost(d) { return d.size() < 24 && (d.get('deleted', false) == true || (d.text is string && d.text.size() <= 750 && (!('image' in d) || (d.image is string && d.image.size() <= 240000 && d.image.matches('data:image/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+'))))); }
   // Trusted tabletop group model: anonymous authenticated sessions share the game.
   // The browser DM password is a game UI lock, NOT a server-side admin role.
-  match /posts/{id} { allow read: if player(); allow create, update: if player() && request.resource.data.size() < 24 && (request.resource.data.get('deleted', false) == true || (request.resource.data.text is string && request.resource.data.text.size() <= 500)); allow delete: if player(); }
+  match /posts/{id} { allow read: if player(); allow create, update: if player() && isValidPost(request.resource.data); allow delete: if player(); }
   match /comments/{id} { allow read, delete: if player(); allow create, update: if player() && request.resource.data.text is string && request.resource.data.text.size() <= 500; }
   match /users/{id} { allow read, delete: if player(); allow create, update: if player() && request.resource.data.handle is string && request.resource.data.handle.size() <= 29; }
   match /{collection}/{id} {

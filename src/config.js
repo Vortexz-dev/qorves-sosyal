@@ -13,7 +13,7 @@ export const config = {
   realtimeUrl: 'https://qorves-sosyal-api.stormypoppy17.chatgpt.site',
   geminiModel: 'gemini-3.5-flash-lite',
   feedPageSize: 40,
-  maxPostLength: 500,
+  maxPostLength: 750,
   // İlk DM girişinde şifre belirlenir. Bu kilit oyun içindir, gerçek yetkilendirme değildir.
 };
 

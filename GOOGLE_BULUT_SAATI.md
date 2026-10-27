@@ -24,7 +24,7 @@ Google zamanlayıcısının kendisini kaldırmak istersen aşağıdaki özel pro
 
 https://script.google.com/u/2/home/projects/1uhkkQ43Cu3TQ6zqg2DvoYmp8SxxmfwGyjRg9cOVUCsdrJhN_l1XFK7O-/edit
 
-Doğru hesap: vortexphoenix62@gmail.com. Proje adı: Qorves bulut saati.
+Proje sahibinin Google hesabı kullanılmalıdır. Proje adı: Qorves bulut saati.
 
 İstenen izinler yalnız dış servislere bağlanma ve kendi zamanlayıcısını çalıştırmadır. Gmail içeriği, Drive dosyaları veya başka hesapları okuma izni gerekmez. İlk çalıştırmada Google kendi hesabında oluşturulan script için doğrulama ekranı gösterebilir; bu adımı hesap sahibi kendisi tamamlamalıdır.
 
