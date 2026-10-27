@@ -10,7 +10,7 @@ const defaults={enabled:false,postsEnabled:true,repliesEnabled:true,intervalMinu
 const project=config.firebaseConfig.projectId;let root=`https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents`;
 const base=Date.parse('2026-10-26T04:00:00Z');
 const seeds=[...npcs.flatMap((n,i)=>n.ornek_paylasimlar.filter(safeText).map((text,j)=>({id:`seed-${n.id}-${j}`,author:n.kullanici_adi,text,system:n.sistem,race:n.irk,createdAt:base-(j*100+i)*420000,seed:true}))),...history.filter(p=>safeText(p.text)).map(p=>({...p,seed:true}))];
-let settings={...defaults},control={},token='',privateKey='',rows={posts:[],comments:[],events:[],follows:[],users:[]},cache=new Map();
+let sharedState=null;let settings={...defaults},control={},token='',privateKey='',rows={posts:[],comments:[],events:[],follows:[],users:[]},cache=new Map();
 const encode=v=>v===null?{nullValue:null}:typeof v==='string'?{stringValue:v}:typeof v==='boolean'?{booleanValue:v}:typeof v==='number'?Number.isInteger(v)?{integerValue:String(v)}:{doubleValue:v}:Array.isArray(v)?{arrayValue:{values:v.map(encode)}}:{mapValue:{fields:Object.fromEntries(Object.entries(v).filter(([,x])=>x!==undefined).map(([k,x])=>[k,encode(x)]))}};
 const decode=v=>'stringValue'in v?v.stringValue:'integerValue'in v?Number(v.integerValue):'doubleValue'in v?v.doubleValue:'booleanValue'in v?v.booleanValue:'nullValue'in v?null:'arrayValue'in v?(v.arrayValue.values||[]).map(decode):Object.fromEntries(Object.entries(v.mapValue?.fields||{}).map(([k,x])=>[k,decode(x)]));
 const unpack=d=>d?.fields?{...Object.fromEntries(Object.entries(d.fields).map(([k,v])=>[k,decode(v)])),id:d.name.split('/').at(-1)}:null;
@@ -31,6 +31,7 @@ export const storage={
  async outreach(claim,items){try{return http('post',config.realtimeUrl+'/api/v1/clock/outreach',{claim,items});}catch{return null;}},
  async record(items){if(!items.length)return;try{http('post',config.realtimeUrl+'/api/v1/clock/record',{items});}catch{}},
  async attachImage(claim,post,prompt){const result=http('post',config.realtimeUrl+'/api/v1/clock/image',{claim,author:post.author,prompt});return result?.image||null;},
+ get backupStatus(){return sharedState;},
  get settings(){return {...defaults,...settings,apiKey:privateKey};},get usage(){return control;},subscribe(){return()=>{};},
  async init(){
 
@@ -41,9 +42,9 @@ export const storage={
    token=session.idToken;properties.setProperties({FIREBASE_REFRESH_TOKEN:session.refreshToken,FIREBASE_SERVICE_UID:session.localId});CacheService.getScriptCache().put('qorves-firebase-session',token,3000);
   }
   globalThis.QORVES_CLOCK_ACCESS_TOKEN=token;cache.clear();
-  const shared=http('post',config.realtimeUrl+'/api/v1/common/sync',{});
+  const shared=http('post',config.realtimeUrl+'/api/v1/common/sync',{});sharedState=shared;
   if(shared?.active)root=config.realtimeUrl+'/api/v1/common/documents';
-  else if(shared?.phase==='copying')throw Error('Ortak yedegin ilk esitlemesi suruyor; Firebase kotasi yenilenince otomatik tamamlanacak.');
+  else if(shared?.phase==='copying'){settings={...defaults,...shared.settings};return storage;}
   else if(CacheService.getScriptCache().get('qorves-firestore-quota')==='1')throw Error('Firebase okuma kotası dolu; 15 dakika sonra yeniden kontrol edilecek.');
   await storage.refreshSettings();await storage.refreshControl();
  },

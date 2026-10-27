@@ -3,9 +3,9 @@ import {storage} from './google-clock-storage.js';
 import {generate} from '../src/simulation.js';
 import {cloudTurnDue} from '../src/publication.js';
 import {day} from '../src/domain.js';
-export async function checkClock(){await storage.init();return {release:'Q09',imageDailyLimit:50,memoryDays:90,profiles:npcs.length,likesPerTurn:storage.settings.likesPerTurn,imageEnabled:!!storage.settings.imageEnabled,enabled:storage.settings.enabled,intervalMinutes:storage.settings.intervalMinutes,requests:storage.usage.requests||0,serviceUid:PropertiesService.getScriptProperties().getProperty('FIREBASE_SERVICE_UID')};}
+export async function checkClock(){await storage.init();return {release:'Q09',imageDailyLimit:50,memoryDays:90,profiles:npcs.length,likesPerTurn:storage.settings.likesPerTurn,imageEnabled:!!storage.settings.imageEnabled,enabled:storage.settings.enabled,intervalMinutes:storage.settings.intervalMinutes,requests:storage.backupStatus?.phase==='copying'?null:storage.usage.requests||0,backup:storage.backupStatus?{active:storage.backupStatus.active,phase:storage.backupStatus.phase,provider:storage.backupStatus.provider,pending:storage.backupStatus.pending,sync:storage.backupStatus.sync}:null,serviceUid:PropertiesService.getScriptProperties().getProperty('FIREBASE_SERVICE_UID')};}
 export async function runClock(automatic=false){
- await storage.init();await storage.markWake(automatic);const s=storage.settings;
+ await storage.init();if(storage.backupStatus?.phase==='copying')return {status:'initial-sync',aiRequests:0,retryAt:storage.backupStatus.sync?.retryAt||0};await storage.markWake(automatic);const s=storage.settings;
  if(!s.enabled)return {status:'paused',aiRequests:0};
  const published=await storage.flushDuePublications();await storage.tickReplies();await storage.refreshControl();
  let result={status:'publishing-only'};

@@ -7,14 +7,14 @@ const bundle=readFileSync(new URL('../research/google-clock/Code.gs',import.meta
 const enc=v=>v===null?{nullValue:null}:typeof v==='string'?{stringValue:v}:typeof v==='boolean'?{booleanValue:v}:typeof v==='number'?{integerValue:String(v)}:Array.isArray(v)?{arrayValue:{values:v.map(enc)}}:{mapValue:{fields:Object.fromEntries(Object.entries(v).map(([k,x])=>[k,enc(x)]))}};
 const dec=v=>'stringValue'in v?v.stringValue:'integerValue'in v?Number(v.integerValue):'booleanValue'in v?v.booleanValue:'nullValue'in v?null:'arrayValue'in v?(v.arrayValue.values||[]).map(dec):Object.fromEntries(Object.entries(v.mapValue.fields).map(([k,x])=>[k,dec(x)]));
 const prefix='projects/qorves-sosyal/databases/(default)/documents/';
-function fixture({paused=false,pauseInModel=false,claimConflict=false}={}){
+function fixture({paused=false,pauseInModel=false,claimConflict=false,copying=false}={}){
  const docs=new Map([['settings/simulation',{enabled:!paused,revision:1,postsEnabled:true,repliesEnabled:false,model:'gemini-3.5-flash-lite',maxRequests:1,maxPosts:50,batchSize:1,likesPerTurn:2,intervalMinutes:30,muted:[]}],['control/simulation',{}]]);let calls=0,conflicted=false;
  const document=key=>docs.has(key)?{name:prefix+key,updateTime:JSON.stringify(docs.get(key)),fields:enc(docs.get(key)).mapValue.fields}:null;
  function respond(data,status=200){return {getResponseCode:()=>status,getContentText:()=>JSON.stringify(data)};}
  const context=vm.createContext({console:{log(){},error(){}},Utilities:{getUuid:randomUUID,sleep(){},base64Decode:s=>[...Buffer.from(s,'base64')],newBlob:bytes=>({getDataAsString:()=>Buffer.from(bytes).toString('utf8')})},PropertiesService:{getScriptProperties:()=>({getProperty:key=>key==='FIREBASE_SERVICE_UID'?'service-test':null,setProperties(){}})},CacheService:{getScriptCache:()=>({get:()=> 'firebase-test-token',put(){}})},UrlFetchApp:{fetch(url,o={}){
   let body=o.payload?JSON.parse(o.payload):{};
   if(url.endsWith('/api/v1/clock/model')){body=body.payload;calls++;if(pauseInModel)docs.set('settings/simulation',{...docs.get('settings/simulation'),enabled:false,revision:2});const prompt=body.contents[0].parts[0].text,tasks=JSON.parse(prompt.match(/GÖREVLER: (.+)\n/)[1]);return respond({candidates:[{content:{parts:[{text:JSON.stringify(tasks.map(t=>({handle:t.handle,text:'Bu reklamı kapatmanın bir yolunu bulan var mı?',replyTo:t.replyTo,memory:'Reklamlardan şikâyet etti.'})))}]}}]});}
-  if(url.endsWith('/api/v1/common/sync'))return respond({active:false,phase:'waiting'});
+  if(url.endsWith('/api/v1/common/sync'))return respond(copying?{active:false,phase:'copying',settings:{enabled:true},sync:{retryAt:Date.now()+900000}}:{active:false,phase:'waiting'});
   if(url.endsWith('/api/v1/tick'))return respond({published:0});
   if(url.endsWith(':beginTransaction'))throw Error('beginTransaction is not available for Firebase ID credentials');
   if(url.endsWith(':rollback'))return respond({});
@@ -45,3 +45,6 @@ test('a queued response to a blocked player is discarded at actual publication t
  f.docs.set('memories/blocked-publication',{id:'blocked-publication',kind:'publication',type:'comment',dueAt:now-1000,pauseOffset:0,body:{id:'blocked-comment',author:'@blocked',recipient:'@alice',postOwner:'@alice',postId:'p',text:'Gorunmemeli.'}});
  await f.run(true);assert.equal(f.calls,0);assert.ok(!f.docs.has('comments/blocked-comment'));assert.ok(!f.docs.has('memories/blocked-publication'));assert.equal(f.docs.get('control/simulation').pending,0);
 });
+
+
+test('first backup waits without spending AI or treating a quota pause as a crashed clock',async()=>{const f=fixture({copying:true}),r=await f.run(true);assert.equal(r.status,'initial-sync');assert.equal(r.aiRequests,0);assert.equal(f.calls,0);assert.equal(f.docs.get('control/simulation').lastWake,undefined);});
