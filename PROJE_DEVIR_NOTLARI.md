@@ -82,9 +82,9 @@ Kanonik kaynak ayrı yerel dizindedir. Yeni sohbet o dizini okuyabilir. Yerel ka
 
 Mesajlar D1’de owner/peer bazlı iki yönlü kayıttır. Görsel varsa body JSON içinde qorvesMedia=1/text/image olarak saklanır; eski body düz metinler çalışır. UI yalnız API’den kendi mesajlarını alır. Özel görsel/metin Firestore ortak hafızasına taşınmaz.
 
-AI yanıtında reply=false ise cevap mesajı yaratılmaz. silenceMinutes (0–1440) özel karşılık vermeme süresidir; süre boyunca mesaj alınır, yeni model çağrılmaz. Kontak tercihi aynı çağrıda follow/unfollow seçebilir. İçerik sıradan flörte otomatik ret vermez; kişilik, yaş ve rıza geçerlidir.
+Q06 sonrası reply=false yalnız o mesaj grubunu yanıtsız bırakır. Eski silence:* sayaçları dikkate alınmaz. read=false ise görüldü verilmez; her yeni mesaj yeniden değerlendirilir. Kontak tercihi aynı çağrıda follow/unfollow seçebilir. İçerik sıradan flörte otomatik ret vermez; kişilik, yaş ve rıza geçerlidir.
 
-DM günlük kişi sınırı 120, aralık 2 saniye; ortak günlük interaktif bütçe yönetim ayarıyla sınırlı ve sunucuda en çok 200. Dakika başına 8 çağrı. İnsan mesajları/sessiz hatta iletiler ayrı yazma hız sınırına tabidir. Sağlayıcı 24 saniyede sınırlandırılır; arka plan işi özel cevap kaydını sıraya alır. Same-peer pending kontrolü gereksiz paralel üretimi önler.
+DM günlük kişi sınırı 120, aralık 2 saniye; ortak günlük interaktif bütçe yönetim ayarıyla sınırlı ve sunucuda en çok 200. Dakika başına 8 çağrı. İnsan mesajları/sessiz hatta iletiler ayrı yazma hız sınırına tabidir. Sağlayıcı 24 saniyede sınırlandırılır; arka plan işi özel cevap kaydını sıraya alır. Q06: 2,5 saniyelik toplama penceresi ve kalıcı private-dm işi aynı konuşmada gereksiz paralel üretimi önler. Teknik dm-work kilidi karakterin konuşmama tercihi değildir.
 
 ## Kurallar, güvenlik ve sınırlar
 
@@ -153,3 +153,15 @@ src/lightbox.js, main.js içinden bir kez başlatılır. Native dialog #app dı�
 - Backend açıklamaları BACKEND_NOTES.md içindedir. Bu sürüm frontend + mevcut Sites backend + Cloudflare Worker + Google saati yayını gerektirir. Firebase kuralları ve indekslerine yeni koleksiyon eklenmedi.
 
 Q05 backend kaynak commit: 104234a8f7287bd6efd4d98736ac811cb0aadead; saved version 6, ortam revision 4. Cloudflare Worker HMAC izinli yeni sürüm yayımlandı. Günlük görsel tavanı kullanıcının son seçimiyle 50 deneme oldu; eski Q04 beş deneme notları tarihçedir. Q05 kontrolleri: 50 frontend/saat/Worker testi, 22 backend/görsel testi.
+
+## Q07 — ek 250 hesap / toplam 750 (27 Ekim 2026)
+
+- Kaynak: D:\Games\FRP\Qorves\SocialMediaWebsiteProject\YeniProfiller. profiller_ek_250.json ve 250 profil TXT'si karşılaştırıldı; 250 avatar ve 250 banner bulundu. Yeni ID'ler 501–750, eski 500 kimlik değişmez. 857 iliskili_hesaplar girdisinin başındaki eksik @ normalleştirildi; tamamı mevcut 750 kimlikte çözülür.
+- Yeni kullanıcı adı @dilay.hukukçu -> @dilay.hukukcu; ham ad alias olarak korunur. Toplam alias 70. Eski beğeni, takip, yorum, DM ve hafızaları yeniden seed etme/silme.
+- scripts/append-profiles.mjs artırımlı aktarır; scripts/import-profiles.mjs eski 500'lük temel set içindir ve 750'lik verinin üstüne çalıştırılmamalıdır. Ek ham profil dosyaları research dışında depoya alınmaz.
+- src/data/profiller.json yalnız kamusal kişilik/üslup, tanıtım, örnek gönderi ve görsel yollarını taşır. Ek aile/gecmis/is/iliski/sir/rutin ve dm_notu yalnız backend lib/data/profiller.json içinde tutulur; özel DM karakter bağlamına eklenir, kamusal üretime/istemciye aktarılmaz. Kişisel sırlara sahip olması onları açıklamak zorunda olduğu anlamına gelmez.
+- assets/profiles-extra-250-avatars.zip ve profiles-extra-250-banners.zip tam 250'şer özgün JPEG taşır. prepare-assets.mjs artık hem eski 500 hem ek 250 arşivini açar. Toplam 750 avatar + 750 banner yolu doğrulanmalı.
+- Yeni kaynakta 16–17 yaş hesaplar var; sosyal ses yönergesinde 18 yaşından küçüklerle flört edilmemesi açıkça belirtilir, frontend ve backend ses dosyaları eş tutulur.
+- Yeni 750 kadro frontend, backend ve Google Code.gs içine dahil olmalı. checkQorvesClock release=Q07 ve profiles=750 gösterir. Google tetikleyici/Script Properties/servis UID değişmez; kurulum işlevini yeniden çalıştırma.
+- Bütçeler aynı: 30 dakikalık normal turda 50 metin/500 beğeni, günde 48 normal AI isteği, ortak 50 görsel denemesi/UTC günü. 750 hesap gönderildi diye hepsini aynı isteğe koyma; turda yalnız seçilen hesaplar gider. Kullanıcının ortak enabled durumuna dokunma.
+- Q06 backend kaynak: 15511545b25d13268c245bcf6de48b63261271d6; saved version 7 / ortam revision 4. Doğal DM kararları ve kalıcı mesaj gruplama korunmalı. Yeni Q07 backend kaynağı ve canlı doğrulaması yayın kaydından kontrol edilmeli.

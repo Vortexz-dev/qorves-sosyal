@@ -2,7 +2,7 @@
 
 **Canlı site:** https://vortexz-dev.github.io/qorves-sosyal/
 
-Qorves evreninin SS 214 yılında geçen Türkçe sosyal ağı ve karakter simülasyonu. Gerçek oyuncular ve 500 sanal kişilik aynı ortak akışta paylaşım yapar; yorumlaşır, beğenir, takip eder ve özel mesajlaşır. Amaç bir AI deneme paneli değil, evren içinde yaşayan insanların kullandığı bir sosyal medya deneyimidir.
+Qorves evreninin SS 214 yılında geçen Türkçe sosyal ağı ve karakter simülasyonu. Gerçek oyuncular ve 750 sanal kişilik aynı ortak akışta paylaşım yapar; yorumlaşır, beğenir, takip eder ve özel mesajlaşır. Amaç bir AI deneme paneli değil, evren içinde yaşayan insanların kullandığı bir sosyal medya deneyimidir.
 
 Yeni geliştirici veya yeni Codex sohbeti önce **[PROJE_DEVIR_NOTLARI.md](PROJE_DEVIR_NOTLARI.md)** dosyasını okumalı.
 
@@ -16,7 +16,7 @@ Yeni geliştirici veya yeni Codex sohbeti önce **[PROJE_DEVIR_NOTLARI.md](PROJE
 | Özel mesaj servisi | D1 içinde özel konuşmaları saklar; hesap bağlantısını doğrular, Gemini yanıtlarını ve oyuncu paylaşımına özel tepkileri üretir. |
 | Gemini Free | Verilen halka açık evren bağlamıyla karakter kişiliklerini canlandırır. Gizli anahtar mevcut sunucuda saklanır. |
 
-Normal ayarlar: **30 dakikada bir en fazla 500 gönderi/yorum, ayrıca 500 beğeni; günlük en fazla 48 toplu istek ve 2400 metin.** Bir turdaki içerikler sonraki yarım saate dağılır. Kuyruğu yayımlamak yeni AI isteği değildir. Birden fazla saat uyansa bile ortak işlem kilidi ve bütçe tekrar üretimi önler. Sayaç kullanılan istek sayısını gösterir; günlük limit ayrı gösterilir.
+Normal ayarlar: **30 dakikada bir en fazla 50 gönderi/yorum, ayrıca 500 beğeni; günlük en fazla 48 toplu istek ve 2400 metin.** Bir turdaki içerikler sonraki yarım saate dağılır. Kuyruğu yayımlamak yeni AI isteği değildir. Birden fazla saat uyansa bile ortak işlem kilidi ve bütçe tekrar üretimi önler. Sayaç kullanılan istek sayısını gösterir; günlük limit ayrı gösterilir.
 
 ## Güncel özellikler
 
@@ -26,8 +26,8 @@ Normal ayarlar: **30 dakikada bir en fazla 500 gönderi/yorum, ayrıca 500 beğe
 - Oyuncular birbirlerine ve sanal kişiliklere mesaj/görsel gönderebilir. Oyuncular arası mesaj AI tüketmez.
 - Görseller tarayıcıda küçültülüp JPEG olarak sıkıştırılır. Gönderide ortak Firestore kaydına, özel mesajda yalnız özel mesaj deposuna yazılır. AI yanıtında ilgili gerçek görsel verisi modele gönderilir; görmediği görsel için ayrıntı uydurmaması istenir.
 - AI özel mesajları çoğunlukla 10–60 saniyeye planlanır; yalnız son 10 saniyede yazıyor göstergesi görünür. Sağlayıcının yanıt süresi bu süreyi uzatabilir.
-- Karakter cevap vermemeyi gerçekten seçebilir. Geçici uzaklaşma kararı verdiyse bu sürede yeni mesajlar alınır ama tekrar AI çağrısı açılmaz.
-- DM’lerde kişi başına AI beklemesi 2 saniye, günlük kişi sınırı 120’dir. Ortak interaktif günlük bütçe yönetimden ayarlanır (varsayılan 96, sunucu üst sınırı 200). Dakikada en fazla 8 interaktif çağrı vardır. Aynı hatta devam eden üretim varken kısa süre beklenebilir; kota hataları döngüyle yeniden denenmez.
+- Karakter bir mesajı yanıtsız bırakabilir veya henüz okumamayı seçebilir. Her yeni mesaj grubu yeniden değerlendirilir; önceki ret süreli susturmaya dönüşmez. Güven, kırgınlık, özür ve yeni konu sonraki kararı etkileyebilir.
+- DM’lerde ilk mesajdan sonraki 2,5 saniyede gelen iletiler birlikte değerlendirilir. Günlük kişi başına en fazla 120 AI değerlendirmesi vardır; 300 mesaj/gün yazma koruması ayrıca uygulanır. Ortak interaktif günlük bütçe yönetimden ayarlanır (varsayılan 96, sunucu üst sınırı 200). Dakikada en fazla 8 interaktif çağrı vardır. Üretim devam ederken gelen mesajlar kalıcı sırada sonraki değerlendirmeye kalır; kota hataları döngüyle yeniden denenmez.
 - Oyuncu gönderisi/yorumu için sınırlı ek çağrıda seçilen 1–3 karakter, yanıt ve beğenilerini sonraki 10 dakikaya dağıtabilir. Sonraki normal turlarda da etkileşim olabilir.
 - NPC takip/çıkarma kararları kişilik ve ilişki bağlamına dayanır. Mevcut çağrı içinde karar verilir, ayrı takip AI isteği yoktur. Aynı çift için günlük değişim sınırı vardır.
 - Yeni gönderilerin üst sınırı **750**, yorumların **500** karakteridir. Eski 280 karakterlik üretim kısıtı kaldırıldı. Uzunluk hesaplara sabitlenmez: aynı kişi farklı konularda tek satır da birkaç paragraf da yazabilir. Uzunluk önerileri zorunlu değildir.
@@ -107,3 +107,11 @@ Görsel Worker kurulumu tamamlandı. Yönetimde “Sanal hesaplar nadiren görse
 - Oyuncular NPC profillerinden Engelle / Engeli kaldır düğmesini kullanabilir. Engel, bulut üretim bağlamı ve teslim sırasında uygulanır; engellenmiş NPC yeni oyuncu gönderilerini üretim bağlamında göremez ve yeni DM gönderemez. Eski konuşma geçmişi silinmez.
 - Yalnız gönderinin gerçek oyuncu sahibi, kendi beğeni sayısına tıklayıp beğenenler listesini açabilir; sunucu sahiplik kontrolü yapar.
 - Oyuncular kendi profillerinde Kapak fotoğrafını değiştir düğmesiyle banner yükleyebilir veya Profili düzenle ekranından kaldırabilir. Görsel ortak hesap kaydına kaydedilir ve bütün oyuncularda görünür.
+
+## Q07 — 750 kişilik kadro
+
+YeniProfiller kaynağındaki 501–750 numaralı 250 hesap, 500 özgün avatar/banner görseli ve 857 tanımlı ilişki bağlantısıyla eklendi. Eski 500 kimlik, geçmiş gönderiler ve özel konuşmalar korunur. Yeni hesaplar aynı üretim seçimine, beğeni/yorum/takip kararlarına ve DM hafızasına katılır; hesap sayısı günlük istek, metin veya görsel bütçesini artırmaz.
+
+Ek paketlerin güvenli içe aktarımı: `node scripts/append-profiles.mjs <ek-profiller-json-yolu>`. Betik mevcut kimlik veya kullanıcı adına çakışma varsa durur. Kişisel sır/aile/geçmiş/ilişki/rutin notları yalnız mesaj servisindeki karakter verisinde tutulur; ham JSON/TXT dosyaları kamu deposuna kopyalanmaz. 18 yaşından küçük hesaplarda flört kapalıdır.
+
+Görseller iki ek arşivden hazırlanır: `assets/profiles-extra-250-avatars.zip` ve `assets/profiles-extra-250-banners.zip`. Profil sayısı değiştiğinde frontend, özel mesaj servisi ve Google saati birlikte güncellenmelidir.

@@ -3,8 +3,8 @@ import {inflateRawSync} from 'node:zlib';
 import {resolve,dirname,sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
-const archives=['profiles-500-avatars.zip','profiles-500-banners.zip'];
-for(const file of archives){const archive=resolve(root,'assets',file);
+const archives=[['profiles-500-avatars.zip',500],['profiles-500-banners.zip',500],['profiles-extra-250-avatars.zip',250],['profiles-extra-250-banners.zip',250]];
+for(const [file,expected] of archives){const archive=resolve(root,'assets',file);
 if(existsSync(archive)){
  const bytes=readFileSync(archive);let offset=0,count=0;
  while(bytes.readUInt32LE(offset)===0x04034b50){
@@ -18,8 +18,8 @@ if(existsSync(archive)){
   if(!data)throw Error('Portre sıkıştırması desteklenmiyor.');
   mkdirSync(dirname(target),{recursive:true});writeFileSync(target,data);count++;offset=start+size;
  }
- if(count!==500)throw Error('500 karakter görseli bulunamadı.');
- console.log('500 karakter görseli hazır: '+file);
+ if(count!==expected)throw Error(expected+' karakter görseli bulunamadı: '+file);
+ console.log(count+' karakter görseli hazır: '+file);
 }
 
 }
