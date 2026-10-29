@@ -50,3 +50,5 @@
 @media(prefers-reduced-motion:reduce){.image-viewer,.image-viewer::backdrop,.image-viewer-stage img{animation:none!important;transition:none!important}}
 
 .banner-upload{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:18px 0}.banner-upload img{width:100%;max-height:160px;border-radius:12px;object-fit:cover}.profile-actions{flex-wrap:wrap;justify-content:flex-end;max-width:75%;gap:8px}.block-account{font-size:11px;color:#d5a3a7}.likers-modal{max-height:75dvh;overflow:auto}.like-count{font-size:11px;color:#8199ac;white-space:nowrap}.post-actions .like-count{padding:8px 4px;width:auto}.post-actions button[aria-label="Beğen"]{margin-right:0}.comment.nested{margin-left:22px}
+
+button[aria-busy="true"]{cursor:progress} .post-actions button.liked svg{animation:heart-press .24s ease-out} @keyframes heart-press{50%{transform:scale(1.2)}} @media(prefers-reduced-motion:reduce){.post-actions button.liked svg{animation:none}}

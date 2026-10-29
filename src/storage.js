@@ -1,4 +1,5 @@
 import {commonCall,createCommonFirestore} from './common-firestore.js';
+import {createOptimisticActions} from './optimistic.js';
 import {writeSharedSettings} from './shared-settings.js';
 import {isBlocked} from './social-visibility.js';
 import {expandLikes,likeBucketId,mergeLikeBucket} from './likes.js';
@@ -19,9 +20,10 @@ let db,fs,uid,mode='Yerel',listeners=new Set(),remoteRows={},cursor=null,profile
 let settings={...defaults,...state.settings};
 let privateKey=localStorage.getItem('qorves-gemini-private')||'';
 const emit=()=>listeners.forEach(fn=>fn());
+const optimistic=createOptimisticActions(emit);
 function persist(){try{localStorage.setItem(localKey,JSON.stringify(state));}catch{throw Error('Tarayıcı depolaması doldu. Yedek alıp büyük görselleri azalt.');}emit();}
 function applyLocal(fn){const next=structuredClone(state);fn(next);localStorage.setItem(localKey,JSON.stringify(next));state=next;settings={...defaults,...state.settings};emit();}
-function rows(name){const data=mode==='Yerel'?Object.values(state.collections[name]||{}):Object.values(remoteRows[name]||{});return (name==='likes'?expandLikes(data):data).map(canonicalRow);}
+function rows(name){const data=mode==='Yerel'?Object.values(state.collections[name]||{}):Object.values(remoteRows[name]||{});return optimistic.project(name,(name==='likes'?expandLikes(data):data).map(canonicalRow));}
 function ref(name,key){return fs.doc(db,name,key);}
 async function put(name,key,data){if(db)await fs.setDoc(ref(name,key),data);else applyLocal(s=>{s.collections[name][key]=data;});}
 async function remove(name,key){if(db)await fs.deleteDoc(ref(name,key));else applyLocal(s=>{delete s.collections[name][key];});}
@@ -70,8 +72,23 @@ export const storage={
  async recordPublic(items){if(!db||!items.length)return;try{await fetch(config.realtimeUrl+'/api/v1/social/record',{method:'POST',headers:{Authorization:'Bearer '+await storage.authToken(),'Content-Type':'application/json'},body:JSON.stringify({items})});}catch{}},
  async addPost(p){if((!p.text?.trim()&&!/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(p.image||''))||p.text.length>750||!safeText(p.text)||((p.image||'').length>240000))throw Error('Bu metin yayınlanamaz. Uzunluğu veya evren kurallarını kontrol et.');const row={...p,id:p.id||id(),createdAt:p.createdAt||Date.now()};await put('posts',row.id,row);if(!npcs.some(n=>n.kullanici_adi===row.author))await storage.enqueue(row);return row;},
  async addComment(c){if(!c.text?.trim()||c.text.length>500||!safeText(c.text))throw Error('Bu yorum yayınlanamaz.');const row={...c,id:id(),createdAt:Date.now()};await put('comments',row.id,row);await storage.notify(c.recipient,c.author,'yorum',c.postId);await storage.enqueue({...row,system:c.system,race:c.race});return row;},
- async toggleLike(postId,author,recipient){const key=encodeURIComponent(`${postId}:${author}`),existing=await getOne('likes',key);if(existing)await remove('likes',key);else{await put('likes',key,{id:key,postId,author,createdAt:Date.now()});await storage.notify(recipient,author,'beğeni',postId);}},
- async follow(author,target){if(author===target)return;const key=encodeURIComponent(`${author}:${target}`),existing=[];for(const a of profileAuthors(author))for(const t of profileAuthors(target)){const k=encodeURIComponent(a+':'+t);if(await getOne('follows',k))existing.push(k);}if(existing.length){for(const k of existing)await remove('follows',k);}else{await put('follows',key,{id:key,author,target});await storage.notify(target,author,'takip');}},
+ interactionBusy(kind,key){return optimistic.busy(kind+':'+key);},
+ async toggleLike(postId,author,recipient){
+  const action='like:'+postId;if(optimistic.busy(action))return;
+  const key=encodeURIComponent(`${postId}:${author}`),matches=r=>r.postId===postId&&r.author===author,wanted=!rows('likes').some(matches),row={id:key,postId,author,createdAt:Date.now()};
+  return optimistic.run(action,{collection:'likes',project:data=>[...data.filter(r=>!matches(r)),...(wanted?[row]:[])],confirmed:data=>data.some(matches)===wanted,save:async()=>{
+   if(wanted){await put('likes',key,row);void storage.notify(recipient,author,'beğeni',postId).catch(()=>{});}else await remove('likes',key);
+  }});
+ },
+ async follow(author,target){
+  if(author===target)return;const action='follow:'+target;if(optimistic.busy(action))return;
+  const key=encodeURIComponent(`${author}:${target}`),matches=r=>r.author===author&&r.target===target,wanted=!rows('follows').some(matches),row={id:key,author,target,createdAt:Date.now()};
+  return optimistic.run(action,{collection:'follows',project:data=>[...data.filter(r=>!matches(r)),...(wanted?[row]:[])],confirmed:data=>data.some(matches)===wanted,save:async()=>{
+   const keys=[...new Set(profileAuthors(author).flatMap(a=>profileAuthors(target).map(t=>encodeURIComponent(a+':'+t))))];
+   const existing=(await Promise.all(keys.map(async k=>await getOne('follows',k)?k:null))).filter(Boolean);
+   if(wanted){if(!existing.length){await put('follows',key,row);void storage.notify(target,author,'takip').catch(()=>{});}}else await Promise.all(existing.map(k=>remove('follows',k)));
+  }});
+ },
  async notify(recipient,author,kind,postId=''){if(!recipient||recipient===author||npcs.some(n=>n.kullanici_adi===recipient))return;const key=id();await put('notifications',key,{id:key,recipient,author,kind,postId,createdAt:Date.now()});},
  async readNotifications(keys){const now=Date.now();if(db){const batch=fs.writeBatch(db);for(const key of keys.slice(0,100))batch.update(ref('notifications',key),{readAt:now});await batch.commit();}else applyLocal(s=>{for(const key of keys)if(s.collections.notifications[key])s.collections.notifications[key].readAt=now;});},
  async saveUser(user,creating=false){const key=user.handle.slice(1);if(db){await fs.runTransaction(db,async tx=>{const r=ref('users',key),old=await tx.get(r);if(creating&&old.exists())throw Error('Bu kullanıcı adı alınmış.');tx.set(r,{...user,...(old.data()?.blockedAccounts?{blockedAccounts:old.data().blockedAccounts}:{}),id:key});});}else{if(creating&&await getOne('users',key))throw Error('Bu kullanıcı adı alınmış.');await put('users',key,{...user,id:key});}},

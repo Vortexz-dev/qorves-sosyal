@@ -125,3 +125,7 @@ Kurulum, tutarlılık ve işletim ayrıntıları: [YEDEK_VERI_HATTI.md](YEDEK_VE
 ## Q11 - Hizli acilis ve gecit terminali
 Acilis once oturum, ortak hat, son akis ve gerekli ayarlari bekler; kullanici listeleri, eski yorumlar, begeniler, takipler ve bildirimler arka planda tamamlanir. Ortak yedek etkinse Firebase Firestore SDK acilista indirilmez; Firebase Auth oturumu geri yuklenir. Cyberpunk boot gercek baglanti asamalarini izler; hazir olmadan basarili yazmaz. Basarida kisa SUCCESSFUL gecisi, hatada yeniden baglan ekrani vardir. Hareket azaltma tercihi desteklenir.
 
+
+## Q12 - Anlik begeni ve takip
+Kalp, begeni sayisi ve takip durumu tiklamada hemen guncellenir. Ortak kayit arka planda tamamlanirken ayni dugme tekrar islem acmaz. Hata olursa gorunum geri alinir ve uyari verilir. Canli dinleyici sonucu dogrulayana kadar kullanicinin son tercihi korunur. Bildirim kaydi ana etkiyi bekletmez; begeni kaydi gereksiz once-okuma olmadan ayni kimlige yazilir.
+

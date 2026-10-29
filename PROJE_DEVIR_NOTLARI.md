@@ -184,3 +184,7 @@ Q05 backend kaynak commit: 104234a8f7287bd6efd4d98736ac811cb0aadead; saved versi
 ## Q11 - 29 Ekim acilis
 src/boot.js + boot.css ve index.html terminali. storage.init onProgress ile kimlik/hat/akis/hazir asamalarini bildirir. Main kendi oturumunu dogruladiktan sonra boot.complete cagirir. Arka plan listelerinin ilk sorgusu ekranin acilmasini engellemez; kritik posts+tombstones+settings+control beklenir. Auth authStateReady ile kalici oturum once geri yuklenir, Firestore modulu yalniz ortak yedek hatti etkin degilse yuklenir. Veriler veya guvenlik kontrolleri atlanmaz; buyuk listeler ayni dinleyicilerde tamamlanir. Ortak ilk esitleme ve Google bulut saati korunur. Q10 sunucu onarimlari backend BACKEND_NOTES.md icindedir.
 
+
+## Q12 - Etkilesim gecikmesi
+src/optimistic.js koleksiyon bazli gecici gorunum, bekleyen islem kilidi, onay gelene kadar tercih koruma ve hatada onceki gorunume donusu yonetir. storage rows projeksiyonu likes/follows icin kullanilir. UI bu islemlerde render'i hemen cagirir ve dugmeler aria-busy/disabled alir. Ayni hedefe ust uste tiklama iki islem baslatmaz. Begenide once sunucudan okuma yoktur; istenen durum belirli belge kimligine yazilir/silinir. Takip alias okumasi paraleldir; bildirimler ayri tamamlanir. Yeni tests/optimistic.test.js gecikme, tek yazma, rollback ve canli diger kayitlarin korunmasini kapsar. Yalniz Pages yayini gerekir; Google saati/sunucu ayni kalir.
+
