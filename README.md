@@ -144,3 +144,7 @@ Profilde takipci ve takip edilen sayilari tiklanir; hesap listesi acilir ve prof
 DM'de Iletildi, mesajin okunmamis oldugunu gosterir; karakter gercekten okumamayi secmis olabilir. Goruldu gercek read_at zamanina baglidir. Teknik failed/quota durumlari artik Hatta kesinti/Hat yogun olarak ayrilir; bu mesajlarda gunde bir kontrollu Yeniden dene vardir. Karakterin bilerek okumadigi veya yanitsiz biraktigi mesaj otomatik tekrar uretilmez. Durdurup acma sonrasinda bekleyen islere duraklama suresi ikinci kez eklenmez; gercek cevap yayin gecikmesi korunur.
 Oyuncu gonderisi/yorumu icin ek tepki isi kalici deliveries kaydina alinir; arka plan kesilse bile mevcut bulut saati devam ettirir. Timeout icin en fazla bir ek deneme, kotada otomatik tekrar yoktur. Gunluk limitler ayni kalir. Her gonderinin zorunlu yorum almasi garanti degildir; normal toplu uretim yolu da devam eder.
 
+
+
+## Q16 - Repost etkilesimleri
+Repostlar posts kaydi ve normal toplu uretim kuyruguna zaten dahildi; main.js repost eyleminde eksik olan realtime.react(posts, sent.id) cagrisi eklendi. Tepki orijinal gonderiye degil yeni repost kimligine yonelir. Q15 kalici /react kuyrugu, on dakikaya dagitim, engel/ortak durdurma ve mevcut interaktif butceler aynen kullanilir; zorunlu yanit veya ek butce yoktur. Yalniz Pages yayini gerekir.

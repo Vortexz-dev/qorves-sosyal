@@ -146,7 +146,7 @@ app.addEventListener('click',async ev=>{const target=ev.target.closest('[data-ac
  if(action==='like'){if(!requireUser())return;const p=storage.getFeed().find(p=>p.id===arg);const saved=storage.toggleLike(arg,user.handle,p.author);render();await saved;}
  if(action==='follow'){if(!requireUser())return;const saved=storage.follow(user.handle,arg);render();await saved;}
  if(action==='share'){await navigator.clipboard.writeText(location.href.split('#')[0]+'#/post/'+arg);toast('Paylaşım bağlantısı kopyalandı.');}
- if(action==='repost'){if(!requireUser())return;const p=storage.getFeed().find(p=>p.id===arg);const sent=await storage.addPost({author:user.handle,text:p.author+' · '+p.text,system:user.system,race:user.race,repostOf:arg,...(p.image?{image:p.image}:{})});toast('Paylaşım yeniden yayınlandı.');}
+ if(action==='repost'){if(!requireUser())return;const p=storage.getFeed().find(p=>p.id===arg);const sent=await storage.addPost({author:user.handle,text:p.author+' · '+p.text,system:user.system,race:user.race,repostOf:arg,...(p.image?{image:p.image}:{})});void realtime.react('posts',sent.id);toast('Paylaşım yeniden yayınlandı.');}
  if(action==='delete'){const p=storage.getFeed().find(p=>p.id===arg);if(p.author!==user?.handle&&!dmUnlocked())return;if(confirm('Bu paylaşım silinsin mi?'))await storage.deletePost(arg);}
  if(action==='delete-comment'){const c=storage.list('comments').find(c=>c.id===arg);if(c.author!==user?.handle&&!dmUnlocked())return;await storage.deleteComment(arg);}
  if(['toggle-simulation','mute','generate','dm-lock','export','edit-event','delete-event'].includes(action)&&!dmUnlocked())return;

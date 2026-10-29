@@ -201,3 +201,7 @@ read-all.js iki bildirim kanalini Promise.allSettled ile ayri isler. storage.rea
 Frontend relationships.js followAccounts aliaslari tekillestirir ve takip yonunu korur. Profilde connections-followers/connections-following modal acar; storage.loadConnections hedefe ozel kayitlari yukler. messageReceipt gercek readAt ile gorulduyu gosterir; failed/quota icin retry-letter kontrollu istektir. Mesaj etiketi bilerek okunmamis sent/read_at=0 ile teknik arizayi ayirir.
 Backend social-api.mjs DM job upsert ve private-dm/reactive-job isleme pause filtresini duzeltir. /dm/retry sahiplik/NPC/engel/ortak anahtar/butce ile korunur; mesaj basina UTC gununde bir manuel deneme. /react reactive-job olusturur; mevcut /tick kalici isi surdurur, lease+state tekrari onler. Provider quota otomatik retry yapmaz; TimeoutError en fazla bir ek butceli deneme. Yeni migration yok. Frontend + mevcut Sites backend yayinlanmali; Google saati ayni /tick'i cagirdigi icin degismez. Anahtar/model/butce ve sim enabled degerini test icin degistirme. Detay BACKEND_NOTES.md.
 
+
+
+## Q16 - Repost etkilesimleri
+Repostlar posts kaydi ve normal toplu uretim kuyruguna zaten dahildi; main.js repost eyleminde eksik olan realtime.react(posts, sent.id) cagrisi eklendi. Tepki orijinal gonderiye degil yeni repost kimligine yonelir. Q15 kalici /react kuyrugu, on dakikaya dagitim, engel/ortak durdurma ve mevcut interaktif butceler aynen kullanilir; zorunlu yanit veya ek butce yoktur. Yalniz Pages yayini gerekir.
