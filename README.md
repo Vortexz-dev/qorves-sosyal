@@ -133,3 +133,8 @@ Kalp, begeni sayisi ve takip durumu tiklamada hemen guncellenir. Ortak kayit ark
 ## Q13 - Ortak ayar kaydi ve durdurma
 Sunucunun kaydi reddetmesi artik gercek aciklamasiyla gosterilir. Veri deposu arizasinda yonetici tarafindan etkinlestirilen guvenli durdurma, yeni AI uretimini engeller ve depo geri donunce kapali ayari bir defa kalicilastirir. Sonraki normal ac/kapa tercihlerini zorla degistirmez. 29 Ekim SQLITE_NOMEM onarimi ve indeks sunucu devir notlarinda aciklanir.
 
+
+## Q14 - Profil kisayolu, hesap gecisi ve bildirimler
+Sol alttaki avatar/isim profil baglantisidir. Yanindaki Hesap degistir menusu bu cihazda kayitli hesaplari gosterir; Hesap ekle ile giris veya kayit yapilir. Giriste Hizli gecis icin bu cihazda sakla secenegi vardir. Hesap sifresi duz metin olarak tutulmaz; IndexedDB icinde hesap basina disari aktarilamayan AES-GCM anahtariyla sifrelenir, hesap degisince mevcut sunucu giris dogrulamasi tekrar kullanilir. Cihazdan kaldir yalniz hizli gecis kaydini siler; hesap/gonderiler silinmez. Cikis yap, aktif hesabin cihaz kaydini da kaldirir. Eski bir hesabi ilk kez kaydetmek icin sifreyle bir kez giris gerekir. Farkli hesaba geciste ozel sohbet gorunumu/taslaklar ve yonetim kilidi temizlenir; eski ag cevaplari yeni hesaba tasinmaz. Baska sekmeler eski hesabin ozel mesajlarini gostermeyi birakir.
+Tumunu okundu say ortak ve ozel bildirimleri bagimsiz kaydeder; biri hata verirse digeri yine denenir. Bos islem gonderilmez, ortak bildirimler yuzluk paketlerle yazilir; hata kullaniciya bildirilir. Sag hat durumu gercek ortak simulasyon anahtarina baglidir: kapaliyken cevrimdisi, sinyal animasyonu durur. Bu arayuz iyilestirmeleri sunucu arizalarini asmaz; veri servisi hata verirse kayit basarili gibi gosterilmez.
+

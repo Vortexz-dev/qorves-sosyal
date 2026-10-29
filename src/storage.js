@@ -90,7 +90,14 @@ export const storage={
   }});
  },
  async notify(recipient,author,kind,postId=''){if(!recipient||recipient===author||npcs.some(n=>n.kullanici_adi===recipient))return;const key=id();await put('notifications',key,{id:key,recipient,author,kind,postId,createdAt:Date.now()});},
- async readNotifications(keys){const now=Date.now();if(db){const batch=fs.writeBatch(db);for(const key of keys.slice(0,100))batch.update(ref('notifications',key),{readAt:now});await batch.commit();}else applyLocal(s=>{for(const key of keys)if(s.collections.notifications[key])s.collections.notifications[key].readAt=now;});},
+ async readNotifications(keys){
+  const ids=[...new Set(keys)];if(!ids.length)return;
+  const selected=new Set(ids),now=Date.now();
+  return optimistic.run('read-notifications:'+ids.join('|'),{collection:'notifications',project:data=>data.map(n=>selected.has(n.id)?{...n,readAt:now}:n),confirmed:data=>ids.every(id=>!data.some(n=>n.id===id&&!n.readAt)),save:async()=>{
+   if(db){for(let i=0;i<ids.length;i+=100){const batch=fs.writeBatch(db);for(const key of ids.slice(i,i+100))batch.update(ref('notifications',key),{readAt:now});await batch.commit();}}
+   else applyLocal(s=>{for(const key of ids)if(s.collections.notifications[key])s.collections.notifications[key].readAt=now;});
+  }});
+ },
  async saveUser(user,creating=false){const key=user.handle.slice(1);if(db){await fs.runTransaction(db,async tx=>{const r=ref('users',key),old=await tx.get(r);if(creating&&old.exists())throw Error('Bu kullanıcı adı alınmış.');tx.set(r,{...user,...(old.data()?.blockedAccounts?{blockedAccounts:old.data().blockedAccounts}:{}),id:key});});}else{if(creating&&await getOne('users',key))throw Error('Bu kullanıcı adı alınmış.');await put('users',key,{...user,id:key});}},
  async refreshUser(handle){if(!db)return;const row=await getOne('users',handle.slice(1));if(row)remoteRows.users[handle.slice(1)]={...row,id:handle.slice(1)};emit();},
  getUser:handle=>getOne('users',handle.replace(/^@/,'')),
