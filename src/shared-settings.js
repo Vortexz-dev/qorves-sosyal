@@ -15,7 +15,7 @@ export async function writeSharedSettings(project,token,current,patch,{fetcher=f
  let r;
  try{r=await fetcher(endpoint||`https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents:commit`,{method:'POST',headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},body:JSON.stringify({...settingsCommit(project,current,patch,now),...(endpoint?{requestId:crypto.randomUUID()}:{})}),signal:AbortSignal.timeout(8000)});}
  catch(e){throw Error(e.name==='TimeoutError'?'Ayarın kaydı doğrulanamadı. Bağlantıyı kontrol edip yeniden dene.':'Ortak ayar bağlantısına ulaşılamadı. Yeniden dene.');}
- const body=await r.json();if(!r.ok)throw Error(r.status===429?'Firebase kayıt kotası dolu. Kota yenilendiğinde tekrar deneyebilirsin.':'Ortak ayar kaydedilemedi ('+r.status+').');
+ const body=await r.json();if(!r.ok)throw Error(typeof body.error==='string'?body.error:r.status===429?'Ortak kayıt kotası dolu. Kota yenilendiğinde tekrar deneyebilirsin.':'Ortak ayar kaydedilemedi ('+r.status+').');
  const next=mergeSimulationSettings(current,patch,now),revision=body.writeResults?.[0]?.transformResults?.[0]?.integerValue;
  if(revision!==undefined)next.revision=Number(revision);return next;
 }

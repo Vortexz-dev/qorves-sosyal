@@ -129,3 +129,7 @@ Acilis once oturum, ortak hat, son akis ve gerekli ayarlari bekler; kullanici li
 ## Q12 - Anlik begeni ve takip
 Kalp, begeni sayisi ve takip durumu tiklamada hemen guncellenir. Ortak kayit arka planda tamamlanirken ayni dugme tekrar islem acmaz. Hata olursa gorunum geri alinir ve uyari verilir. Canli dinleyici sonucu dogrulayana kadar kullanicinin son tercihi korunur. Bildirim kaydi ana etkiyi bekletmez; begeni kaydi gereksiz once-okuma olmadan ayni kimlige yazilir.
 
+
+## Q13 - Ortak ayar kaydi ve durdurma
+Sunucunun kaydi reddetmesi artik gercek aciklamasiyla gosterilir. Veri deposu arizasinda yonetici tarafindan etkinlestirilen guvenli durdurma, yeni AI uretimini engeller ve depo geri donunce kapali ayari bir defa kalicilastirir. Sonraki normal ac/kapa tercihlerini zorla degistirmez. 29 Ekim SQLITE_NOMEM onarimi ve indeks sunucu devir notlarinda aciklanir.
+

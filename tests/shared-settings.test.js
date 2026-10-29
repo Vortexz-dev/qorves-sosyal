@@ -14,3 +14,7 @@ test('shared stop/start writes without a quota-limited read and preserves unrela
 test('a quota refusal returns a clear error instead of retrying indefinitely or pretending success',async()=>{
  let calls=0;await assert.rejects(writeSharedSettings('test','token',{enabled:true},{enabled:false},{fetcher:async()=>{calls++;return Response.json({error:{status:'RESOURCE_EXHAUSTED'}},{status:429});}}),/kota/);assert.equal(calls,1);
 });
+
+test('shared storage failures explain the actual refusal instead of an opaque status number',async()=>{
+ await assert.rejects(writeSharedSettings('test','token',{enabled:true},{enabled:false},{fetcher:async()=>Response.json({error:'Ortak veri servisi kullanılamıyor.'},{status:503})}),/Ortak veri servisi kullanılamıyor/);
+});
