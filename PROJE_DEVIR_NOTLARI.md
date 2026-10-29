@@ -180,3 +180,7 @@ Q05 backend kaynak commit: 104234a8f7287bd6efd4d98736ac811cb0aadead; saved versi
 ## Q09 — otomatik yedek ve Firebase'e geri dönüş
 
 Önce YEDEK_VERI_HATTI.md dosyasını oku. D1'de yalnız dört yeni ortak tablo var; özel tablolar korunur. İlk tam aktarım bitmeden active işaretini elle değiştirme. Yeni Google Q09 kodu her uyanmada /common/sync çağırarak aktarımı otomatik sürdürür. Firebase sağlıklıyken provider=firebase, hata/kota veya bekleyen kopya varken provider=sites. Aynı requestId/sürüm korumaları, silme izleri ve yazma çiti iki ayrı veri dalını engeller. Firebase'e yalnız eşitleme bitince otomatik dönülür. İstemci src/common-firestore.js, sunucu lib/common-store.mjs ve Cloudflare imzalı görsel yolu birlikte güncellenmiştir. Yeni ücretli plan/billing yok. Kuralların writer çiti gerçek projeye ayrıca yayımlanmalıdır.
+
+## Q11 - 29 Ekim acilis
+src/boot.js + boot.css ve index.html terminali. storage.init onProgress ile kimlik/hat/akis/hazir asamalarini bildirir. Main kendi oturumunu dogruladiktan sonra boot.complete cagirir. Arka plan listelerinin ilk sorgusu ekranin acilmasini engellemez; kritik posts+tombstones+settings+control beklenir. Auth authStateReady ile kalici oturum once geri yuklenir, Firestore modulu yalniz ortak yedek hatti etkin degilse yuklenir. Veriler veya guvenlik kontrolleri atlanmaz; buyuk listeler ayni dinleyicilerde tamamlanir. Ortak ilk esitleme ve Google bulut saati korunur. Q10 sunucu onarimlari backend BACKEND_NOTES.md icindedir.
+

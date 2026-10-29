@@ -31,27 +31,30 @@ export const storage={
  get mode(){return mode;},get backupStatus(){return backupStatus;}, get settings(){return {...settings,apiKey:privateKey};}, get uid(){return uid;},get usage(){return db?remoteRows.control?.simulation||{}:state.control||{};},
  async authToken(){if(!db)throw Error('Mesajlar için ortak ağa bağlan.');const {getAuth}=await import('firebase/auth');return getAuth().currentUser.getIdToken();},
  async resetIdentity(){if(!db)return;const {getAuth,signOut,signInAnonymously}=await import('firebase/auth');const a=getAuth();await signOut(a);await signInAnonymously(a);uid=a.currentUser.uid;},
- async init({forceLocal=false,cloud=false,deliveryOnly=false}={}){
+ async init({forceLocal=false,cloud=false,deliveryOnly=false,onProgress=()=>{}}={}){
   if(Object.keys(config.firebaseConfig).length&&!forceLocal){
    cloudStops.forEach(stop=>stop());cloudStops=[];clearInterval(modeCheck);fs?.stop?.();profileUnsubscribe?.();commentsUnsubscribe?.();profileKey='';commentsKey='';
    const initial=[];
-   function listen(target,consume){initial.push(new Promise((resolve,reject)=>{let first=true;const stop=fs.onSnapshot(target,snap=>{consume(snap);if(first){first=false;resolve();}},error=>{storage.error='Ortak veriler alinamadi. Biraz sonra tekrar dene.';emit();if(first){first=false;reject(error);}});cloudStops.push(stop);}));}
-   const [{initializeApp},auth,firestore]=await Promise.all([import('firebase/app'),import('firebase/auth'),import('firebase/firestore')]);
-   fs=firestore;const app=initializeApp(config.firebaseConfig);db=fs.getFirestore(app);mode='Ortak (Firebase)';
-   const a=auth.getAuth(app);if(!a.currentUser)await auth.signInAnonymously(a);uid=a.currentUser.uid;const token=()=>a.currentUser.getIdToken();
+   function listen(target,consume,critical=true){const ready=new Promise((resolve,reject)=>{let first=true;const stop=fs.onSnapshot(target,snap=>{consume(snap);if(first){first=false;resolve();}},error=>{storage.error='Ortak veriler alinamadi. Biraz sonra tekrar dene.';emit();if(first){first=false;reject(error);}});cloudStops.push(stop);});if(critical)initial.push(ready);else void ready.catch(()=>{});}
+   onProgress('identity');
+   const [{initializeApp},auth]=await Promise.all([import('firebase/app'),import('firebase/auth')]);
+   const app=initializeApp(config.firebaseConfig),a=auth.getAuth(app);await a.authStateReady();if(!a.currentUser)await auth.signInAnonymously(a);uid=a.currentUser.uid;const token=()=>a.currentUser.getIdToken();
+   onProgress('network');
    try{backupStatus=await commonCall(token,'state');}catch{}
    if(backupStatus.active){fs=createCommonFirestore(token,backupStatus);db=fs.getFirestore();mode=backupStatus.provider==='firebase'?'Ortak (Firebase)':'Ortak (Sites yedek)';}
+   else{fs=await import('firebase/firestore');db=fs.getFirestore(app);mode='Ortak (Firebase)';}
+   onProgress('feed');
    modeCheck=setInterval(async()=>{if(switchingStore)return;try{const latest=await commonCall(token,'state');backupStatus=latest;if(fs.common)mode=latest.provider==='firebase'?'Ortak (Firebase)':'Ortak (Sites yedek)';if(latest.phase==='copying'&&latest.settings)settings={...settings,...latest.settings};if(latest.active&&!fs.common){switchingStore=true;try{await storage.init({cloud,deliveryOnly});}finally{switchingStore=false;}}emit();}catch{}},60000);modeCheck.unref?.();
    for(const name of names){remoteRows[name]={};if(deliveryOnly||name==='memories'||name==='queue'||(cloud&&['likes','notifications','follows'].includes(name)))continue;
     const q=name==='posts'?fs.query(fs.collection(db,name),fs.orderBy('createdAt','desc'),fs.limit(config.feedPageSize)):name==='comments'?fs.query(fs.collection(db,name),fs.orderBy('createdAt','desc'),fs.limit(200)):name==='notifications'?fs.query(fs.collection(db,name),fs.orderBy('createdAt','desc'),fs.limit(100)):cloud&&name==='comments'?fs.query(fs.collection(db,name),fs.orderBy('createdAt','desc'),fs.limit(200)):fs.collection(db,name);
     const consume=snap=>{for(const change of snap.docChanges()){if(change.type==='removed'){if(name!=='posts')delete remoteRows[name][change.doc.id];}else remoteRows[name][change.doc.id]={...change.doc.data(),id:change.doc.id};}if(name==='posts'&&!cursor)cursor=snap.docs.at(-1)||null;emit();};
-    if(cloud)initial.push(fs.getDocs(q).then(consume));else listen(q,consume);
+    if(cloud)initial.push(fs.getDocs(q).then(consume));else listen(q,consume,name==='posts');
    }
    // All moderation tombstones must survive the recent-feed window on fresh clients.
    if(!deliveryOnly)listen(fs.query(fs.collection(db,'posts'),fs.where('deleted','==',true)),snap=>{for(const d of snap.docs)remoteRows.posts[d.id]={...d.data(),id:d.id};emit();});
    listen(ref('settings','simulation'),snap=>{settings={...defaults,...snap.data(),...(backupStatus.phase==='copying'&&backupStatus.settings?backupStatus.settings:{})};emit();});
    remoteRows.control={};const consumeControl=snap=>{remoteRows.control.simulation=snap.data()||{};emit();};if(cloud)initial.push(fs.getDocFromServer(ref('control','simulation')).then(consumeControl));else listen(ref('control','simulation'),consumeControl);
-   await Promise.all(initial);if(!fs.common){try{backupStatus=await commonCall(token,'warm',{settings:{...settings,apiKey:''},control:storage.usage});}catch{}}
+   await Promise.all(initial);onProgress('ready');if(!fs.common){void commonCall(token,'warm',{settings:{...settings,apiKey:''},control:storage.usage}).then(value=>{backupStatus=value;}).catch(()=>{});}
   }else{uid='local';window.addEventListener('storage',e=>{if(e.key===localKey){state=JSON.parse(e.newValue)||state;settings={...defaults,...state.settings};emit();}});}
   return storage;
  },

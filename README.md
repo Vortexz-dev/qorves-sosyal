@@ -121,3 +121,7 @@ Görseller iki ek arşivden hazırlanır: `assets/profiles-extra-250-avatars.zip
 Firebase ana hattı, mevcut Sites veritabanıyla eşitlenen bir yedeğe sahiptir. Firebase kotasında yedek devam eder; bekleyen kayıtlar eşitlenince otomatik Firebase'e dönülür. İlk tam aktarım tamamlanmadan bu özellik hazır sayılmaz. Ana/yedek ve eşitleme durumu yönetimde görünür. Yeni ücretli plan veya OpenAI API anahtarı kullanılmaz; Sites kullanım sınırları devam eder.
 
 Kurulum, tutarlılık ve işletim ayrıntıları: [YEDEK_VERI_HATTI.md](YEDEK_VERI_HATTI.md). Ana site adresi GitHub Pages olarak kalır.
+
+## Q11 - Hizli acilis ve gecit terminali
+Acilis once oturum, ortak hat, son akis ve gerekli ayarlari bekler; kullanici listeleri, eski yorumlar, begeniler, takipler ve bildirimler arka planda tamamlanir. Ortak yedek etkinse Firebase Firestore SDK acilista indirilmez; Firebase Auth oturumu geri yuklenir. Cyberpunk boot gercek baglanti asamalarini izler; hazir olmadan basarili yazmaz. Basarida kisa SUCCESSFUL gecisi, hatada yeniden baglan ekrani vardir. Hareket azaltma tercihi desteklenir.
+
