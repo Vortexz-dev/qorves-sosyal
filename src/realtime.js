@@ -10,6 +10,7 @@ export const realtime={
  messages:peer=>realtime.call('/dm'+(peer?'?peer='+encodeURIComponent(peer):'')),
  read:peer=>realtime.call('/dm/read',{peer}),
  readAll:()=>realtime.call('/dm/read',{all:true}),
+ retry:id=>realtime.call('/dm/retry',{id}),
  send:(peer,text,image='')=>realtime.call('/dm/send',{peer,text,image}),
  async react(collection,id){if(!realtime.enabled)return;try{await realtime.call('/react',{collection,id});}catch(e){console.info('Ek yanıt ertelendi; normal küme turu kullanılacak.');}},
  async tick(){if(!realtime.enabled)return;try{await realtime.call('/tick');}catch{}},
