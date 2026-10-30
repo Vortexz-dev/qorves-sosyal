@@ -152,3 +152,16 @@ Repostlar posts kaydi ve normal toplu uretim kuyruguna zaten dahildi; main.js re
 
 ## Q17 - GitHub saatinin ortak veri hatti
 GitHub cloud-simulation.mjs ilk kontrol/yazma adiminda da cloud-store.mjs araciligiyla ortak D1/Firebase hattini kullanir. Aktif ortak depoda dogrudan Firestore yazmasi yoktur. Durum sorgusu hata verirse eski yazma yoluna kacmaz; ilk esitleme veya emergencyPaused durumunda uretim yapmaz. Google saati, ortak kilit, revision, butceler ve simulasyon anahtari korunur.
+
+
+## Q18 - Bes ozellikli sosyal ag paketi (30 Ekim 2026)
+
+1. Iliski/itibar: her NPC-oyuncu cifti icin warmth, trust, respect; ayrica friendship, familiarity, tension ve yetiskin karakterlerde romance/flirt baglari. Tek seviyor/sevmiyor degeri yoktur. Model mevcut cagrida anlamli gelismeye gore en fazla +/-3 degisim ve onceki iliskiyi koruyan ozet verir. DM ozel izlenimi kamuya sizmaz; gorunen public ve private deneyimler ayri tutulur. 16-17 kaynak karakterlerin normal sohbeti/paylasimi degismez, yeni romance/flirt boyutlari eklenmez. Oyunculardan yas/dogum tarihi/kimlik toplanmaz; grup sahibinin tum oyuncularin 20+ oldugu bilgisi esas alinir.
+2. Yerel akis: ana sayfadaki Sistem akisi secicisinde Genel veya 29 sistem secilir. Gonderiler, Kesfet hesaplari ve sag hesap onerileri bu secime uyar. Genel tum sistemleri geri getirir. Sistem icin ek 200 kayit arka planda yuklenir.
+3. Kisisel siralama: discovery.js gercek oyuncunun begenilerinden konu/meslek/sistem/irk/yas grubu ve kaynakta acikca belirtilen kurgusal karakter sunumu etiketlerini ogrenir. Gercek oyuncunun cinsiyeti veya gorseli tahmin edilmez. Hesap ilgisi, benzer etiketler ve yenilik birlikte puanlanir; her besinci sira kesif icindir. Begeniyi kaldirmak tercihten de cikarir. Ek AI cagrisi yoktur.
+4. Gruplar: Mesajlar > Yeni grup; ad ve 2-11 katilimci secilir (oyuncu/NPC karisik). Uye listesi, kim ne yazdi, okunmamis sayisi, grup bildirimi, gorselli oyuncu mesaji ve ayrilma vardir. NPC grubu bilir; tek insan mesaj grubu icin en fazla 3 NPC ayni istekte degerlendirilir, yanit vermemeyi veya ayrilmayi secebilir. Cevaplar 10-60 saniyeye dagilir; son 10 saniyede yaziyor gorunur. NPC cevabi yeni model istegi dogurmaz. Birebir ozel DM gecmisi grup istemine verilmez. Gruplar mevcut interaktif gunluk/dakikalik butceyi paylasir, sinir artmaz.
+5. Kaydedilenler: gonderide igneli kaydet dugmesi; kendi profilinde Kaydedilen gonderiler baglantisi. Liste sunucuda hesaba ozel saklanir ve hesaplar/cihazlar arasinda korunur; gonderi silinirse arsiv onu yeniden canlandirmaz.
+
+Yeni backend tablolar: impressions, bookmarks, chat_groups, group_members, group_messages. Ortak Firebase aynasina bu ozel tablolar dahil edilmez. D1 migration 0004_chunky_sway ve 0005_jazzy_mandarin eklemelidir; mevcut veri silinmez. Yeni API /bookmarks ve /groups* bagli hesap kimligi gerektirir. Grup uye denetimi okuma/yazma/okundu/ayrilmada sunucudadir. group-job mevcut /tick ile surdurulur; lease ve kaynak mesaji tekillestirilir, kota/hata otomatik sonsuz deneme yapmaz. Ortak enabled/revision ve engeller korunur.
+
+Yayin: once mevcut Sites backend + migrationlar, ardindan GitHub Pages. Google saatinin kodu degismez; mevcut /tick yeni grup islerini de isler. Kaynak frontend icin qorves-sosyal-publish yayinci klonu yetkilidir; ikinci yerel qorves-sosyal kopyasi bu paketle otomatik ezilmemistir.

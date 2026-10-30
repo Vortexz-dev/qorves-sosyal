@@ -3,6 +3,13 @@ import {storage} from './storage.js';
 export const realtime={
  get enabled(){return !!config.realtimeEnabled&&!!config.realtimeUrl;},
  async call(path,data){if(!realtime.enabled)throw Error('Mesaj hattı henüz oyunculara açılmadı.');const token=await storage.authToken();const r=await fetch(config.realtimeUrl+'/api/v1'+path,{method:data?'POST':'GET',headers:{Authorization:'Bearer '+token,...(data?{'Content-Type':'application/json'}:{})},...(data?{body:JSON.stringify(data)}:{})});if(r.redirected||!r.headers.get('content-type')?.includes('application/json'))throw Error('Mesaj hattı henüz oyunculara açılmadı.');const b=await r.json();if(!r.ok)throw Error(b.error||'Mesaj hattı geçici olarak meşgul.');return b;},
+ groups:id=>realtime.call('/groups'+(id?'?id='+encodeURIComponent(id):'')),
+ createGroup:(name,members)=>realtime.call('/groups/create',{name,members}),
+ sendGroup:(id,text,image='')=>realtime.call('/groups/send',{id,text,image}),
+ readGroup:id=>realtime.call('/groups/read',{id}),
+ leaveGroup:id=>realtime.call('/groups/leave',{id}),
+ bookmarks:()=>realtime.call('/bookmarks'),
+ bookmark:(postId,saved)=>realtime.call('/bookmarks',{postId,saved}),
  block:(peer,blocked)=>realtime.call('/blocks',{peer,blocked}),
  likers:postId=>realtime.call('/likers',{postId}),
  bind:(handle,password)=>realtime.call('/bind',{handle,password}),
