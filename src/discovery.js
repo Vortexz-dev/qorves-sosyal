@@ -11,7 +11,7 @@ export function accountTags(p={}){
 }
 export function tasteProfile(likes,owner,posts,people,now=Date.now()){
  const postMap=new Map(posts.map(p=>[p.id,p])),weights=new Map(),authors=new Map();
- const seen=new Set();for(const l of likes.filter(l=>l.author===owner).sort((a,b)=>b.createdAt-a.createdAt).slice(0,150)){
+ const seen=new Set();for(const l of likes.filter(l=>l.author===owner&&typeof l.postId==='string'&&!l.postId.startsWith('comment:')).sort((a,b)=>b.createdAt-a.createdAt).slice(0,150)){
   if(seen.has(l.postId))continue;seen.add(l.postId);const p=postMap.get(l.postId);if(!p||p.author===owner)continue;
   const w=Math.pow(.5,Math.max(0,now-(l.createdAt||now))/86400000/30);authors.set(p.author,(authors.get(p.author)||0)+w);
   for(const tag of accountTags(people(p.author)))weights.set(tag,(weights.get(tag)||0)+w);

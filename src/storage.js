@@ -16,7 +16,7 @@ export const seeds=[...npcs.flatMap((n,i)=>n.ornek_paylasimlar.filter(safeText).
 const localKey='qorves-social-v1';
 let state=JSON.parse(localStorage.getItem(localKey)||'null')||{collections:Object.fromEntries(names.map(n=>[n,{}])),settings:{...defaults},control:{}};
 let cloudStops=[],modeCheck=null,backupStatus={active:false,phase:'waiting'},switchingStore=false;
-let db,fs,uid,mode='Yerel',listeners=new Set(),remoteRows={},cursor=null,profileUnsubscribe=null,profileKey='',loadedPostIds=new Set(),commentsKey='',commentsUnsubscribe=null,feedLimit=config.feedPageSize;
+let db,fs,uid,mode='Yerel',listeners=new Set(),remoteRows={},cursor=null,profileUnsubscribe=null,profileKey='',loadedPostIds=new Set(),commentsKey='',commentsUnsubscribe=null,commentLikesUnsubscribe=null,feedLimit=config.feedPageSize;
 let settings={...defaults,...state.settings};
 let privateKey=localStorage.getItem('qorves-gemini-private')||'';
 const emit=()=>listeners.forEach(fn=>fn());
@@ -35,7 +35,7 @@ export const storage={
  async resetIdentity(){if(!db)return;const {getAuth,signOut,signInAnonymously}=await import('firebase/auth');const a=getAuth();await signOut(a);await signInAnonymously(a);uid=a.currentUser.uid;},
  async init({forceLocal=false,cloud=false,deliveryOnly=false,onProgress=()=>{}}={}){
   if(Object.keys(config.firebaseConfig).length&&!forceLocal){
-   cloudStops.forEach(stop=>stop());cloudStops=[];clearInterval(modeCheck);fs?.stop?.();profileUnsubscribe?.();commentsUnsubscribe?.();profileKey='';commentsKey='';
+   cloudStops.forEach(stop=>stop());cloudStops=[];clearInterval(modeCheck);fs?.stop?.();profileUnsubscribe?.();commentsUnsubscribe?.();commentLikesUnsubscribe?.();profileKey='';commentsKey='';
    const initial=[];
    function listen(target,consume,critical=true){const ready=new Promise((resolve,reject)=>{let first=true;const stop=fs.onSnapshot(target,snap=>{consume(snap);if(first){first=false;resolve();}},error=>{storage.error='Ortak veriler alinamadi. Biraz sonra tekrar dene.';emit();if(first){first=false;reject(error);}});cloudStops.push(stop);});if(critical)initial.push(ready);else void ready.catch(()=>{});}
    onProgress('identity');
@@ -70,7 +70,7 @@ export const storage={
  async loadConnections(handle,mode){if(!db)return;const aliases=profileAuthors(handle),q=fs.query(fs.collection(db,'follows'),fs.where(mode==='following'?'author':'target',aliases.length===1?'==':'in',aliases.length===1?aliases[0]:aliases));const snap=await fs.getDocs(q);for(const d of snap.docs)remoteRows.follows[d.id]={...d.data(),id:d.id};emit();},
  async openProfile(handle){if(!db||profileKey===handle)return;profileUnsubscribe?.();profileUnsubscribe=null;profileKey=handle;if(!handle)return;const authors=profileAuthors(handle),q=fs.query(fs.collection(db,'posts'),fs.where('author',authors.length===1?'==':'in',authors.length===1?authors[0]:authors));profileUnsubscribe=fs.onSnapshot(q,snap=>{for(const d of snap.docs)remoteRows.posts[d.id]={...d.data(),id:d.id};emit();},()=>{storage.error='Profil geçmişi alınamadı.';emit();});},
  async loadPost(key){if(!db||loadedPostIds.has(key)||remoteRows.posts?.[key])return;loadedPostIds.add(key);const d=await fs.getDocFromServer(ref('posts',key));if(d.exists()){remoteRows.posts[d.id]={...d.data(),id:d.id};emit();}},
- async openComments(postId){if(!db||commentsKey===postId)return;commentsUnsubscribe?.();commentsUnsubscribe=null;commentsKey=postId;if(!postId)return;commentsUnsubscribe=fs.onSnapshot(fs.query(fs.collection(db,'comments'),fs.where('postId','==',postId)),snap=>{for(const change of snap.docChanges())if(change.type==='removed')delete remoteRows.comments[change.doc.id];else remoteRows.comments[change.doc.id]={...change.doc.data(),id:change.doc.id};emit();},()=>{storage.error='Yorumlar alinamadi.';emit();});},
+ async openComments(postId){if(!db||commentsKey===postId)return;commentsUnsubscribe?.();commentLikesUnsubscribe?.();commentsUnsubscribe=null;commentLikesUnsubscribe=null;commentsKey=postId;if(!postId)return;commentLikesUnsubscribe=fs.onSnapshot(fs.query(fs.collection(db,'likes'),fs.where('parentPostId','==',postId)),snap=>{for(const change of snap.docChanges())if(change.type==='removed')delete remoteRows.likes[change.doc.id];else remoteRows.likes[change.doc.id]={...change.doc.data(),id:change.doc.id};emit();},()=>{});commentsUnsubscribe=fs.onSnapshot(fs.query(fs.collection(db,'comments'),fs.where('postId','==',postId)),snap=>{for(const change of snap.docChanges())if(change.type==='removed')delete remoteRows.comments[change.doc.id];else remoteRows.comments[change.doc.id]={...change.doc.data(),id:change.doc.id};emit();},()=>{storage.error='Yorumlar alinamadi.';emit();});},
  async actorContexts(claim,handles){if(!db)return {};try{const r=await fetch(config.realtimeUrl+'/api/v1/social/context',{method:'POST',headers:{Authorization:'Bearer '+await storage.authToken(),'Content-Type':'application/json'},body:JSON.stringify({claim,handles})});return r.ok?(await r.json()).contexts||{}:{};}catch{return {};}},
  async recordPublic(items){if(!db||!items.length)return;try{await fetch(config.realtimeUrl+'/api/v1/social/record',{method:'POST',headers:{Authorization:'Bearer '+await storage.authToken(),'Content-Type':'application/json'},body:JSON.stringify({items})});}catch{}},
  async addPost(p){if((!p.text?.trim()&&!/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(p.image||''))||p.text.length>750||!safeText(p.text)||((p.image||'').length>240000))throw Error('Bu metin yayınlanamaz. Uzunluğu veya evren kurallarını kontrol et.');const row={...p,id:p.id||id(),createdAt:p.createdAt||Date.now()};await put('posts',row.id,row);if(!npcs.some(n=>n.kullanici_adi===row.author))await storage.enqueue(row);return row;},
@@ -81,6 +81,13 @@ export const storage={
   const key=encodeURIComponent(`${postId}:${author}`),matches=r=>r.postId===postId&&r.author===author,wanted=!rows('likes').some(matches),row={id:key,postId,author,createdAt:Date.now()};
   return optimistic.run(action,{collection:'likes',project:data=>[...data.filter(r=>!matches(r)),...(wanted?[row]:[])],confirmed:data=>data.some(matches)===wanted,save:async()=>{
    if(wanted){await put('likes',key,row);void storage.notify(recipient,author,'beğeni',postId).catch(()=>{});}else await remove('likes',key);
+  }});
+ },
+ async toggleCommentLike(comment,author){
+  const postId='comment:'+comment.id,action='comment-like:'+comment.id;if(optimistic.busy(action))return;
+  const key=encodeURIComponent(postId+':'+author),matches=r=>r.postId===postId&&r.author===author,wanted=!rows('likes').some(matches),row={id:key,postId,commentId:comment.id,parentPostId:comment.postId,author,createdAt:Date.now()};
+  return optimistic.run(action,{collection:'likes',project:data=>[...data.filter(r=>!matches(r)),...(wanted?[row]:[])],confirmed:data=>data.some(matches)===wanted,save:async()=>{
+   if(wanted){await put('likes',key,row);void storage.notify(comment.author,author,'yorum-beğeni',comment.postId).catch(()=>{});if(npcs.some(n=>n.kullanici_adi===comment.author))void storage.recordPublic([{kind:'comment-like',id:comment.id,npc:comment.author}]);}else await remove('likes',key);
   }});
  },
  async follow(author,target){
