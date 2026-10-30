@@ -1,7 +1,7 @@
 // Lightweight wake-up: queued publishing does not call Gemini.
 import {initializeApp} from 'firebase/app';
 import {getAuth,signInAnonymously} from 'firebase/auth';
-import {getFirestore,setDoc,getDocFromServer,getDocs,doc,query,collection,where,limit} from 'firebase/firestore';
+import {openCloudStore} from './cloud-store.mjs';
 import {config} from '../src/config.js';
 import {day} from '../src/domain.js';
 import {cloudTurnDue} from '../src/publication.js';
@@ -13,7 +13,7 @@ globalThis.window={addEventListener:()=>{}};
 const timer=setTimeout(()=>{console.error('Bulut turu toplam süre sınırına ulaştı.');process.exit(1);},420000);
 try{
  const {storage,defaults}=await import('../src/storage.js');
- const app=initializeApp(config.firebaseConfig);await signInAnonymously(getAuth(app));const db=getFirestore(app);
+ const app=initializeApp(config.firebaseConfig);await signInAnonymously(getAuth(app));const fs=await openCloudStore(()=>getAuth(app).currentUser.getIdToken());if(!fs){console.log('Ortak hat ilk esitleme veya guvenli durdurma durumunda; islem yapilmadi.');clearTimeout(timer);process.exit(0);}const {getFirestore,setDoc,getDocFromServer,getDocs,doc,query,collection,where,limit}=fs,db=getFirestore(app);
  const [s,c]=await Promise.all([getDocFromServer(doc(db,'settings','simulation')),getDocFromServer(doc(db,'control','simulation'))]);
  const settings={...defaults,...s.data()},control=c.data()||{},now=Date.now();
  await setDoc(doc(db,'control','simulation'),{lastWake:now,clockTrigger:process.env.GITHUB_EVENT_NAME||'local',...(process.env.GITHUB_EVENT_NAME==='schedule'?{lastScheduledWake:now}:{})},{merge:true});

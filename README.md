@@ -148,3 +148,7 @@ Oyuncu gonderisi/yorumu icin ek tepki isi kalici deliveries kaydina alinir; arka
 
 ## Q16 - Repost etkilesimleri
 Repostlar posts kaydi ve normal toplu uretim kuyruguna zaten dahildi; main.js repost eyleminde eksik olan realtime.react(posts, sent.id) cagrisi eklendi. Tepki orijinal gonderiye degil yeni repost kimligine yonelir. Q15 kalici /react kuyrugu, on dakikaya dagitim, engel/ortak durdurma ve mevcut interaktif butceler aynen kullanilir; zorunlu yanit veya ek butce yoktur. Yalniz Pages yayini gerekir.
+
+
+## Q17 - GitHub saatinin ortak veri hatti
+GitHub cloud-simulation.mjs ilk kontrol/yazma adiminda da cloud-store.mjs araciligiyla ortak D1/Firebase hattini kullanir. Aktif ortak depoda dogrudan Firestore yazmasi yoktur. Durum sorgusu hata verirse eski yazma yoluna kacmaz; ilk esitleme veya emergencyPaused durumunda uretim yapmaz. Google saati, ortak kilit, revision, butceler ve simulasyon anahtari korunur.
