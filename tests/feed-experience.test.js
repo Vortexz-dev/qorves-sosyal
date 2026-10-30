@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createSeenHistory,freshFeed} from '../src/feed-seen.js';
+import {createSeenHistory,freshFeed,keepVisibleOrder} from '../src/feed-seen.js';
 import {insertEmoji,findEmojis} from '../src/emoji.js';
 import {expandLikes} from '../src/likes.js';
 test('seen posts survive reload, isolate accounts and retain only the current visible reading session',()=>{
@@ -25,4 +25,9 @@ test('comment likes remain distinct from post likes for the same author and carr
 test('reposts of the same original do not repeat a seen or duplicated recommendation',()=>{
  const h={has:id=>id==='seen'};assert.equal(freshFeed([{id:'r1',repostOf:'seen'}],{seen:h}).length,0);
  assert.equal(freshFeed([{id:'r1',repostOf:'p'},{id:'r2',repostOf:'p'},{id:'p'}],{seen:h}).length,1);
+});
+
+test('background recommendations never lift an already visible post above what the player is reading',()=>{
+ const ranked=[{id:'b',createdAt:1},{id:'a',createdAt:1},{id:'c',createdAt:1}];assert.deepEqual(keepVisibleOrder(ranked,['a','b'],10).map(p=>p.id),['a','b','c']);
+ assert.deepEqual(keepVisibleOrder([{id:'new',createdAt:20},...ranked],['a','b'],10).map(p=>p.id),['new','a','b','c']);
 });

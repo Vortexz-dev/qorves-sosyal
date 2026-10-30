@@ -14,6 +14,12 @@ export function createSeenHistory(store){
  };
 }
 export function freshFeed(posts,{seen,liked=new Set(),visible=new Set(),retainedLiked=new Set()}){const roots=new Set();return posts.filter(p=>{const root=p.repostOf||p.id;if(roots.has(root))return false;const keep=(retainedLiked.has(p.id)||!liked.has(p.id)&&!liked.has(root))&&(visible.has(p.id)||!seen.has(p.id)&&!seen.has(root));if(keep)roots.add(root);return keep;});}
+export function keepVisibleOrder(ranked,order,openedAt){
+ if(!order.length)return ranked;
+ const byId=new Map(ranked.map(p=>[p.id,p])),held=order.map(id=>byId.get(id)).filter(Boolean),ids=new Set(held.map(p=>p.id));
+ const incoming=ranked.filter(p=>!ids.has(p.id)&&p.createdAt>openedAt);for(const p of incoming)ids.add(p.id);
+ return [...incoming,...held,...ranked.filter(p=>!ids.has(p.id))];
+}
 export function watchFeed(root,history){
  if(typeof IntersectionObserver==='undefined')return ()=>{};
  const timers=new Map(),observed=new Set();const observer=new IntersectionObserver(entries=>{for(const entry of entries){const el=entry.target,id=el.dataset.feedId;clearTimeout(timers.get(el));timers.delete(el);if(entry.isIntersecting&&(entry.intersectionRatio>=.55||entry.intersectionRect.height>=Math.min(350,innerHeight*.55)))timers.set(el,setTimeout(()=>{timers.delete(el);const rect=el.getBoundingClientRect(),height=Math.max(0,Math.min(rect.bottom,innerHeight)-Math.max(rect.top,0));if(el.isConnected&&(height>=rect.height*.55||height>=Math.min(350,innerHeight*.55))&&document.visibilityState==='visible'&&!document.querySelector('.modal-backdrop'))history.markMany([id,...(el.dataset.feedOrigin?[el.dataset.feedOrigin]:[])]);},1200));}},{threshold:[0,.25,.55]});
